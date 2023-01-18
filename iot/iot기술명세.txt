@@ -1,3 +1,12 @@
+아두이노 라즈베리파이 통신
+아두이노 mp3파일 생성
+아두이노 배터리찾기
+아두이노 자이로센서
+아두이노 마이크센서
+
+라즈베리파이 stt
+라즈베리파이 텍스트 비교 후 일치율
+
 https://diy-project.tistory.com/12 - 아두이노 에어마우스 제작
 
 https://gnsb8.tistory.com/entry/%EB%9D%BC%EC%A6%88%EB%B2%A0%EB%A6%AC-%ED%8C%8C%EC%9D%B4-Wii-%EB%A6%AC%EB%AA%A8%EC%BB%A8Wii-Remote-%EB%88%88%EC%B0%A8%ED%81%ACNunchuk-%EC%84%A4%EC%A0%95 - 라즈베리파이 wii 연결 및 블루투스 연결
@@ -22,3 +31,4 @@ esp32
 <stt>
 마이크 max9814
 스피커
+MP3 보이스 모듈 -8MB 저장공간 (Gravity: UART MP3 Voice Module)
