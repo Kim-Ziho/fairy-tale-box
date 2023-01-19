@@ -22,7 +22,7 @@ https://kaki104.tistory.com/560 - 한국어 stt
 
 https://diy-project.tistory.com/91 - 구글 + 한국어 stt
 
-
+https://blog.naver.com/PostView.naver?blogId=mapes_khkim&logNo=221899887945&parentCategoryNo=&categoryNo=1&viewDate=&isShowPopularPosts=false&from=postView - 아두이노 음성파일 제작 및 웹통신, 많은 예제
 <에어마우스>
 버튼2개
 mpu6050
@@ -31,4 +31,33 @@ esp32
 <stt>
 마이크 max9814
 스피커
-MP3 보이스 모듈 -8MB 저장공간 (Gravity: UART MP3 Voice Module)
+MP3 보이스 모듈 -8MB 저장공간 (Gravity: UART MP3 Voice Module) 이거 한번 찾아봐도 좋을 듯 싶다.
+
+
+
+
+
+
+
+01/19 막힌 곳
+(venv) pi@raspberrypi:~/Downloads/box/mic $ python3 speech_control.py
+Traceback (most recent call last):
+  File "speech_control.py", line 2, in <module>
+    from google.cloud import speech
+  File "/home/pi/Downloads/box/mic/venv/lib/python3.7/site-packages/google/cloud/speech/__ini                                                                 t__.py", line 21, in <module>
+    from google.cloud.speech_v1.services.adaptation.client import AdaptationClient
+  File "/home/pi/Downloads/box/mic/venv/lib/python3.7/site-packages/google/cloud/speech_v1/__                                                                 init__.py", line 21, in <module>
+    from .services.adaptation import AdaptationClient
+  File "/home/pi/Downloads/box/mic/venv/lib/python3.7/site-packages/google/cloud/speech_v1/se                                                                 rvices/adaptation/__init__.py", line 16, in <module>
+    from .client import AdaptationClient
+  File "/home/pi/Downloads/box/mic/venv/lib/python3.7/site-packages/google/cloud/speech_v1/se                                                                 rvices/adaptation/client.py", line 36, in <module>
+    from google.api_core import gapic_v1
+  File "/home/pi/Downloads/box/mic/venv/lib/python3.7/site-packages/google/api_core/gapic_v1/                                                                 __init__.py", line 16, in <module>
+    from google.api_core.gapic_v1 import config
+  File "/home/pi/Downloads/box/mic/venv/lib/python3.7/site-packages/google/api_core/gapic_v1/                                                                 config.py", line 23, in <module>
+    import grpc
+  File "/home/pi/Downloads/box/mic/venv/lib/python3.7/site-packages/grpc/__init__.py", line 2                                                                 2, in <module>
+    from grpc import _compression
+  File "/home/pi/Downloads/box/mic/venv/lib/python3.7/site-packages/grpc/_compression.py", li                                                                 ne 20, in <module>
+    from grpc._cython import cygrpc
+ImportError: /lib/arm-linux-gnueabihf/libm.so.6: version `GLIBC_2.29' not found (required by                                                                  /home/pi/Downloads/box/mic/venv/lib/python3.7/site-packages/grpc/_cython/cygrpc.cpython-37m-a                                                                 rm-linux-gnueabihf.so)
