@@ -1,0 +1,12 @@
+https://opentutorials.org/course/3085 (WEB2 - JavaScript)
+https://opentutorials.org/module/4048
+https://opentutorials.org/module/4600
+
+[2022 30분 요약 강좌 시즌 1](리뉴얼)JavaScript 1부
+강의 자료(노션) : https://url.kr/2n1owd
+
+ctrl + shift + i : 콘솔
+alt+ 방향키 : 코드 옮기기
+
+h1{hi}+p{hello}*5 + tab => 완성
+alt+l + alt+o => 라이브서버 열기
