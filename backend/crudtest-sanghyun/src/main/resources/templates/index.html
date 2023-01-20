@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>crud test</title>
+
+</head>
+<body>
+<div id="app">
+    <input type="text" id="title" ref="title" /><br>
+    <input type="file" id="picture"  ref="picture" accept="image/png, image/jpeg"  /><br>
+    <input type="password" id="password" ref="password" />  <br>
+    <button v-on:click="post" >Posting!</button>
+    <hr>
+    <div
+            v-for="list in lists"
+            v-bind:id="list.uid"
+    >
+        {{list.uid}}
+        <img v-bind:src=list.path width="100%"/>
+        <input type="text" v-model=list.title ref="tt" /><br>
+        <input type="file" v-bind:ref=list.uid accept="image/png, image/jpeg"  /><br>
+        <button v-on:click="update(list)" >update</button>
+        <button v-on:click="del(list)" >delete</button>
+        <hr>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.0.1/mustache.min.js"></script>
+<script type="text/javascript" >
+    new Vue({
+        el: '#app',
+        data: {
+            file: null
+            , lists: []
+            , path: ''
+            , status: ''
+        },
+        methods: {
+            post: function () {
+                var formData = new FormData();
+                formData.append("picture", this.$refs.picture.files[0] );
+                formData.append("title", this.$refs.title.value );
+                formData.append("password", this.$refs.password.value );
+                axios.post(
+                    '/content'
+                    , formData
+                    , { headers: {  'Content-Type': 'multipart/form-data'   }   }
+                ).then(response => {
+                    console.log(response.data);
+                    this.getList();
+                }).catch(error => {
+                    console.log(error);
+                });
+            }
+            ,update: function (list) {
+                var upPasswd = prompt("Enter the password for update.");
+                if (!upPasswd) return;
+                var formData = new FormData();
+                formData.append("picture", this.$refs[list.uid][0].files[0]);
+                formData.append("title", list.title );
+                formData.append("password", upPasswd );
+                axios.put(
+                    '/content/'+list.uid
+                    , formData
+                    , { headers: {  'Content-Type': 'multipart/form-data'   }   }
+                ).then(response => {
+                    console.log(response.data);
+                    this.getList();
+                }).catch(error => {
+                    console.log(error);
+                });
+            }
+            ,
+            del: function (list) {
+                var delPasswd = prompt("Enter the password for delete.");
+                if (!delPasswd) return;
+                axios.delete('/content/'+list.uid
+                    ,{ data: { password: delPasswd  }}
+                ).then(response =>
+                    this.getList()
+                ).catch(error =>
+                    console.log(error)
+                );
+            }
+            ,
+            getList: function () {
+                axios.get('/content').then(response => {
+                    this.lists = response.data
+                    response.data.forEach(element => {
+                        // console.log(element.path);
+                    });
+                }).catch(error =>
+                    console.log(error)
+                );
+            }
+        }
+        ,
+        mounted: function () {
+            this.$nextTick(function () {
+                this.getList();
+            })
+
+        }
+
+    })
+</script>
+</body>
+</html>
