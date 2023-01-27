@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import React, {Component , useRef} from 'react'
+import React, {Component , useRef , useState , props} from 'react'
 import {BrowserRouter, Routes,Route , useNavigate,useLocation} from 'react-router-dom'
 import Header from './pages/Header';
 import Main from './pages/Main';
@@ -29,6 +29,7 @@ import Scene21 from './pages/scene21';
 import { AnimatePresence } from "framer-motion";
 
 function App() {
+  
   
   return (
     <div className="App">
@@ -59,7 +60,6 @@ function App() {
           <Route path="/scene19" element={<Scene19/>}></Route>
           <Route path="/scene20" element={<Scene20/>}></Route>
           <Route path="/scene21" element={<Scene21/>}></Route>
-          
         </Routes>
         </AnimatePresence>
       </BrowserRouter>
