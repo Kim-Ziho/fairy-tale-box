@@ -1,0 +1,14 @@
+.passorfail{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.historydetailContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+.containerdetailbox{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
