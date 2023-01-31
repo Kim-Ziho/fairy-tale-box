@@ -14,10 +14,11 @@ public class Word {
     private String wordName;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "history_id")
-    private MemberHistory memberHistory;
+    @JoinColumn(name = "story_id")
+    private Story story;
 
-    private String audioPath;
+    @OneToOne(mappedBy = "word", fetch = FetchType.LAZY)
+    private WordResult wordResult;
 
-    private String wordImage;
+    private String imagePath;
 }
