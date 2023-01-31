@@ -1,0 +1,40 @@
+.Box{
+    text-align: center;
+    /* background-image: url(../../public/img/씬3.png); */
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 5%;
+}
+
+.top{
+    background-color: aqua;
+    width: auto;
+    border-radius: 10px;
+    
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    
+}
+
+.containerbox{
+    background-color: beige;
+    margin: 20px;
+    border-radius: 10px;
+}
+.tale{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.talebox{
+    background-color: beige;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.back{
+    text-align: end;
+}
