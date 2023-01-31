@@ -2,23 +2,47 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import Back from "./Back";
 import historydata from "./historydata.json"
+import "./History.css"
 
 const History = () =>{
     const historys = historydata.map(history =>{
         return (
-            <div key={history.id}>
-                <h3>
-                    <Link to={`/history/${history.id}`}>{history.name}</Link>
-                </h3>
-                <p>price : ${history.price}</p>
+            <div key={history.id} className="tale">
+                <div className="talebox">
+                    {history.name}
+                </div>
+                <div className="talebox">price : ${history.price}</div>
+                <div className="talebox">내용 : {history.description}</div>
+                <div className="talebox">
+                    <Link to={`/history/${history.id}`}> 아이디 : {history.id}</Link>
+                </div>
             </div>
         )
     });
 
     return(
-        <div>
+        <div className="Box">
+            <div className="back">
             <Back/>
-            학습기록 페이지입니다.
+            </div>
+            <div className="top">
+            <h1>학습기록 </h1>
+            </div>  
+            <hr></hr>
+                <div className="container">
+                    <div className="containerbox">
+                        학습날짜
+                    </div>
+                    <div className="containerbox">
+                        학습동화
+                    </div>
+                    <div className="containerbox">
+                        별점
+                    </div>
+                    <div className="containerbox">
+                        자세히
+                    </div>
+                </div>          
             {historys}
         </div>
     )
