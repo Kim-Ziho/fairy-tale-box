@@ -1,13 +1,22 @@
-#img1 {
-  width: auto;
-  height: 200px;
+.selectImg {
+  width: 25vw;
+  height: 20vh;
+  object-fit: contain;
 }
+
 #Grid {
-  padding: 50px;
+  padding: 2% 7%;
 }
 
 .homeBtn {
   font-size: 30px;
-  display: inline-block;
   float: right;
+}
+.selectBtn {
+  border: none;
+  background-color: #fff;
+}
+
+#item:hover {
+  background-color: yellow;
 }
