@@ -22,6 +22,10 @@ https://kaki104.tistory.com/560 - 한국어 stt
 
 https://diy-project.tistory.com/91 - 구글 + 한국어 stt
 
+https://fishpoint.tistory.com/5266 - mic블루투스 통신
+
+https://community.element14.com/challenges-projects/project14/nano-rama/b/blog/posts/ble-on-arduino-nano-33-ble-sense---bluez-connect - 블루투스 통신
+
 https://blog.naver.com/PostView.naver?blogId=mapes_khkim&logNo=221899887945&parentCategoryNo=&categoryNo=1&viewDate=&isShowPopularPosts=false&from=postView - 아두이노 음성파일 제작 및 웹통신, 많은 예제
 <에어마우스>
 버튼2개
