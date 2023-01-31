@@ -29,7 +29,7 @@ const History = () =>{
             <h1>학습기록 </h1>
             </div>  
             <hr></hr>
-                <div className="container">
+                <div className="historyContainer">
                     <div className="containerbox">
                         학습날짜
                     </div>

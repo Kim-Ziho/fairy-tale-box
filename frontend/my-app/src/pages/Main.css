@@ -1,4 +1,4 @@
-.container {
+.mainContainer {
   padding-top: 3%;
   padding-bottom: 3%;
   width: 100vw;
@@ -13,7 +13,6 @@
 }
 
 .buttons {
-  margin: auto;
   display: flex;
   justify-content: space-around;
 }
@@ -21,10 +20,9 @@
 .button2,
 .button3 {
   display: inline-block;
-  padding: 0%;
-  width: 500px;
-  height: 600px;
-  margin: auto;
+  width: 30vw;
+  height: 60vh;
+  border: 40px;
 }
 
 .txt {
@@ -32,4 +30,7 @@
 }
 .btnText {
   font-size: 60px;
+  width: fit-content;
+  margin: auto;
+  text-align: center;
 }
