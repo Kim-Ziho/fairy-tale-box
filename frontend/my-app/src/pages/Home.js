@@ -30,7 +30,9 @@ const Home = (props) => {
 	return (
 		<>
 			<div id="Grid">
-				<Back/>
+				<Link to ="/">
+					<button>메인 화면으로 가기
+						</button> </Link>
 			<Grid container spacing={2}>
 				<Grid item xs={4}>
 					<Item >
