@@ -5,7 +5,7 @@ import "./Main.css";
 const Main = () => {
   return (
     <div className="mainContainer">
-      <h1 className="mainText txt">🤸🏻‍♀️ 동화상자 🤸🏻‍♂️</h1>
+      <h1 className="mainText txt">🧚🏻‍♀️ 동화상자 🧚🏻‍♂️</h1>
       <div className="buttons">
         <Link to="/home">
           <button className="button1">
