@@ -30,4 +30,7 @@ public class Member {
     @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
     private List<History> historyList = new ArrayList<>();
 
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
 }
