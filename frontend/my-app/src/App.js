@@ -3,7 +3,6 @@ import './App.css';
 import React, {Component , useRef , useState , props} from 'react'
 import {BrowserRouter, Routes,Route , useNavigate,useLocation} from 'react-router-dom'
 import Main from './pages/Main';
-import Pause from './pages/Pause';
 import Home from './pages/Home';
 import History from './pages/History';
 import Historydetail from './pages/Historydetail';
