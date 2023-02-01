@@ -50,6 +50,9 @@ void setup() {
   pinMode(LEDR, OUTPUT);
   pinMode(LEDG, OUTPUT);
 
+  pinMode(8, OUTPUT);
+	pinMode(7, INPUT);
+
   // Configure the data receive callback
   PDM.onReceive(onPDMdata);
 
@@ -97,7 +100,14 @@ void setup() {
 void loop()
 {
   BLEDevice central = BLE.central();
-  
+  int readValue = digitalRead(7);
+  Serial.println(readValue);
+  if(readValue == HIGH){
+    digitalWrite(8,HIGH);
+  }
+  else {
+    digitalWrite(8,LOW);
+  }
   if (central)
   {
     // Only send data if we are connected to a central device.

@@ -7,13 +7,6 @@ void setup()
 
 void loop() 
 {
-  int readValue = digitalRead(7);
-  Serial.println(readValue);
-  if(readValue == HIGH){
-    digitalWrite(8,HIGH);
-  }
-  else {
-    digitalWrite(8,LOW);
-  }
+  
 	
 }
