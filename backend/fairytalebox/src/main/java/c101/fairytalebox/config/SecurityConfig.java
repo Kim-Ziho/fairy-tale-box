@@ -28,8 +28,8 @@ public class SecurityConfig {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-                .antMatchers("/members/login").permitAll()
-                .antMatchers("/members/test").hasRole("USER")
+                .antMatchers("/member/signup", "member/login").permitAll()
+                .antMatchers("/member/test").hasRole("USER")
                 .anyRequest().authenticated()
                 .and()
                 .addFilterBefore(new FairyJwtFilter(jwtTokenProvider), UsernamePasswordAuthenticationFilter.class);

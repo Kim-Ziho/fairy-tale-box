@@ -1,17 +1,31 @@
 package c101.fairytalebox.controller;
 
+import c101.fairytalebox.dto.SignUpRequestDto;
+import c101.fairytalebox.jwt.JwtTokenProvider;
+import c101.fairytalebox.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/accounts")
+@RequestMapping("/member")
 @RequiredArgsConstructor
 public class MemberController {
-    @GetMapping("/hello")
-    public ResponseEntity<String> hello() {
-        return ResponseEntity.ok("hello");
+
+    private final JwtTokenProvider jwtTokenProvider;
+    private final AuthenticationManagerBuilder authenticationMangerBuilder;
+    private final MemberService memberService;
+
+
+    @GetMapping("/test")
+    public String testUrl() {
+        return "접속됐지롱";
+    }
+    @PostMapping("/signup")
+    public Long signUp(@Valid @RequestBody SignUpRequestDto request) throws Exception {
+        return memberService.signUp(request);
     }
 }
