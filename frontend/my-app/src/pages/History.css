@@ -1,38 +1,38 @@
-.Box {
-  text-align: center;
-  /* background-image: url(../../public/img/씬3.png); */
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-top: 5%;
+.mainText {
+  /* margin: auto;
+  padding-bottom: 3%;
+  font-size: 110px;
+  width: fit-content; */
+  margin-top: -3%;
+}
+.backBtn {
+  font-size: 30px;
+  float: right;
 }
 
-.top {
-  background-color: aqua;
-  width: auto;
-  border-radius: 10px;
+.historyBox {
+  text-align: center;
+  /* background-image: url(../../public/img/씬3.png); */
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 5%;
 }
 
 .historyContainer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
-
-.containerbox {
-  background-color: beige;
-  margin: 20px;
-  border-radius: 10px;
+.historytitle {
+  background-color: rgb(194, 224, 245);
+  width: 88%;
+  margin: 7%;
+  border-radius: 8px;
+  font-size: 45px;
 }
-.tale {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-
-.talebox {
-  background-color: beige;
-  margin: 20px;
-  border-radius: 10px;
-}
-
-.back {
-  text-align: end;
+.historycontent {
+  background-color: rgb(240, 240, 240);
+  width: 88%;
+  margin: 2% 7% 2% 7%;
+  border-radius: 8px;
+  font-size: 30px;
 }
