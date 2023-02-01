@@ -35,39 +35,65 @@ from pycoral.utils.edgetpu import make_interpreter
 
 import cv2
 import numpy as np
+from signal import signal
 
 _NUM_KEYPOINTS = 17
 
 
 def main():
 
-  model = 'model/movenet_single_pose_thunder_ptq_edgetpu.tflite'
-  input = 'test_data/squat.bmp'
-  output = 'movenet_result.jpg'
+    model = 'model/movenet_single_pose_thunder_ptq_edgetpu.tflite'
+    input = 'test_data/squat.bmp'
+    output = 'movenet_result.jpg'
 
-  interpreter = make_interpreter(model)
-  interpreter.allocate_tensors()
+    interpreter = make_interpreter(model)
+    interpreter.allocate_tensors()
+    inference_size = common.input_size(interpreter)
 
-  img = Image.open(input)
-  resized_img = img.resize(common.input_size(interpreter), Image.ANTIALIAS)
-  common.set_input(interpreter, resized_img)
 
-  interpreter.invoke()
+    threshold = .3
+    cap = cv2.VideoCapture(0)
+    print(cap, "is open:", cap.isOpened())
 
-  pose = common.output_tensor(interpreter, 0).copy().reshape(_NUM_KEYPOINTS, 3)
-  print(pose)
-  draw = ImageDraw.Draw(img)
-  width, height = img.size
-  for i in range(0, _NUM_KEYPOINTS):
-    draw.ellipse(
-        xy=[
-            pose[i][1] * width - 2, pose[i][0] * height - 2,
-            pose[i][1] * width + 2, pose[i][0] * height + 2
-        ],
-        fill=(255, 0, 0))
-  img.save(output)
-  print('Done. Results saved at', output)
+    if not cap.isOpened():
+        print("Cannot open camera")
+        exit()
 
+    while cap.isOpened():
+        ret, frame = cap.read()
+        if not ret:
+            print("Can't receive frame (stream end?). Exiting ...")
+            break
+
+        frame = cv2.resize(frame, inference_size)
+        frame = cv2.flip(frame, 1)
+        common.set_input(interpreter, frame)
+        interpreter.invoke()
+
+        pose = common.output_tensor(interpreter, 0).copy().reshape(_NUM_KEYPOINTS, 3)
+        print(pose)
+
+        y, x, _ = frame.shape
+
+        for k in pose[:,:]:
+            # Checks confidence for keypoint
+            if k[2] > threshold:
+                # The first two channels of the last dimension represents the yx coordinates (normalized to image frame, i.e. range in [0.0, 1.0]) of the 17 keypoints
+                yc = int(k[0] * y)
+                xc = int(k[1] * x)
+
+                # Draws a circle on the image for each keypoint
+                frame = cv2.circle(frame, (xc, yc), 2, (0, 255, 0), 5)
+        
+
+        cv2.imshow('frame', frame)
+        if cv2.waitKey(1) == ord("q"):
+            break
+
+    cap.release()
+    cv2.destroyAllWindows()
+
+    
 
 if __name__ == '__main__':
-  main()
+    main()
