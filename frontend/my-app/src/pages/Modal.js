@@ -2,6 +2,7 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Button from "@mui/material/Button";
+import { Link } from "react-router-dom";
 
 const style = {
   position: "absolute",
@@ -17,39 +18,7 @@ const style = {
   pb: 3,
 };
 
-function ChildModal() {
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => {
-    setOpen(true);
-  };
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  return (
-    <React.Fragment>
-      <Button onClick={handleOpen}>이전</Button>
-      <Button onClick={handleOpen}>시작하기</Button>
-      <Modal
-        hideBackdrop
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="child-modal-title"
-        aria-describedby="child-modal-description"
-      >
-        <Box sx={{ ...style, width: 200 }}>
-          <h2 id="child-modal-title">Text in a child modal</h2>
-          <p id="child-modal-description">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-          </p>
-          <Button onClick={handleClose}>Close Child Modal</Button>
-        </Box>
-      </Modal>
-    </React.Fragment>
-  );
-}
-
-export default function Modall() {
+export default function HomeModal() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => {
     setOpen(true);
@@ -60,7 +29,7 @@ export default function Modall() {
 
   return (
     <div>
-      <Button onClick={handleOpen}>Open modal</Button>
+      <Button onClick={handleOpen}>Modal</Button>
       <Modal
         open={open}
         onClose={handleClose}
@@ -68,11 +37,16 @@ export default function Modall() {
         aria-describedby="parent-modal-description"
       >
         <Box sx={{ ...style, width: 400 }}>
-          <h2 id="parent-modal-title">Text in a modal</h2>
+          <h2 id="parent-modal-title">해님 달님</h2>
           <p id="parent-modal-description">
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+            한국의 대표적인 전래동화 중 하나. 넓게 보면 신화로도 볼 수 있으며,
+            줄여서 해님달님이라고도 불린다. 원래는 한국의 해와 달의 기원
+            신화였던 ...
           </p>
-          <ChildModal />
+          <Button onClick={handleClose}>닫기</Button>
+          <Link to="/Scene1">
+            <Button onClick={handleOpen}>시작할래요</Button>
+          </Link>
         </Box>
       </Modal>
     </div>
