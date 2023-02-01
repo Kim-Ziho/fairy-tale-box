@@ -1,14 +1,15 @@
 package c101.fairytalebox.service;
 
 
+import c101.fairytalebox.dto.LoginRequestDto;
 import c101.fairytalebox.dto.SignUpRequestDto;
+import c101.fairytalebox.jwt.TokenInfo;
 
 import java.util.Map;
 
 public interface MemberService {
-    public Long signUp(SignUpRequestDto requestDto) throws Exception;
+    public Long signUp(SignUpRequestDto request) throws Exception;
 
-//    public String login(Map<String, String> members);
-
+    public TokenInfo login(String email, String password) throws Exception;
 
 }

@@ -9,6 +9,9 @@ import lombok.Data;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @Builder
@@ -30,7 +33,7 @@ public class SignUpRequestDto {
 
     private String checkedPassword;
 
-    private Role role;
+    private List<String> roles;
 
     @Builder
     public Member toEntity(){
@@ -38,7 +41,7 @@ public class SignUpRequestDto {
                 .email(email)
                 .nickname(nickname)
                 .password(password)
-                .role(Role.USER)
+                .roles(roles)
                 .build();
     }
 }
