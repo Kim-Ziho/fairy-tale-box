@@ -28,7 +28,7 @@ const Home = (props) => {
   return (
     <div id="Grid">
       <Link to="/">
-        <button className="homeBtn txt">👈🏻 뒤로가기</button>
+        <button className="backBtn txt">👈🏻 뒤로가기</button>
       </Link>
       <Grid container spacing={4}>
         <Grid item xs={4}>

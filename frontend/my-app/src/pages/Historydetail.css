@@ -1,14 +1,38 @@
-.passorfail{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.passorfail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .historydetailContainer {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
+  display: grid;
+  grid-template-columns: 0.1fr 1fr 1fr 1fr 0.1fr;
+}
+.historydetailContainer2 {
+  display: grid;
+  grid-template-columns: 0.1fr 1fr 1fr 1fr 0.1fr 0.1fr 1fr 1fr 1fr 0.1fr;
+}
+.historydetailcontent {
+  background-color: rgb(240, 240, 240);
+  /* width: 88%; */
+  margin: 2% 7% 2% 7%;
+  border-radius: 8px;
+  font-size: 30px;
+}
 
-.containerdetailbox{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+.historyDetailBox {
+  text-align: center;
+  /* background-image: url(../../public/img/씬3.png); */
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-top: 2%;
+}
+
+.detailText {
+  margin: auto;
+  padding-bottom: 3%;
+  font-size: 100px;
+  width: fit-content;
+}
+.hide {
+  opacity: 0;
 }

@@ -7,32 +7,28 @@ import "./History.css";
 const History = () => {
   const historys = historydata.map((history) => {
     return (
-      <div key={history.id} className="tale">
-        <div className="talebox">{history.name}</div>
-        <div className="talebox">price : ${history.price}</div>
-        <div className="talebox">내용 : {history.description}</div>
-        <div className="talebox">
-          <Link to={`/history/${history.id}`}> 아이디 : {history.id}</Link>
+      <div key={history.id} className="historyContainer">
+        <div className="historycontent txt">{history.date}</div>
+        <div className="historycontent txt">{history.tale}</div>
+        <div className="historycontent txt">{history.score}</div>
+        <div className="historycontent txt">
+          <Link to={`/history/${history.id}`}>커몬요</Link>
         </div>
       </div>
     );
   });
 
   return (
-    <div className="Box">
-      <div className="back">
-        <Back />
-      </div>
-      <div className="top">
-        <h1>학습기록 </h1>
+    <div className="historyBox">
+      <Back />
+      <h1 className="mainText txt">📝 학습기록 🎧</h1>
+      <div className="historyContainer">
+        <div className="historytitle txt">학습날짜</div>
+        <div className="historytitle txt">학습동화</div>
+        <div className="historytitle txt">별점</div>
+        <div className="historytitle txt">자세히보기</div>
       </div>
       <hr></hr>
-      <div className="historyContainer">
-        <div className="containerbox">학습날짜</div>
-        <div className="containerbox">학습동화</div>
-        <div className="containerbox">별점</div>
-        <div className="containerbox">자세히</div>
-      </div>
       {historys}
     </div>
   );
