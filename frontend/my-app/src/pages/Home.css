@@ -1,6 +1,6 @@
 .selectImg {
   width: 25vw;
-  height: 17vh;
+  height: 21vh;
   object-fit: contain;
 }
 
@@ -17,6 +17,7 @@
   background-color: #fff;
 }
 
-#item:hover {
-  background-color: yellow;
+button:hover {
+  transition: 3s;
+  transform: scale(1);
 }
