@@ -6,7 +6,7 @@ import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import { Button } from "@mui/material";
 import Typography from "@mui/material/Typography";
-import Modal from "./HomeModal.js";
+import Modal from "./Modal.js";
 import Back from "./Back";
 import "./Home.css";
 
@@ -18,13 +18,13 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const Home = (props) => {
   const [modalOpen, setModalOpen] = useState(false);
-
   const openModal = () => {
     setModalOpen(true);
   };
   const closeModal = () => {
     setModalOpen(false);
   };
+
   return (
     <div id="Grid">
       <Link to="/">
@@ -40,23 +40,14 @@ const Home = (props) => {
                 alt="sun and moon"
               ></img>
             </button>
-            <Modal open={modalOpen} close={closeModal} header="해님 달님">
-              모달 바꿀거임
-            </Modal>
-          </Item>
-        </Grid>
-        <Grid item xs={4}>
-          <Item>
-            <button onClick={openModal} className="selectBtn">
-              <img
-                src="img/sunandmoon_select1.png"
-                className="selectImg"
-                alt="sun and moon"
-              ></img>
-            </button>
-            <Modal open={modalOpen} close={closeModal} header="해님 달님">
-              {/* Modal.js <main> {props.children} </main>에 내용이 입력된다. */}
-              해와 달이 된 오누이 그 신화...!
+            <Modal
+              open={modalOpen}
+              close={closeModal}
+              header="해님달님 헤더잖아"
+            >
+              한국의 대표적인 전래동화 중 하나. 넓게 보면 신화로도 볼 수 있으며,
+              줄여서 해님달님이라고도 불린다. 원래는 한국의 해와 달의 기원
+              신화였던 ...
               <Grid container>
                 <Grid item xs={12}>
                   <Link to="/scene1">
@@ -76,9 +67,14 @@ const Home = (props) => {
                 alt="sun and moon"
               ></img>
             </button>
-            <Modal open={modalOpen} close={closeModal} header="해님 달님">
-              {/* Modal.js <main> {props.children} </main>에 내용이 입력된다. */}
-              해와 달이 된 오누이 그 신화...!
+            <Modal
+              open={modalOpen}
+              close={closeModal}
+              header="해님달님 헤더잖아"
+            >
+              한국의 대표적인 전래동화 중 하나. 넓게 보면 신화로도 볼 수 있으며,
+              줄여서 해님달님이라고도 불린다. 원래는 한국의 해와 달의 기원
+              신화였던 ...
               <Grid container>
                 <Grid item xs={12}>
                   <Link to="/scene1">
@@ -93,14 +89,19 @@ const Home = (props) => {
           <Item>
             <button onClick={openModal} className="selectBtn">
               <img
-                src="img/sunandmoon_select2.png"
+                src="img/sunandmoon_select1.png"
                 className="selectImg"
                 alt="sun and moon"
               ></img>
             </button>
-            <Modal open={modalOpen} close={closeModal} header="해님 달님">
-              {/* Modal.js <main> {props.children} </main>에 내용이 입력된다. */}
-              해와 달이 된 오누이 그 신화...!
+            <Modal
+              open={modalOpen}
+              close={closeModal}
+              header="해님달님 헤더잖아"
+            >
+              한국의 대표적인 전래동화 중 하나. 넓게 보면 신화로도 볼 수 있으며,
+              줄여서 해님달님이라고도 불린다. 원래는 한국의 해와 달의 기원
+              신화였던 ...
               <Grid container>
                 <Grid item xs={12}>
                   <Link to="/scene1">
@@ -115,14 +116,19 @@ const Home = (props) => {
           <Item>
             <button onClick={openModal} className="selectBtn">
               <img
-                src="img/sunandmoon_select2.png"
+                src="img/sunandmoon_select1.png"
                 className="selectImg"
                 alt="sun and moon"
               ></img>
             </button>
-            <Modal open={modalOpen} close={closeModal} header="해님 달님">
-              {/* Modal.js <main> {props.children} </main>에 내용이 입력된다. */}
-              해와 달이 된 오누이 그 신화...!
+            <Modal
+              open={modalOpen}
+              close={closeModal}
+              header="해님달님 헤더잖아"
+            >
+              한국의 대표적인 전래동화 중 하나. 넓게 보면 신화로도 볼 수 있으며,
+              줄여서 해님달님이라고도 불린다. 원래는 한국의 해와 달의 기원
+              신화였던 ...
               <Grid container>
                 <Grid item xs={12}>
                   <Link to="/scene1">
@@ -137,14 +143,19 @@ const Home = (props) => {
           <Item>
             <button onClick={openModal} className="selectBtn">
               <img
-                src="img/sunandmoon_select2.png"
+                src="img/sunandmoon_select1.png"
                 className="selectImg"
                 alt="sun and moon"
               ></img>
             </button>
-            <Modal open={modalOpen} close={closeModal} header="해님 달님">
-              {/* Modal.js <main> {props.children} </main>에 내용이 입력된다. */}
-              해와 달이 된 오누이 그 신화...!
+            <Modal
+              open={modalOpen}
+              close={closeModal}
+              header="해님달님 헤더잖아"
+            >
+              한국의 대표적인 전래동화 중 하나. 넓게 보면 신화로도 볼 수 있으며,
+              줄여서 해님달님이라고도 불린다. 원래는 한국의 해와 달의 기원
+              신화였던 ...
               <Grid container>
                 <Grid item xs={12}>
                   <Link to="/scene1">
@@ -159,14 +170,19 @@ const Home = (props) => {
           <Item>
             <button onClick={openModal} className="selectBtn">
               <img
-                src="img/sunandmoon_select3.png"
+                src="img/sunandmoon_select1.png"
                 className="selectImg"
                 alt="sun and moon"
               ></img>
             </button>
-            <Modal open={modalOpen} close={closeModal} header="해님 달님">
-              {/* Modal.js <main> {props.children} </main>에 내용이 입력된다. */}
-              해와 달이 된 오누이 그 신화...!
+            <Modal
+              open={modalOpen}
+              close={closeModal}
+              header="해님달님 헤더잖아"
+            >
+              한국의 대표적인 전래동화 중 하나. 넓게 보면 신화로도 볼 수 있으며,
+              줄여서 해님달님이라고도 불린다. 원래는 한국의 해와 달의 기원
+              신화였던 ...
               <Grid container>
                 <Grid item xs={12}>
                   <Link to="/scene1">
@@ -181,14 +197,19 @@ const Home = (props) => {
           <Item>
             <button onClick={openModal} className="selectBtn">
               <img
-                src="img/sunandmoon_select3.png"
+                src="img/sunandmoon_select1.png"
                 className="selectImg"
                 alt="sun and moon"
               ></img>
             </button>
-            <Modal open={modalOpen} close={closeModal} header="해님 달님">
-              {/* Modal.js <main> {props.children} </main>에 내용이 입력된다. */}
-              해와 달이 된 오누이 그 신화...!
+            <Modal
+              open={modalOpen}
+              close={closeModal}
+              header="해님달님 헤더잖아"
+            >
+              한국의 대표적인 전래동화 중 하나. 넓게 보면 신화로도 볼 수 있으며,
+              줄여서 해님달님이라고도 불린다. 원래는 한국의 해와 달의 기원
+              신화였던 ...
               <Grid container>
                 <Grid item xs={12}>
                   <Link to="/scene1">
@@ -203,14 +224,46 @@ const Home = (props) => {
           <Item>
             <button onClick={openModal} className="selectBtn">
               <img
-                src="img/sunandmoon_select3.png"
+                src="img/sunandmoon_select1.png"
                 className="selectImg"
                 alt="sun and moon"
               ></img>
             </button>
-            <Modal open={modalOpen} close={closeModal} header="해님 달님">
-              {/* Modal.js <main> {props.children} </main>에 내용이 입력된다. */}
-              해와 달이 된 오누이 그 신화...!
+            <Modal
+              open={modalOpen}
+              close={closeModal}
+              header="해님달님 헤더잖아"
+            >
+              한국의 대표적인 전래동화 중 하나. 넓게 보면 신화로도 볼 수 있으며,
+              줄여서 해님달님이라고도 불린다. 원래는 한국의 해와 달의 기원
+              신화였던 ...
+              <Grid container>
+                <Grid item xs={12}>
+                  <Link to="/scene1">
+                    <button>하러가기</button>
+                  </Link>
+                </Grid>
+              </Grid>
+            </Modal>
+          </Item>
+        </Grid>
+        <Grid item xs={4}>
+          <Item>
+            <button onClick={openModal} className="selectBtn">
+              <img
+                src="img/sunandmoon_select1.png"
+                className="selectImg"
+                alt="sun and moon"
+              ></img>
+            </button>
+            <Modal
+              open={modalOpen}
+              close={closeModal}
+              header="해님달님 헤더잖아"
+            >
+              한국의 대표적인 전래동화 중 하나. 넓게 보면 신화로도 볼 수 있으며,
+              줄여서 해님달님이라고도 불린다. 원래는 한국의 해와 달의 기원
+              신화였던 ...
               <Grid container>
                 <Grid item xs={12}>
                   <Link to="/scene1">

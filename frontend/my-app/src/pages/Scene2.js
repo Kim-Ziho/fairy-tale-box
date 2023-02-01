@@ -1,7 +1,6 @@
 import React from "react";
 import {Link} from 'react-router-dom';
 import {motion} from "framer-motion"
-import Pause from "./Pause"
 
 const Scene2 = () => {
     let audio = new Audio("sound/sample2.wav")
@@ -15,7 +14,7 @@ const Scene2 = () => {
         animate={{x:0}}
         exit={{opacity: 0}}
         >
-              <Pause/>
+             
             <img src="/img/구름2.jpg"></img>
             <button onClick={start} >play</button>
             <button onClick={stop} >stop</button>
