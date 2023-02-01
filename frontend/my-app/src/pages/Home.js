@@ -6,7 +6,7 @@ import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import { Button } from "@mui/material";
 import Typography from "@mui/material/Typography";
-import Modal from "./Modal.js";
+import Modal from "./HomeModal.js";
 import Back from "./Back";
 import "./Home.css";
 
