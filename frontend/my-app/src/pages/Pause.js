@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Pause.css";
-import Modal from "./Modal.js";
+import Modal from "./PauseModal.js";
 
 function Header(props) {
   const [modalOpen, setModalOpen] = useState(false);
