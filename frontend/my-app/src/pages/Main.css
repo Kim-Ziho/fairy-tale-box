@@ -1,5 +1,5 @@
 .mainContainer {
-  padding-top: 5%;
+  padding-top: 6%;
   padding-bottom: 3%;
   width: 100vw;
   height: 100vh;
@@ -34,4 +34,11 @@
   width: fit-content;
   margin: auto;
   text-align: center;
+}
+
+body {
+  -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+  display: none;
 }
