@@ -48,13 +48,9 @@ const Home = (props) => {
               한국의 대표적인 전래동화 중 하나. 넓게 보면 신화로도 볼 수 있으며,
               줄여서 해님달님이라고도 불린다. 원래는 한국의 해와 달의 기원
               신화였던 ...
-              <Grid container>
-                <Grid item xs={12}>
-                  <Link to="/scene1">
-                    <button>하러가기</button>
-                  </Link>
-                </Grid>
-              </Grid>
+              <Link to="/scene1">
+                <button>하러가기</button>
+              </Link>
             </Modal>
           </Item>
         </Grid>
@@ -75,16 +71,12 @@ const Home = (props) => {
               한국의 대표적인 전래동화 중 하나. 넓게 보면 신화로도 볼 수 있으며,
               줄여서 해님달님이라고도 불린다. 원래는 한국의 해와 달의 기원
               신화였던 ...
-              <Grid container>
-                <Grid item xs={12}>
-                  <Link to="/scene1">
-                    <button>하러가기</button>
-                  </Link>
-                </Grid>
-              </Grid>
+              <Link to="/scene1">
+                <button>하러가기</button>
+              </Link>
             </Modal>
           </Item>
-        </Grid>
+        </Grid>{" "}
         <Grid item xs={4}>
           <Item>
             <button onClick={openModal} className="selectBtn">
@@ -102,16 +94,12 @@ const Home = (props) => {
               한국의 대표적인 전래동화 중 하나. 넓게 보면 신화로도 볼 수 있으며,
               줄여서 해님달님이라고도 불린다. 원래는 한국의 해와 달의 기원
               신화였던 ...
-              <Grid container>
-                <Grid item xs={12}>
-                  <Link to="/scene1">
-                    <button>하러가기</button>
-                  </Link>
-                </Grid>
-              </Grid>
+              <Link to="/scene1">
+                <button>하러가기</button>
+              </Link>
             </Modal>
           </Item>
-        </Grid>
+        </Grid>{" "}
         <Grid item xs={4}>
           <Item>
             <button onClick={openModal} className="selectBtn">
@@ -129,16 +117,12 @@ const Home = (props) => {
               한국의 대표적인 전래동화 중 하나. 넓게 보면 신화로도 볼 수 있으며,
               줄여서 해님달님이라고도 불린다. 원래는 한국의 해와 달의 기원
               신화였던 ...
-              <Grid container>
-                <Grid item xs={12}>
-                  <Link to="/scene1">
-                    <button>하러가기</button>
-                  </Link>
-                </Grid>
-              </Grid>
+              <Link to="/scene1">
+                <button>하러가기</button>
+              </Link>
             </Modal>
           </Item>
-        </Grid>
+        </Grid>{" "}
         <Grid item xs={4}>
           <Item>
             <button onClick={openModal} className="selectBtn">
@@ -156,16 +140,12 @@ const Home = (props) => {
               한국의 대표적인 전래동화 중 하나. 넓게 보면 신화로도 볼 수 있으며,
               줄여서 해님달님이라고도 불린다. 원래는 한국의 해와 달의 기원
               신화였던 ...
-              <Grid container>
-                <Grid item xs={12}>
-                  <Link to="/scene1">
-                    <button>하러가기</button>
-                  </Link>
-                </Grid>
-              </Grid>
+              <Link to="/scene1">
+                <button>하러가기</button>
+              </Link>
             </Modal>
           </Item>
-        </Grid>
+        </Grid>{" "}
         <Grid item xs={4}>
           <Item>
             <button onClick={openModal} className="selectBtn">
@@ -183,94 +163,9 @@ const Home = (props) => {
               한국의 대표적인 전래동화 중 하나. 넓게 보면 신화로도 볼 수 있으며,
               줄여서 해님달님이라고도 불린다. 원래는 한국의 해와 달의 기원
               신화였던 ...
-              <Grid container>
-                <Grid item xs={12}>
-                  <Link to="/scene1">
-                    <button>하러가기</button>
-                  </Link>
-                </Grid>
-              </Grid>
-            </Modal>
-          </Item>
-        </Grid>
-        <Grid item xs={4}>
-          <Item>
-            <button onClick={openModal} className="selectBtn">
-              <img
-                src="img/sunandmoon_select1.png"
-                className="selectImg"
-                alt="sun and moon"
-              ></img>
-            </button>
-            <Modal
-              open={modalOpen}
-              close={closeModal}
-              header="해님달님 헤더잖아"
-            >
-              한국의 대표적인 전래동화 중 하나. 넓게 보면 신화로도 볼 수 있으며,
-              줄여서 해님달님이라고도 불린다. 원래는 한국의 해와 달의 기원
-              신화였던 ...
-              <Grid container>
-                <Grid item xs={12}>
-                  <Link to="/scene1">
-                    <button>하러가기</button>
-                  </Link>
-                </Grid>
-              </Grid>
-            </Modal>
-          </Item>
-        </Grid>
-        <Grid item xs={4}>
-          <Item>
-            <button onClick={openModal} className="selectBtn">
-              <img
-                src="img/sunandmoon_select1.png"
-                className="selectImg"
-                alt="sun and moon"
-              ></img>
-            </button>
-            <Modal
-              open={modalOpen}
-              close={closeModal}
-              header="해님달님 헤더잖아"
-            >
-              한국의 대표적인 전래동화 중 하나. 넓게 보면 신화로도 볼 수 있으며,
-              줄여서 해님달님이라고도 불린다. 원래는 한국의 해와 달의 기원
-              신화였던 ...
-              <Grid container>
-                <Grid item xs={12}>
-                  <Link to="/scene1">
-                    <button>하러가기</button>
-                  </Link>
-                </Grid>
-              </Grid>
-            </Modal>
-          </Item>
-        </Grid>
-        <Grid item xs={4}>
-          <Item>
-            <button onClick={openModal} className="selectBtn">
-              <img
-                src="img/sunandmoon_select1.png"
-                className="selectImg"
-                alt="sun and moon"
-              ></img>
-            </button>
-            <Modal
-              open={modalOpen}
-              close={closeModal}
-              header="해님달님 헤더잖아"
-            >
-              한국의 대표적인 전래동화 중 하나. 넓게 보면 신화로도 볼 수 있으며,
-              줄여서 해님달님이라고도 불린다. 원래는 한국의 해와 달의 기원
-              신화였던 ...
-              <Grid container>
-                <Grid item xs={12}>
-                  <Link to="/scene1">
-                    <button>하러가기</button>
-                  </Link>
-                </Grid>
-              </Grid>
+              <Link to="/scene1">
+                <button>하러가기</button>
+              </Link>
             </Modal>
           </Item>
         </Grid>
