@@ -21,7 +21,7 @@ const History = () => {
   return (
     <div className="historyBox">
       <Back />
-      <h1 className="mainText txt">📝 학습기록 🎧</h1>
+      <h1 className="historymainText txt">📝 학습기록 🎧</h1>
       <div className="historyContainer">
         <div className="historytitle txt">학습날짜</div>
         <div className="historytitle txt">학습동화</div>
@@ -30,7 +30,7 @@ const History = () => {
       </div>
       <hr></hr>
       {historys}
-      <a className="historyfooter txt">1</a>
+      <div className="historyfooter txt">1 2 3</div>
     </div>
   );
 };

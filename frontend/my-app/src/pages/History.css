@@ -1,9 +1,7 @@
-.mainText {
-  /* margin: auto;
-  padding-bottom: 3%;
-  font-size: 110px;
-  width: fit-content; */
-  margin-top: -3%;
+.historymainText {
+  margin: auto;
+  padding-bottom: 1%;
+  font-size: 11rem;
 }
 
 .historyBox {
@@ -23,16 +21,17 @@
   width: 88%;
   margin: 7%;
   border-radius: 8px;
-  font-size: 45px;
+  font-size: 4.5rem;
 }
 .historycontent {
   background-color: rgb(240, 240, 240);
   width: 88%;
   margin: 2% 7% 2% 7%;
   border-radius: 8px;
-  font-size: 30px;
+  font-size: 3rem;
+  background-color: #fff;
 }
 .historyfooter {
-  padding-top: 10%;
-  font-size: 30px;
+  margin-top: 2%;
+  font-size: 3rem;
 }
