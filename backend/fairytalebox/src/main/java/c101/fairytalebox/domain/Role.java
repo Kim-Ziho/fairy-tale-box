@@ -1,5 +1,5 @@
 package c101.fairytalebox.domain;
 
 public enum Role {
-    USER, ADMIN, ANONYMOUS
+    ROLE_USER, ROLE_ADMIN, ROLE_ANONYMOUS
 }

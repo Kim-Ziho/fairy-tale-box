@@ -5,6 +5,7 @@ import c101.fairytalebox.domain.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
@@ -13,7 +14,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
+@Getter
 @Builder
 @AllArgsConstructor
 public class SignUpRequestDto {
@@ -33,7 +34,7 @@ public class SignUpRequestDto {
 
     private String checkedPassword;
 
-    private List<String> roles;
+    private Role role;
 
     @Builder
     public Member toEntity(){
@@ -41,7 +42,7 @@ public class SignUpRequestDto {
                 .email(email)
                 .nickname(nickname)
                 .password(password)
-                .roles(roles)
+                .role(Role.ROLE_USER)
                 .build();
     }
 }

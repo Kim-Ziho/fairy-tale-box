@@ -10,6 +10,6 @@ import java.util.Map;
 public interface MemberService {
     public Long signUp(SignUpRequestDto request) throws Exception;
 
-    public TokenInfo login(String email, String password) throws Exception;
+    public TokenInfo login(LoginRequestDto request);
 
 }

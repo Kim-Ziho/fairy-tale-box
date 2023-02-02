@@ -26,7 +26,7 @@ public class FairyUserDetailsService implements UserDetailsService {
                 .orElseThrow(() -> new UsernameNotFoundException(username + "를 찾을 수 없습니다."));
     }
     private UserDetails createUserDetails(Member member) {
-        GrantedAuthority grantedAuthority = new SimpleGrantedAuthority(member.getRoles().toString());
+        GrantedAuthority grantedAuthority = new SimpleGrantedAuthority(member.getRole().toString());
         return new User(
                 String.valueOf(member.getId()),
                 member.getPassword(),

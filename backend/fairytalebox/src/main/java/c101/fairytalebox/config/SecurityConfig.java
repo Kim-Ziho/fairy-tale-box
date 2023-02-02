@@ -23,17 +23,19 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
+                .formLogin().disable()
                 .httpBasic().disable()
+                .cors().disable()
                 .csrf().disable()
+                .addFilterBefore(new FairyJwtFilter(jwtTokenProvider), UsernamePasswordAuthenticationFilter.class)
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-                .antMatchers("/member/signup").permitAll()
                 .antMatchers("/member/login").permitAll()
+                .antMatchers("/member/signup").permitAll()
+//                .antMatchers("/member/test").permitAll();
                 .antMatchers("/member/test").hasRole("USER")
-                .anyRequest().authenticated()
-                .and()
-                .addFilterBefore(new FairyJwtFilter(jwtTokenProvider), UsernamePasswordAuthenticationFilter.class);
+                .anyRequest().authenticated();
         return http.build();
     }
 

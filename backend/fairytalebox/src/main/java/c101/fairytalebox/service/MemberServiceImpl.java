@@ -40,9 +40,6 @@ public class MemberServiceImpl implements MemberService {
             throw new Exception("비밀번호가 일치하지 않습니다.");
         }
 
-        List<String> roles = new ArrayList<String>();
-        roles.add("ROLE_USER");
-        request.setRoles(roles);
         Member member = memberRepository.save(request.toEntity());
         member.encodePassword(passwordEncoder);
 
@@ -50,7 +47,19 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public TokenInfo login(String email, String password) {
+    public TokenInfo login(LoginRequestDto request) {
+
+        String email = request.getEmail();
+        String password = request.getPassword();
+
+        Member member = memberRepository.findByEmail(email)
+                .orElseThrow(() -> new IllegalArgumentException("가입되지 않은 Email 입니다."));
+
+        if (!passwordEncoder.matches(password, member.getPassword())) {
+            throw new IllegalArgumentException("잘못된 비밀번호입니다.");
+        }
+
+
         // 1. Login ID/PW 를 기반으로 Authentication 객체 생성
         // 이때 authentication 는 인증 여부를 확인하는 authenticated 값이 false
         UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(email, password);

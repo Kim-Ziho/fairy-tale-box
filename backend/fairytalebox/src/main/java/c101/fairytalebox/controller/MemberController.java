@@ -30,10 +30,7 @@ public class MemberController {
     }
 
     @PostMapping("/login")
-    public TokenInfo login(@RequestBody LoginRequestDto request) throws Exception {
-        String email = request.getEmail();
-        String password = request.getPassword();
-        TokenInfo tokenInfo = memberService.login(email, password);
-        return tokenInfo;
+    public TokenInfo login(@RequestBody LoginRequestDto request) {
+        return memberService.login(request);
     }
 }

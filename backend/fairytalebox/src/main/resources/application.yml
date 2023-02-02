@@ -5,7 +5,7 @@ spring:
     livereload:
       enabled: true
   datasource:
-    url: jdbc:mysql://i8c101.p.ssafy.io/seunghyeondb?serverTimezone=UTC&useUniCode=yes&characterEncoding=UTF-8
+    url: jdbc:mysql://i8c101.p.ssafy.io/c101test?serverTimezone=UTC&useUniCode=yes&characterEncoding=UTF-8
     username: seunghyeon
     password: ssafyc101
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -18,11 +18,11 @@ spring:
         format_sql: true
         use_sql_comments: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
 
 jwt:
   header: Authorization
   #HS512 알고리즘을 사용할 것이기 때문에 512bit, 즉 64byte 이상의 secret key를 사용해야 한다.
   #echo 'spring-boot-security-jwt-ssafy-project-fairytalebox-spring-boot-security-jwt'|base64
   secret: c3ByaW5nLWJvb3Qtc2VjdXJpdHktand0LXNzYWZ5LXByb2plY3QtZmFpcnl0YWxlYm94LXNwcmluZy1ib290LXNlY3VyaXR5LWp3dA==
-  token-validity-in-seconds: 86400
+  token-validity-in-seconds: 100000000
