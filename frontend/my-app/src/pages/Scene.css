@@ -1,0 +1,10 @@
+.bgImg {
+    width: 99vw;
+    height: 99vh;
+    object-fit: cover;
+    
+}
+
+.SceneBox{
+    text-align: center;
+}
