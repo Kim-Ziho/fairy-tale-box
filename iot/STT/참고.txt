@@ -1,0 +1,2 @@
+https://snowdeer.github.io/raspberry/2017/08/12/raspberry-aplay-and-arecord/    -- 라즈베리파이 음성녹음
+https://cloud.google.com/speech-to-text/docs/basics?hl=ko&_gl=1*9ug96y*_ga*NzU3Nzc1NDgyLjE2NzQwMDczNzA.*_ga_WH2QY8WWF5*MTY3NTMyMzcxOC40LjEuMTY3NTMyNDM5OC4wLjAuMA..&_ga=2.154950654.-757775482.1674007370    -- 구글 stt사이트
