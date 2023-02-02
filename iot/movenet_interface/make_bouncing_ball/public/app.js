@@ -22,6 +22,7 @@ class App {
     window.requestAnimationFrame(this.animate.bind(this));
   }
 
+  // 이벤트 리스터 화면 크기에 따른 변화
   resize() {
     this.stageWidth = document.body.clientWidth;
     this.stageHeight = document.body.clientHeight;
@@ -31,6 +32,7 @@ class App {
     this.ctx.scale(2, 2);
   }
 
+  // 루프
   animate(t) {
     window.requestAnimationFrame(this.animate.bind(this));
     this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight);
