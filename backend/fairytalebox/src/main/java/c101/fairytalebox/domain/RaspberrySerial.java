@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Entity
 @Getter
 public class RaspberrySerial {
-    @Id@GeneratedValue
+    @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "raspberry_id")
     private Long id;
 

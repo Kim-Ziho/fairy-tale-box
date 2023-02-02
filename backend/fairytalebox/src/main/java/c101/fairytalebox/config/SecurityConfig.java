@@ -33,8 +33,7 @@ public class SecurityConfig {
                 .authorizeRequests()
                 .antMatchers("/member/login").permitAll()
                 .antMatchers("/member/signup").permitAll()
-//                .antMatchers("/member/test").permitAll();
-                .antMatchers("/member/test").hasRole("USER")
+                .antMatchers("/admin/**").hasRole("ADMIN")
                 .anyRequest().authenticated();
         return http.build();
     }
