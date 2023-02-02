@@ -42,14 +42,11 @@ _NUM_KEYPOINTS = 17
 
 def main():
 
-    model = 'model/movenet_single_pose_thunder_ptq_edgetpu.tflite'
-    input = 'test_data/squat.bmp'
-    output = 'movenet_result.jpg'
+    model = 'model/movenet_single_pose_lightning_ptq_edgetpu.tflite'
 
     interpreter = make_interpreter(model)
     interpreter.allocate_tensors()
     inference_size = common.input_size(interpreter)
-
 
     threshold = .3
     cap = cv2.VideoCapture(0)
