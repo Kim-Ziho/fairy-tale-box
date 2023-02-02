@@ -30,6 +30,7 @@ const History = () => {
       </div>
       <hr></hr>
       {historys}
+      <a className="historyfooter txt">1</a>
     </div>
   );
 };

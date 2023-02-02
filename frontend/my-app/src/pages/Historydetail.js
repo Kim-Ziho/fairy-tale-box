@@ -5,6 +5,7 @@ import historydata from "./historydata.json";
 import historydetaildata from "./historydetaildata.json";
 import Back from "./Back";
 import "./Historydetail.css";
+import "./Back.css"
 
 const Historydetail = () => {
   const { historyId } = useParams();
@@ -28,9 +29,9 @@ const Historydetail = () => {
 
   return (
     <div className="historyDetailBox">
-      <Back />
       <div className="top">
         {/* <h1 className="txt">{thisHistory.tale} </h1> */}
+      <Back />
         <h1 className="hide txt">숨길거지롱</h1>
       </div>
       <div className="passorfail">

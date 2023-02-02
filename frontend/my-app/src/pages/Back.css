@@ -1,0 +1,7 @@
+.backBtn {
+  font-size: 30px;
+  top: 5%;
+  right: 5%;
+  z-index: 1;
+  position: absolute;
+}

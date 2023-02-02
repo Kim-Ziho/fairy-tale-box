@@ -2,10 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router";
 
 const Back = () => {
-  let navigate = useNavigate();
-  function handleClick() {
-    navigate(-1);
-  }
+  const navigate = useNavigate();
 
   return (
     <div>

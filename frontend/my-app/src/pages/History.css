@@ -5,10 +5,6 @@
   width: fit-content; */
   margin-top: -3%;
 }
-.backBtn {
-  font-size: 30px;
-  float: right;
-}
 
 .historyBox {
   text-align: center;
@@ -34,5 +30,9 @@
   width: 88%;
   margin: 2% 7% 2% 7%;
   border-radius: 8px;
+  font-size: 30px;
+}
+.historyfooter {
+  padding-top: 10%;
   font-size: 30px;
 }
