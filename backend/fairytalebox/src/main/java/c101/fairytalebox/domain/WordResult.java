@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Getter
 public class WordResult {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "word_result_id")
     private Long id;
 

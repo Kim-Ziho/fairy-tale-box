@@ -11,7 +11,7 @@ import java.util.List;
 @Getter
 public class History {
 
-    @Id@GeneratedValue
+    @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "history_id")
     private Long id;
 
