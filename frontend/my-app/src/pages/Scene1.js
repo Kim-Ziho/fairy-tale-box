@@ -2,7 +2,8 @@ import React ,{ useState,useEffect } from "react";
 import {Link , Navigate, useNavigate} from 'react-router-dom';
 import {motion} from "framer-motion"
 import Modal from "./Modal.js";
-import "./Scene.css"
+import "./Scene1.css"
+import { positions } from "@mui/system";
 
 
 // 하단은 음성파일
@@ -47,31 +48,40 @@ const Scene1 = () => {
         const timertext = setTimeout(() => timedText(), 1000);
     }, []);
     
-    // const timerpage = setTimeout(() => navigate(`/scene2`), 10000);
+    const timerpage = setTimeout(() => navigate(`/scene2`), 10000);
     
-
+    
     return( 
       <div className="SceneBox">
         <motion.div
         initial={{x:500}}
         animate={{x:0}}
         exit={{opacity: 0}}
-        >  
+        >
+        <div className="Homebtn">
+            <button onClick={openModal}>홈으로가기</button>
+        </div>
+        <div  className="bgImg" >
+            <img src="img/scene1/1-배경.png"></img>
         
-        <img src="img/구름1.jpg" className="bgImg"></img>
-        
-        {/* <Link to = "/scene2">
-            <button>
-                다음 씬입니다
-            </button>
-        </Link>
-        <input type="text" id="text"></input>
-        <button onClick={openModal}>홈으로가기</button>
+        <div  className="mother1">
+             <img src="img/scene1/1-엄마.png"></img>
+        </div>
+        <div  className="brother">
+            <img src="img/scene1/1-오빠.png"></img>   
+        </div>
+        <div  className="sister">
+            <img src="img/scene1/1-동생.png"></img>
+        </div>
+        </div>  
+        {/* <input type="text" id="text"></input> */}
         <div id="output"></div>
         <Modal open={pausemodalOpen} close={closeModal} header="해님 달님"> 
         <a href="/home">정말 홈으로 가시겠어요??</a>   
-        </Modal> */}
+        </Modal>
         </motion.div>
+        <style>
+        </style>
       </div>
     )
 
