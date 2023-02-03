@@ -20,10 +20,7 @@ public class MemberController {
     private final JwtTokenProvider jwtTokenProvider;
     private final AuthenticationManagerBuilder authenticationMangerBuilder;
     private final MemberService memberService;
-    @GetMapping("/test")
-    public String testUrl() {
-        return "접속됐지롱";
-    }
+
     @PostMapping("/signup")
     public Long signUp(@Valid @RequestBody SignUpRequestDto request) throws Exception {
         return memberService.signUp(request);

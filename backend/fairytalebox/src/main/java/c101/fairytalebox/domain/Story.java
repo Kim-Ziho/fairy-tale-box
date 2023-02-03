@@ -32,4 +32,9 @@ public class Story {
     @OneToMany(mappedBy = "story", cascade = CascadeType.ALL)
     private List<Word> words = new ArrayList<>();
 
+    public void modify(String title, String packagePath, String overview) {
+        this.title = title;
+        this.packagePath = packagePath;
+        this.overview = overview;
+    }
 }
