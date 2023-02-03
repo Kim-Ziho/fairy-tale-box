@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router";
+import "./Back.css";
 
 const Back = () => {
   const navigate = useNavigate();

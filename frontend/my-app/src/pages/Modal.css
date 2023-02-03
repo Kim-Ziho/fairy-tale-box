@@ -6,60 +6,63 @@
   bottom: 0;
   left: 0;
   z-index: 99;
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(5px);
+  background-color: #5c5c5c77;
 }
-.modal button {
+.modalButton {
+  padding: 0.6rem 1.2rem;
+  margin: 0.3rem;
+  /* bottom: 5%; */
+  color: #fff;
+  background-color: #6c757d;
+  border-radius: 0.5rem;
+  font-family: "Yeon Sung", cursive;
+  font-size: 3rem;
   outline: none;
   cursor: pointer;
   border: 0;
 }
-.modal > section {
-  width: 90%;
-  max-width: 450px;
+.modal section {
+  width: 35%;
+  height: 80%;
   margin: 0 auto;
-  border-radius: 0.3rem;
+  border-radius: 0.5rem;
   background-color: #fff;
-  /* 팝업이 열릴때 스르륵 열리는 효과 */
   animation: modal-show 0.3s;
   overflow: hidden;
 }
 .modal > section > header {
   position: relative;
-  padding: 16px 64px 16px 16px;
-  background-color: #f1f1f1;
-  font-weight: 700;
+  padding: 1.7rem 6.4rem 1.7rem 1.9rem;
+  background-color: #d4d4d4;
+  font-family: "Yeon Sung", cursive;
+  font-weight: 1000;
+  font-size: 3rem;
 }
 .modal > section > header button {
   position: absolute;
-  top: 15px;
-  right: 15px;
-  width: 30px;
-  font-size: 2.1rem;
+  top: 0.6rem;
+  right: 1.4rem;
+  width: 4rem;
+  font-size: 5rem;
   font-weight: 700;
   text-align: center;
-  color: #999;
+  color: rgb(0, 0, 0);
   background-color: transparent;
 }
-.modal > section > main {
-  padding: 16px;
-  border-bottom: 1px solid #dee2e6;
-  border-top: 1px solid #dee2e6;
+.modalMain {
+  padding: 20px;
+  font-family: "Yeon Sung", cursive;
+  font-weight: 500;
+  font-size: 2rem;
 }
-.modal > section > footer {
+.modalFooter {
   padding: 12px 16px;
-  text-align: right;
-}
-.modal > section > footer button {
-  padding: 6px 12px;
-  color: #fff;
-  background-color: #6c757d;
-  border-radius: 5px;
-  font-size: 1.3rem;
+  text-align: center;
 }
 .modal.openModal {
   display: flex;
   align-items: center;
-  /* 팝업이 열릴때 스르륵 열리는 효과 */
   animation: modal-bg-show 0.3s;
 }
 @keyframes modal-show {
