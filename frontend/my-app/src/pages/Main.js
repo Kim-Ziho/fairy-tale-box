@@ -23,7 +23,7 @@ const Main = () => {
         </Link>
         <Link to="/history">
           <button className="button2">
-            <div className="btnText txt">✍🏻 학습기록</div>
+            <div className="btnText txt">📝 학습기록</div>
           </button>
         </Link>
         {/* <Link to="/home"> */}

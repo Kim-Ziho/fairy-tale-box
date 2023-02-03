@@ -1,7 +1,7 @@
 .mainContainer {
   padding-top: 5%;
   width: 100vw;
-  height: 100vh;
+  height: 0vh;
   margin: auto;
 }
 .mainText {
@@ -33,7 +33,6 @@
 
 .txt {
   font-family: "Yeon Sung", cursive;
-  text-align: center;
 }
 .btnText {
   font-size: 6rem;
