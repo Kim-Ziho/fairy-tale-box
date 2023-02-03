@@ -1,0 +1,31 @@
+sudo gcloud iam service-accounts keys create ~/hyunyoung_gcloud_service_accounts_key.json --iam-account hyunyoung@project1-376701.iam.gserviceaccount.com
+
+curl -s -H "Content-Type: application/json" -H "Authorization: Bearer ya29.a0AVvZVsrFi9jZ2ttkBuXRQ2dAMYhAQ-N6ar_s1oI7A6boiUzfESnJzLKzMM4B5aB1c0vrcXJUSxwiE9tjBIrJhAeamRrzMMmmQxFXSbvzK5CXNpM1eQ8Dc1jgI_KNm-AhVI-WP5I-YU6gre0lEa-OA1OamfcKRHYaCgYKAYsSAQASFQGbdwaIbE0r4QPGBahLdvPM3HNceA0166" https://speech.googleapis.com/v1/speech:recognize -d @sync-request.json
+
+
+hyunyoung@project1-376701.iam.gserviceaccount.com 
+
+<keyfile json>
+created key [8e25f1191c06eef38316b0dae9f28bd4a3fc795f] of type [json] as [/home/pi/hyunyoung_gcloud_service_accounts_key.json] for [hyunyoung@project1-376701.iam.gserviceaccount.com]
+
+export GOOGLE_APPLICATION_CREDENTIALS=/root/.config/gcloud/application_default_credentials.json
+
+sudo gcloud auth application-default login
+Your browser has been opened to visit:
+    https://accounts.google.com/o/oauth2/auth?response_type=code&client_id=764086051850-6qr4p6gpi6hn506pt8ejuq83di341hur.apps.googleusercontent.com&redirect_uri=http%3A%2F%2Flocalhost%3A8085%2F&scope=openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fsqlservice.login+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Faccounts.reauth&state=RRMw16yyED6X4IOeNs4XxIbgXdKkKW&access_type=offline&code_challenge=HLAuVfKFo-zg2yabpW3gT9sokhtc2xHquX_IksC53tw&code_challenge_method=S256
+Credentials saved to file: [/root/.config/gcloud/application_default_credentials.json]
+These credentials will be used by any library that requests Application Default Credentials (ADC).
+Quota project "project1-376701" was added to ADC which can be used by Google client libraries for billing and quota. Note that some services may still bill the project owning the resource.
+
+sudo gcloud auth application-default print-access-token
+ya29.a0AVvZVsomQ2W6iKQBNnQ_LgoTIeSjl5wvVJIfa5RZKwU5uPtpmL7E0zDjqZi7w7fmFZcPucYKO8l1WIhDCSYrLKaGrmSLs-dRdKNhzKyXMdsb-k_76vAx5A9-omvxux_iEZzJPj852J4KKK039TTipaUrHEKj2yoaCgYKARMSAQASFQGbdwaIqcWEsEm9v-mOLQHT1S_ksQ0166
+
+
+
+
+
+
+
+
+
+
