@@ -23,7 +23,7 @@ public class SignUpRequestDto {
     private String email;
 
     @NotBlank(message = "닉네임을 입력해주세요.")
-    @Size(max=8, message = "닉네임은 8자 이하 입니다.")
+    @Size(max = 8, message = "닉네임은 8자 이하 입니다.")
     private String nickname;
 
 
@@ -36,8 +36,7 @@ public class SignUpRequestDto {
 
     private Role role;
 
-    @Builder
-    public Member toEntity(){
+    public Member toEntity() {
         return Member.builder()
                 .email(email)
                 .nickname(nickname)
