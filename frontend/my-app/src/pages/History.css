@@ -1,0 +1,37 @@
+.historymainText {
+  margin: auto;
+  padding-bottom: 1%;
+  font-size: 11rem;
+}
+
+.historyBox {
+  text-align: center;
+  /* background-image: url(../../public/img/씬3.png); */
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 5%;
+}
+
+.historyContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.historytitle {
+  background-color: rgb(194, 224, 245);
+  width: 88%;
+  margin: 7%;
+  border-radius: 8px;
+  font-size: 4.5rem;
+}
+.historycontent {
+  background-color: rgb(240, 240, 240);
+  width: 88%;
+  margin: 2% 7% 2% 7%;
+  border-radius: 8px;
+  font-size: 3rem;
+  background-color: #fff;
+}
+.historyfooter {
+  margin-top: 2%;
+  font-size: 3rem;
+}

@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from 'react-router-dom';
 import {motion} from "framer-motion"
 
-const scene14 = () => {
+const Scene14 = () => {
     return (
         <div>
             첫 번째 씬입니다.
@@ -10,4 +10,4 @@ const scene14 = () => {
     )
 }
 
-export default scene14
+export default Scene14

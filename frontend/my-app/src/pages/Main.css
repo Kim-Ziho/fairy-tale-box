@@ -1,0 +1,48 @@
+.mainContainer {
+  padding-top: 5%;
+  width: 100vw;
+  height: 0vh;
+  margin: auto;
+}
+.mainText {
+  margin: auto;
+  padding-bottom: 5%;
+  font-size: 11rem;
+  width: fit-content;
+  color: rgb(0, 0, 0);
+  text-shadow: 6px 6px #ffffff;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.button1,
+.button2,
+.button3 {
+  display: inline-block;
+  width: 26vw;
+  height: 50vh;
+  background-color: #fff;
+  border: 0px;
+  border-radius: 6%;
+  position: relative;
+}
+
+.txt {
+  font-family: "Yeon Sung", cursive;
+}
+.btnText {
+  font-size: 6rem;
+  width: fit-content;
+  margin: auto;
+  text-align: center;
+}
+
+.button1:hover,
+.button2:hover,
+.button3:hover {
+  transform: scale(0.85);
+}

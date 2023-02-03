@@ -1,0 +1,32 @@
+.bgImg {
+    margin-top: 1.5%;
+    width: 100vw;
+    height: 93vh;
+    object-fit: contain;
+    
+}
+
+.SceneBox{
+    text-align: center;
+}
+
+.Homebtn{
+    position: absolute;
+    right: 10%;
+}
+.mother1{
+    position: absolute;
+    right: 30%;
+    bottom: 40%;
+    /* animation: shake 3s; */
+}
+.brother{
+    position: absolute;
+    right: 70%;
+    bottom: 40%;
+}
+.sister{
+    position: absolute;
+    right: 60%;
+    bottom: 30%;
+}

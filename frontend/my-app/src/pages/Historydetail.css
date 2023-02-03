@@ -1,0 +1,38 @@
+.passorfail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.historydetailContainer {
+  display: grid;
+  grid-template-columns: 0.1fr 1fr 1fr 1fr 0.1fr;
+}
+.historydetailContainer2 {
+  display: grid;
+  grid-template-columns: 0.1fr 1fr 1fr 1fr 0.1fr 0.1fr 1fr 1fr 1fr 0.1fr;
+}
+.historydetailcontent {
+  background-color: rgb(240, 240, 240);
+  /* width: 88%; */
+  margin: 2% 7% 2% 7%;
+  border-radius: 8px;
+}
+
+.historyDetailBox {
+  text-align: center;
+  /* background-image: url(../../public/img/씬3.png); */
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-top: 2%;
+}
+
+.detailText {
+  margin: auto;
+  padding-bottom: 3%;
+  font-size: 10rem;
+  width: fit-content;
+}
+.hide {
+  opacity: 0;
+  z-index: 99;
+}

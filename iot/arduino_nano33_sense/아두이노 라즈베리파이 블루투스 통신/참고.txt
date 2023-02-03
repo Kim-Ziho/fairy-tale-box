@@ -1,0 +1,9 @@
+Sudo apt-get install bluetooth blueman bluez
+Sudo apt-get install python-bluetooth
+
+pip install bleak
+pip install aioconsole
+
+<참고사이트>
+https://fishpoint.tistory.com/5266
+https://github.com/Ladvien/arduino_ble_sense/blob/master/app.py

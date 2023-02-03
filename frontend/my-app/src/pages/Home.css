@@ -1,16 +1,18 @@
-h3{
-    text-align: center;
+.selectImg {
+  width: 21vw;
+  height: 30vh;
+  object-fit: cover;
 }
 
-#img1{
-    width: 100%;
-    height: 200px;
-    
+#Grid {
+  padding: 8%;
 }
 
-#Grid{
-    padding: 100px;
-    /* margin: 100px; */
-    /* border: 100px; */
+.selectBtn {
+  border: none;
+  background-color: #fff;
 }
 
+.selectImg:hover {
+  transform: scale(0.85);
+}
