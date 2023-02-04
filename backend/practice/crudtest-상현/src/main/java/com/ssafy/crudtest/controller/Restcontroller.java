@@ -33,10 +33,10 @@ public class Restcontroller {
     ContentRepository contentRepository;
 
     @GetMapping
-    public List<Map<String, Object>> list(){
+    public List<Map<String, Object>> list() {
         List<Map<String, Object>> result = new ArrayList<>();
         Map<String, Object> map = new HashMap<>();
-        map.put("apple","0");
+        map.put("apple", "0");
         result.add(map);
         return result;
     }
@@ -44,7 +44,7 @@ public class Restcontroller {
     @PostMapping
     public Map<String, String> post(@RequestPart("picture") MultipartFile pic,
                                     @RequestParam("title") String title,
-                                    @RequestParam("password") String password) throws IOException{
+                                    @RequestParam("password") String password) throws IOException {
         String path = System.getProperty("user.dir");
         File file = new File(path + "/src/main/resources/static" + pic.getOriginalFilename());
         Map<String, String> map = new HashMap<>();

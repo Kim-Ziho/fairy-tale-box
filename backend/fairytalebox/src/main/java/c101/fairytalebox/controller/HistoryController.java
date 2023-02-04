@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/history")
+@RequestMapping("/api/history")
 @RequiredArgsConstructor
 public class HistoryController {
 
