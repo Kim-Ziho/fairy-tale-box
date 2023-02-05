@@ -1,7 +1,9 @@
 package c101.fairytalebox.service;
 
 import c101.fairytalebox.domain.Story;
+import c101.fairytalebox.dto.AdminMemberDto;
 import c101.fairytalebox.dto.AdminStoryDto;
+import c101.fairytalebox.repository.MemberRepository;
 import c101.fairytalebox.repository.StoryRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -16,6 +18,27 @@ import java.util.stream.Collectors;
 public class AdminServiceImpl implements AdminService {
 
     private final StoryRepository storyRepository;
+    private final MemberRepository memberRepository;
+
+
+    @Override
+    public List<AdminMemberDto> readMembers() {
+        return memberRepository.findAll().stream().map(x ->
+                        AdminMemberDto.builder()
+                                .email(x.getEmail())
+                                .nickname(x.getNickname())
+                                .createdDate(x.getCreatedDate())
+                                .role(x.getRole()).build())
+                .collect(Collectors.toList());
+
+    }
+
+    @Override
+    @Transactional
+    public void removeMember(Long id) {
+        memberRepository.deleteById(id);
+    }
+
 
     @Override
     @Transactional
