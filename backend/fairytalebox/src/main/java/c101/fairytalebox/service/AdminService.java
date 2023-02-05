@@ -2,10 +2,13 @@ package c101.fairytalebox.service;
 
 import c101.fairytalebox.dto.AdminMemberDto;
 import c101.fairytalebox.dto.AdminStoryDto;
+import c101.fairytalebox.dto.DeviceDto;
 
 import java.util.List;
 
 public interface AdminService {
+
+    public Long registerDevice(DeviceDto request);
 
     public List<AdminMemberDto> readMembers();
 

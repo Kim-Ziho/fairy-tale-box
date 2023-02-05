@@ -1,7 +1,9 @@
 package c101.fairytalebox.service;
 
 import c101.fairytalebox.domain.Member;
+import c101.fairytalebox.dto.EmailCheckDto;
 import c101.fairytalebox.dto.LoginRequestDto;
+import c101.fairytalebox.dto.MemberNicknameDto;
 import c101.fairytalebox.dto.SignUpRequestDto;
 import c101.fairytalebox.jwt.JwtTokenProvider;
 import c101.fairytalebox.jwt.TokenInfo;
@@ -13,10 +15,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 
 @RequiredArgsConstructor
 @Transactional(readOnly = true)
@@ -73,6 +71,42 @@ public class MemberServiceImpl implements MemberService {
 
         return tokenInfo;
     }
+
+    @Override
+    public Boolean checkEmail(EmailCheckDto request) throws Exception {
+        if (memberRepository.findByEmail(request.getEmail()).isPresent()) {
+            throw new Exception("이미 존재하는 이메일입니다.");
+        }
+        return false;
+    }
+
+    @Override
+    public Boolean checkNickname(MemberNicknameDto request) throws Exception {
+        if (memberRepository.findByNickname(request.getNickname()).isPresent()) {
+            throw new Exception("이미 존재하는 닉네임입니다.");
+        }
+        return false;
+    }
+
+    @Transactional
+    @Override
+    public MemberNicknameDto modifyNickname (MemberNicknameDto request) throws Exception{
+        Member findMember = memberRepository.findByEmail(request.getEmail()).orElseThrow(() -> new Exception("해당 유저를 찾을 수 없습니다."));
+
+        findMember.modifyNick(request.getNickname());
+
+        MemberNicknameDto memberNicknameDto = MemberNicknameDto.builder()
+                .email((findMember.getEmail()))
+                .nickname(findMember.getNickname())
+                .build();
+
+        return memberNicknameDto;
+
+
+
+
+    }
+
 
 }
 

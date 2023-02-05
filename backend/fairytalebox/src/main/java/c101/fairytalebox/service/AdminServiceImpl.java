@@ -1,9 +1,12 @@
 package c101.fairytalebox.service;
 
+import c101.fairytalebox.domain.RaspberrySerial;
 import c101.fairytalebox.domain.Story;
 import c101.fairytalebox.dto.AdminMemberDto;
 import c101.fairytalebox.dto.AdminStoryDto;
+import c101.fairytalebox.dto.DeviceDto;
 import c101.fairytalebox.repository.MemberRepository;
+import c101.fairytalebox.repository.RaspberrySerialRepository;
 import c101.fairytalebox.repository.StoryRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -19,7 +22,15 @@ public class AdminServiceImpl implements AdminService {
 
     private final StoryRepository storyRepository;
     private final MemberRepository memberRepository;
+    private final RaspberrySerialRepository raspberrySerialRepository;
 
+
+    @Override
+    @Transactional
+    public Long registerDevice(DeviceDto request) {
+        RaspberrySerial raspberrySerial = raspberrySerialRepository.save(request.toEntity());
+        return raspberrySerial.getId();
+    }
 
     @Override
     public List<AdminMemberDto> readMembers() {
