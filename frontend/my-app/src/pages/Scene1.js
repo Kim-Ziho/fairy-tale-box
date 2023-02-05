@@ -62,19 +62,18 @@ const Scene1 = () => {
             <button onClick={openModal}>홈으로가기</button>
         </div>
         <div  className="bgImg" >
-            <img src="img/scene1/1-배경.png"></img>
-        
-        <div  className="mother1">
-             <img src="img/scene1/1-엄마.png"></img>
-        </div>
-        <div  className="brother">
-            <img src="img/scene1/1-오빠.png"></img>   
-        </div>
-        <div  className="sister">
-            <img src="img/scene1/1-동생.png"></img>
-        </div>
+                <img src="img/scene1/1-배경.png"></img>
+            <div  className="mother1">
+                <img src="img/scene1/1-엄마.png"></img>
+            </div>
+            <div  className="brother1">
+                <img src="img/scene1/1-오빠.png"></img>   
+            </div>
+            <div  className="sister1">
+                <img src="img/scene1/1-동생.png"></img>
+            </div>
+        <input type="text" id="text"></input>
         </div>  
-        {/* <input type="text" id="text"></input> */}
         <div id="output"></div>
         <Modal open={pausemodalOpen} close={closeModal} header="해님 달님"> 
         <a href="/home">정말 홈으로 가시겠어요??</a>   

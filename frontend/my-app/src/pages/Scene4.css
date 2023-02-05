@@ -14,14 +14,15 @@
     position: absolute;
     right: 10%;
 }
-.mother2{
-    position: absolute;
-    left: 35%;
-    bottom: 35%;
-}
 
-.tiger2{
+.tiger4{
     position: absolute;
     right: 30%;
-    bottom: 25%;
+    bottom: 5%;
+}
+
+.rice4{
+    position: absolute;
+    right: 25%;
+    bottom: 0%;
 }

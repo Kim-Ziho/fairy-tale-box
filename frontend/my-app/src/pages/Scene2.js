@@ -67,7 +67,7 @@ const Scene2 = () => {
         <div  className="mother2">
              <img src="img/scene2/2-엄마.png"></img>
         </div>
-        <div  className="tiger">
+        <div  className="tiger2">
             <img src="img/scene2/2-호랑이.png"></img>   
         </div>
         </div>  
