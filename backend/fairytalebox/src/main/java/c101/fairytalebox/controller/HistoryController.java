@@ -35,8 +35,6 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class HistoryController {
     private final HistoryService historyService;
-    private final MemberRepository memberRepository;
-    private final StoryRepository storyRepository;
 
     @GetMapping("/history")
     public ResponseEntity<List<GetHistoryDto>> getHistory(){
@@ -75,17 +73,12 @@ public class HistoryController {
         return ResponseEntity.ok().body(historyDetail);
     }
 
-//    @PostMapping("/history")
-//    public ResponseEntity createHistory(@RequestBody HistoryRequestDto historyRequestDto){
-//        Optional<Member> member = memberRepository.findById(historyRequestDto.getMember_id());
-//        Optional<Story> story = storyRepository.findById(historyRequestDto.getStory_id());
-//        History history = new History();
-//        history.member = member;
-//
-//        HistoryRepository.save()
-//
-//
-//        return ResponseEntity.ok().body(HttpStatus.OK);
-//    }
+    @PostMapping("/history")
+    public ResponseEntity createHistory(@RequestBody HistoryRequestDto historyRequestDto){
+
+        historyService.createHistory(historyRequestDto);
+
+        return ResponseEntity.ok().body(HttpStatus.OK);
+    }
 
 }
