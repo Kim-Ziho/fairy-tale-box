@@ -14,9 +14,23 @@
     position: absolute;
     right: 10%;
 }
+
+@keyframes tiger-move6 {
+    from{
+        transform: translate(0,0);
+    }
+    to{
+        transform: translate(200px,-100px);
+    }
+}
+
 .tiger6{
     position: absolute;
-    left: 35%;
-    top: 20%;
+    left: 10%;
+    top: 30%;
+    animation-name : tiger-move6;
+    animation-delay: 1s;
+    animation-duration: 1.5s;
+    animation-fill-mode: both;
 }
 

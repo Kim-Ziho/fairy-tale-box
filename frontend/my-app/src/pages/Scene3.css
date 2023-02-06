@@ -15,8 +15,21 @@
     right: 10%;
 }
 
+@keyframes tiger-move3 {
+    from {
+        transform: translate(0,0);
+    }
+    to{
+        transform: translate(0,-300px);
+    }
+}
+
 .tiger3{
     position: absolute;
     right: 30%;
-    bottom: 5%;
+    top: 50%;
+    animation-name: tiger-move3;
+    animation-duration: 0.2s;
+    animation-fill-mode: both;
+    animation-delay: 1s;
 }

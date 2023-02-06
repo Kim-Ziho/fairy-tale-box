@@ -62,14 +62,13 @@ const Scene2 = () => {
             <button onClick={openModal}>홈으로가기</button>
         </div>
         <div  className="bgImg" >
-            <img src="img/scene2/2-배경.png"></img>
-        
-        <div  className="mother2">
-             <img src="img/scene2/2-엄마.png"></img>
-        </div>
-        <div  className="tiger2">
-            <img src="img/scene2/2-호랑이.png"></img>   
-        </div>
+                <img src="img/scene2/2-배경.png"></img>  
+            <div  className="mother2">
+                <img src="img/scene2/2-엄마.png"></img>
+            </div>
+            <div  className="tiger2">
+                <img src="img/scene2/2-호랑이.png"></img>   
+            </div>
         </div>  
         {/* <input type="text" id="text"></input> */}
         <div id="output"></div>

@@ -53,15 +53,23 @@ const Scene1 = () => {
 
   // 밑은 시작지점
 
-  useEffect(() => {
-    const timertext = setTimeout(() => timedText(), 1000);
-  }, []);
-
-  const timerpage = setTimeout(() => navigate(`/scene2`), 10000);
-
-  return (
-    <div className="SceneBox">
-      <motion.div initial={{ x: 500 }} animate={{ x: 0 }} exit={{ opacity: 0 }}>
+    
+    // 밑은 시작지점
+    
+    useEffect(() => {
+        const timertext = setTimeout(() => timedText(), 1000);
+    }, []);
+    
+    // const timerpage = setTimeout(() => navigate(`/scene2`), 10000);
+    
+    
+    return( 
+      <div className="SceneBox">
+        <motion.div
+        initial={{x:500}}
+        animate={{x:0}}
+        exit={{opacity: 0}}
+        >
         <div className="Homebtn">
           <button onClick={openModal}>홈으로가기</button>
         </div>
