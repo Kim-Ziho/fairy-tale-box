@@ -23,11 +23,6 @@ import Scene13 from './pages/Scene13';
 import Scene14 from './pages/Scene14';
 import Scene15 from './pages/Scene15';
 import Scene16 from './pages/Scene16';
-import Scene17 from './pages/Scene17';
-import Scene18 from './pages/Scene18';
-import Scene19 from './pages/Scene19';
-import Scene20 from './pages/Scene20';
-import Scene21 from './pages/Scene21';
 import { AnimatePresence } from "framer-motion";
 
 function App() {
@@ -60,11 +55,6 @@ function App() {
           <Route path="/Scene14" element={<Scene14/>}></Route>
           <Route path="/Scene15" element={<Scene15/>}></Route>
           <Route path="/Scene16" element={<Scene16/>}></Route>
-          <Route path="/Scene17" element={<Scene17/>}></Route>
-          <Route path="/Scene18" element={<Scene18/>}></Route>
-          <Route path="/Scene19" element={<Scene19/>}></Route>
-          <Route path="/Scene20" element={<Scene20/>}></Route>
-          <Route path="/Scene21" element={<Scene21/>}></Route>
         </Routes>
         </AnimatePresence>
       </BrowserRouter>

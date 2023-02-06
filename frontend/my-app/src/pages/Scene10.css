@@ -14,14 +14,9 @@
     position: absolute;
     right: 10%;
 }
-.mother2{
+.siblings{
     position: absolute;
-    left: 35%;
-    bottom: 35%;
+    left: 45%;
+    bottom: 20%;
 }
 
-.tiger2{
-    position: absolute;
-    right: 30%;
-    bottom: 25%;
-}
