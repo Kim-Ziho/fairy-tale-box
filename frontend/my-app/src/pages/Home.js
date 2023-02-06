@@ -30,7 +30,6 @@ const Home = (props) => {
       <Link to="/">
         <button className="backBtn txt">👈🏻 뒤로가기</button>
       </Link>
-      <h3 className="homeMainText txt">👆🏻 동화선택 🖐🏻</h3>
       <Grid container spacing={4}>
         <Grid item xs={4}>
           <Item>

@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import taledata from "../data/taledata.json";
 import "./Modal.css";
 import "./LogoutModal.css";
 
@@ -19,7 +18,7 @@ const LogoutModal = (props) => {
           </header>
           <main className="modalMain">{props.children}</main>
           <footer className="modalFooter">
-            <Link to="/home">
+            <Link to="/Qr">
               <button className="footerButton">👈🏻 로그아웃</button>
             </Link>
           </footer>

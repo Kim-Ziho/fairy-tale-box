@@ -11,6 +11,7 @@ import Main from "./pages/Main";
 import Home from "./pages/Home";
 import History from "./pages/History";
 import Historydetail from "./pages/Historydetail";
+import Qr from "./pages/Qr";
 import Scene1 from "./scene/Scene1";
 import Scene2 from "./scene/Scene2";
 import Scene3 from "./scene/Scene3";
@@ -33,7 +34,6 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        {/* <Header /> */}
         <AnimatePresence>
           <Routes>
             <Route path="/" element={<Main />}></Route>
@@ -43,6 +43,7 @@ function App() {
               path="/history/:historyId"
               element={<Historydetail />}
             ></Route>
+            <Route path="/Qr" element={<Qr/>}></Route>
             <Route path="/Scene1" element={<Scene1 />}></Route>
             <Route path="/Scene2" element={<Scene2 />}></Route>
             <Route path="/Scene3" element={<Scene3 />}></Route>
