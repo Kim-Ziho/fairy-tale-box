@@ -7,12 +7,12 @@ import "../modal/Back.css";
 import axios from "axios";
 
 const Historydetail = () => {
-  const { historyId } = useParams();
+  // const { historyId } = useParams();
   // const thisHistory = historydata.find((prod) => prod.id === historyId);
 
   const [histDet, setHistDets] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:8080/api/history/3").then((response) => {
+    axios.get("http://i8c101.p.ssafy.io:8080/api/history/3").then((response) => {
       setHistDets(response.data);
     });
   }, []);
@@ -20,9 +20,9 @@ const Historydetail = () => {
 
   const historyDets = histDet.map((histDet) => {
     return (
-      <div key={histDet.id} className="historydetailContainer2">
+      <div key={histDet.historyId} className="historydetailContainer2">I
         <div></div>
-        <div className="historycontent txt">{histDet.pic}</div>
+        <div className="historycontent txt">{histDet.wordResult}</div>
         <div className="historycontent txt">{histDet.pass}</div>
         <div className="historycontent txt">{histDet.record}</div>
         <div></div>

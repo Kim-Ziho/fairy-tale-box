@@ -7,7 +7,7 @@ import axios from "axios";
 const History = () => {
   const [hist, setHists] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:8080/api/history").then((response) => {
+    axios.get("http://i8c101.p.ssafy.io:8080/api/history").then((response) => {
       setHists(response.data);
     });
   }, []);

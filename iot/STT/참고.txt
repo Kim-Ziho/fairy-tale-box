@@ -2,3 +2,6 @@ https://snowdeer.github.io/raspberry/2017/08/12/raspberry-aplay-and-arecord/    
 https://cloud.google.com/speech-to-text/docs/basics?hl=ko&_gl=1*9ug96y*_ga*NzU3Nzc1NDgyLjE2NzQwMDczNzA.*_ga_WH2QY8WWF5*MTY3NTMyMzcxOC40LjEuMTY3NTMyNDM5OC4wLjAuMA..&_ga=2.154950654.-757775482.1674007370    -- 구글 stt사이트
 https://jeongchul.tistory.com/544 -- 라즈베리파이 stt기술 연동해본 사이트
 https://blog.outsider.ne.kr/539 -- node설치
+https://ehdrh789.tistory.com/29 -- 메모장에 저장
+https://cloud.google.com/speech-to-text/docs/sync-recognize?hl=ko -- 로컬파일 stt
+https://medium.com/nodejs-server/node%EC%97%90%EC%84%9C-%ED%84%B0%EB%AF%B8%EB%84%90-%EB%AA%85%EB%A0%B9-%EC%8B%A4%ED%96%89-cff26a6bf83a  -- nodejs 커멘트입력

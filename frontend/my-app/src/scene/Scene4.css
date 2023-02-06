@@ -17,23 +17,24 @@
 
 .tiger4{
     position: absolute;
-    right: 30%;
-    bottom: 5%;
+    top: 5%;
+    bottom: 10%;
+    right: 35%;
+    left: 30%;
 }
 
 @keyframes rice-move {
-    from{}
-    0% { transform: translate(2px, -60px)  }
-    10% { transform: translate(-2px, -80px)  }
-    20% { transform: translate(2px, -60px)  }
-    30% { transform: translate(-2px, -80px)  }
-    40% { transform: translate(2px, -60px)  }
-    50% { transform: translate(-2px, -80px)  }
-    60% { transform: translate(2px, -60px)  }
-    70% { transform: translate(-2px, -80px)  }
-    80% { transform: translate(2px, -60px)  }
-    90% { transform: translate(-2px, -80px)  }
-    100% { transform: translate(2px, -60px)  }
+    0% { transform: translate(-1px, -30px); }
+    10% { transform: translate(2px, -40px); }
+    20% { transform: translate(-1px, -30px); }
+    30% { transform: translate(10px, -40px); }
+    40% { transform: translate(-10px, -30px); }
+    50% { transform: translate(10px, -40px); }
+    60% { transform: translate(-10px, -10px); }
+    70% { transform: translate(10px, -10px); }
+    80% { transform: translate(-10px, -10px); }
+    90% { transform: translate(10px, -20px); }
+    100% { transform: translate(-10px, -20px); }
 }
 
 .rice4{
