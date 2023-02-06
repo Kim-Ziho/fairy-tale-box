@@ -21,8 +21,21 @@
     bottom: 5%;
 }
 
+@keyframes rice-move {
+    from{
+        transform: translate(0,0);
+    }
+    to{
+        transform: translate(0,-200px);
+    }
+}
+
 .rice4{
     position: absolute;
     right: 25%;
-    bottom: 0%;
+    top: 70%;
+    animation-name: rice-move;
+    animation-delay: 1s;
+    animation-duration: 2s;
+    /* animation-iteration-count: infinite; */
 }

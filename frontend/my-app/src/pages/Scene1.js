@@ -48,7 +48,7 @@ const Scene1 = () => {
         const timertext = setTimeout(() => timedText(), 1000);
     }, []);
     
-    const timerpage = setTimeout(() => navigate(`/scene2`), 10000);
+    // const timerpage = setTimeout(() => navigate(`/scene2`), 10000);
     
     
     return( 

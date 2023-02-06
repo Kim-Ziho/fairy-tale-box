@@ -14,9 +14,24 @@
     position: absolute;
     right: 10%;
 }
+
+@keyframes attack{
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 .attack5{
     position: absolute;
     left: 40%;
     bottom: 30%;
+    animation-name : attack;
+    animation-delay: 2s;
+    animation-duration: 0.2s;
+    opacity: 0;
+    animation-fill-mode: both;
 }
 
