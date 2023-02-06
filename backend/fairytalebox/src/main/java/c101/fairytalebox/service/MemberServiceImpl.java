@@ -1,22 +1,20 @@
 package c101.fairytalebox.service;
 
 import c101.fairytalebox.domain.Member;
-import c101.fairytalebox.dto.LoginRequestDto;
-import c101.fairytalebox.dto.SignUpRequestDto;
+import c101.fairytalebox.domain.RaspberrySerial;
+import c101.fairytalebox.dto.*;
 import c101.fairytalebox.jwt.JwtTokenProvider;
 import c101.fairytalebox.jwt.TokenInfo;
 import c101.fairytalebox.repository.MemberRepository;
+import c101.fairytalebox.repository.RaspberrySerialRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 
 @RequiredArgsConstructor
 @Transactional(readOnly = true)
@@ -27,6 +25,7 @@ public class MemberServiceImpl implements MemberService {
     private final PasswordEncoder passwordEncoder;
     private final JwtTokenProvider jwtTokenProvider;
     private final AuthenticationManagerBuilder authenticationManagerBuilder;
+    private final RaspberrySerialRepository raspberrySerialRepository;
 
     @Transactional
     @Override
@@ -41,6 +40,11 @@ public class MemberServiceImpl implements MemberService {
         }
 
         Member member = memberRepository.save(request.toEntity());
+        RaspberrySerial raspberrySerial = raspberrySerialRepository.findBySerialNum(request.getSerialNum())
+                .orElseThrow(() -> new IllegalArgumentException("기기 정보가 올바르지 않습니다."));
+        raspberrySerial.registerMember(member);
+
+
         member.encodePassword(passwordEncoder);
 
         return member.getId();
@@ -72,6 +76,52 @@ public class MemberServiceImpl implements MemberService {
         TokenInfo tokenInfo = jwtTokenProvider.generateToken(authentication);
 
         return tokenInfo;
+    }
+
+    @Override
+    public Boolean checkEmail(EmailCheckDto request) throws Exception {
+        if (memberRepository.findByEmail(request.getEmail()).isPresent()) {
+            throw new Exception("이미 존재하는 이메일입니다.");
+        }
+        return false;
+    }
+
+    @Override
+    public Boolean checkNickname(MemberNicknameDto request) throws Exception {
+        if (memberRepository.findByNickname(request.getNickname()).isPresent()) {
+            throw new Exception("이미 존재하는 닉네임입니다.");
+        }
+        return false;
+    }
+
+    @Transactional
+    @Override
+    public MemberNicknameDto changeNickname (MemberNicknameDto request, User user) throws Exception{
+        Member member = memberRepository.findById(Long.valueOf(user.getUsername())).orElse(null);
+        member.modifyNick(request.getNickname());
+        MemberNicknameDto memberNicknameDto = MemberNicknameDto.builder()
+                .nickname(member.getNickname())
+                .build();
+        return memberNicknameDto;
+    }
+
+    @Transactional
+    @Override
+    public Boolean changePassword (ChangePasswordDto request, User user) throws Exception {
+        Member member = memberRepository.findById(Long.valueOf(user.getUsername())).orElse(null);
+
+        if (!passwordEncoder.matches(request.getCurrentPassword(), member.getPassword())) {
+            throw new IllegalArgumentException("잘못된 비밀번호입니다.");
+        }
+
+        if (!request.getNewPassword().equals(request.getCheckedNewPassword())) {
+            throw new Exception("비밀번호가 일치하지 않습니다.");
+        }
+
+        member.modifyPassword(request.getNewPassword());
+        member.encodePassword(passwordEncoder);
+
+        return true;
     }
 
 }
