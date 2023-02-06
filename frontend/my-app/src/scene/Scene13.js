@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import BackHome from "../modal/BackHomeModal";
 import "./Scene13.css";
@@ -16,7 +17,7 @@ const stop = () => {
 
 
 const Scene13 = () => {
-  
+  const navigate = useNavigate();
   // const timerpage = setTimeout(() => navigate(`/scene2`), 10000);
 
   return (

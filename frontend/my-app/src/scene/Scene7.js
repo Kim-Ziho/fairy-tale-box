@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import BackHome from "../modal/BackHomeModal";
 import "./Scene6.css";
@@ -15,8 +16,7 @@ const stop = () => {
 // 하단은 자막
 
 const Scene7 = () => {
-
-
+  const navigate = useNavigate();
   // const timerpage = setTimeout(() => navigate(`/scene2`), 10000);
 
   return (

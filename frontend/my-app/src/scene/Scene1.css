@@ -55,12 +55,11 @@
     right: 50%;
 }
 
-#text{
+#Text{
     position: absolute;
+    top: 70%;
+    right: 25%;
     left: 25%;
-    bottom: 12%; 
-    background-color: rgba(255, 255, 255, 0);
-    border: none;
-    font-size: 20px;   
-    /* width: 100%; */
+    bottom: 10%; 
+    font-size: 30px;
 }
