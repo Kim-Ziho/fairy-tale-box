@@ -1,11 +1,11 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import historydata from "./historydata.json";
-import historydetaildata from "./historydetaildata.json";
-import Back from "./Back";
+import historydata from "../data/historydata.json";
+import historydetaildata from "../data/historydetaildata.json";
+import Back from "../modal/Back";
 import "./Historydetail.css";
-import "./Back.css"
+import "../modal/Back.css"
 
 const Historydetail = () => {
   const { historyId } = useParams();

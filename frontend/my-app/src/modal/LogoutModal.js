@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import taledata from "./taledata.json";
+import taledata from "../data/taledata.json";
 import "./Modal.css";
 import "./LogoutModal.css";
 

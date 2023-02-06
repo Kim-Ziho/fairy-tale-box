@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import BackHome from "./BackHomeModal";
-import "./Scene1.css";
+import BackHome from "../modal/BackHomeModal";
+import "./Scene2.css";
 import { positions } from "@mui/system";
 
 // 하단은 음성파일
@@ -33,27 +33,12 @@ function timedText() {
   }, 8000);
 }
 
-const Scene1 = () => {
+const Scene2 = () => {
   const navigate = useNavigate();
-  const [pausemodalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
     const timersound = setTimeout(() => start(), 1000);
   }, []);
-
-  const openModal = () => {
-    setModalOpen(true);
-    stop();
-  };
-
-  const closeModal = () => {
-    setModalOpen(false);
-    start();
-  };
-
-  // 밑은 시작지점
-
-  // 밑은 시작지점
 
   useEffect(() => {
     const timertext = setTimeout(() => timedText(), 1000);
@@ -66,18 +51,15 @@ const Scene1 = () => {
       <BackHome></BackHome>
       <motion.div initial={{ x: 500 }} animate={{ x: 0 }} exit={{ opacity: 0 }}>
         <div className="bgImg">
-          <img src="img/scene1/1-배경.png"></img>
-          <div className="mother1">
-            <img src="img/scene1/1-엄마.png"></img>
+          <img src="img/scene2/2-배경.png"></img>
+          <div className="mother2">
+            <img src="img/scene2/2-엄마.png"></img>
           </div>
-          <div className="brother1">
-            <img src="img/scene1/1-오빠.png"></img>
+          <div className="tiger2">
+            <img src="img/scene2/2-호랑이.png"></img>
           </div>
-          <div className="sister1">
-            <img src="img/scene1/1-동생.png"></img>
-          </div>
-          <input type="text" id="text"></input>
         </div>
+        {/* <input type="text" id="text"></input> */}
         <div id="output"></div>
       </motion.div>
       <style></style>
@@ -85,4 +67,4 @@ const Scene1 = () => {
   );
 };
 
-export default Scene1;
+export default Scene2;

@@ -6,8 +6,8 @@ import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import { Button } from "@mui/material";
 import Typography from "@mui/material/Typography";
-import Modal from "./SelectModal.js";
-import Back from "./Back";
+import Modal from "../modal/SelectModal.js";
+import Back from "../modal/Back";
 import "./Home.css";
 
 const Item = styled(Paper)(({ theme }) => ({

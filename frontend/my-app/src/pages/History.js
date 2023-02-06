@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Back from "./Back";
-import historydata from "./historydata.json";
+import Back from "../modal/Back";
+import historydata from "../data/historydata.json";
 import "./History.css";
 
 const History = () => {
