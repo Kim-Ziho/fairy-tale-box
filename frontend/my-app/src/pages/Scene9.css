@@ -24,13 +24,42 @@
     right: 35%;
     bottom: 10%;
 }
+
+@keyframes hand1-move {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes hand2-move {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
 .hand1{
     position: absolute;
     left: 25%;
     bottom: 60%;
+    opacity: 0;
+    animation-name: hand1-move;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
 }
 .hand2{
     position: absolute;
     left: 25%;
     bottom: 20%;
+    opacity: 0;
+    animation-name: hand2-move;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
 }

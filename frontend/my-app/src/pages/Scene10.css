@@ -14,9 +14,23 @@
     position: absolute;
     right: 10%;
 }
+
+@keyframes siblings-move {
+    from{
+        transform: translate(0,0);
+    }
+    to{
+        transform: translate(0,-200px);
+    }
+}
+
 .siblings{
     position: absolute;
     left: 45%;
-    bottom: 20%;
+    bottom: 5%;
+    animation-name: siblings-move;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-fill-mode: both;
 }
 
