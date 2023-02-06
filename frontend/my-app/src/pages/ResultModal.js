@@ -24,14 +24,14 @@ const ResultModal = (props) => {
   return (
     <div className={open ? "openModal modal" : "modal"}>
       {open ? (
-        <section id="LogoutBg">
+        <section id="ResultBg">
           <header>
             {jemok[0]}
             <button className="headerbutton" onClick={close}>
               &times;
             </button>
           </header>
-          <main className="modalMain">{score[0]}</main>
+          <main className="modalMain modalMainScore">{score[0]}옳지잘한다</main>
           <footer className="modalFooter">
             <Link to="/home">
               <button className="footerButton">👈🏻 홈으로 돌아가기</button>

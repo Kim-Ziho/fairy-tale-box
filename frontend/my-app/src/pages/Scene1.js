@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import Modal from "./Modal.js";
+import BackHome from "./BackHomeModal";
 import "./Scene1.css";
 import { positions } from "@mui/system";
 
@@ -53,26 +53,18 @@ const Scene1 = () => {
 
   // 밑은 시작지점
 
-    
-    // 밑은 시작지점
-    
-    useEffect(() => {
-        const timertext = setTimeout(() => timedText(), 1000);
-    }, []);
-    
-    // const timerpage = setTimeout(() => navigate(`/scene2`), 10000);
-    
-    
-    return( 
-      <div className="SceneBox">
-        <motion.div
-        initial={{x:500}}
-        animate={{x:0}}
-        exit={{opacity: 0}}
-        >
-        <div className="Homebtn">
-          <button onClick={openModal}>홈으로가기</button>
-        </div>
+  // 밑은 시작지점
+
+  useEffect(() => {
+    const timertext = setTimeout(() => timedText(), 1000);
+  }, []);
+
+  // const timerpage = setTimeout(() => navigate(`/scene2`), 10000);
+
+  return (
+    <div className="SceneBox">
+      <BackHome></BackHome>
+      <motion.div initial={{ x: 500 }} animate={{ x: 0 }} exit={{ opacity: 0 }}>
         <div className="bgImg">
           <img src="img/scene1/1-배경.png"></img>
           <div className="mother1">
@@ -87,9 +79,6 @@ const Scene1 = () => {
           <input type="text" id="text"></input>
         </div>
         <div id="output"></div>
-        <Modal open={pausemodalOpen} close={closeModal} header="해님 달님">
-          <a href="/home">정말 홈으로 가시겠어요??</a>
-        </Modal>
       </motion.div>
       <style></style>
     </div>
