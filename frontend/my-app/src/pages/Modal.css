@@ -23,9 +23,9 @@
 }
 .footerButton {
   position: relative;
-  padding: 0.6rem 1.2rem;
+  padding: 0.6rem 1.8rem;
   margin: 0.3rem;
-  top: 1rem;
+  top: 3rem;
   bottom: 0rem;
   color: #fff;
   background-color: #6c757d;
@@ -35,7 +35,7 @@
   cursor: pointer;
   border: 0;
 }
-.modal section {
+/* .modal section {
   width: 35%;
   height: 80%;
   margin: 0 auto;
@@ -43,23 +43,24 @@
   background-color: #fff;
   animation: modal-show 0.3s;
   overflow: hidden;
-}
+} */
 .modal > section > header {
   position: relative;
-  padding: 1.7rem 6.4rem 1.7rem 1.9rem;
+  padding: 1.8rem 6.4rem 1.7rem 3.3rem;
   background-color: #d4d4d4;
   font-family: "Yeon Sung", cursive;
   font-weight: 1000;
   font-size: 3rem;
+  text-align: left;
 }
 .modalMain {
-  padding: 20px;
+  padding: 3rem 4rem 0rem 4rem;
   font-family: "Yeon Sung", cursive;
   font-weight: 500;
   font-size: 2rem;
 }
 .modalFooter {
-  padding: 12px 16px;
+  padding: 1%;
   text-align: center;
 }
 .modal.openModal {

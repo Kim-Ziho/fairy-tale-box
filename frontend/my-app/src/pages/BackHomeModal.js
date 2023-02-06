@@ -2,15 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import taledata from "./taledata.json";
 import "./Modal.css";
-import "./LogoutModal.css";
+import "./BackHome.css";
 
-const LogoutModal = (props) => {
+const BackHomeModal = (props) => {
   const { open, close, header } = props;
 
   return (
     <div className={open ? "openModal modal" : "modal"}>
       {open ? (
-        <section id="LogoutBg">
+        <section id="BackHomeBg">
           <header>
             {header}
             <button className="headerbutton" onClick={close}>
@@ -20,7 +20,10 @@ const LogoutModal = (props) => {
           <main className="modalMain">{props.children}</main>
           <footer className="modalFooter">
             <Link to="/home">
-              <button className="footerButton">👈🏻 로그아웃</button>
+              <button className="footerButton">
+                {/* HomeBtn */}
+                👈🏻 홈으로가기
+              </button>
             </Link>
           </footer>
         </section>
@@ -29,4 +32,4 @@ const LogoutModal = (props) => {
   );
 };
 
-export default LogoutModal;
+export default BackHomeModal;

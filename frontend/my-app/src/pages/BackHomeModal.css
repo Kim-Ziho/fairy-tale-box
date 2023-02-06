@@ -1,0 +1,17 @@
+.backHomeBtn {
+  font-size: 3rem;
+  top: 5%;
+  right: 5%;
+  z-index: 1;
+  position: absolute;
+}
+
+#BackHomeBg {
+  width: 35%;
+  height: 35%;
+  margin: 0 auto;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  animation: modal-show 0.3s;
+  overflow: hidden;
+}
