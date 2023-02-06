@@ -18,7 +18,7 @@ const Main = () => {
       <div className="buttons">
         <Link to="/home">
           <button className="button1">
-            <div className="btnText txt">🖐🏻 동화선택</div>
+            <div className="btnText txt">👆🏻 동화선택</div>
           </button>
         </Link>
         <Link to="/history">
@@ -32,8 +32,7 @@ const Main = () => {
         </button>
         <Modal open={modalOpen} close={closeModal} header="로그아웃">
           로그아웃 하시겠어요?
-          <footer className="modalFooter">
-          </footer>
+          <footer className="modalFooter"></footer>
         </Modal>
       </div>
     </div>

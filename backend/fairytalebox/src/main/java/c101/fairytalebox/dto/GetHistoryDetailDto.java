@@ -1,7 +1,6 @@
 package c101.fairytalebox.dto;
 
 
-import c101.fairytalebox.dto.WordResultDto;
 import lombok.*;
 
 import java.util.List;
