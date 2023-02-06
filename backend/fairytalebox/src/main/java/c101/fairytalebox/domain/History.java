@@ -1,9 +1,6 @@
 package c101.fairytalebox.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -35,4 +32,5 @@ public class History {
 
     @OneToMany(mappedBy = "history", cascade = CascadeType.ALL)
     private List<WordResult> wordResults = new ArrayList<>();
+
 }

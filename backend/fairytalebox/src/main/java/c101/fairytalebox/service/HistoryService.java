@@ -11,5 +11,5 @@ public interface HistoryService {
 
     public Optional<History> getHistoryById(Long id);
 
-//    public Long createHistory(HistoryRequestDto request);
+    public void createHistory(HistoryRequestDto request);
 }
