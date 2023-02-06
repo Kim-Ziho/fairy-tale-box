@@ -20,7 +20,11 @@ Quota project "project1-376701" was added to ADC which can be used by Google cli
 sudo gcloud auth application-default print-access-token
 ya29.a0AVvZVsomQ2W6iKQBNnQ_LgoTIeSjl5wvVJIfa5RZKwU5uPtpmL7E0zDjqZi7w7fmFZcPucYKO8l1WIhDCSYrLKaGrmSLs-dRdKNhzKyXMdsb-k_76vAx5A9-omvxux_iEZzJPj852J4KKK039TTipaUrHEKj2yoaCgYKARMSAQASFQGbdwaIqcWEsEm9v-mOLQHT1S_ksQ0166
 
-
+pip install scipy
+pip install sounddevice
+pip install -U numpy 
+sudo apt-get install libcblas-dev
+pip3 install opencv-python 
 
 
 
