@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import taledata from "./taledata.json";
-import "./Modal.css";
+import histdata from "./historydata.json";
+import "./ResultModal.css";
 
 const ResultModal = (props) => {
   const { open, close } = props;
@@ -12,10 +13,10 @@ const ResultModal = (props) => {
       </div>
     );
   });
-  const naeyong = taledata.map((taleDat) => {
+  const score = histdata.map((histDat) => {
     return (
-      <div key={taleDat.id} className="txt">
-        {taleDat.story}
+      <div key={histDat.id} className="txt">
+        {histDat.score}
       </div>
     );
   });
@@ -23,18 +24,14 @@ const ResultModal = (props) => {
   return (
     <div className={open ? "openModal modal" : "modal"}>
       {open ? (
-        <section>
+        <section id="LogoutBg">
           <header>
             {jemok[0]}
-            해님 달님을 넣고싶은데.
             <button className="headerbutton" onClick={close}>
               &times;
             </button>
           </header>
-          <main className="modalMain">
-            {naeyong[0]}
-            스토리를 넣고싶은데.
-          </main>
+          <main className="modalMain">{score[0]}</main>
           <footer className="modalFooter">
             <Link to="/home">
               <button className="footerButton">👈🏻 홈으로 돌아가기</button>

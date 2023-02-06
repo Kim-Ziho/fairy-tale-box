@@ -40,4 +40,10 @@ public class HistoryController {
         return ResponseEntity.ok().body(getHistory);
     }
 
+//    @GetMapping("/history/{id}")
+//    public ResponseEntity<GetHistoryDto> getHistoryDetail(){
+//        History history = historyService.get
+//        return ResponseEntity.ok().body(getHistoryDetail);
+//    }
+
 }
