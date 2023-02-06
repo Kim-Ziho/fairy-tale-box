@@ -1,4 +1,4 @@
-#ResulttBg {
+#ResultBg {
   width: 35%;
   height: 60%;
   margin: 0 auto;
@@ -6,4 +6,8 @@
   background-color: #fff;
   animation: modal-show 0.3s;
   overflow: hidden;
+}
+
+.modalMainScore {
+  text-align: center;
 }
