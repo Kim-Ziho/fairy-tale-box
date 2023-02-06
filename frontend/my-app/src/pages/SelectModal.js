@@ -1,24 +1,49 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import taledata from "./taledata.json";
 import "./Modal.css";
+import "./SelectModal.css";
 
-const Modal = (props) => {
-  const { open, close, header } = props;
+const SelectModal = (props) => {
+  const { open, close } = props;
+  const jemok = taledata.map((taleDat) => {
+    return (
+      <div key={taleDat.id} className="txt">
+        {taleDat.tale}
+      </div>
+    );
+  });
+  const naeyong = taledata.map((taleDat) => {
+    return (
+      <div key={taleDat.id} className="txt">
+        {taleDat.story}
+      </div>
+    );
+  });
 
   return (
     <div className={open ? "openModal modal" : "modal"}>
       {open ? (
-        <section>
+        <section id="SelectBg">
           <header>
-            {header}
-            <button className="close" onClick={close}>
+            {jemok[0]}
+            <button className="headerbutton" onClick={close}>
               &times;
             </button>
           </header>
-          <main>{props.children}</main>
+          <main className="modalMain">
+            {naeyong[0]}
+            {/* {props.children} */}
+          </main>
+          <footer className="modalFooter">
+            <Link to="/scene1">
+              <button className="footerButton">👉🏻 하러가기</button>
+            </Link>
+          </footer>
         </section>
       ) : null}
     </div>
   );
 };
 
-export default Modal;
+export default SelectModal;
