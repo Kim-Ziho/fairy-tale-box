@@ -12,7 +12,11 @@
 
 .Homebtn{
     position: absolute;
+    top: 30%;
+    bottom: 20%;
     right: 10%;
+    left: 10%;
+    
 }
 
 @keyframes tiger-move3 {
@@ -29,7 +33,7 @@
     right: 30%;
     top: 50%;
     animation-name: tiger-move3;
-    animation-duration: 0.2s;
+    animation-duration: 0.15s;
     animation-fill-mode: both;
     animation-delay: 1s;
 }

@@ -7,7 +7,7 @@
     
 }
 
-/* 아래 대사 움직임 복붙해서 쓸 것 */
+/* 아래 대사시 움직임 복붙해서 쓸 것 */
 @keyframes shake {
     0% { transform: translate(0px, 1px) rotate(0deg); }
     10% { transform: translate(0px, -2px) rotate(-1deg); }
@@ -22,9 +22,6 @@
     100% { transform: translate(0px, -2px) rotate(-1deg); }
   }
   
-/* .SceneBox{
-    text-align: center;
-} */
 
 .Homebtn{
     position: absolute;
@@ -34,7 +31,9 @@
 .mother1{
     position: absolute;
     left: 25%;
-    bottom: 45%;
+    bottom: 40%;
+    top: 25%;
+    right: 80%;
     animation-name: shake;
     animation-delay: 3s;
     animation-duration: 3s;
@@ -43,13 +42,17 @@
 
 .brother1{
     position: absolute;
+    right: 50%;
+    bottom: 20%;
+    top: 40%;
     right: 40%;
-    bottom: 30%;
 }
 .sister1{
     position: absolute;
     right: 50%;
     bottom: 30%;
+    top: 40%;
+    right: 50%;
 }
 
 #text{

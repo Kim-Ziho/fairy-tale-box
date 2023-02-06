@@ -28,6 +28,8 @@
     position: absolute;
     left: 45%;
     bottom: 5%;
+    top: 60%;
+    right: 40%;
     animation-name: siblings-move;
     animation-duration: 2s;
     animation-delay: 1s;
