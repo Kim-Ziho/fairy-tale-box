@@ -3,8 +3,13 @@ import { Link } from "react-router-dom";
 import Back from "../modal/Back";
 import historydata from "../data/historydata.json";
 import "./History.css";
+import axios from "axios";
 
 const History = () => {
+  axios.get("http://localhost:8080/api/history")
+  .then(res=>{
+    console.log(res.data);
+  })
   const historys = historydata.map((history) => {
     return (
       <div key={history.id} className="historyContainer">
