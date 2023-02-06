@@ -1,6 +1,7 @@
 package c101.fairytalebox.service;
 
 import c101.fairytalebox.domain.Member;
+import c101.fairytalebox.domain.RaspberrySerial;
 import c101.fairytalebox.dto.EmailCheckDto;
 import c101.fairytalebox.dto.LoginRequestDto;
 import c101.fairytalebox.dto.MemberNicknameDto;
@@ -8,6 +9,7 @@ import c101.fairytalebox.dto.SignUpRequestDto;
 import c101.fairytalebox.jwt.JwtTokenProvider;
 import c101.fairytalebox.jwt.TokenInfo;
 import c101.fairytalebox.repository.MemberRepository;
+import c101.fairytalebox.repository.RaspberrySerialRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -25,6 +27,7 @@ public class MemberServiceImpl implements MemberService {
     private final PasswordEncoder passwordEncoder;
     private final JwtTokenProvider jwtTokenProvider;
     private final AuthenticationManagerBuilder authenticationManagerBuilder;
+    private final RaspberrySerialRepository raspberrySerialRepository;
 
     @Transactional
     @Override
@@ -39,6 +42,11 @@ public class MemberServiceImpl implements MemberService {
         }
 
         Member member = memberRepository.save(request.toEntity());
+        RaspberrySerial raspberrySerial = raspberrySerialRepository.findBySerialNum(request.getSerialNum())
+                .orElseThrow(() -> new IllegalArgumentException("기기 정보가 올바르지 않습니다."));
+        raspberrySerial.registerMember(member);
+
+
         member.encodePassword(passwordEncoder);
 
         return member.getId();

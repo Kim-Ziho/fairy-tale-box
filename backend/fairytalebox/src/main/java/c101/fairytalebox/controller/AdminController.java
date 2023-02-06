@@ -24,6 +24,12 @@ public class AdminController {
         return adminService.registerDevice(request);
     }
 
+    @DeleteMapping("/device/{raspberry_id}")
+    public ResponseEntity reniveDevice (@PathVariable Long raspberry_id) {
+        adminService.removeDevice(raspberry_id);
+        return ResponseEntity.ok().build();
+    }
+
 
     @GetMapping("/members")
     public ResponseEntity<List<AdminMemberDto>> readMembers() {

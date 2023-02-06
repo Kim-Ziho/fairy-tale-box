@@ -1,6 +1,7 @@
 package c101.fairytalebox.dto;
 
 import c101.fairytalebox.domain.Member;
+import c101.fairytalebox.domain.RaspberrySerial;
 import c101.fairytalebox.domain.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -35,6 +36,8 @@ public class SignUpRequestDto {
     private String checkedPassword;
 
     private Role role;
+
+    private String serialNum;
 
     public Member toEntity() {
         return Member.builder()

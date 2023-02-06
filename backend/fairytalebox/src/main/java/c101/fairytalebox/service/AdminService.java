@@ -3,12 +3,15 @@ package c101.fairytalebox.service;
 import c101.fairytalebox.dto.AdminMemberDto;
 import c101.fairytalebox.dto.AdminStoryDto;
 import c101.fairytalebox.dto.DeviceDto;
+import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 
 public interface AdminService {
 
     public Long registerDevice(DeviceDto request);
+
+    public void removeDevice(Long id);
 
     public List<AdminMemberDto> readMembers();
 

@@ -1,13 +1,12 @@
 package c101.fairytalebox.dto;
 
 import c101.fairytalebox.domain.RaspberrySerial;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
+import lombok.*;
 
 @Getter
 @Builder
 @AllArgsConstructor
+@NoArgsConstructor
 public class DeviceDto {
 
     private String serialNum;

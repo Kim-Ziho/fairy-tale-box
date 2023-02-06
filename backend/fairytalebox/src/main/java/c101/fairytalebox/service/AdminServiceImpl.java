@@ -9,6 +9,7 @@ import c101.fairytalebox.repository.MemberRepository;
 import c101.fairytalebox.repository.RaspberrySerialRepository;
 import c101.fairytalebox.repository.StoryRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -31,6 +32,13 @@ public class AdminServiceImpl implements AdminService {
         RaspberrySerial raspberrySerial = raspberrySerialRepository.save(request.toEntity());
         return raspberrySerial.getId();
     }
+
+    @Override
+    @Transactional
+    public void removeDevice(Long id) {
+        raspberrySerialRepository.deleteById(id);
+    }
+
 
     @Override
     public List<AdminMemberDto> readMembers() {

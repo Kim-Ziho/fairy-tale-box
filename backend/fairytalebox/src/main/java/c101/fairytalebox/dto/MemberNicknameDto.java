@@ -11,8 +11,4 @@ public class MemberNicknameDto {
 
     private String nickname;
 
-//    @Builder
-//    public MemberNicknameDto(String nickname) {
-//        this.nickname = nickname;
-//    }
 }
