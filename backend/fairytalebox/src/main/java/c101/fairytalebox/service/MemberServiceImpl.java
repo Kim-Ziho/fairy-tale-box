@@ -2,10 +2,7 @@ package c101.fairytalebox.service;
 
 import c101.fairytalebox.domain.Member;
 import c101.fairytalebox.domain.RaspberrySerial;
-import c101.fairytalebox.dto.EmailCheckDto;
-import c101.fairytalebox.dto.LoginRequestDto;
-import c101.fairytalebox.dto.MemberNicknameDto;
-import c101.fairytalebox.dto.SignUpRequestDto;
+import c101.fairytalebox.dto.*;
 import c101.fairytalebox.jwt.JwtTokenProvider;
 import c101.fairytalebox.jwt.TokenInfo;
 import c101.fairytalebox.repository.MemberRepository;
@@ -14,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -98,23 +96,33 @@ public class MemberServiceImpl implements MemberService {
 
     @Transactional
     @Override
-    public MemberNicknameDto modifyNickname (MemberNicknameDto request) throws Exception{
-        Member findMember = memberRepository.findByEmail(request.getEmail()).orElseThrow(() -> new Exception("해당 유저를 찾을 수 없습니다."));
-
-        findMember.modifyNick(request.getNickname());
-
+    public MemberNicknameDto changeNickname (MemberNicknameDto request, User user) throws Exception{
+        Member member = memberRepository.findById(Long.valueOf(user.getUsername())).orElse(null);
+        member.modifyNick(request.getNickname());
         MemberNicknameDto memberNicknameDto = MemberNicknameDto.builder()
-                .email((findMember.getEmail()))
-                .nickname(findMember.getNickname())
+                .nickname(member.getNickname())
                 .build();
-
         return memberNicknameDto;
-
-
-
-
     }
 
+    @Transactional
+    @Override
+    public Boolean changePassword (ChangePasswordDto request, User user) throws Exception {
+        Member member = memberRepository.findById(Long.valueOf(user.getUsername())).orElse(null);
+
+        if (!passwordEncoder.matches(request.getCurrentPassword(), member.getPassword())) {
+            throw new IllegalArgumentException("잘못된 비밀번호입니다.");
+        }
+
+        if (!request.getNewPassword().equals(request.getCheckedNewPassword())) {
+            throw new Exception("비밀번호가 일치하지 않습니다.");
+        }
+
+        member.modifyPassword(request.getNewPassword());
+        member.encodePassword(passwordEncoder);
+
+        return true;
+    }
 
 }
 

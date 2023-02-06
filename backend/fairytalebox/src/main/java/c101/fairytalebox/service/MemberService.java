@@ -1,11 +1,10 @@
 package c101.fairytalebox.service;
 
 
-import c101.fairytalebox.dto.EmailCheckDto;
-import c101.fairytalebox.dto.LoginRequestDto;
-import c101.fairytalebox.dto.MemberNicknameDto;
-import c101.fairytalebox.dto.SignUpRequestDto;
+import c101.fairytalebox.domain.Member;
+import c101.fairytalebox.dto.*;
 import c101.fairytalebox.jwt.TokenInfo;
+import org.springframework.security.core.userdetails.User;
 
 public interface MemberService {
 
@@ -17,6 +16,8 @@ public interface MemberService {
 
     public Boolean checkNickname (MemberNicknameDto request) throws Exception;
 
-    public MemberNicknameDto modifyNickname (MemberNicknameDto request) throws Exception;
+    public MemberNicknameDto changeNickname (MemberNicknameDto request, User user) throws Exception;
+
+    public Boolean changePassword (ChangePasswordDto request, User user) throws Exception;
 
 }
