@@ -27,9 +27,9 @@ const BackHomeModal = (props) => {
           </header>
           <main className="modalMain">{props.children}</main>
           <footer className="modalFooter">
-            <Link to="/home">
+            <a href="/home">
               <button className="footerButton">👈🏻 홈으로</button>
-            </Link>
+            </a>
           </footer>
         </section>
       ) : null}

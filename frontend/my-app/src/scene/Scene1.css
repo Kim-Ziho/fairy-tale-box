@@ -3,8 +3,7 @@
     width: 100vw;
     height: 93vh;
     object-fit: contain;
-    position: absolute;
-    
+
 }
 
 /* 아래 대사시 움직임 복붙해서 쓸 것 */
@@ -62,4 +61,8 @@
     left: 25%;
     bottom: 10%; 
     font-size: 30px;
+    font-family: 'Jua', sans-serif;
+    border: 1px solid white;
+    background-color: white;
+    height: 7%;
 }
