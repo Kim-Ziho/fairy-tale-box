@@ -33,4 +33,5 @@ public class History {
     @OneToMany(mappedBy = "history", cascade = CascadeType.ALL)
     private List<WordResult> wordResults = new ArrayList<>();
 
+    public void modifyStarPoint(int starPoint){this.starPoint=starPoint;}
 }

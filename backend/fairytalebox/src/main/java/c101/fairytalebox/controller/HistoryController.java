@@ -14,13 +14,10 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpMessage;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-<<<<<<< HEAD
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-=======
->>>>>>> c669eecc9064d3143c3db6a1c8331019736ae812
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -56,7 +53,7 @@ public class HistoryController {
     @GetMapping("/history/{id}")
     public ResponseEntity<GetHistoryDetailDto> getHistoryDetail(@PathVariable Long id){
         Optional<History> history = historyService.getHistoryById(id);
-        System.out.println(history);
+//        System.out.println(history);
         GetHistoryDetailDto historyDetail = new GetHistoryDetailDto();
         historyDetail.historyId = id;
         historyDetail.wordResult = history.get().getWordResults().stream()
@@ -74,11 +71,23 @@ public class HistoryController {
     }
 
     @PostMapping("/history")
-    public ResponseEntity createHistory(@RequestBody HistoryRequestDto historyRequestDto){
+    public ResponseEntity<Long> createHistory(@RequestBody HistoryRequestDto historyRequestDto){
 
-        historyService.createHistory(historyRequestDto);
+        Long history_id = historyService.createHistory(historyRequestDto);
 
-        return ResponseEntity.ok().body(HttpStatus.OK);
+        return ResponseEntity.ok().body(history_id);
+    }
+
+    @PostMapping("/history/{id}")
+    public ResponseEntity setStarPoint(@PathVariable Long id, @RequestBody StarPointDto starPointDto){
+        historyService.setStarPoint(id,starPointDto);
+        return ResponseEntity.ok().body(HttpStatus.ACCEPTED);
+    }
+
+    @PostMapping("/wordresult/{word_id}")
+    public ResponseEntity createWordResult(@PathVariable Long word_id, @RequestBody WordResultRequestDto wordResultRequestDto){
+        historyService.createWordResult(word_id,wordResultRequestDto);
+        return ResponseEntity.ok().body(HttpStatus.ACCEPTED);
     }
 
 }
