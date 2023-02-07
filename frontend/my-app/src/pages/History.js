@@ -28,7 +28,7 @@ const History = () => {
   return (
     <div className="historyBox">
       <Back />
-      <h3 className="homeMainText txt">📝 학습기록 🎧</h3>
+      <h3 className="histMainText txt">📝 학습기록 🎧</h3>
       <div className="historyContainer">
         <div className="historytitle txt">학습날짜</div>
         <div className="historytitle txt">학습동화</div>

@@ -4,34 +4,68 @@ import { motion } from "framer-motion";
 import BackHome from "../modal/BackHomeModal";
 import "./Scene5.css";
 
-// 하단은 음성파일
-const audio = new Audio("sound/sample.wav");
-const start = () => {
-  audio.play();
+// 음성파일
+const audio5_1 = new Audio("sound/5-1.mp3");
+const audio5_2 = new Audio("sound/5-2.mp3");
+const start1 = () => {
+  setTimeout(() => {
+    audio5_1.play();
+  }, 1000);
 };
-const stop = () => {
-  audio.pause();
+const start2 = () => {
+  setTimeout(() => {
+    audio5_2.play();
+  }, 16000);
 };
 
-// 하단은 자막
+// 자막
+function Change_text() {
+  const subtitle = document.getElementById("Text");
+  setTimeout(() => {
+    subtitle.innerText = "음, 떡이 아주 맛있군!";
+  }, 1000);
+  setTimeout(() => {
+    subtitle.innerText = "호랑이는 떡을 배불리 먹고서,";
+  }, 3900);
+  setTimeout(() => {
+    subtitle.innerText = "약속을 깨고 엄마까지 잡아먹어버렸어요";
+  }, 5400);
+  setTimeout(() => {
+    subtitle.innerText = "약속이라고 말해볼까요?";
+  }, 9000);
+  setTimeout(() => {
+    subtitle.innerText = "오호라, 아이들이 기다린다고?";
+  }, 16000);
+  setTimeout(() => {
+    subtitle.innerText = "안 가볼 수 없지!";
+  }, 18500);
+}
 
 const Scene5 = () => {
   const navigate = useNavigate();
-  // const timerpage = setTimeout(() => navigate(`/scene2`), 10000);
 
+  // 자막 시작 딜레이
+  setTimeout(Change_text);
+  // 페이지 넘어가는 시간
+  setTimeout(() => navigate(`/scene6`), 19700);
+  // 오디오 파일 자동재생
+  setTimeout(start1);
+  setTimeout(start2);
+  
   return (
     <div className="SceneBox">
       <BackHome></BackHome>
-      <motion.div initial={{ x: 500 }} animate={{ x: 0 }} exit={{ opacity: 0 }}>
+      <motion.div>
         <div className="bgImg5">
           <img src="img/scene5/5-호랑이.png"></img>
           <div className="attack5">
             <img src="img/scene5/5-공격.png"></img>
-          </div> 
+          </div>
         </div>
         <div className="before-tiger">
-            <img src="img/scene5/5-공격전호랑이.png"></img>
+          <img src="img/scene5/5-공격전호랑이.png"></img>
         </div>
+        <h2 id="Text"></h2>
         <div id="output"></div>
       </motion.div>
       <style></style>
