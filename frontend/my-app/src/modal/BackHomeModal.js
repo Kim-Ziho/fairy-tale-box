@@ -4,14 +4,6 @@ import taledata from "../data/taledata.json";
 import "./Modal.css";
 import "./BackHomeModal.css";
 
-const audio = new Audio("sound/sample.wav");
-const start = () => {
-  audio.play();
-};
-const stop = () => {
-  audio.pause();
-};
-
 const BackHomeModal = (props) => {
   const { open, close, header } = props;
 
@@ -41,12 +33,10 @@ const BackHome = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const openModal = () => {
     setModalOpen(true);
-    stop();
   };
 
   const closeModal = () => {
     setModalOpen(false);
-    start();
   };
 
   return (

@@ -31,10 +31,7 @@ const SelectModal = (props) => {
               &times;
             </button>
           </header>
-          <main className="modalMain">
-            {naeyong[0]}
-            {/* {props.children} */}
-          </main>
+          <main className="modalMain">{naeyong[0]}</main>
           <footer className="modalFooter">
             <Link to="/scene1">
               <button className="footerButton">👉🏻 하러가기</button>
