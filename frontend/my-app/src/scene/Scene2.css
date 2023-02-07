@@ -21,22 +21,6 @@
     top: 25%;
     right: 80%;
 }
-
-/*
-아래는 애니메이션 효과
-keyframe 
-*/
-@keyframes tiger-move2 {
-    from {                              
-        transform: translate(0,0);
-        opacity: 0;
-    }
-    to {
-        transform: translate(-150px,-100px);
-        opacity: 1;
-    }
-}
-
 .tiger2{
     position: absolute;
     right: 20%;
@@ -48,4 +32,15 @@ keyframe
     animation-name: tiger-move2;
     opacity: 0;
     animation-fill-mode: both;
+}
+
+@keyframes tiger-move2 {
+    from {                              
+        transform: translate(0,0);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-150px,-100px);
+        opacity: 1;
+    }
 }

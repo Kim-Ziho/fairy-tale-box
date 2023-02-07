@@ -12,42 +12,44 @@ const start = () => {
   }, 1000);
 };
 
-// 하단은 자막 수정해서 사용할 것.
-function Change_text(){
-  const subtitle = document.getElementById('Text')
-  setTimeout(()=>{
-    subtitle.innerText = '옛날옛날에 마음씨 좋은 엄마와'
-  },1000)
-  setTimeout(()=>{
-    subtitle.innerText = '사이좋은 오누이가 살고 있었어요'
-  },2000)
-  setTimeout(()=>{
-    subtitle.innerText = '얘들아, 혹시 누군가 문을 열어달라고 하면'
-  },3000)
-  setTimeout(()=>{
-    subtitle.innerText = "엄마말고는 문을 열어 주면 안된단다!"
-  },4000)
-  setTimeout(()=>{
-    subtitle.innerText = "네, 엄마"
-  },5000)
+// 자막
+function Change_text() {
+  const subtitle = document.getElementById("Text");
+  setTimeout(() => {
+    subtitle.innerText = "옛날옛날에 마음씨 좋은 엄마와";
+  }, 1000);
+  setTimeout(() => {
+    subtitle.innerText = "사이좋은 오누이가 살고 있었어요";
+  }, 3500);
+  setTimeout(() => {
+    subtitle.innerText = "얘들아, 혹시 누군가 문을 열어달라고 하면";
+  }, 5500);
+  setTimeout(() => {
+    subtitle.innerText = "엄마말고는 문을 열어 주면 안된단다!";
+  }, 10000);
+  setTimeout(() => {
+    subtitle.innerText = "네, 그럴게요!";
+  }, 12800);
+  setTimeout(() => {
+    subtitle.innerText = "엄마라고 말해볼까요?";
+  }, 15050);
 }
 
 const Scene1 = () => {
   const navigate = useNavigate();
-  
-  // 하단은 자막 시작 딜레이
-  setTimeout(Change_text)
-  // 하단은 페이지 넘어가는 시간
-  // const timerpage = setTimeout(() => navigate(`/scene2`), 7000);
-  // 하단은 오디오 파일 자동재생
-  setTimeout(start)
-  
-  return (
 
+  // 자막 시작 딜레이
+  setTimeout(Change_text);
+  // 페이지 넘어가는 시간
+  setTimeout(() => navigate(`/scene2`), 23120);
+  // 오디오 파일 자동재생
+  setTimeout(start);
+
+  return (
     <div className="SceneBox">
       <BackHome></BackHome>
-      <motion.div initial={{ x: 500 }} animate={{ x: 0 }} exit={{ opacity: 0 }}>
-        <div >
+      <motion.div>
+        <div>
           <img src="img/scene1/1-배경.png" className="bgImg"></img>
           <div className="mother1">
             <img src="img/scene1/1-엄마.png"></img>
