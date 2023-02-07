@@ -41,13 +41,6 @@ public class SecurityConfig {
         return http.build();
     }
 
-    public void configure(WebSecurity web) throws Exception {
-        web.httpFirewall(defaultHttpFirewall());
-    }
-    @Bean
-    public HttpFirewall defaultHttpFirewall() {
-        return new DefaultHttpFirewall();
-    }
 
     @Bean
     public PasswordEncoder passwordEncoder() {
