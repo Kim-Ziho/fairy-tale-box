@@ -1,1 +1,15 @@
-https://www.coupang.com/vp/products/7032926837?itemId=17362493427&vendorItemId=84532435301&q=%EB%B8%94%EB%A3%A8%ED%88%AC%EC%8A%A4+%EB%A7%88%EC%9D%B4%ED%81%AC&itemsCount=36&searchId=78fa0d94a0114cb4b73254004c8ff232&rank=54&isAddedCart=              -- 18.900월
+arecord -L  // (plug출력장치 확인)
+arecord -t wav -c 1 -D plughw:Device,0 -f S16_LE -d 3 -r 44100 test.wav // 스테레오 크기 확인
+
+main.py에서 바꿔준 내용 : 
+1. encoding 내용 wav파일이기 때문에 LINEAR16으로 변경해 주었음.
+2. sample_rate_hertz=44100 wav파일이기 때문에 변경해 주었음.
+3. language_code="ko-KR" string이고 한국말을 쓸 것이기 때문에 변경해 주었음.
+4. model 기본으로 사용 보틍 긴 문장에서 사용하지만 왜 되었는진 잘 모르겠음..
+
+
+<도움>
+https://cloud.google.com/speech-to-text/docs/reference/rest/v1/RecognitionConfig
+https://cloud.google.com/speech-to-text/docs/speech-to-text-supported-languages?hl=ko
+https://cloud.google.com/speech-to-text/docs/encoding
+https://snepbnt.tistory.com/379
