@@ -1,0 +1,79 @@
+@keyframes changebg1 {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes changebg2 {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+.bgImg5 {
+    position: absolute;
+    margin-top: 1.5%;
+    width: 100vw;
+    height: 93vh;
+    object-fit: contain;
+    animation-name: changebg1;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-fill-mode: both;
+    opacity: 0;
+}
+
+.SceneBox{
+    text-align: center;
+}
+
+.Homebtn{
+    position: absolute;
+    right: 10%;
+}
+
+@keyframes attack{
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.attack5{
+    position: absolute;
+    left: 40%;
+    bottom: 30%;
+    animation-name : attack;
+    animation-delay: 1s;
+    animation-duration: 0.2s;
+    opacity: 0;
+    animation-fill-mode: both;
+}
+
+@keyframes tiger-change{
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+.before-tiger{
+    position: absolute;
+    margin-top: 1.5%;
+    width: 100vw;
+    height: 93vh;
+    object-fit: contain;
+    animation-name: changebg2;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-fill-mode: both;
+    opacity: 1;
+}

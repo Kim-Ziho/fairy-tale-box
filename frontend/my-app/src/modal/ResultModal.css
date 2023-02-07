@@ -1,0 +1,13 @@
+#ResultBg {
+  width: 35%;
+  height: 60%;
+  margin: 0 auto;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  animation: modal-show 0.3s;
+  overflow: hidden;
+}
+
+.modalMainScore {
+  text-align: center;
+}

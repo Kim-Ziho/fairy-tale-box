@@ -20,10 +20,25 @@ Quota project "project1-376701" was added to ADC which can be used by Google cli
 sudo gcloud auth application-default print-access-token
 ya29.a0AVvZVsomQ2W6iKQBNnQ_LgoTIeSjl5wvVJIfa5RZKwU5uPtpmL7E0zDjqZi7w7fmFZcPucYKO8l1WIhDCSYrLKaGrmSLs-dRdKNhzKyXMdsb-k_76vAx5A9-omvxux_iEZzJPj852J4KKK039TTipaUrHEKj2yoaCgYKARMSAQASFQGbdwaIqcWEsEm9v-mOLQHT1S_ksQ0166
 
-
-
-
-
+pip install scipy
+pip install sounddevice
+pip install -U numpy 
+sudo apt-get install libcblas-dev
+pip3 install opencv-python
+sudo apt-get install python3-opencv 
+sudo apt-get install libcblas-dev
+sudo apt-get install libhdf5-dev
+sudo apt-get install libhdf5-serial-dev
+sudo apt-get install libatlas-base-dev
+sudo apt-get install libjasper-dev 
+sudo apt-get install libqtgui4 
+sudo apt-get install libqt4-test
+pip install wavio
+44100
+pip install google-cloud
+pip install google-cloud-vision
+pip install google-clould-speech
+pip install pydubpip install --upgrade google-cloud-storage
 
 
 

@@ -3,7 +3,6 @@ package c101.fairytalebox.dto;
 import c101.fairytalebox.domain.Story;
 import lombok.Builder;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 
 @Getter
 public class AdminStoryDto {

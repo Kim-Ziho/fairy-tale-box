@@ -1,11 +1,17 @@
 package c101.fairytalebox.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Entity
 @Getter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class WordResult {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

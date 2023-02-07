@@ -1,7 +1,9 @@
 package c101.fairytalebox.controller;
 
 import c101.fairytalebox.domain.Story;
+import c101.fairytalebox.dto.AdminMemberDto;
 import c101.fairytalebox.dto.AdminStoryDto;
+import c101.fairytalebox.dto.DeviceDto;
 import c101.fairytalebox.service.AdminService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -12,10 +14,33 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/admin")
+@RequestMapping("/api/admin")
 @RequiredArgsConstructor
 public class AdminController {
     private final AdminService adminService;
+
+    @PostMapping("/device")
+    public Long registerDevice(@Valid @RequestBody DeviceDto request) throws  Exception{
+        return adminService.registerDevice(request);
+    }
+
+    @DeleteMapping("/device/{raspberry_id}")
+    public ResponseEntity reniveDevice (@PathVariable Long raspberry_id) {
+        adminService.removeDevice(raspberry_id);
+        return ResponseEntity.ok().build();
+    }
+
+
+    @GetMapping("/members")
+    public ResponseEntity<List<AdminMemberDto>> readMembers() {
+        return ResponseEntity.ok().body(adminService.readMembers());
+    }
+
+    @DeleteMapping("/member/{memberId}")
+    public ResponseEntity removeMember (@PathVariable Long memberId) {
+        adminService.removeMember(memberId);
+        return ResponseEntity.ok().build();
+    }
 
     @GetMapping("/stories")
     public ResponseEntity<List<AdminStoryDto>> readStories() {

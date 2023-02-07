@@ -1,0 +1,3 @@
+https://forum.arduino.cc/t/using-keyboard-mouse-functionality-on-nano-ble-sense/638497/6
+https://esp32tutorials.com/install-esp32-esp-idf-linux-ubuntu/ -- 우분트에 esp-idf 설치
+https://github.com/blackketter/ESP32-BLE-Combo -- 보고 따라한 git

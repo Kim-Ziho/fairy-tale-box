@@ -31,9 +31,12 @@ public class SecurityConfig {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
+                .antMatchers("/").permitAll()
+                .antMatchers("/api/admin/**").hasRole("ADMIN")
+                .antMatchers("/api/**").permitAll()
                 .antMatchers("/member/login").permitAll()
                 .antMatchers("/member/signup").permitAll()
-                .antMatchers("/admin/**").hasRole("ADMIN")
+                .antMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-resources/**").permitAll()
                 .anyRequest().authenticated();
         return http.build();
     }

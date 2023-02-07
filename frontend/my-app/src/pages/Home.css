@@ -1,11 +1,15 @@
-.selectImg {
-  width: 21vw;
-  height: 30vh;
-  object-fit: cover;
+.homeMainText {
+  position: relative;
+  margin: auto;
+  top: -3rem;
+  font-size: 6.5rem;
+  width: fit-content;
+  color: rgb(0, 0, 0);
+  text-shadow: 4px 4px #ffffff;
 }
 
 #Grid {
-  padding: 8%;
+  padding: 5%;
 }
 
 .selectBtn {
@@ -13,6 +17,11 @@
   background-color: #fff;
 }
 
+.selectImg {
+  width: 21vw;
+  height: 30vh;
+  object-fit: cover;
+}
 .selectImg:hover {
   transform: scale(0.85);
 }
