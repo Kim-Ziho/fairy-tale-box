@@ -16,18 +16,43 @@
 }
 .mother2{
     position: absolute;
-    left: 35%;
-    bottom: 35%;
+    left: 20%;
+    bottom: 30%;
     top: 25%;
     right: 80%;
+    height: 35%;
+    animation-name: mother2-move;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    animation-fill-mode: both;
+
+}
+@keyframes mother2-move{
+    from{
+        transform: translate(0,0);
+    }
+    to{
+        transform: translate(70%,30%);
+    }
+}
+
+.tree{
+    position: absolute;
+    left: 10%;
+    bottom: 30%;
+    top: 25%;
+    right: 80%;
+    width: 60%;
+    height: 60%;
 }
 .tiger2{
     position: absolute;
-    right: 20%;
-    bottom: 20%;
+    left: 50%;
+    bottom: 10%;
     top: 40%;
     right: 20%;
-    animation-delay: 1s;
+    height: 60%;
+    animation-delay: 4s;
     animation-duration: 3s;
     animation-name: tiger-move2;
     opacity: 0;

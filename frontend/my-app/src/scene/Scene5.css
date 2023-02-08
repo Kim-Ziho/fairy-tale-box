@@ -16,14 +16,25 @@
 }
 
 .bgImg5 {
-    position: absolute;
+    margin-top: 1.5%;
+    width: 100vw;
+    height: 93vh;
+    object-fit: contain;
+    animation-name: changebg2;
+    animation-duration: 1s;
+    animation-delay: 3s;
+    animation-fill-mode: both;
+    opacity: 1;
+}
+.bgImg5-2 {
+    position:absolute;
     margin-top: 1.5%;
     width: 100vw;
     height: 93vh;
     object-fit: contain;
     animation-name: changebg1;
     animation-duration: 1s;
-    animation-delay: 1s;
+    animation-delay: 3s;
     animation-fill-mode: both;
     opacity: 0;
 }
@@ -74,6 +85,20 @@
     animation-name: changebg2;
     animation-duration: 1s;
     animation-delay: 1s;
+    animation-fill-mode: both;
+    opacity: 1;
+}
+
+.tiger5{
+    position: absolute;
+    right: 0%;
+    top: 0%;
+    left: 0%;
+    bottom: 0%;
+    height: 100%;
+    animation-name: changebg2;
+    animation-duration: 1s;
+    animation-delay: 3s;
     animation-fill-mode: both;
     opacity: 1;
 }

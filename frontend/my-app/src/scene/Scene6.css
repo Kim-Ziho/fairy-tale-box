@@ -27,12 +27,13 @@
 .tiger6{
     position: absolute;
     right: 40%;
-    left: 10%;
+    left: 20%;
     top: 30%;
     bottom: 10%;
+    height: 70%;
     animation-name : tiger-move6;
     animation-delay: 1s;
-    animation-duration: 1.5s;
+    animation-duration: 3s;
     animation-fill-mode: both;
 }
 

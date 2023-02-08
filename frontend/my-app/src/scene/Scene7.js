@@ -34,7 +34,6 @@ function Change_text(){
 }
 const Scene7 = () => {
   const navigate = useNavigate();
-  // const timerpage = setTimeout(() => navigate(`/scene2`), 10000);
 
   // 하단은 자막 시작 딜레이
   setTimeout(Change_text)
@@ -46,9 +45,9 @@ const Scene7 = () => {
   return (
     <div className="SceneBox">
       <BackHome></BackHome>
-      <motion.div initial={{ x: 500 }} animate={{ x: 0 }} exit={{ opacity: 0 }}>
-        <div className="bgImg">
-          <img src="img/scene7/7-배경.png"></img>
+      <motion.div>
+        <div>
+          <img src="img/scene7/7-배경.png" className="bgImg"></img>
           <h2 id="Text"></h2>
         </div>
         <div id="output"></div>

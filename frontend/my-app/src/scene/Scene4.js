@@ -37,13 +37,13 @@ const Scene4 = () => {
     <div className="SceneBox">
       <BackHome></BackHome>
       <motion.div>
-        <div className="bgImg">
-          <img src="img/scene4/4-배경.png"></img>
-          <div className="tiger4">
-            <img src="img/scene4/4-호랑이.png"></img>
+        <div>
+          <img src="img/scene4/4-배경.png" className="bgImg"></img>
+          <div>
+            <img src="img/scene4/4-호랑이.png" className="tiger4"></img>
           </div>
-          <div className="rice4">
-            <img src="img/scene4/4-떡.png"></img>
+          <div>
+            <img src="img/scene4/4-떡.png" className="rice4"></img>
           </div>
           <h2 id="Text"></h2>
         </div>

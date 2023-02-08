@@ -30,8 +30,9 @@
     bottom: 5%;
     top: 60%;
     right: 40%;
+    height: 50%;
     animation-name: siblings-move;
-    animation-duration: 2s;
+    animation-duration: 3s;
     animation-delay: 1s;
     animation-fill-mode: both;
 }
