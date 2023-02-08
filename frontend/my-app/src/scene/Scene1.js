@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import BackHome from "../modal/BackHomeModal";
+import BackHome from "../modal/BackHomeDrop";
 import "./Scene1.css";
 
 // 하단은 음성파일 Audio에 음성파일 경로를 넣으면 됩니다.
@@ -47,11 +47,11 @@ const Scene1 = () => {
   return (
     <div className="SceneBox">
       <BackHome></BackHome>
-          <img src="img/scene1/1-배경.png" className="bgImg"></img>
-          <img src="img/scene1/1-엄마.png" className="mother1"></img>
-          <img src="img/scene1/1-오빠.png" className="brother1"></img>
-          <img src="img/scene1/1-동생.png" className="sister1"></img>
-          <h2 id="Text"></h2>
+      <img src="img/scene1/1-배경.png" className="bgImg"></img>
+      <img src="img/scene1/1-엄마.png" className="mother1"></img>
+      <img src="img/scene1/1-오빠.png" className="brother1"></img>
+      <img src="img/scene1/1-동생.png" className="sister1"></img>
+      <h2 id="Text"></h2>
     </div>
   );
 };

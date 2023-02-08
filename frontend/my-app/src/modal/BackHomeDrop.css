@@ -1,25 +1,29 @@
 .blank {
-  width: 15%;
-  height: 5%;
+  position: absolute;
+  width: 10%;
+  height: 7.5%;
   background: rgb(255, 255, 255);
   text-align: center;
+  top: 5%;
+  right: 5%;
+  z-index: 1;
 }
 
 .blank::before {
   content: "🖐🏻멈춰";
-  font-size: 2.5em;
+  font-size: 2em;
   color: rgb(0, 0, 0);
 }
 
 .blank:hover {
   animation-play-state: paused;
   background: rgb(0, 109, 187);
-  width: 15%;
-  height: 5%;
+  width: 10%;
+  height: 7.5%;
 }
 
 .blank:hover::before {
   content: "🤸🏻‍♂️홈으로가기";
-  font-size: 2.5em;
+  font-size: 2em;
   color: rgb(255, 255, 255);
 }

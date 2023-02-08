@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import BackHome from "../modal/BackHomeModal";
+import BackHome from "../modal/BackHomeDrop";
 import "./Scene12.css";
 
 // 하단은 음성파일
@@ -21,13 +21,13 @@ function Change_text(){
     subtitle.innerText = '호랑이는 나무 위에 올라가려 했지만,'
   },2730)
   setTimeout(()=>{
-    subtitle.innerText = '나무에 오르기 어려웠어요.'
+    subtitle.innerText = '나무에 오르기 어려웠어요'
   },5742)
   setTimeout(()=>{
-    subtitle.innerText = '그 모습을 본 동생이 말했어요.'
+    subtitle.innerText = '그 모습을 본 동생이 말했어요'
   },8742)
   setTimeout(()=>{
-    subtitle.innerText = '하하하, 손에 참기름을 바르고 올라오면 쉽지.'
+    subtitle.innerText = '하하하, 손에 참기름을 바르고 올라오면 쉽지'
   },11280)
 }
 

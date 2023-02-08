@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import BackHome from "../modal/BackHomeModal";
+import BackHome from "../modal/BackHomeDrop";
 import "./Scene8.css";
 
 // 하단은 음성파일
@@ -22,7 +22,7 @@ function Change_text(){
     subtitle.innerText = '여기? 저기? 호랑이가 어디에 있을까요?'
   },6632)
   setTimeout(()=>{
-    subtitle.innerText = '호랑이와 눈이 마주쳤어요!!!'
+    subtitle.innerText = '호랑이와 눈이 마주쳤어요!'
   },12710)
   setTimeout(()=>{
     subtitle.innerText = '큰일났다!'
