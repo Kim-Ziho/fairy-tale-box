@@ -23,10 +23,13 @@
     bottom: 0%;
     height: 200%;
     animation-name: hole-move, hole-hide;
-    animation-duration: 3s,1s;
-    animation-delay: 0s,4s;
+    animation-duration: 9s,1s;
+    animation-delay: 5s,14s;
     animation-iteration-count: 1,1;
     animation-fill-mode: both;
+    width: 190vw;
+    height: 190vh;
+    object-fit: contain;
 }
 
 @keyframes hole-move {
@@ -40,7 +43,7 @@
     70% { transform: translate(-20%, -17%) }
     80% { transform: translate(-23%, -9%) }
     90% { transform: translate(-25%, -20%) }
-    100% { transform: translate(-25%,-25% ) }
+    100% { transform: translate(-23%,-23% ) }
 }
 @keyframes hole-hide {
     from{

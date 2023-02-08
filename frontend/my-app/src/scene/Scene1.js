@@ -1,6 +1,5 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
 import BackHome from "../modal/BackHomeModal";
 import "./Scene1.css";
 
@@ -41,24 +40,18 @@ const Scene1 = () => {
   // 자막 시작 딜레이
   setTimeout(Change_text);
   // 페이지 넘어가는 시간
-  // setTimeout(() => navigate(`/scene2`), 23120);
+  setTimeout(() => navigate(`/scene2`), 23120);
   // 오디오 파일 자동재생
   setTimeout(start);
 
   return (
     <div className="SceneBox">
       <BackHome></BackHome>
-      <motion.div>
-        <div>
           <img src="img/scene1/1-배경.png" className="bgImg"></img>
           <img src="img/scene1/1-엄마.png" className="mother1"></img>
           <img src="img/scene1/1-오빠.png" className="brother1"></img>
           <img src="img/scene1/1-동생.png" className="sister1"></img>
           <h2 id="Text"></h2>
-        </div>
-        <div id="output"></div>
-      </motion.div>
-      <style></style>
     </div>
   );
 };

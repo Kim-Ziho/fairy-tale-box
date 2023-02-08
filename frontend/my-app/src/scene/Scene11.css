@@ -31,15 +31,17 @@
 .well{
     rotate: 100deg;
     position: absolute;
-    left: 10%;
+    left: -30%;
     bottom: 5%;
     top: 30%;
-    right: 40%;
+    right: 0%;
     height: 150%;
     z-index: -1;
     animation-name:well-move;
-    animation-duration: 8s;
-    animation-delay: 5s;
+    animation-duration: 7s;
+    animation-delay: 15s;
     animation-fill-mode: both;
-    /* clip: rect(400px,400px,400px,400px); */
+    width: 150vw;
+    height: 150vh;
+    object-fit: contain;
 }

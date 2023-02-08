@@ -24,20 +24,23 @@
         transform: translate(0,0);
     }
     to{
-        transform: translate(0,-300px);
+        transform: translate(0,-50%);
     }
 }
 
 .tiger3{
     position: absolute;
     right: 0%;
-    top: 35%;
+    top: 45%;
     left: 0%;
     bottom: 0%;
     height: 100%;
     animation-name: tiger-move3;
-    animation-duration: 0.15s;
+    animation-duration: 0.5s;
     animation-fill-mode: both;
     animation-delay: 1s;
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
 
 }
