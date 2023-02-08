@@ -35,12 +35,12 @@ sudo apt-get install libqtgui4
 sudo apt-get install libqt4-test
 pip install wavio
 44100
+pip install --upgrade google-api-python-client
 pip install google-cloud
+pip3 install --upgrade pip setuptools wheel
 pip install google-cloud-vision
 pip install google-clould-speech
+pip install google-cloud-storage
 pip install pydubpip install --upgrade google-cloud-storage
-
-
-
-
+pip install pydub
 
