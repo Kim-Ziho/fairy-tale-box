@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Back from "../modal/Back";
-import "./History.css";
 import axios from "axios";
+import "./History.css";
 
 const History = () => {
   const [hist, setHists] = useState([]);
   useEffect(() => {
-    axios.get("http://i8c101.p.ssafy.io:8080/api/history").then((response) => {
+    axios.get("http://i8c101.p.ssafy.io/api/history").then((response) => {
       setHists(response.data);
+      console.log(hist[0]);
+      console.log(hist[0].historyId);
     });
   }, []);
 
@@ -19,25 +21,33 @@ const History = () => {
         <div className="historycontent txt">{hist.story}</div>
         <div className="historycontent txt">{hist.starPoint}</div>
         <div className="historycontent txt">
-          <Link to={`/history/${hist.historyId}`}>👀</Link>
+          <Link
+            to={`/history/${hist.historyId}`}
+            style={{ textDecoration: "none" }}
+          >
+            👀 보러가자
+          </Link>
         </div>
       </div>
     );
   });
 
   return (
-    <div className="historyBox">
-      <Back />
-      <h3 className="histMainText txt">📝 학습기록 🎧</h3>
-      <div className="historyContainer">
-        <div className="historytitle txt">학습날짜</div>
-        <div className="historytitle txt">학습동화</div>
-        <div className="historytitle txt">별점</div>
-        <div className="historytitle txt">자세히보기</div>
+    <div>
+      <div>
+        <Back />
       </div>
-      <hr className="tableLine"></hr>
-      {historys}
-      <div className="historyfooter txt">1 2 3</div>
+      <div className="historyBox">
+        <h3 className="histMainText txt">📝 학습기록 🎧</h3>
+        <div className="historyContainer">
+          <div className="historytitle txt">학습날짜</div>
+          <div className="historytitle txt">학습동화</div>
+          <div className="historytitle txt">별점</div>
+          <div className="historytitle txt">자세히보기</div>
+        </div>
+        <hr className="tableLine"></hr>
+        {historys}
+      </div>
     </div>
   );
 };

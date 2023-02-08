@@ -26,6 +26,23 @@
   padding-top: 2%;
 }
 
+.detailMainText {
+  position: relative;
+  margin: auto;
+  top: -1rem;
+  font-size: 6.5rem;
+  width: fit-content;
+  color: rgb(0, 0, 0);
+  text-shadow: 4px 4px #ffffff;
+}
+
+.histdetailtitle {
+  background-color: rgb(194, 224, 245);
+  width: 88%;
+  margin: 7%;
+  border-radius: 8px;
+  font-size: 4rem;
+}
 .detailText {
   margin: auto;
   padding-bottom: 3%;
@@ -35,4 +52,8 @@
 .hide {
   opacity: 0;
   z-index: 99;
+}
+
+.histHeader {
+  margin-top: 4%;
 }
