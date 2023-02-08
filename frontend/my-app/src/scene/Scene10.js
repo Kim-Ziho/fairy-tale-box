@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import BackHome from "../modal/BackHomeModal";
+import BackHome from "../modal/BackHomeDrop";
 import "./Scene10.css";
 
 
@@ -25,7 +25,7 @@ function Change_text(){
     subtitle.innerText = '어서 나가서 우물옆 나무 위에 숨어버리자!'
   },1000)
   setTimeout(()=>{
-    subtitle.innerText = '나무라고 말해 볼까요? 나무'
+    subtitle.innerText = '나무라고 말해 볼까요?'
   },5960)
   setTimeout(()=>{
     subtitle.innerText = '오누이는 나무 위로 올라갔어요'

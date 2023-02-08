@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import BackHome from "../modal/BackHomeModal";
+import BackHome from "../modal/BackHomeDrop";
 import "./Scene5.css";
 
 // 음성파일
@@ -24,7 +24,7 @@ function Change_text() {
     subtitle.innerText = "음, 떡이 아주 맛있군!";
   }, 1000);
   setTimeout(() => {
-    subtitle.innerText = "호랑이는 떡을 배불리 먹고서,";
+    subtitle.innerText = "호랑이는 떡을 배불리 먹고서";
   }, 3900);
   setTimeout(() => {
     subtitle.innerText = "약속을 깨고 엄마까지 잡아먹어버렸어요";

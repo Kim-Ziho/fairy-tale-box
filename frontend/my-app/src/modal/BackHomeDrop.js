@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./BackHomeDrop.css";
 
 const BackHome = () => {
-  return <button class="blank txt"></button>;
+  return (<Link to="/home"><button class="blank txt"></button></Link>);
 };
 
 export default BackHome;

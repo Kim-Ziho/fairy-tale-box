@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import BackHome from "../modal/BackHomeModal";
+import BackHome from "../modal/BackHomeDrop";
 import "./Scene4.css";
 
 // 음성파일
@@ -15,10 +15,10 @@ const start = () => {
 function Change_text() {
   const subtitle = document.getElementById("Text");
   setTimeout(() => {
-    subtitle.innerText = "엄마는 얼른 떡을 꺼내 호랑이에게 주었어요.";
+    subtitle.innerText = "엄마는 얼른 떡을 꺼내 호랑이에게 주었어요";
   }, 1000);
   setTimeout(() => {
-    subtitle.innerText = "팔을 들어 호랑이에게 떡을 주세요.";
+    subtitle.innerText = "팔을 들어 호랑이에게 떡을 주세요";
   }, 5500);
 }
 

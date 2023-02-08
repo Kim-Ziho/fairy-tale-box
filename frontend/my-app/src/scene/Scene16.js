@@ -1,9 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import BackHome from "../modal/BackHomeModal";
+import BackHome from "../modal/BackHomeDrop";
 import "./Scene16.css";
-
 
 // 하단은 음성파일
 const audio = new Audio("sound/sample.wav");
@@ -23,13 +22,11 @@ const Scene16 = () => {
   return (
     <div className="SceneBox">
       <BackHome></BackHome>
-      <motion.div initial={{ x: 500 }} animate={{ x: 0 }} exit={{ opacity: 0 }}>
-        <div className="bgImg">
-          <img src="img/scene11/11.png"></img>
-        </div>
-        <div id="output"></div>
-      </motion.div>
-      <style></style>
+
+      <div className="bgImg">
+        <img src="img/scene11/11.png"></img>
+      </div>
+      <div id="output"></div>
     </div>
   );
 };

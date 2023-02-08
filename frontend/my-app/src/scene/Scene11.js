@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import BackHome from "../modal/BackHomeModal";
+import BackHome from "../modal/BackHomeDrop";
 import "./Scene11.css";
 
 // 하단은 음성파일
@@ -21,10 +21,10 @@ function Change_text(){
     subtitle.innerText = '얘들아, 거긴 어떻게 들어갔니?'
   },4730)
   setTimeout(()=>{
-    subtitle.innerText = '오누이는 어느쪽에 있을까요?'
+    subtitle.innerText = '오누이는 어느 쪽에 있을까요?'
   },8742)
   setTimeout(()=>{
-    subtitle.innerText = '오른쪽 왼쪽으로 움직이며 오누이를 찾아보세요.'
+    subtitle.innerText = '오른쪽 왼쪽으로 움직이며 오누이를 찾아보세요'
   },10742)
 }
 const Scene11 = () => {

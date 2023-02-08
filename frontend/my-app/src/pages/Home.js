@@ -25,7 +25,6 @@ const Home = (props) => {
 
   return (
     <div id="Grid">
-      <BackHomeDrop></BackHomeDrop>
       <h3 className="homeMainText txt">👆🏻 동화선택 🖐🏻</h3>
       <Link to="/">
         <button className="backBtn txt">👈🏻 뒤로가기</button>

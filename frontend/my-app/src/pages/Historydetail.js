@@ -15,14 +15,14 @@ const Historydetail = () => {
           return (
             <div key={histdet.historyId} className="historydetailContainer2">
               <div></div>
+              <img src="../img/qr_eemshi.png" alt="외않나와"></img>
               <div className="historycontent txt">{histdet.word_name}</div>
-              <div className="historycontent txt">{histdet.word_name}</div>
-              <div className="historycontent txt">{histdet.word_name}</div>
+              <div className="historycontent txt">{histdet.audio_path}</div>
               <div></div>
               <div></div>
+              <img src="../img/qr_eemshi.png" alt="외않나와"></img>
               <div className="historycontent txt">{histdet.word_name}</div>
-              <div className="historycontent txt">{histdet.word_name}</div>
-              <div className="historycontent txt">{histdet.word_name}</div>
+              <div className="historycontent txt">{histdet.audio_path}</div>
             </div>
           );
         })

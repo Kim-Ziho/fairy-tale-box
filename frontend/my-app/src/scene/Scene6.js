@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import BackHome from "../modal/BackHomeModal";
+import BackHome from "../modal/BackHomeDrop";
 import "./Scene6.css";
 
 // 음성파일
@@ -21,16 +21,16 @@ const start2 = () => {
 function Change_text() {
   const subtitle = document.getElementById("Text");
   setTimeout(() => {
-    subtitle.innerText = "호랑이는 엄마가 입던 옷을 입고,";
+    subtitle.innerText = "호랑이는 엄마가 입던 옷을 입고";
   }, 1000);
   setTimeout(() => {
-    subtitle.innerText = "오누이가 있는 집을 찾아갔어요.";
+    subtitle.innerText = "오누이가 있는 집을 찾아갔어요";
   }, 3900);
   setTimeout(() => {
     subtitle.innerText = "집이라고 말해볼까요?";
   }, 6500);
   setTimeout(() => {
-    subtitle.innerText = "애들아 엄마 왔다!";
+    subtitle.innerText = "애들아, 엄마 왔다!";
   }, 14000);
 }
 
