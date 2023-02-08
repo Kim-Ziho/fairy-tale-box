@@ -16,7 +16,7 @@
 }
 .mother2{
     position: absolute;
-    left: 20%;
+    left: -5%;
     bottom: 30%;
     top: 25%;
     right: 80%;
@@ -25,6 +25,9 @@
     animation-duration: 2s;
     animation-delay: 2s;
     animation-fill-mode: both;
+    width: 40vw;
+    height: 40vh;
+    object-fit: contain;
 
 }
 @keyframes mother2-move{
@@ -32,7 +35,7 @@
         transform: translate(0,0);
     }
     to{
-        transform: translate(70%,30%);
+        transform: translate(50%,30%);
     }
 }
 
@@ -40,14 +43,17 @@
     position: absolute;
     left: 10%;
     bottom: 30%;
-    top: 25%;
+    top: 15%;
     right: 80%;
     width: 60%;
     height: 60%;
+    width: 70vw;
+    height: 70vh;
+    object-fit: contain;
 }
 .tiger2{
     position: absolute;
-    left: 50%;
+    left: 40%;
     bottom: 10%;
     top: 40%;
     right: 20%;
@@ -57,6 +63,9 @@
     animation-name: tiger-move2;
     opacity: 0;
     animation-fill-mode: both;
+    width: 60vw;
+    height: 60vh;
+    object-fit: contain;
 }
 
 @keyframes tiger-move2 {
