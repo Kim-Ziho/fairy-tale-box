@@ -14,6 +14,7 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.Map;
 
 @CrossOrigin(origins = "*",allowedHeaders = "*")
 @RestController
@@ -34,10 +35,10 @@ public class MemberController {
         return memberService.login(request);
     }
 
-//    @PostMapping("/login/authcheck")
-//    public String authCheck(@RequestBody String serialNum) {
-//        return memberService.authCheck(serialNum);
-//    }
+    @PostMapping("/authcheck")
+    public TokenInfo authCheck(@RequestBody Map<String, String> serialNum) throws Exception{
+        return memberService.authCheck(serialNum.get("serialNum"));
+    }
 
     @PostMapping("/email/check")
     public Boolean checkEmail(@RequestBody EmailCheckDto request) throws Exception {

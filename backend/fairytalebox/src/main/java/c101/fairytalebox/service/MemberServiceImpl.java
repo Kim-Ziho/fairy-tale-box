@@ -1,10 +1,13 @@
 package c101.fairytalebox.service;
 
+import antlr.Token;
 import c101.fairytalebox.domain.Member;
+import c101.fairytalebox.domain.MemberRaspberry;
 import c101.fairytalebox.domain.RaspberrySerial;
 import c101.fairytalebox.dto.*;
 import c101.fairytalebox.jwt.JwtTokenProvider;
 import c101.fairytalebox.jwt.TokenInfo;
+import c101.fairytalebox.repository.MemberRaspberryRepository;
 import c101.fairytalebox.repository.MemberRepository;
 import c101.fairytalebox.repository.RaspberrySerialRepository;
 import lombok.RequiredArgsConstructor;
@@ -26,6 +29,7 @@ public class MemberServiceImpl implements MemberService {
     private final JwtTokenProvider jwtTokenProvider;
     private final AuthenticationManagerBuilder authenticationManagerBuilder;
     private final RaspberrySerialRepository raspberrySerialRepository;
+    private final MemberRaspberryRepository memberRaspberryRepository;
 
     @Transactional
     @Override
@@ -39,10 +43,10 @@ public class MemberServiceImpl implements MemberService {
             throw new Exception("비밀번호가 일치하지 않습니다.");
         }
 
+        RaspberrySerial raspberrySerial = raspberrySerialRepository.findBySerialNum(request.getSerialNum())
+                .orElseThrow(() -> new IllegalArgumentException("기기 정보가 올바르지 않습니다."));
         Member member = memberRepository.save(request.toEntity());
-//        RaspberrySerial raspberrySerial = raspberrySerialRepository.findBySerialNum(request.getSerialNum())
-//                .orElseThrow(() -> new IllegalArgumentException("기기 정보가 올바르지 않습니다."));
-//        raspberrySerial.registerMember(member);
+
 
 
         member.encodePassword(passwordEncoder);
@@ -51,6 +55,7 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
+    @Transactional
     public TokenInfo login(LoginRequestDto request) {
 
         String email = request.getEmail();
@@ -58,6 +63,9 @@ public class MemberServiceImpl implements MemberService {
 
         Member member = memberRepository.findByEmail(email)
                 .orElseThrow(() -> new IllegalArgumentException("가입되지 않은 Email 입니다."));
+
+        RaspberrySerial raspberrySerial = raspberrySerialRepository.findBySerialNum(member.getSerialNum())
+                .orElseThrow(()-> new IllegalArgumentException("유저가 가지고 있는 기기 넘버와 다르다."));
 
         if (!passwordEncoder.matches(password, member.getPassword())) {
             throw new IllegalArgumentException("잘못된 비밀번호입니다.");
@@ -75,7 +83,41 @@ public class MemberServiceImpl implements MemberService {
         // 3. 인증 정보를 기반으로 JWT 토큰 생성
         TokenInfo tokenInfo = jwtTokenProvider.generateToken(authentication);
 
+        MemberRaspberry memberRaspberry = memberRaspberryRepository.findByMember(member)
+                        .orElse(MemberRaspberry.builder()
+                                .member(member)
+                                .raspberrySerial(raspberrySerial)
+                                .build());
+
+        memberRaspberry.updateToken(tokenInfo.getAccessToken(), tokenInfo.getRefreshToken());
+
+        memberRaspberryRepository.save(memberRaspberry);
+
+
         return tokenInfo;
+    }
+
+    @Override
+    @Transactional
+    public TokenInfo authCheck(String serialNum) {
+        RaspberrySerial raspberrySerial = raspberrySerialRepository.findBySerialNum(serialNum)
+                .orElseThrow(()->new IllegalArgumentException("시리얼 넘버를 통해 라즈베리 찾는 것을 실패하였다."));
+
+        MemberRaspberry memberRaspberry = memberRaspberryRepository.findByRaspberrySerial(raspberrySerial)
+                .orElseThrow(() -> new IllegalArgumentException("시리얼 넘버를 통해 찾은 라즈베리에 로그인 하지 않았다."));
+
+        // 로컬에서 날아온 시리얼과 일치하는 것을 db에서 찾은 후 그것을 통해 일시 저장 되어 있던 토큰 정보를 담고
+        TokenInfo tokenInfo = TokenInfo.builder()
+                .grantType("Bearer")
+                .accessToken(memberRaspberry.getAccessToken())
+                .refreshToken((memberRaspberry.getRefreshToken()))
+                .build();
+
+        // 저장된 토큰은 삭제한다.
+        memberRaspberry.clearToken();
+
+        return tokenInfo;
+
     }
 
     @Override
