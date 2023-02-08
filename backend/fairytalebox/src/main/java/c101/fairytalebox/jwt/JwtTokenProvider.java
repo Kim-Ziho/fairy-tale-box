@@ -23,12 +23,16 @@ public class JwtTokenProvider {
 
 
     private final String secret;
-    private final Long tokenValidityInSeconds;
+    private final Long tokenValidityInMilliseconds;
+    private final Long refreshTokenValidityInMilliseconds;
     private Key key;
 
-    public JwtTokenProvider(@Value("${jwt.secret}") String secret, @Value("${jwt.token-validity-in-seconds}") Long tokenValidityInSeconds) {
+    public JwtTokenProvider(@Value("${jwt.secret}") String secret,
+                            @Value("${jwt.token-validity-in-milliseconds}") Long tokenValidityInMilliseconds,
+                            @Value("${jwt.refresh-token-validity-in-milliseconds}") Long refreshTokenValidityInMilliseconds) {
         this.secret = secret;
-        this.tokenValidityInSeconds = tokenValidityInSeconds;
+        this.tokenValidityInMilliseconds = tokenValidityInMilliseconds;
+        this.refreshTokenValidityInMilliseconds = refreshTokenValidityInMilliseconds;
         byte[] keyBytes = Decoders.BASE64.decode(secret);
         this.key = Keys.hmacShaKeyFor(keyBytes);
     }
@@ -42,7 +46,7 @@ public class JwtTokenProvider {
 
         long now = (new Date()).getTime();
         // Access Token
-        Date accessTokenExpiresIn = new Date(now + tokenValidityInSeconds);
+        Date accessTokenExpiresIn = new Date(now + tokenValidityInMilliseconds);
         String accessToken = Jwts.builder()
                 .setSubject(authentication.getName())
                 .claim("auth", authorities)
@@ -52,7 +56,7 @@ public class JwtTokenProvider {
 
         // Refresh Token
         String refreshToken = Jwts.builder()
-                .setExpiration(new Date(now + tokenValidityInSeconds))
+                .setExpiration(new Date(now + refreshTokenValidityInMilliseconds))
                 .signWith(key, SignatureAlgorithm.HS512)
                 .compact();
 

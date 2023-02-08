@@ -16,11 +16,4 @@ public class RaspberrySerial {
 
     private String serialNum;
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "member_id")
-    private Member member;
-
-    public void registerMember(Member member) {
-        this.member = member;
-    }
 }

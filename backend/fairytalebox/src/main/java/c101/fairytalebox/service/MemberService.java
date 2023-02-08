@@ -20,4 +20,6 @@ public interface MemberService {
 
     public Boolean changePassword (ChangePasswordDto request, User user) throws Exception;
 
+//    public String authCheck (String serialNum) throws Exception;
+
 }
