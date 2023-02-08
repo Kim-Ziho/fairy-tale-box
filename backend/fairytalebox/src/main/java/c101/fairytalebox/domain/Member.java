@@ -29,6 +29,9 @@ public class Member extends BaseTimeEntity{
     @NonNull
     private String nickname;
 
+    @NonNull
+    private String serialNum;
+
     @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
     private List<History> historyList = new ArrayList<>();
 
