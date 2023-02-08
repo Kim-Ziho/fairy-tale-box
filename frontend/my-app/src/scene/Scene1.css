@@ -81,14 +81,14 @@
     position: absolute;
     top: 80%;
     right: 20%;
-    left: 20%;
+    left: 12.5%;
     bottom: 0%; 
     font-size: 6vh;
     font-family: 'Jua', sans-serif;
     border: 1px solid white;
     background-color: white;
     height: 7%;
-    width: 60vw;
+    width: 75vw;
     height: 7vh;
     object-fit: contain;
 }
