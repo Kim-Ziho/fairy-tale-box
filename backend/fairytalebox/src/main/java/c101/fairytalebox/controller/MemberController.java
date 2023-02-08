@@ -34,6 +34,11 @@ public class MemberController {
         return memberService.login(request);
     }
 
+//    @PostMapping("/login/authcheck")
+//    public String authCheck(@RequestBody String serialNum) {
+//        return memberService.authCheck(serialNum);
+//    }
+
     @PostMapping("/email/check")
     public Boolean checkEmail(@RequestBody EmailCheckDto request) throws Exception {
         return memberService.checkEmail(request);

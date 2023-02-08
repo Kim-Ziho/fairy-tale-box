@@ -40,9 +40,9 @@ public class MemberServiceImpl implements MemberService {
         }
 
         Member member = memberRepository.save(request.toEntity());
-        RaspberrySerial raspberrySerial = raspberrySerialRepository.findBySerialNum(request.getSerialNum())
-                .orElseThrow(() -> new IllegalArgumentException("기기 정보가 올바르지 않습니다."));
-        raspberrySerial.registerMember(member);
+//        RaspberrySerial raspberrySerial = raspberrySerialRepository.findBySerialNum(request.getSerialNum())
+//                .orElseThrow(() -> new IllegalArgumentException("기기 정보가 올바르지 않습니다."));
+//        raspberrySerial.registerMember(member);
 
 
         member.encodePassword(passwordEncoder);
