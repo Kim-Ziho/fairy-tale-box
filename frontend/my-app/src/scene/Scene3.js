@@ -1,6 +1,5 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
 import BackHome from "../modal/BackHomeModal";
 import "./Scene3.css";
 
@@ -35,18 +34,10 @@ const Scene3 = () => {
 
   return (
     <div className="SceneBox">
-      <BackHome></BackHome>
-      <motion.div>
-        <div>
-          <img src="img/scene3/3-배경.png" className="bgImg"></img>
-          <div>
-            <img src="img/scene3/3-호랑이.png"className="tiger3"></img>
-          </div>
-          <h2 id="Text"></h2>
-        </div>
-        <div id="output"></div>
-      </motion.div>
-      <style></style>
+      <BackHome></BackHome>  
+        <img src="img/scene3/3-배경.png" className="bgImg"></img>       
+        <img src="img/scene3/3-호랑이.png"className="tiger3"></img>
+        <h2 id="Text"></h2>
     </div>
   );
 };
