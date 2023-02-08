@@ -62,6 +62,7 @@ public class HistoryController {
                     newDto.audio_path = wordResult.getAudioPath();
                     newDto.is_correct = wordResult.getIsCorrect();
                     newDto.word_name = wordResult.getWord().getWordName();
+                    newDto.image_path = wordResult.getWord().getImagePath();
 
                     return newDto;
                 })

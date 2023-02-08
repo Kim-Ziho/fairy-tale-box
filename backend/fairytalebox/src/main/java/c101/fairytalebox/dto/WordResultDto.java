@@ -13,5 +13,6 @@ public class WordResultDto {
     public String audio_path;
     public Boolean is_correct;
     public String word_name;
+    public String image_path;
 
 }
