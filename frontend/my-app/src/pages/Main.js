@@ -32,8 +32,7 @@ const Main = () => {
         </button>
         <Modal open={modalOpen} close={closeModal} header="로그아웃">
           로그아웃 하시겠어요?
-          <footer className="modalFooter">
-          </footer>
+          <footer className="modalFooter"></footer>
         </Modal>
       </div>
     </div>

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import taledata from "../data/taledata.json";
 import "./Modal.css";
 import "./BackHomeModal.css";
 
