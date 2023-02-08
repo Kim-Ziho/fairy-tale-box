@@ -30,10 +30,14 @@
 
 .tiger3{
     position: absolute;
-    right: 30%;
-    top: 50%;
+    right: 0%;
+    top: 35%;
+    left: 0%;
+    bottom: 0%;
+    height: 100%;
     animation-name: tiger-move3;
     animation-duration: 0.15s;
     animation-fill-mode: both;
     animation-delay: 1s;
+
 }

@@ -46,11 +46,11 @@ const Scene10 = () => {
   return (
     <div className="SceneBox">
       <BackHome></BackHome>
-      <motion.div initial={{ x: 500 }} animate={{ x: 0 }} exit={{ opacity: 0 }}>
-        <div className="bgImg">
-          <img src="img/scene10/10-배경.png"></img>
-          <div className="siblings">
-            <img src="img/scene10/10-오누이.png"></img>
+      <motion.div>
+        <div>
+          <img src="img/scene10/10-배경.png" className="bgImg"></img>
+          <div>
+            <img src="img/scene10/10-오누이.png" className="siblings"></img>
           </div>
           <h2 id="Text"></h2>
         </div>

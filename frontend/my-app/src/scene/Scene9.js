@@ -39,20 +39,20 @@ const Scene9 = () => {
   return (
     <div className="SceneBox">
       <BackHome></BackHome>
-      <motion.div initial={{ x: 500 }} animate={{ x: 0 }} exit={{ opacity: 0 }}>
-        <div className="bgImg">
-          <img src="img/scene9/9-배경.png"></img>
-          <div className="brother9">
-            <img src="img/scene9/9-오빠.png"></img>
+      <motion.div>
+        <div>
+          <img src="img/scene9/9-배경.png" className="bgImg"></img>
+          <div>
+            <img src="img/scene9/9-오빠.png" className="brother9"></img>
           </div>
-          <div className="sister9">
-            <img src="img/scene9/9-동생.png"></img>
+          <div>
+            <img src="img/scene9/9-동생.png" className="sister9"></img>
           </div>
-          <div className="hand1">
-            <img src="img/scene9/9-손1.png"></img>
+          <div>
+            <img src="img/scene9/9-손1.png" className="hand1"></img>
           </div>
-          <div className="hand2">
-            <img src="img/scene9/9-손2.png"></img>
+          <div>
+            <img src="img/scene9/9-손2.png" className="hand2"></img>
           </div>
           <h2 id="Text"></h2>
         </div>

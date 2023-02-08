@@ -29,7 +29,7 @@
 
 .mother1{
     position: absolute;
-    left: 25%;
+    left: 20%;
     bottom: 40%;
     top: 25%;
     right: 80%;
@@ -44,22 +44,22 @@
     right: 50%;
     bottom: 20%;
     top: 40%;
-    right: 40%;
+    right: 30%;
 }
 .sister1{
     position: absolute;
     right: 50%;
     bottom: 30%;
     top: 40%;
-    right: 50%;
+    right: 40%;
 }
 
 #Text{
     position: absolute;
-    top: 70%;
+    top: 80%;
     right: 25%;
     left: 25%;
-    bottom: 10%; 
+    bottom: 0%; 
     font-size: 30px;
     font-family: 'Jua', sans-serif;
     border: 1px solid white;

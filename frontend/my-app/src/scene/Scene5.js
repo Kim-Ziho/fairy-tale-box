@@ -56,14 +56,12 @@ const Scene5 = () => {
     <div className="SceneBox">
       <BackHome></BackHome>
       <motion.div>
-        <div className="bgImg5">
-          <img src="img/scene5/5-호랑이.png"></img>
-          <div className="attack5">
-            <img src="img/scene5/5-공격.png"></img>
+        <div>
+          <img src="img/scene5/5.png" className="bgImg5-2"></img>
+          <img src="img/scene5/5-공격전.png" className="bgImg5"></img>
+          <div>
+            {/* <img src="img/scene5/5-호랑이.png" className="tiger5"></img> */}
           </div>
-        </div>
-        <div className="before-tiger">
-          <img src="img/scene5/5-공격전호랑이.png"></img>
         </div>
         <h2 id="Text"></h2>
         <div id="output"></div>

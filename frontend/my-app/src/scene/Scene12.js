@@ -23,9 +23,9 @@ const Scene12 = () => {
   return (
     <div className="SceneBox">
       <BackHome></BackHome>
-      <motion.div initial={{ x: 500 }} animate={{ x: 0 }} exit={{ opacity: 0 }}>
-        <div className="bgImg">
-          <img src="img/scene11/11.png"></img>
+      <motion.div>
+        <div>
+          <img src="img/scene11/11.png" className="bgImg"></img>
         </div>
         <div id="output"></div>
       </motion.div>

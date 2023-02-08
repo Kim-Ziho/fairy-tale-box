@@ -17,10 +17,11 @@
 
 .tiger4{
     position: absolute;
-    top: 5%;
-    bottom: 10%;
-    right: 35%;
-    left: 30%;
+    right: 0%;
+    top: 0%;
+    left: 0%;
+    bottom: 0%;
+    height: 100%;
 }
 
 @keyframes rice-move {
@@ -37,12 +38,24 @@
     100% { transform: translate(-10px, -20px); }
 }
 
+@keyframes rice-move2 {
+    from{
+        transform: translate(0,0);
+    }
+    to{
+        transform: translate(0,-200px);
+    }
+}
+
 .rice4{
     position: absolute;
+    left: 30%;
+    bottom: 0%;
     right: 25%;
     top: 70%;
-    animation-name: rice-move;
-    animation-delay: 1s;
-    animation-duration: 2s;
-    animation-fill-mode: both;
+    width: 40%;
+    animation-name: rice-move,rice-move2;
+    animation-delay: 1s,10s;
+    animation-duration: 2s,3s;
+    animation-iteration-count: 1,2;
 }

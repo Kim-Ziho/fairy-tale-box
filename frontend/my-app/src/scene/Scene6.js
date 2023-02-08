@@ -50,10 +50,10 @@ const Scene6 = () => {
     <div className="SceneBox">
       <BackHome></BackHome>
       <motion.div>
-        <div className="bgImg">
-          <img src="img/scene6/6-배경.png"></img>
-          <div className="tiger6">
-            <img src="img/scene6/6-호랑이.png"></img>
+        <div>
+          <img src="img/scene6/6-배경.png" className="bgImg"></img>
+          <div>
+            <img src="img/scene6/6-호랑이.png" className="tiger6"></img>
           </div>
           <h2 id="Text"></h2>
         </div>
