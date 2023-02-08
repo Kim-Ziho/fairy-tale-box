@@ -9,6 +9,8 @@
 }
 
 #Grid {
+  margin: auto;
+  width: 76%;
   padding: 5%;
 }
 
@@ -18,7 +20,8 @@
 }
 
 .selectImg {
-  width: 21vw;
+  margin: auto;
+  width: 21.05vw;
   height: 30vh;
   object-fit: cover;
 }
