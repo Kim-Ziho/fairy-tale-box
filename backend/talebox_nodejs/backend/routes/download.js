@@ -9,7 +9,8 @@ function spawnTest() {
   
       // 3. 실행할 명령을 작성합니다.
       // '\n' 은 엔터입니다. terminal 이기 때문에 엔터로 명령어를 입력해야 실행되겠죠?
-      const command = 'scp -r -i I8C101T.pem ubuntu@i8c101.p.ssafy.io:~/gogo C:/download/ \n'; // a: 숨긴 파일까지 , l: 자세한 내용까지 검색
+      const command = 'scp -r -i C://Users/multicampus/Desktop/S08P12C101/backend/talebox_nodejs/backend/routes/I8C101T.pem ubuntu@i8c101.p.ssafy.io:~/gogo C://download/ \n'; // a: 숨긴 파일까지 , l: 자세한 내용까지 검색
+      
   
       try {
         // 4. 부모 프로세서에서 자식프로세서로 명령을 보냅니다.

@@ -14,3 +14,34 @@
     position: absolute;
     right: 10%;
 }
+
+@keyframes well-move {
+    0% { rotate: -200deg; }
+    10% { rotate: -140deg; }
+    20% { rotate: -160deg; }
+    30% { rotate: -120deg;}
+    40% { rotate: -70deg; }
+    50% { rotate: -90deg;}
+    60% { rotate: -60deg; }
+    70% { rotate: -80deg; }
+    80% { rotate: -40deg; }
+    90% { rotate: -20deg; }
+    100% { rotate: 0deg; }
+}
+.well{
+    rotate: 100deg;
+    position: absolute;
+    left: -30%;
+    bottom: 5%;
+    top: 30%;
+    right: 0%;
+    height: 150%;
+    z-index: -1;
+    animation-name:well-move;
+    animation-duration: 7s;
+    animation-delay: 15s;
+    animation-fill-mode: both;
+    width: 150vw;
+    height: 150vh;
+    object-fit: contain;
+}

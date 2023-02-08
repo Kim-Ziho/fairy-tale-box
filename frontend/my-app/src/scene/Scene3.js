@@ -1,6 +1,5 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
 import BackHome from "../modal/BackHomeModal";
 import "./Scene3.css";
 
@@ -16,7 +15,7 @@ const start = () => {
 function Change_text() {
   const subtitle = document.getElementById("Text");
   setTimeout(() => {
-    subtitle.innerText = "어흥, 떡 하나 주면 안 잡아먹지!”";
+    subtitle.innerText = "어흥, 떡 하나 주면 안 잡아먹지!";
   }, 1000);
   setTimeout(() => {
     subtitle.innerText = "떡이라고 말해볼까요?";
@@ -35,18 +34,10 @@ const Scene3 = () => {
 
   return (
     <div className="SceneBox">
-      <BackHome></BackHome>
-      <motion.div>
-        <div className="bgImg">
-          <img src="img/scene3/3-배경.png"></img>
-          <div className="tiger3">
-            <img src="img/scene3/3-호랑이.png"></img>
-          </div>
-          <h2 id="Text"></h2>
-        </div>
-        <div id="output"></div>
-      </motion.div>
-      <style></style>
+      <BackHome></BackHome>  
+        <img src="img/scene3/3-배경.png" className="bgImg"></img>       
+        <img src="img/scene3/3-호랑이.png"className="tiger3"></img>
+        <h2 id="Text"></h2>
     </div>
   );
 };

@@ -16,17 +16,33 @@
 }
 .brother9{
     position: absolute;
-    right: 25%;
+    right: 0%;
     bottom: 10%;
-    top: 30%;
-    left: 60%;
+    top: 40%;
+    left: 50%;
+    height: 55%;
+    width: 50vw;
+    height: 50vh;
+    object-fit: contain;
+    animation-name: shake;
+    animation-delay: 1s;
+    animation-duration: 2.22s;
+    animation-fill-mode: both;
 }
 .sister9{
     position: absolute;
     right: 35%;
     bottom: 10%;
-    top: 30%;
-    left: 50%
+    top: 40%;
+    left: 40%;
+    height: 55%;
+    width: 50vw;
+    height: 50vh;
+    object-fit: contain;
+    animation-name: shake;
+    animation-delay: 2.32s;
+    animation-duration: 2.36s;
+    animation-fill-mode: both;
 }
 
 @keyframes hand1-move {
@@ -49,25 +65,33 @@
 
 .hand1{
     position: absolute;
-    left: 25%;
+    left: 10%;
     bottom: 60%;
     top: 5%;
     right: 55%;
+    height: 40%;
     opacity: 0;
     animation-name: hand1-move;
-    animation-duration: 0.5s;
+    animation-duration: 1s;
     animation-iteration-count: infinite;
     animation-delay: 1s;
+    width: 50vw;
+    height: 50vh;
+    object-fit: contain;
 }
 .hand2{
     position: absolute;
-    left: 25%;
+    left: 10%;
     bottom: 20%;
     top:35%;
     right: 55%;
+    height: 40%;
     opacity: 0;
     animation-name: hand2-move;
-    animation-duration: 0.5s;
+    animation-duration: 1s;
     animation-iteration-count: infinite;
     animation-delay: 1s;
+    width: 50vw;
+    height: 50vh;
+    object-fit: contain;
 }

@@ -1,6 +1,5 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
 import BackHome from "../modal/BackHomeModal";
 import "./Scene6.css";
 
@@ -34,7 +33,6 @@ function Change_text(){
 }
 const Scene7 = () => {
   const navigate = useNavigate();
-  // const timerpage = setTimeout(() => navigate(`/scene2`), 10000);
 
   // 하단은 자막 시작 딜레이
   setTimeout(Change_text)
@@ -46,14 +44,8 @@ const Scene7 = () => {
   return (
     <div className="SceneBox">
       <BackHome></BackHome>
-      <motion.div initial={{ x: 500 }} animate={{ x: 0 }} exit={{ opacity: 0 }}>
-        <div className="bgImg">
-          <img src="img/scene7/7-배경.png"></img>
-          <h2 id="Text"></h2>
-        </div>
-        <div id="output"></div>
-      </motion.div>
-      <style></style>
+          <img src="img/scene7/7-배경.png" className="bgImg"></img>
+          <h2 id="Text"></h2> 
     </div>
   );
 };

@@ -26,7 +26,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-@CrossOrigin(origins = "http://localhost:3000",allowedHeaders = "*")
+@CrossOrigin(origins = "*",allowedHeaders = "*")
 @RestController
 @RequestMapping("/api")
 @RequiredArgsConstructor
@@ -62,6 +62,7 @@ public class HistoryController {
                     newDto.audio_path = wordResult.getAudioPath();
                     newDto.is_correct = wordResult.getIsCorrect();
                     newDto.word_name = wordResult.getWord().getWordName();
+                    newDto.image_path = wordResult.getWord().getImagePath();
 
                     return newDto;
                 })
