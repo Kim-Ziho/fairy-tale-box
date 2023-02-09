@@ -1,9 +1,13 @@
-.bgImg {
+.bgImg16 {
     margin-top: 1.5%;
     width: 100vw;
-    height: 93vh;
+    height: 250vh;
     object-fit: contain;
-    
+    transform: translate(0,-40%);
+    animation-name: sky-move;
+    animation-duration: 5s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
 }
 
 .SceneBox{
@@ -13,4 +17,59 @@
 .Homebtn{
     position: absolute;
     right: 10%;
+}
+.siblings16{
+    position: absolute;
+    left: 50%;
+    bottom: 5%;
+    top: -30%;
+    right: 30%;
+    height: 50%;
+    width: 20vw;
+    height: 200vh;
+    object-fit: contain;
+}
+.tiger16{
+    position: absolute;
+    left: 25%;
+    bottom: 5%;
+    top: -30%;
+    right: 40%;
+    height: 50%;
+    width: 20vw;
+    height: 200vh;
+    object-fit: contain;
+}
+@keyframes sky-move {
+    from{
+        transform: translate(0,-40%);
+    }
+    to{
+        transform: translate(0,0);
+    }
+}
+@keyframes cloud-move {
+    from{
+        transform: translate(0,0);
+    }
+    to{
+        transform: translate(0, 55%);
+    }
+}
+
+.cloud{
+    position: absolute;
+    left: 25%;
+    bottom: 5%;
+    top: -80%;
+    right: 30%;
+    height: 50%;
+    width: 50vw;
+    height: 200vh;
+    object-fit: contain;
+    z-index: 1;
+    animation-name: cloud-move;
+    animation-duration: 3s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
 }

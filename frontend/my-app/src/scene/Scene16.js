@@ -1,6 +1,5 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
 import BackHome from "../modal/BackHomeDrop";
 import "./Scene16.css";
 
@@ -17,16 +16,15 @@ const stop = () => {
 
 const Scene16 = () => {
   const navigate = useNavigate();
-  // const timerpage = setTimeout(() => navigate(`/scene2`), 10000);
+  const timerpage = setTimeout(() => navigate(`/scene17`), 10000);
 
   return (
     <div className="SceneBox">
       <BackHome></BackHome>
-
-      <div className="bgImg">
-        <img src="img/scene11/11.png"></img>
-      </div>
-      <div id="output"></div>
+        <img src="img/scene16/16-배경.png" className="bgImg16"></img>
+        <img src="img/scene16/16-구름.png" className="cloud"></img>
+        <img src="img/scene16/16-오누이.png" className="siblings16"></img>
+        <img src="img/scene16/16-호랑이.png" className="tiger16"></img>
     </div>
   );
 };
