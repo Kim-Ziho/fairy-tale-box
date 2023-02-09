@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import taledata from "./taledata.json";
 import histdata from "./historydata.json";
+import axios from "axios";
 import "./ResultModal.css";
 
 const ResultModal = (props) => {
   const { open, close } = props;
+  const [histdet, setHistdets] = useState([]);
+  const [historydetails, setHistorydetails] = useState([]);
+
   const jemok = taledata.map((taleDat) => {
     return (
       <div key={taleDat.id} className="txt">
