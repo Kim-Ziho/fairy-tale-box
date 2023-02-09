@@ -43,6 +43,12 @@
   border-radius: 8px;
   font-size: 4rem;
 }
+.detailImg {
+  width: 4vw;
+  height: 8vh;
+  margin: auto;
+  object-fit: contain;
+}
 .detailText {
   margin: auto;
   padding-bottom: 3%;

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Modal from "../modal/LogoutModal.js";
+// import Modal from "../modal/ResultModal.js";
 import "./Main.css";
 
 const Main = () => {
