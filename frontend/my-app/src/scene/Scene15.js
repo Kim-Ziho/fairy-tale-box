@@ -21,11 +21,7 @@ const Scene15 = () => {
 
   return (
     <div className="SceneBox">
-      <BackHome></BackHome>
-      <div className="bgImg">
-        <img src="img/scene11/11.png"></img>
-      </div>
-      <div id="output"></div>
+      <img src="img/scene15/15-기도전.png" className="bgImg"></img>
     </div>
   );
 };
