@@ -5,7 +5,7 @@ import "./BackHomeDrop.css";
 const BackHome = () => {
   return (
     <a href="/home">
-      <button class="blank txt"></button>
+      <button class="gohome txt"></button>
     </a>
   );
 };

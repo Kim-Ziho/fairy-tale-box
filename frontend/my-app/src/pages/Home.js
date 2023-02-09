@@ -4,7 +4,6 @@ import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import Modal from "../modal/SelectModal.js";
-import BackHomeDrop from "../modal/BackHomeDrop";
 import "./Home.css";
 import "../modal/Modal.css";
 

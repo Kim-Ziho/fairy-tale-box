@@ -6,4 +6,5 @@
   background-color: #fff;
   animation: modal-show 0.3s;
   overflow: hidden;
+  text-align: center;
 }

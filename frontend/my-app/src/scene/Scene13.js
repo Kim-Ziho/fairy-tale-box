@@ -27,11 +27,10 @@ function Change_text(){
 
 const Scene13 = () => {
   const navigate = useNavigate();
-  // const timerpage = setTimeout(() => navigate(`/scene2`), 10000);
   // 하단은 자막 시작 딜레이
   setTimeout(Change_text)
   // 하단은 페이지 넘어가는 시간
-  // const timerpage = setTimeout(() => navigate(`/scene12`), 17000);
+  const timerpage = setTimeout(() => navigate(`/scene14`), 17000);
   // 하단은 오디오 파일 자동재생
   setTimeout(start)
   return (

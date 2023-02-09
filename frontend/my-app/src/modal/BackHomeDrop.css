@@ -1,4 +1,4 @@
-.blank {
+.gohome {
   position: absolute;
   width: 10%;
   height: 7.5%;
@@ -9,20 +9,20 @@
   z-index: 1;
 }
 
-.blank::before {
+.gohome::before {
   content: "🖐🏻멈춰";
   font-size: 2em;
   color: rgb(0, 0, 0);
 }
 
-.blank:hover {
+.gohome:hover {
   animation-play-state: paused;
   background: rgb(0, 109, 187);
   width: 10%;
   height: 7.5%;
 }
 
-.blank:hover::before {
+.gohome:hover::before {
   content: "🤸🏻‍♂️홈으로가기";
   font-size: 2em;
   color: rgb(255, 255, 255);
