@@ -47,11 +47,11 @@ const Scene1 = () => {
   return (
     <div className="SceneBox">
       <BackHome></BackHome>
-      <img src="img/scene1/1-배경.png" className="bgImg"></img>
-      <img src="img/scene1/1-엄마.png" className="mother1"></img>
-      <img src="img/scene1/1-오빠.png" className="brother1"></img>
-      <img src="img/scene1/1-동생.png" className="sister1"></img>
-      <h2 id="Text"></h2>
+      <img src="img/scene1/1-배경.png" className="bgImg" alt="#"></img>
+      <img src="img/scene1/1-엄마.png" className="mother1" alt="#"></img>
+      <img src="img/scene1/1-오빠.png" className="brother1" alt="#"></img>
+      <img src="img/scene1/1-동생.png" className="sister1" alt="#"></img>
+      <h2 id="Text"> </h2>
     </div>
   );
 };

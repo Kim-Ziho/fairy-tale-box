@@ -48,9 +48,9 @@ const Scene6 = () => {
   return (
     <div className="SceneBox">
       <BackHome></BackHome>
-        <img src="img/scene6/6-배경.png" className="bgImg"></img> 
-        <img src="img/scene6/6-호랑이.png" className="tiger6"></img>
-        <h2 id="Text"></h2>
+        <img src="img/scene6/6-배경.png" className="bgImg" alt="#"></img> 
+        <img src="img/scene6/6-호랑이.png" className="tiger6" alt="#"></img>
+        <h2 id="Text"> </h2>
    </div>
   );
 };

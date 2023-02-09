@@ -37,16 +37,16 @@ const Scene12 = () => {
   // 하단은 자막 시작 딜레이
   setTimeout(Change_text)
   // 하단은 페이지 넘어가는 시간
-  const timerpage = setTimeout(() => navigate(`/scene13`), 17000);
+  setTimeout(() => navigate(`/scene13`), 17000);
   // 하단은 오디오 파일 자동재생
   setTimeout(start)
   return (
     <div className="SceneBox">
       <BackHome></BackHome>
-          <img src="img/scene12/12-배경.png" className="bgImg"></img>
-          <img src="img/scene12/12-오누이.png" className="siblings12"></img>
-          <img src="img/scene12/12-호랑이.png" className="tiger12"></img>
-          <h2 id="Text"></h2>
+          <img src="img/scene12/12-배경.png" className="bgImg" alt="#"></img>
+          <img src="img/scene12/12-오누이.png" className="siblings12" alt="#"></img>
+          <img src="img/scene12/12-호랑이.png" className="tiger12" alt="#"></img>
+          <h2 id="Text"> </h2>
     </div>
   );
 };

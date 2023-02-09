@@ -1,6 +1,5 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
 import BackHome from "../modal/BackHomeDrop";
 import "./Scene8.css";
 
@@ -37,15 +36,15 @@ const Scene8 = () => {
   // 하단은 자막 시작 딜레이
   setTimeout(Change_text)
   // 하단은 페이지 넘어가는 시간
-  const timerpage = setTimeout(() => navigate(`/scene9`), 19000);
+  setTimeout(() => navigate(`/scene9`), 19000);
   // 하단은 오디오 파일 자동재생
   setTimeout(start)
   return (
     <div className="SceneBox">
       <BackHome></BackHome>
-          <img src="img/scene8/8-배경.png" className="bgImg"></img>
-          <img src="img/scene8/8-구멍.png" className="hole"></img>
-          <h2 id="Text"></h2>
+          <img src="img/scene8/8-배경.png" className="bgImg" alt="#"></img>
+          <img src="img/scene8/8-구멍.png" className="hole" alt="#"></img>
+          <h2 id="Text"> </h2>
     </div>
   );
 };
