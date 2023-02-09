@@ -8,6 +8,8 @@ const port = envJson.port ? envJson.port : 3001;
 //----------------------------------
 // routes
 app.use("/download", require("./routes/download"));
+app.use("/startrecord", require("./routes/startrecord"));
+
 
 app.get("/", function (req, res) {
   res.send("Hello node.js");
