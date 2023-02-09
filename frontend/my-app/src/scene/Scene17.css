@@ -1,0 +1,41 @@
+.bgImg {
+    margin-top: 1.5%;
+    width: 100vw;
+    height: 93vh;
+    object-fit: contain;
+    
+}
+
+.SceneBox{
+    text-align: center;
+}
+
+.Homebtn{
+    position: absolute;
+    right: 10%;
+}
+
+.tiger17{
+    position: absolute;
+    left: 13%;
+    bottom: 5%;
+    top: 10%;
+    right: 30%;
+    height: 50%;
+    width: 80vw;
+    height: 80vh;
+    object-fit: contain;
+    animation-name: tiger-move17;
+    animation-duration: 3s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes tiger-move17 {
+    from{
+        transform: translate(0,0);
+    }
+    to{
+        transform: translate(0,120%);
+    }
+}

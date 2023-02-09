@@ -28,6 +28,9 @@ import Scene13 from "./scene/Scene13";
 import Scene14 from "./scene/Scene14";
 import Scene15 from "./scene/Scene15";
 import Scene16 from "./scene/Scene16";
+import Scene17 from "./scene/Scene17";
+import Scene18 from "./scene/Scene18";
+import Scene19 from "./scene/Scene19";
 import { AnimatePresence } from "framer-motion";
 
 function App() {
@@ -60,6 +63,9 @@ function App() {
             <Route path="/Scene14" element={<Scene14 />}></Route>
             <Route path="/Scene15" element={<Scene15 />}></Route>
             <Route path="/Scene16" element={<Scene16 />}></Route>
+            <Route path="/Scene17" element={<Scene17 />}></Route>
+            <Route path="/Scene18" element={<Scene18 />}></Route>
+            <Route path="/Scene19" element={<Scene19 />}></Route>
           </Routes>
         </AnimatePresence>
       </BrowserRouter>
