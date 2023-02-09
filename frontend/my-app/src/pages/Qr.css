@@ -1,13 +1,15 @@
 .qrContainer {
   text-align: center;
-  margin-top: 7%;
+  margin-top: 5%;
   margin-bottom: 5%;
+  width: 100vw;
+  height: 70vh;
 }
 .qrMainText {
   position: relative;
   margin: auto;
   top: -3rem;
-  font-size: 9rem;
+  font-size: 10rem;
   width: fit-content;
   color: rgb(0, 0, 0);
   text-shadow: 4px 4px #ffffff;
@@ -31,6 +33,8 @@
   font-size: 3.5rem;
   width: fit-content;
   background-color: #fff;
+  padding: 10px;
+  border-radius: 1rem;
 }
 .qrFooter {
   padding-top: 3%;
