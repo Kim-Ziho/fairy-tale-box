@@ -54,9 +54,9 @@ const Scene5 = () => {
   return (
     <div className="SceneBox">
       <BackHome></BackHome>   
-        <img src="img/scene5/5.png" className="bgImg5-2"></img>
-        <img src="img/scene5/5-공격전.png" className="bgImg5"></img>  
-        <h2 id="Text"></h2>
+        <img src="img/scene5/5.png" className="bgImg5-2" alt="#"></img>
+        <img src="img/scene5/5-공격전.png" className="bgImg5" alt="#"></img>  
+        <h2 id="Text"> </h2>
     </div>
   );
 };

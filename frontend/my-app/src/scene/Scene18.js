@@ -13,14 +13,14 @@ const start = () => {
 
 const Scene18 = () => {
   const navigate = useNavigate();
-  const timerpage = setTimeout(() => navigate(`/scene19`), 10000);
+  setTimeout(() => navigate(`/scene19`), 10000);
 
   return (
     <div className="SceneBox">
       <BackHome></BackHome>
-        <img src="img/scene18/18-배경.png" className="bgImg"></img>   
-        <img src="img/scene18/18-오누이.png" className="siblings18"></img>   
-        <img src="img/scene18/18-엄마.png" className="mother18"></img>   
+        <img src="img/scene18/18-배경.png" className="bgImg" alt="#"></img>   
+        <img src="img/scene18/18-오누이.png" className="siblings18" alt="#"></img>   
+        <img src="img/scene18/18-엄마.png" className="mother18" alt="#"></img>   
     </div>
   );
 };

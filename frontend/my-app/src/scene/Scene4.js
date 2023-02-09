@@ -35,10 +35,10 @@ const Scene4 = () => {
   return (
     <div className="SceneBox">
       <BackHome></BackHome>
-          <img src="img/scene4/4-배경.png" className="bgImg"></img>
-          <img src="img/scene4/4-호랑이.png" className="tiger4"></img>
-          <img src="img/scene4/4-떡.png" className="rice4"></img>
-          <h2 id="Text"></h2>
+          <img src="img/scene4/4-배경.png" className="bgImg" alt="#"></img>
+          <img src="img/scene4/4-호랑이.png" className="tiger4" alt="#"></img>
+          <img src="img/scene4/4-떡.png" className="rice4" alt="#"></img>
+          <h2 id="Text"> </h2>
     </div>
   );
 };

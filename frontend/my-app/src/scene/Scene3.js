@@ -35,9 +35,10 @@ const Scene3 = () => {
   return (
     <div className="SceneBox">
       <BackHome></BackHome>  
-        <img src="img/scene3/3-배경.png" className="bgImg"></img>       
-        <img src="img/scene3/3-호랑이.png"className="tiger3"></img>
-        <h2 id="Text"></h2>
+        <img src="img/scene3/3-배경.png" className="bgImg" alt="#"></img>       
+        <img src="img/scene3/3-호랑이.png"className="tiger3" alt="#"></img>
+        <h2 id="Text"> </h2>
+        <div className="hidden"></div>
     </div>
   );
 };

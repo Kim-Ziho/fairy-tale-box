@@ -26,24 +26,23 @@ function Change_text(){
 }
 const Scene9 = () => {
   const navigate = useNavigate();
-  // const timerpage = setTimeout(() => navigate(`/scene2`), 10000);
 
   // 하단은 자막 시작 딜레이
   setTimeout(Change_text)
   // 하단은 페이지 넘어가는 시간
-  const timerpage = setTimeout(() => navigate(`/scene10`), 14800);
+  setTimeout(() => navigate(`/scene10`), 14800);
   // 하단은 오디오 파일 자동재생
   setTimeout(start)
 
   return (
     <div className="SceneBox">
       <BackHome></BackHome>
-          <img src="img/scene9/9-배경.png" className="bgImg"></img>
-          <img src="img/scene9/9-오빠.png" className="brother9"></img>
-          <img src="img/scene9/9-동생.png" className="sister9"></img>
-          <img src="img/scene9/9-손1.png" className="hand1"></img>
-          <img src="img/scene9/9-손2.png" className="hand2"></img>
-          <h2 id="Text"></h2>
+          <img src="img/scene9/9-배경.png" className="bgImg" alt="#"></img>
+          <img src="img/scene9/9-오빠.png" className="brother9" alt="#"></img>
+          <img src="img/scene9/9-동생.png" className="sister9" alt="#"></img>
+          <img src="img/scene9/9-손1.png" className="hand1" alt="#"></img>
+          <img src="img/scene9/9-손2.png" className="hand2" alt="#"></img>
+          <h2 id="Text"> </h2>
     </div>
   );
 };
