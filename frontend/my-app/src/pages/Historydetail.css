@@ -7,10 +7,6 @@
   display: grid;
   grid-template-columns: 0.1fr 1fr 1fr 1fr 0.1fr;
 }
-.historydetailContainer2 {
-  display: grid;
-  grid-template-columns: 0.1fr 1fr 1fr 1fr 0.1fr 0.1fr 1fr 1fr 1fr 0.1fr;
-}
 .historydetailcontent {
   background-color: rgb(240, 240, 240);
   /* width: 88%; */
@@ -62,4 +58,11 @@
 
 .histHeader {
   margin-top: 4%;
+}
+.detailLine {
+  width: 95%;
+  height: 2px;
+  margin: auto;
+  border: 0;
+  border-top: 3px dashed rgb(148, 148, 148);
 }

@@ -7,13 +7,12 @@
   color: rgb(0, 0, 0);
   text-shadow: 4px 4px #ffffff;
 }
-.tableLine {
+.histLine {
   width: 96.7%;
   height: 2px;
   margin: -0.5% auto 0.5% 2%;
   border: 0;
   border-top: 3px dashed rgb(148, 148, 148);
-  /* background-color: rgb(148, 148, 148); */
 }
 .historyBox {
   position: relative;
