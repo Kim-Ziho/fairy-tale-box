@@ -1,7 +1,8 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate , useLocation} from "react-router-dom";
 import BackHome from "../modal/BackHomeDrop";
 import "./Scene3.css";
+import axios from "axios";
 
 // 하단은 음성파일
 const audio = new Audio("sound/3.mp3");
@@ -19,11 +20,15 @@ function Change_text() {
   }, 1000);
   setTimeout(() => {
     subtitle.innerText = "떡이라고 말해볼까요?";
+    // axios.get('192.168.100.245:3001/startrecord?wordname="호랑이"&hist_num=1')
   }, 3800);
 }
 
 const Scene3 = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const number =  location.state.value;
+  console.log(number)
 
   // 자막 시작 딜레이
   setTimeout(Change_text);
