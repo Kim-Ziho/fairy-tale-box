@@ -21,7 +21,7 @@ const Home = (props) => {
   const closeModal = () => {
     setModalOpen(false);
   };
-
+  
   return (
     <div id="Grid">
       <h3 className="homeMainText txt">👆🏻 동화선택 🖐🏻</h3>

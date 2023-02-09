@@ -18,6 +18,8 @@ const Scene19 = () => {
     <div className="SceneBox">
       <BackHome></BackHome>
         <img src="img/scene19/19.png" className="bgImg" alt="#"></img>
+        <h1 className="word">단어</h1>
+        <div className="popup"></div>
     </div>
   );
 };
