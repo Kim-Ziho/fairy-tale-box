@@ -5,12 +5,13 @@ import axios from "axios";
 import "./History.css";
 
 const History = () => {
-  const [hist, setHists] = useState([]);
+  // const [hist, setHists] = useState([]);
   const [histchild, setHistchild] = useState([]);
 
   useEffect(() => {
     axios.get("http://i8c101.p.ssafy.io/api/history").then((response) => {
-      setHists(response.data);
+      // setHists(response.data);
+      const hist = response.data;
       console.log(hist[0]);
       console.log(hist[0].historyId);
       setHistchild(
@@ -33,7 +34,7 @@ const History = () => {
         })
       );
     });
-  });
+  }, []);
 
   return (
     <div>
