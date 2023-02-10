@@ -5,14 +5,15 @@ import axios from "axios";
 import "./History.css";
 
 const History = () => {
-  const [hist, setHists] = useState([]);
+  // const [hist, setHists] = useState([]);
   const [histchild, setHistchild] = useState([]);
 
   useEffect(() => {
-    axios.get("http://i8c101.p.ssafy.io/api/history").then((response) => {
-      setHists(response.data);
-      console.log(hist[0]);
-      console.log(hist[0].historyId);
+    axios
+    .get("http://i8c101.p.ssafy.io/api/history")
+    .then((response) => {
+      // setHists(response.data);
+      const hist = response.data;
       setHistchild(
         hist.map((hist) => {
           return (
@@ -24,6 +25,7 @@ const History = () => {
                 <Link
                   to={`/history/${hist.historyId}`}
                   style={{ textDecoration: "none" }}
+                  state={{ histId: hist.historyId }}
                 >
                   👀 보러가자
                 </Link>
@@ -33,7 +35,7 @@ const History = () => {
         })
       );
     });
-  });
+  }, []);
 
   return (
     <div>
