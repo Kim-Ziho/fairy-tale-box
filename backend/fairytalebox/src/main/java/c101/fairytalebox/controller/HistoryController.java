@@ -28,7 +28,7 @@ import java.util.stream.Collectors;
 
 @CrossOrigin(origins = "*",allowedHeaders = "*")
 @RestController
-@RequestMapping("api/history")
+@RequestMapping("/api/history")
 @RequiredArgsConstructor
 public class HistoryController {
     private final HistoryService historyService;

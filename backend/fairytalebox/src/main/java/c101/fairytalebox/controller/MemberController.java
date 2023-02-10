@@ -18,7 +18,7 @@ import java.util.Map;
 
 @CrossOrigin(origins = "*",allowedHeaders = "*")
 @RestController
-@RequestMapping("api/member")
+@RequestMapping("/api/member")
 @RequiredArgsConstructor
 public class MemberController {
 
