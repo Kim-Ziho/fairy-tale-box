@@ -14,7 +14,7 @@ import java.util.List;
 
 @CrossOrigin(origins = "*",allowedHeaders = "*")
 @RestController
-@RequestMapping("/api/story")
+@RequestMapping("api/story")
 @RequiredArgsConstructor
 public class StoryController {
 
