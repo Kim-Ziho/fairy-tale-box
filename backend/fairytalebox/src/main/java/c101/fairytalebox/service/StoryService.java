@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface StoryService {
     public List<GetStoryDto> getStory();
+
+    public GetStoryDto getStorybyID(Long id);
 }
