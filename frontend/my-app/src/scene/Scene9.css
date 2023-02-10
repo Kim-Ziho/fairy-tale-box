@@ -65,10 +65,10 @@
 
 .hand1{
     position: absolute;
-    left: 10%;
+    left: 7%;
     bottom: 60%;
     top: 5%;
-    right: 55%;
+    right: 60%;
     height: 40%;
     opacity: 0;
     animation-name: hand1-move;
@@ -81,10 +81,10 @@
 }
 .hand2{
     position: absolute;
-    left: 10%;
+    left: 7%;
     bottom: 20%;
     top:35%;
-    right: 55%;
+    right: 60%;
     height: 40%;
     opacity: 0;
     animation-name: hand2-move;
@@ -95,3 +95,35 @@
     height: 50vh;
     object-fit: contain;
 }
+.word9{
+    position: absolute;
+    left: 30%;
+    bottom: 5%;
+    top: 10%;
+    right: 30%;
+    height: 50%;
+    object-fit: contain;
+    z-index: 10;
+    opacity: 0;
+    animation-name: word-pop, word-popout;
+    animation-duration: 1s,1s;
+    animation-delay: 9s,14s;
+    animation-fill-mode: forwards;
+    font-size:20rem;
+    font-family: "Jua", sans-serif;
+    text-shadow: -2px 0px white, 0px 2px white, 2px 0px white, 0px -2px white;
+  }
+  .popup9{
+    position: absolute;
+    top:0%;
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 9;
+    opacity: 0;
+    animation-name: word-pop, word-popout;
+    animation-duration: 1s,1s;
+    animation-delay: 9s,14s;
+    animation-fill-mode: forwards;
+  }

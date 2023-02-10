@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate , useLocation} from "react-router-dom";
 import BackHome from "../modal/BackHomeDrop";
 import "./Scene10.css";
 
@@ -33,11 +33,13 @@ function Change_text(){
 }
 const Scene10 = () => {
   const navigate = useNavigate();
-
+  const location = useLocation();
+  const number =  location.state.value;
+  console.log(number)
   // 하단은 자막 시작 딜레이
   setTimeout(Change_text)
   // 하단은 페이지 넘어가는 시간
-  setTimeout(() => navigate(`/scene11`), 17000);
+  setTimeout(() => navigate(`/scene11`, { state: { value: number } }), 17000);
   // 하단은 오디오 파일 자동재생
   setTimeout(start)
   setTimeout(start2)
@@ -47,6 +49,8 @@ const Scene10 = () => {
       <BackHome></BackHome>
           <img src="img/scene10/10-배경.png" className="bgImg" alt="#"></img>
           <img src="img/scene10/10-오누이.png" className="siblings" alt="#"></img>
+          <h1 className="word10">나무</h1>
+          <div className="popup10"></div>
           <h2 id="Text"> </h2>
     </div>
   );

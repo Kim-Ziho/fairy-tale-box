@@ -51,16 +51,20 @@ const Scene1 = () => {
     .then((res) => {
       const number = res.data
       setTimeout(() => navigate(`/scene2`, { state: { value: number } }), 23120)
+      setTimeout( () =>
+        axios({
+          method:'get',
+          url:`192.168.100.245:3001/startrecord?wordname="엄마"&hist_num=${number}&word_id=1`
+        }),3000
+      )
     })
-  
   },[]);
  
   // 자막 시작 딜레이
   setTimeout(Change_text);
-  // 페이지 넘어가는 시간
+  
   // 오디오 파일 자동재생
   setTimeout(start);
-
 
   return (
     
@@ -70,6 +74,8 @@ const Scene1 = () => {
       <img src="img/scene1/1-엄마.png" className="mother1" alt="#"></img>
       <img src="img/scene1/1-오빠.png" className="brother1" alt="#"></img>
       <img src="img/scene1/1-동생.png" className="sister1" alt="#"></img>
+      <h1 className="word1">엄마</h1>
+      <div className="popup1"></div>
       <h2 id="Text"> </h2>
     </div>
   );

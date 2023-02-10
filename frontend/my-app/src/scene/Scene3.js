@@ -33,7 +33,7 @@ const Scene3 = () => {
   // 자막 시작 딜레이
   setTimeout(Change_text);
   // 페이지 넘어가는 시간
-  setTimeout(() => navigate(`/scene4`), 11610);
+  setTimeout(() => navigate(`/scene4`, { state: { value: number } }), 11610);
   // 오디오 파일 자동재생
   setTimeout(start);
 
@@ -43,6 +43,8 @@ const Scene3 = () => {
         <img src="img/scene3/3-배경.png" className="bgImg" alt="#"></img>       
         <img src="img/scene3/3-호랑이.png"className="tiger3" alt="#"></img>
         <h2 id="Text"> </h2>
+        <h1 className="word3">떡</h1>
+        <div className="popup3"></div>
         <div className="hidden"></div>
     </div>
   );
