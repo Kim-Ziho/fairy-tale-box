@@ -4,6 +4,7 @@ import antlr.Token;
 import c101.fairytalebox.domain.Member;
 import c101.fairytalebox.domain.MemberRaspberry;
 import c101.fairytalebox.domain.RaspberrySerial;
+import c101.fairytalebox.domain.Role;
 import c101.fairytalebox.dto.*;
 import c101.fairytalebox.jwt.JwtTokenProvider;
 import c101.fairytalebox.jwt.TokenInfo;
@@ -36,7 +37,11 @@ public class MemberServiceImpl implements MemberService {
     public Long signUp(SignUpRequestDto request) throws Exception {
 
         if (memberRepository.findByEmail(request.getEmail()).isPresent()) {
-            throw new Exception("이미 존재하는 이메일입니다.");
+            throw new Exception("이메일 중복 검사를 진행해주세요");
+        }
+
+        if (memberRepository.findByNickname(request.getNickname()).isPresent()) {
+            throw new Exception("닉네임 중복 검사를 진행해주세요");
         }
 
         if (!request.getPassword().equals(request.getCheckedPassword())) {
@@ -64,13 +69,12 @@ public class MemberServiceImpl implements MemberService {
         Member member = memberRepository.findByEmail(email)
                 .orElseThrow(() -> new IllegalArgumentException("가입되지 않은 Email 입니다."));
 
-        RaspberrySerial raspberrySerial = raspberrySerialRepository.findBySerialNum(member.getSerialNum())
-                .orElseThrow(()-> new IllegalArgumentException("유저가 가지고 있는 기기 넘버와 다르다."));
-
         if (!passwordEncoder.matches(password, member.getPassword())) {
             throw new IllegalArgumentException("잘못된 비밀번호입니다.");
         }
 
+        RaspberrySerial raspberrySerial = raspberrySerialRepository.findBySerialNum(member.getSerialNum())
+                .orElse(null);
 
         // 1. Login ID/PW 를 기반으로 Authentication 객체 생성
         // 이때 authentication 는 인증 여부를 확인하는 authenticated 값이 false
@@ -84,10 +88,10 @@ public class MemberServiceImpl implements MemberService {
         TokenInfo tokenInfo = jwtTokenProvider.generateToken(authentication);
 
         MemberRaspberry memberRaspberry = memberRaspberryRepository.findByMember(member)
-                        .orElse(MemberRaspberry.builder()
-                                .member(member)
-                                .raspberrySerial(raspberrySerial)
-                                .build());
+                .orElse(MemberRaspberry.builder()
+                        .member(member)
+                        .raspberrySerial(raspberrySerial)
+                        .build());
 
         memberRaspberry.updateToken(tokenInfo.getAccessToken(), tokenInfo.getRefreshToken());
 
