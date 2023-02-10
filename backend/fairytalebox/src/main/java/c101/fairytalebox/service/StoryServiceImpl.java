@@ -27,4 +27,13 @@ public class StoryServiceImpl implements StoryService{
         return getStory;
 
     }
+
+    public GetStoryDto getStorybyID(Long id){
+        Story story = storyRepository.findById(id).orElse(null);
+        GetStoryDto getStorybyId = new GetStoryDto();
+        getStorybyId.setStory_id(story.getId());
+        getStorybyId.setStory_overview(story.getOverview());
+        getStorybyId.setStory_title(storyRepository.findById(story.getId()).get().getTitle());
+        return getStorybyId;
+    }
 }

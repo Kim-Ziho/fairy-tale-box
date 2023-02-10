@@ -5,10 +5,7 @@ import c101.fairytalebox.repository.StoryRepository;
 import c101.fairytalebox.service.StoryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,6 +20,13 @@ public class StoryController {
     @GetMapping("")
     public ResponseEntity<List<GetStoryDto>> getStory(){
         return ResponseEntity.ok().body(storyService.getStory());
+
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<GetStoryDto> getStorybyID(@PathVariable Long id){
+
+        return ResponseEntity.ok().body(storyService.getStorybyID(id));
 
     }
 }
