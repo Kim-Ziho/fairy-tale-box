@@ -9,11 +9,11 @@ const History = () => {
   const [histchild, setHistchild] = useState([]);
 
   useEffect(() => {
-    axios.get("http://i8c101.p.ssafy.io/api/history").then((response) => {
+    axios
+    .get("http://i8c101.p.ssafy.io/api/history")
+    .then((response) => {
       // setHists(response.data);
       const hist = response.data;
-      console.log(hist[0]);
-      console.log(hist[0].historyId);
       setHistchild(
         hist.map((hist) => {
           return (
@@ -25,6 +25,7 @@ const History = () => {
                 <Link
                   to={`/history/${hist.historyId}`}
                   style={{ textDecoration: "none" }}
+                  state={{ histId: hist.historyId }}
                 >
                   👀 보러가자
                 </Link>

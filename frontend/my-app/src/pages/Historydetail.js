@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import Back from "../modal/Back";
+import axios from "axios";
 import "./Historydetail.css";
 import "./History.css";
 import "../modal/Back.css";
-import axios from "axios";
 
 const Historydetail = () => {
-  const [histdet, setHistdets] = useState([]);
+  // const [histdet, setHistdets] = useState([]);
   const [histdetYes, setHistdetYes] = useState([]);
   const [histdetNo, setHistdetNo] = useState([]);
+
+  const location = useLocation();
+	const histId = location.state.histId;
+
+  // console.log(histId);
 
   const audioStart = () => {
     new Audio("sound/1.mp3").play();
@@ -16,9 +22,9 @@ const Historydetail = () => {
 
   useEffect(() => {
     axios
-      .get(`http://i8c101.p.ssafy.io/api/history/${histdet.historyId}`)
+      .get(`http://i8c101.p.ssafy.io/api/history/${histId}`)
       .then((response) => {
-        setHistdets(response.data);
+        const histdet = response.data;
         setHistdetYes(
           histdet.wordResult.map((histdet) => {
             if (histdet.is_correct === true) {
@@ -61,8 +67,9 @@ const Historydetail = () => {
             }
           })
         );
-      });
-  });
+      }
+      );
+  },[]);
 
   return (
     <div className="historyDetailBox">

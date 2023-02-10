@@ -14,7 +14,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* -ms-overflow-style: none; */
-  background-image: url(../public/img/bg2.jfif);
+  background-image: url(../public/img/bgimg.jpg);
   background-size: cover;
   /* background-image: url(../public/img/scene2/2-배경.png); */
 }
