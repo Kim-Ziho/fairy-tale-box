@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import BackHome from "../modal/BackHomeDrop";
-import "./Scene6.css";
+import "./Scene7.css";
 
 // 하단은 음성파일
 const audio7_1 = new Audio("sound/7-1.mp3");
@@ -45,6 +45,8 @@ const Scene7 = () => {
     <div className="SceneBox">
       <BackHome></BackHome>
           <img src="img/scene7/7-배경.png" className="bgImg" alt="#"></img>
+          <h1 className="word7">목소리</h1>
+          <div className="popup7"></div>
           <h2 id="Text"> </h2> 
     </div>
   );

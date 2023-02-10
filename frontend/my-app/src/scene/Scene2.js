@@ -44,6 +44,8 @@ const Scene2 = () => {
             <img src="img/scene2/2-엄마.png" className="mother2" alt="#"></img>
             <img src="img/scene2/2-호랑이.png" className="tiger2" alt="#"></img>
             <img src="img/scene2/2-나무.png" className="tree" alt="#"></img>
+            <h1 className="word2">호랑이</h1>
+            <div className="popup2"></div>
           <h2 id="Text"> </h2>
           {/* <div>number</div> */}
     </div>

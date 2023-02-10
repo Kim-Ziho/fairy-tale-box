@@ -5,7 +5,7 @@
     object-fit: contain;
     animation-name: fade-out15;
     animation-duration: 1s;
-    animation-delay: 5s;
+    animation-delay: 11s;
     animation-fill-mode: forwards;
 }
 
@@ -26,7 +26,7 @@
     opacity: 0;
     animation-name: hand15-2-move, hand15-move;
     animation-duration: 2s, 2s;
-    animation-delay: 5s, 7s;
+    animation-delay: 11s, 17s;
     animation-iteration-count: 1, 1;
     animation-fill-mode: forwards;
 }
@@ -39,7 +39,7 @@
     opacity: 0;
     animation-name: hand15-2-move, hand15-move;
     animation-duration: 2s ,2s;
-    animation-delay: 7s , 9s;
+    animation-delay: 17s , 19s;
     animation-iteration-count: 1, 1;
     animation-fill-mode: forwards
 }
@@ -52,7 +52,7 @@
     opacity: 0;
     animation-name: hand15-2-move, hand15-move;
     animation-duration: 2s, 2s;
-    animation-delay: 9s, 11s;
+    animation-delay: 19s, 21s;
     animation-iteration-count: 1, 1;
     animation-fill-mode: forwards;
 }
@@ -65,7 +65,7 @@
     opacity: 0;
     animation-name: hand15-2-move, hand15-move;
     animation-duration: 2s ,2s;
-    animation-delay: 11s , 13s;
+    animation-delay: 21s , 23s;
     animation-iteration-count: 1, 1;
     animation-fill-mode: forwards
 }
@@ -78,7 +78,7 @@
     opacity: 0;
     animation-name: hand15-2-move, hand15-move;
     animation-duration: 2s, 2s;
-    animation-delay: 13s, 15s;
+    animation-delay: 23s, 25s;
     animation-iteration-count: 1, 1;
     animation-fill-mode: forwards;
 }
@@ -91,7 +91,7 @@
     opacity: 0;
     animation-name: hand15-2-move;
     animation-duration: 2s;
-    animation-delay: 15s;
+    animation-delay: 25s;
     animation-fill-mode: forwards
 }
 @keyframes hand15-move {
@@ -132,7 +132,7 @@
     object-fit: contain;
     animation-name: rope-move,rope-move2,rope-move3;
     animation-duration: 2s,2s,2s;
-    animation-delay: 7s,11s,15s;
+    animation-delay: 17s,21s,25s;
     animation-fill-mode: forwards;
 }
 

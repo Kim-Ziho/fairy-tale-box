@@ -6,7 +6,7 @@
     transform: translate(0,-40%);
     animation-name: sky-move;
     animation-duration: 5s;
-    animation-delay: 1s;
+    animation-delay: 10s;
     animation-fill-mode: forwards;
 }
 
@@ -70,6 +70,31 @@
     z-index: 1;
     animation-name: cloud-move;
     animation-duration: 3s;
-    animation-delay: 1s;
+    animation-delay: 10s;
     animation-fill-mode: forwards;
+}
+#Text16 {
+    position: absolute;
+    top: 30%;
+    right: 20%;
+    left: 12.5%;
+    bottom: 0%;
+    font-size: 6vh;
+    font-family: "Jua", sans-serif;
+    /* border: 1px solid white; */
+    /* background-color: white; */
+    height: 7%;
+    width: 75vw;
+    height: 7vh;
+    object-fit: contain;
+    text-shadow: -2px 0px white, 0px 2px white, 2px 0px white, 0px -2px white;
+  }
+  .hidden16{
+    position: absolute;
+    margin-top: -0.35%;
+    top:38%;
+    width: 100vw;
+    height: 100vh;
+    opacity: 1;
+    background-image: url("/public/img/bg2.jfif");
 }
