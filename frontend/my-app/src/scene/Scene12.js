@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import BackHome from "../modal/BackHomeDrop";
 import "./Scene12.css";
 
@@ -33,11 +33,13 @@ function Change_text(){
 
 const Scene12 = () => {
   const navigate = useNavigate();
-
+  const location = useLocation();
+  const number =  location.state.value;
+  console.log(number)
   // 하단은 자막 시작 딜레이
   setTimeout(Change_text)
   // 하단은 페이지 넘어가는 시간
-  setTimeout(() => navigate(`/scene13`), 17000);
+  setTimeout(() => navigate(`/scene13`, { state: { value: number } }), 17000);
   // 하단은 오디오 파일 자동재생
   setTimeout(start)
   return (

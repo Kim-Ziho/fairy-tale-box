@@ -1,7 +1,8 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React ,{useState} from "react";
+import { useNavigate , useLocation} from "react-router-dom";
 import BackHome from "../modal/BackHomeDrop";
 import "./Scene19.css";
+import Modal from "../modal/ResultModal.js";
 
 // 하단은 음성파일
 const audio19_1 = new Audio("sound/19-1.mp3");
@@ -34,12 +35,24 @@ function Change_text(){
   },15000)
 }
 const Scene19 = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const openModal = () => {
+    setModalOpen(true);
+  };
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
   const navigate = useNavigate();
+  const location = useLocation();
+  const number =  location.state.value;
+  console.log(number)
   // 하단은 자막 시작 딜레이
   setTimeout(Change_text)
   // 하단은 오디오 파일 자동재생
   setTimeout(start)
   setTimeout(start2)
+  setTimeout(()=>openModal(),2000)
   return (
     <div className="SceneBox">
       <BackHome></BackHome>
@@ -49,6 +62,9 @@ const Scene19 = () => {
         <h1 className="word19-2">달님</h1>
         <div className="popup19-2"></div>
         <h2 id="Text"> </h2>  
+        <Modal open={modalOpen} header="학습 완료">
+          <footer className="modalFooter"></footer>
+        </Modal>
     </div>
   );
 };
