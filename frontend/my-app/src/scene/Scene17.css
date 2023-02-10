@@ -26,8 +26,8 @@
     height: 80vh;
     object-fit: contain;
     animation-name: tiger-move17;
-    animation-duration: 3s;
-    animation-delay: 1s;
+    animation-duration: 4s;
+    animation-delay: 3.56s;
     animation-fill-mode: forwards;
 }
 

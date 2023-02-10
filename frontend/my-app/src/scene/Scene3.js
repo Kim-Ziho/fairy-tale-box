@@ -27,8 +27,8 @@ function Change_text() {
 const Scene3 = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const number =  location.state.value;
-  console.log(number)
+  // const number =  location.state.value;
+  // console.log(number)/
 
   // 자막 시작 딜레이
   setTimeout(Change_text);
@@ -43,6 +43,8 @@ const Scene3 = () => {
         <img src="img/scene3/3-배경.png" className="bgImg" alt="#"></img>       
         <img src="img/scene3/3-호랑이.png"className="tiger3" alt="#"></img>
         <h2 id="Text"> </h2>
+        <h1 className="word3">떡</h1>
+        <div className="popup3"></div>
         <div className="hidden"></div>
     </div>
   );

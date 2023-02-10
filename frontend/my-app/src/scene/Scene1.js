@@ -70,6 +70,8 @@ const Scene1 = () => {
       <img src="img/scene1/1-엄마.png" className="mother1" alt="#"></img>
       <img src="img/scene1/1-오빠.png" className="brother1" alt="#"></img>
       <img src="img/scene1/1-동생.png" className="sister1" alt="#"></img>
+      <h1 className="word1">엄마</h1>
+      <div className="popup1"></div>
       <h2 id="Text"> </h2>
     </div>
   );

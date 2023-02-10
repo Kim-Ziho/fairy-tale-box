@@ -57,6 +57,8 @@ const Scene5 = () => {
         <img src="img/scene5/5.png" className="bgImg5-2" alt="#"></img>
         <img src="img/scene5/5-공격전.png" className="bgImg5" alt="#"></img>  
         <h2 id="Text"> </h2>
+        <h1 className="word5">약속</h1>
+        <div className="popup5"></div>
     </div>
   );
 };

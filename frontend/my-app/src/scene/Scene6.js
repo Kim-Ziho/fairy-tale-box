@@ -50,6 +50,8 @@ const Scene6 = () => {
       <BackHome></BackHome>
         <img src="img/scene6/6-배경.png" className="bgImg" alt="#"></img> 
         <img src="img/scene6/6-호랑이.png" className="tiger6" alt="#"></img>
+        <h1 className="word6">집</h1>
+        <div className="popup6"></div>
         <h2 id="Text"> </h2>
    </div>
   );

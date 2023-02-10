@@ -14,7 +14,7 @@
     position: absolute;
     right: 10%;
 }
-.word{
+.word19-1{
     position: absolute;
     left: 30%;
     bottom: 5%;
@@ -24,13 +24,14 @@
     object-fit: contain;
     z-index: 10;
     opacity: 0;
-    animation-name: word-pop;
-    animation-duration: 1s;
-    animation-delay: 1s;
+    animation-name: word-pop, word-popout;
+    animation-duration: 1s,1s;
+    animation-delay: 9s,14s;
+    animation-fill-mode: forwards;
     font-size:20rem
     
 }
-.popup{
+.popup19-1{
     position: absolute;
     top:0%;
     width: 100vw;
@@ -39,9 +40,41 @@
     background-color: rgba(255, 255, 255, 0.8);
     z-index: 9;
     opacity: 0;
-    animation-name: word-pop;
-    animation-duration: 1s;
-    animation-delay: 1s;
+    animation-name: word-pop, word-popout;
+    animation-duration: 1s,1s;
+    animation-delay: 9s,14s;
+    animation-fill-mode: forwards;
+}
+.word19-2{
+    position: absolute;
+    left: 30%;
+    bottom: 5%;
+    top: 10%;
+    right: 30%;
+    height: 50%;
+    object-fit: contain;
+    z-index: 10;
+    opacity: 0;
+    animation-name: word-pop, word-popout;
+    animation-duration: 1s,1s;
+    animation-delay: 18s,23s;
+    animation-fill-mode: forwards;
+    font-size:20rem
+    
+}
+.popup19-2{
+    position: absolute;
+    top:0%;
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 9;
+    opacity: 0;
+    animation-name: word-pop, word-popout;
+    animation-duration: 1s,1s;
+    animation-delay: 18s,23s;
+    animation-fill-mode: forwards;
 }
 
 @keyframes word-pop {

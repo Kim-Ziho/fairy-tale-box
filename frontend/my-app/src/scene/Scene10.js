@@ -47,6 +47,8 @@ const Scene10 = () => {
       <BackHome></BackHome>
           <img src="img/scene10/10-배경.png" className="bgImg" alt="#"></img>
           <img src="img/scene10/10-오누이.png" className="siblings" alt="#"></img>
+          <h1 className="word10">나무</h1>
+          <div className="popup10"></div>
           <h2 id="Text"> </h2>
     </div>
   );
