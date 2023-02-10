@@ -51,16 +51,20 @@ const Scene1 = () => {
     .then((res) => {
       const number = res.data
       setTimeout(() => navigate(`/scene2`, { state: { value: number } }), 23120)
+      setTimeout( () =>
+        axios({
+          method:'get',
+          url:`192.168.100.245:3001/startrecord?wordname="엄마"&hist_num=${number}&word_id=1`
+        }),3000
+      )
     })
-  
   },[]);
  
   // 자막 시작 딜레이
   setTimeout(Change_text);
-  // 페이지 넘어가는 시간
+  
   // 오디오 파일 자동재생
   setTimeout(start);
-
 
   return (
     
