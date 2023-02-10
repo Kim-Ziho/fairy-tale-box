@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import taledata from "./taledata.json";
-import histdata from "./historydata.json";
+import taledata from "../data/taledata.json";
+import histdata from "../data/historydetaildata.json";
 import axios from "axios";
 import "./ResultModal.css";
 
@@ -9,6 +9,8 @@ const ResultModal = (props) => {
   const { open, close } = props;
   const [histdet, setHistdets] = useState([]);
   const [historydetails, setHistorydetails] = useState([]);
+
+  
 
   const jemok = taledata.map((taleDat) => {
     return (
@@ -25,15 +27,16 @@ const ResultModal = (props) => {
     );
   });
 
+  
   return (
     <div className={open ? "openModal modal" : "modal"}>
       {open ? (
         <section id="ResultBg">
           <header>
             {jemok[0]}
-            <button className="headerbutton" onClick={close}>
+            {/* <button className="headerbutton" onClick={close}>
               &times;
-            </button>
+            </button> */}
           </header>
           <main className="modalMain modalMainScore">{score[0]}옳지잘한다</main>
           <footer className="modalFooter">

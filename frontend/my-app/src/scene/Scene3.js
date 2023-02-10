@@ -27,13 +27,13 @@ function Change_text() {
 const Scene3 = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  // const number =  location.state.value;
-  // console.log(number)/
+  const number =  location.state.value;
+  console.log(number)
 
   // 자막 시작 딜레이
   setTimeout(Change_text);
   // 페이지 넘어가는 시간
-  setTimeout(() => navigate(`/scene4`), 11610);
+  setTimeout(() => navigate(`/scene4`, { state: { value: number } }), 11610);
   // 오디오 파일 자동재생
   setTimeout(start);
 
