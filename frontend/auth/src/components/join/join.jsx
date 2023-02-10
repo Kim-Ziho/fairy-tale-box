@@ -1,0 +1,204 @@
+import { useEffect, useState } from "react";
+import axios from 'axios';
+import { useNavigate } from "react-router-dom"
+import { Link } from 'react-router-dom';
+
+const Join = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [checkedPassword, setCheckedPassword] = useState('');
+    const [emailValid, setEmailValid] = useState(false);
+    const [passwordValid, setPasswordValid] = useState(false);
+    const [matchPassword, setMatchPassword] = useState(false);
+    const [notAllow, setNotAllow] = useState(true);
+    const [nickname, setNickname] = useState('');
+    const [emailCheck, setEmailCheck] = useState(false);
+    const [nicknameCheck, setNicknameCheck] = useState(false);
+
+
+    const navigate = useNavigate()
+
+    const goToLogin = () => {
+        alert('회원가입이 완료되었습니다.')
+        navigate('/login')
+    }
+    const handleEmail = (e) => {
+        setEmail(e.target.value);
+        const regex = /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
+        if (regex.test(email)) {
+            setEmailValid(true);
+        } else {
+            setEmailValid(false);
+        }
+    }
+
+    const handleCheckedPassword = (e) => {
+        setCheckedPassword(e.target.value);
+    }
+
+    const handleNickname = (e) => {
+        setNickname(e.target.value);
+    }
+
+    const handlePassword = (e) => {
+        setPassword(e.target.value);
+    }
+
+    useEffect(() => {
+        const regex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,30}$/;
+        if (regex.test(password)) {
+            setPasswordValid(true);
+        } else {
+            setPasswordValid(false);
+        }
+    }, [password])
+
+    useEffect(() => {
+        if (password === checkedPassword && password.length > 0) {
+            setMatchPassword(true);
+        } else {
+            setMatchPassword(false);
+        }
+
+    }, [checkedPassword])
+
+    useEffect(() => {
+        if (emailCheck && nicknameCheck && emailValid && passwordValid && matchPassword && nickname.length < 8) {
+            setNotAllow(false);
+            return;
+        }
+        setNotAllow(true);
+    })
+
+    const axiossignup = () => {
+        axios.post('http://localhost:8080/api/member/signup', {
+            email,
+            nickname,
+            password,
+            checkedPassword,
+            serialNum: "동화상자c101-1"
+        })
+            .then((res) => {
+                goToLogin()
+                console.log(res.data)
+            })
+            .catch((err) => {
+                console.log(err.response.data.message)
+            })
+    }
+
+    const axiosemail = () => {
+        axios.post('http://localhost:8080/api/member/email/check', {
+            email,
+        })
+            .then((res) => {
+                setEmailCheck(true);
+                alert('사용 가능한 이메일 입니다.')
+            })
+            .catch((err) => {
+                alert(err.response.data.message)
+            })
+    }
+
+    const axiosnickname = () => {
+        axios.post('http://localhost:8080/api/member/nickname/check', {
+            nickname,
+        })
+            .then((res) => {
+                setNicknameCheck(true);
+                alert('사용 가능한 닉네임 입니다.')
+            })
+            .catch((err) => {
+                alert(err.response.data.message)
+            })
+
+    }
+
+    return (
+        <div className='page'>
+            <div className='titleWrap'>
+                회원가입을
+                <br />
+                진행해주세요
+            </div>
+
+            <div className='contentWrap'>
+                <div className='inputTitle'>이메일 주소</div>
+                <div className='inputWrap'>
+                    <input
+                        type='text'
+                        className='input'
+                        placeholder='test@gmail.com'
+                        value={email}
+                        onChange={handleEmail} />
+                </div>
+                <div className='errorMessageWrap'>
+                    {!emailValid && email.length > 0 && (
+                        <div>올바른 이메일을 입력해주세요</div>
+                    )}
+                </div>
+                <button onClick={() => { axiosemail() }}> 중복검사</button>
+                <div className='inputTitle'>닉네임</div>
+                <div className='inputWrap'>
+                    <input
+                        type='text'
+                        className='input'
+                        placeholder='test@gmail.com'
+                        value={nickname}
+                        onChange={handleNickname} />
+                </div>
+                <div className='errorMessageWrap'>
+                    {nickname.length > 8 && (
+                        <div>닉네임은 8자 이하입니다.</div>
+                    )}
+                    <button onClick={() => { axiosnickname() }}>
+                        중복검사
+                    </button>
+
+
+                    <div style={{ marginTop: "15px" }} className='inputTitle'>비밀번호</div>
+                    <div className='inputWrap'>
+                        <input
+                            type='password'
+                            className='input'
+                            placeholder='영문, 숫자, 특수문자 포함 8자 이상'
+                            value={password}
+                            onChange={handlePassword} />
+                    </div>
+                    <div className='errorMessageWrap'>
+                        {!passwordValid && password.length > 0 && (
+                            <div>영문, 숫자, 특수문자 포함 8자 이상 입력해주세요</div>
+                        )}
+                    </div>
+                    <div style={{ marginTop: "15px" }} className='inputTitle'>비밀번호 확인</div>
+                    <div className='inputWrap'>
+                        <input
+                            type='password'
+                            className='input'
+                            placeholder='영문, 숫자, 특수문자 포함 8자 이상'
+                            value={checkedPassword}
+                            onChange={handleCheckedPassword} />
+                    </div>
+                    <div className='errorMessageWrap'>
+                        {!matchPassword && checkedPassword.length > 0 && (
+                            <div>비밀번호가 일치하지 않습니다.</div>
+                        )}
+                    </div>
+
+                    <div>
+                        <button onClick={() => { axiossignup() }} disabled={notAllow} className='bottomButton'>
+                            확인
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <Link to="/login">로그인 페이지로</Link>
+        </div>
+
+
+
+    )
+
+}
+
+export default Join
