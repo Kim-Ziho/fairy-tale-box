@@ -28,7 +28,7 @@ import java.util.stream.Collectors;
 
 @CrossOrigin(origins = "*",allowedHeaders = "*")
 @RestController
-@RequestMapping("/api/history")
+@RequestMapping("api/history")
 @RequiredArgsConstructor
 public class HistoryController {
     private final HistoryService historyService;
@@ -36,7 +36,7 @@ public class HistoryController {
     @GetMapping("")
     public ResponseEntity<List<GetHistoryDto>> getHistory(){
         List<History> histories = historyService.getHistory();
-        List<GetHistoryDto> getHistory = histories.stream()
+        List<GetHistoryDto> getHistory = histories.stream().filter(history -> history.getStarPoint()>0)
                 .map(history -> {
                     GetHistoryDto newDto = new GetHistoryDto();
                     newDto.historyId=history.getId();
