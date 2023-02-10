@@ -7,13 +7,12 @@
   color: rgb(0, 0, 0);
   text-shadow: 4px 4px #ffffff;
 }
-.tableLine {
+.histLine {
   width: 96.7%;
   height: 2px;
   margin: -0.5% auto 0.5% 2%;
   border: 0;
   border-top: 3px dashed rgb(148, 148, 148);
-  /* background-color: rgb(148, 148, 148); */
 }
 .historyBox {
   position: relative;
@@ -38,12 +37,10 @@
 .historycontent {
   background-color: rgb(240, 240, 240);
   width: 88%;
-  margin: 2% 7% 2% 7%;
+  height: 90%;
+  margin: auto;
   border-radius: 8px;
   font-size: 3rem;
   background-color: #fff;
+  object-fit: contain;
 }
-.historyfooter {
-  margin-top: 2%;
-  font-size: 3rem;
-} 

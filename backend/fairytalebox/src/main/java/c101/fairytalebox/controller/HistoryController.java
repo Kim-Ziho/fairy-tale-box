@@ -28,12 +28,12 @@ import java.util.stream.Collectors;
 
 @CrossOrigin(origins = "*",allowedHeaders = "*")
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/history")
 @RequiredArgsConstructor
 public class HistoryController {
     private final HistoryService historyService;
 
-    @GetMapping("/history")
+    @GetMapping("")
     public ResponseEntity<List<GetHistoryDto>> getHistory(){
         List<History> histories = historyService.getHistory();
         List<GetHistoryDto> getHistory = histories.stream()
@@ -50,7 +50,7 @@ public class HistoryController {
         return ResponseEntity.ok().body(getHistory);
     }
 
-    @GetMapping("/history/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<GetHistoryDetailDto> getHistoryDetail(@PathVariable Long id){
         Optional<History> history = historyService.getHistoryById(id);
 //        System.out.println(history);
@@ -71,7 +71,7 @@ public class HistoryController {
         return ResponseEntity.ok().body(historyDetail);
     }
 
-    @PostMapping("/history")
+    @PostMapping("")
     public ResponseEntity<Long> createHistory(@RequestBody HistoryRequestDto historyRequestDto){
 
         Long history_id = historyService.createHistory(historyRequestDto);
@@ -79,7 +79,7 @@ public class HistoryController {
         return ResponseEntity.ok().body(history_id);
     }
 
-    @PostMapping("/history/{id}")
+    @PostMapping("/{id}")
     public ResponseEntity setStarPoint(@PathVariable Long id, @RequestBody StarPointDto starPointDto){
         historyService.setStarPoint(id,starPointDto);
         return ResponseEntity.ok().body(HttpStatus.ACCEPTED);

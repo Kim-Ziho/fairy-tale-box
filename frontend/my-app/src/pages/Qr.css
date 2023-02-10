@@ -1,4 +1,41 @@
-.qrcontainer{
-    text-align: center;
-    margin-top: 5%;
+.qrContainer {
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  width: 100vw;
+  height: 70vh;
+}
+.qrMainText {
+  position: relative;
+  margin: auto;
+  top: -3rem;
+  font-size: 10rem;
+  width: fit-content;
+  color: rgb(0, 0, 0);
+  text-shadow: 4px 4px #ffffff;
+}
+.qrText {
+  position: relative;
+  padding-top: 1%;
+  margin: auto;
+  font-size: 4rem;
+  width: fit-content;
+}
+.qrimg {
+  position: relative;
+  padding-top: 3%;
+  margin: auto;
+  width: fit-content;
+}
+.qrButton {
+  position: relative;
+  margin: auto;
+  font-size: 3.5rem;
+  width: fit-content;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 1rem;
+}
+.qrFooter {
+  padding-top: 3%;
 }

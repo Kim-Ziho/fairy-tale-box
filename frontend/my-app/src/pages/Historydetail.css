@@ -7,10 +7,6 @@
   display: grid;
   grid-template-columns: 0.1fr 1fr 1fr 1fr 0.1fr;
 }
-.historydetailContainer2 {
-  display: grid;
-  grid-template-columns: 0.1fr 1fr 1fr 1fr 0.1fr 0.1fr 1fr 1fr 1fr 0.1fr;
-}
 .historydetailcontent {
   background-color: rgb(240, 240, 240);
   /* width: 88%; */
@@ -26,6 +22,29 @@
   padding-top: 2%;
 }
 
+.detailMainText {
+  position: relative;
+  margin: auto;
+  top: -1rem;
+  font-size: 6.5rem;
+  width: fit-content;
+  color: rgb(0, 0, 0);
+  text-shadow: 4px 4px #ffffff;
+}
+
+.histdetailtitle {
+  background-color: rgb(194, 224, 245);
+  width: 88%;
+  margin: 7%;
+  border-radius: 8px;
+  font-size: 4rem;
+}
+.detailImg {
+  width: 4vw;
+  height: 8vh;
+  margin: auto;
+  object-fit: contain;
+}
 .detailText {
   margin: auto;
   padding-bottom: 3%;
@@ -35,4 +54,15 @@
 .hide {
   opacity: 0;
   z-index: 99;
+}
+
+.histHeader {
+  margin-top: 4%;
+}
+.detailLine {
+  width: 95%;
+  height: 2px;
+  margin: auto;
+  border: 0;
+  border-top: 3px dashed rgb(148, 148, 148);
 }

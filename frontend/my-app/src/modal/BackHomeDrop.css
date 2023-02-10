@@ -1,0 +1,29 @@
+.gohome {
+  position: absolute;
+  width: 10%;
+  height: 7.5%;
+  background: rgb(255, 255, 255);
+  text-align: center;
+  top: 5%;
+  right: 5%;
+  z-index: 11;
+}
+
+.gohome::before {
+  content: "🖐🏻멈춰";
+  font-size: 2em;
+  color: rgb(0, 0, 0);
+}
+
+.gohome:hover {
+  animation-play-state: paused;
+  background: rgb(0, 109, 187);
+  width: 10%;
+  height: 7.5%;
+}
+
+.gohome:hover::before {
+  content: "🤸🏻‍♂️홈으로가기";
+  font-size: 2em;
+  color: rgb(255, 255, 255);
+}

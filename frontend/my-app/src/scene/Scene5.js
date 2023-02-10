@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
-import BackHome from "../modal/BackHomeModal";
+import BackHome from "../modal/BackHomeDrop";
 import "./Scene5.css";
 
 // 음성파일
@@ -25,7 +24,7 @@ function Change_text() {
     subtitle.innerText = "음, 떡이 아주 맛있군!";
   }, 1000);
   setTimeout(() => {
-    subtitle.innerText = "호랑이는 떡을 배불리 먹고서,";
+    subtitle.innerText = "호랑이는 떡을 배불리 먹고서";
   }, 3900);
   setTimeout(() => {
     subtitle.innerText = "약속을 깨고 엄마까지 잡아먹어버렸어요";
@@ -54,21 +53,10 @@ const Scene5 = () => {
   
   return (
     <div className="SceneBox">
-      <BackHome></BackHome>
-      <motion.div>
-        <div className="bgImg5">
-          <img src="img/scene5/5-호랑이.png"></img>
-          <div className="attack5">
-            <img src="img/scene5/5-공격.png"></img>
-          </div>
-        </div>
-        <div className="before-tiger">
-          <img src="img/scene5/5-공격전호랑이.png"></img>
-        </div>
-        <h2 id="Text"></h2>
-        <div id="output"></div>
-      </motion.div>
-      <style></style>
+      <BackHome></BackHome>   
+        <img src="img/scene5/5.png" className="bgImg5-2" alt="#"></img>
+        <img src="img/scene5/5-공격전.png" className="bgImg5" alt="#"></img>  
+        <h2 id="Text"> </h2>
     </div>
   );
 };

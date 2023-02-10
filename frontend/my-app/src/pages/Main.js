@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Modal from "../modal/LogoutModal.js";
+// import Modal from "../modal/ResultModal.js";
 import "./Main.css";
 
 const Main = () => {
@@ -32,8 +33,7 @@ const Main = () => {
         </button>
         <Modal open={modalOpen} close={closeModal} header="로그아웃">
           로그아웃 하시겠어요?
-          <footer className="modalFooter">
-          </footer>
+          <footer className="modalFooter"></footer>
         </Modal>
       </div>
     </div>

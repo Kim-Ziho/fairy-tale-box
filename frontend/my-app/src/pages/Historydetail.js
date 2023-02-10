@@ -1,59 +1,97 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
-import historydata from "../data/historydata.json";
-import historydetaildata from "../data/historydetaildata.json";
+import React, { useEffect, useState } from "react";
 import Back from "../modal/Back";
 import "./Historydetail.css";
-import "../modal/Back.css"
+import "./History.css";
+import "../modal/Back.css";
+import axios from "axios";
 
 const Historydetail = () => {
-  const { historyId } = useParams();
-  const thisHistory = historydata.find((prod) => prod.id === historyId);
-  const historydetails = historydetaildata.map((historydetail) => {
-    return (
-      <div key={historydetail.id} className="historydetailContainer2">
-        <div></div>
-        <div className="historycontent txt">{historydetail.pic}</div>
-        <div className="historycontent txt">{historydetail.pass}</div>
-        <div className="historycontent txt">{historydetail.record}</div>
-        <div></div>
-        <div></div>
-        <div className="historycontent txt">{historydetail.pic}</div>
-        <div className="historycontent txt">{historydetail.fail}</div>
-        <div className="historycontent txt">{historydetail.record}</div>
-        <div></div>
-      </div>
-    );
+  const [histdet, setHistdets] = useState([]);
+  const [histdetYes, setHistdetYes] = useState([]);
+  const [histdetNo, setHistdetNo] = useState([]);
+
+  const audioStart = () => {
+    new Audio("sound/1.mp3").play();
+  };
+
+  useEffect(() => {
+    axios
+      .get(`http://i8c101.p.ssafy.io/api/history/${histdet.historyId}`)
+      .then((response) => {
+        setHistdets(response.data);
+        setHistdetYes(
+          histdet.wordResult.map((histdet) => {
+            if (histdet.is_correct === true) {
+              return (
+                <div key={histdet.historyId} className="historydetailContainer">
+                  <div></div>
+                  <img
+                    src={histdet.image_path}
+                    alt="단어그림"
+                    className="detailImg"
+                  ></img>
+                  <div className="historycontent txt">{histdet.word_name}</div>
+                  <div className="historycontent txt" onClick={audioStart}>
+                    🎧 {histdet.audio_path}
+                  </div>
+                  <div></div>
+                </div>
+              );
+            }
+          })
+        );
+        setHistdetNo(
+          histdet.wordResult.map((histdet) => {
+            if (histdet.is_correct === false) {
+              return (
+                <div key={histdet.historyId} className="historydetailContainer">
+                  <div></div>
+                  <img
+                    src={histdet.image_path}
+                    alt="단어그림"
+                    className="detailImg"
+                  ></img>
+                  <div className="historycontent txt">{histdet.word_name}</div>
+                  <div className="historycontent txt" onClick={audioStart}>
+                    🎧 {histdet.audio_path}
+                  </div>
+                  <div></div>
+                </div>
+              );
+            }
+          })
+        );
+      });
   });
 
   return (
     <div className="historyDetailBox">
-      <div className="top">
-        {/* <h1 className="txt">{thisHistory.tale} </h1> */}
-      <Back />
-        <h1 className="hide txt">숨길거지롱</h1>
+      <div className="histHeader">
+        <Back />
       </div>
       <div className="passorfail">
-        <h1 className="detailText txt">🙆🏻‍♀️ 잘했어요 🙆🏻‍♂️</h1>
-        <h1 className="detailText txt">🙅🏻‍♀️ 아쉬워요 🙅🏻‍♂️</h1>
+        <h1 className="detailMainText txt">🙆🏻‍♀️ 잘했어요 🙆🏻‍♂️</h1>
+        <h1 className="detailMainText txt">🙅🏻‍♀️ 아쉬워요 🙅🏻‍♂️</h1>
         <div className="historydetailContainer">
           <div></div>
-          <div className="historytitle txt">그림</div>
-          <div className="historytitle txt">단어</div>
-          <div className="historytitle txt">음성듣기</div>
+          <div className="histdetailtitle txt">그림</div>
+          <div className="histdetailtitle txt">단어</div>
+          <div className="histdetailtitle txt">음성듣기</div>
           <div></div>
         </div>
         <div className="historydetailContainer">
           <div></div>
-          <div className="historytitle txt">그림</div>
-          <div className="historytitle txt">단어</div>
-          <div className="historytitle txt">음성듣기</div>
+          <div className="histdetailtitle txt">그림</div>
+          <div className="histdetailtitle txt">단어</div>
+          <div className="histdetailtitle txt">음성듣기</div>
           <div></div>
         </div>
       </div>
-      <hr></hr>
-      {historydetails}
+      <hr className="detailLine"></hr>
+      <div className="passorfail">
+        <div>{histdetYes}</div>
+        <div>{histdetNo}</div>
+      </div>
     </div>
   );
 };

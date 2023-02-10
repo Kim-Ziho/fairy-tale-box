@@ -44,6 +44,7 @@ public class SignUpRequestDto {
                 .email(email)
                 .nickname(nickname)
                 .password(password)
+                .serialNum(serialNum)
                 .role(Role.ROLE_USER)
                 .build();
     }

@@ -1,8 +1,8 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
-import BackHome from "../modal/BackHomeModal";
+import { useNavigate , useLocation} from "react-router-dom";
+import BackHome from "../modal/BackHomeDrop";
 import "./Scene3.css";
+import axios from "axios";
 
 // 하단은 음성파일
 const audio = new Audio("sound/3.mp3");
@@ -16,15 +16,19 @@ const start = () => {
 function Change_text() {
   const subtitle = document.getElementById("Text");
   setTimeout(() => {
-    subtitle.innerText = "어흥, 떡 하나 주면 안 잡아먹지!”";
+    subtitle.innerText = "어흥, 떡 하나 주면 안 잡아먹지!";
   }, 1000);
   setTimeout(() => {
     subtitle.innerText = "떡이라고 말해볼까요?";
+    // axios.get('192.168.100.245:3001/startrecord?wordname="호랑이"&hist_num=1')
   }, 3800);
 }
 
 const Scene3 = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const number =  location.state.value;
+  console.log(number)
 
   // 자막 시작 딜레이
   setTimeout(Change_text);
@@ -35,18 +39,11 @@ const Scene3 = () => {
 
   return (
     <div className="SceneBox">
-      <BackHome></BackHome>
-      <motion.div>
-        <div className="bgImg">
-          <img src="img/scene3/3-배경.png"></img>
-          <div className="tiger3">
-            <img src="img/scene3/3-호랑이.png"></img>
-          </div>
-          <h2 id="Text"></h2>
-        </div>
-        <div id="output"></div>
-      </motion.div>
-      <style></style>
+      <BackHome></BackHome>  
+        <img src="img/scene3/3-배경.png" className="bgImg" alt="#"></img>       
+        <img src="img/scene3/3-호랑이.png"className="tiger3" alt="#"></img>
+        <h2 id="Text"> </h2>
+        <div className="hidden"></div>
     </div>
   );
 };

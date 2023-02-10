@@ -20,19 +20,23 @@
         transform: translate(0,0);
     }
     to{
-        transform: translate(0,-200px);
+        transform: translate(0,-50%);
     }
 }
 
 .siblings{
     position: absolute;
-    left: 45%;
+    left: 30%;
     bottom: 5%;
     top: 60%;
     right: 40%;
+    height: 50%;
     animation-name: siblings-move;
-    animation-duration: 2s;
+    animation-duration: 3s;
     animation-delay: 1s;
     animation-fill-mode: both;
+    width: 50vw;
+    height: 50vh;
+    object-fit: contain;
 }
 

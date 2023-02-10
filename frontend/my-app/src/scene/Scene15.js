@@ -1,34 +1,32 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
-import BackHome from "../modal/BackHomeModal";
-import "./Scene11.css";
+import BackHome from "../modal/BackHomeDrop";
+import "./Scene15.css";
 
 // 하단은 음성파일
-const audio = new Audio("sound/sample.wav");
+const audio = new Audio("sound/15.mp3");
 const start = () => {
   audio.play();
 };
-const stop = () => {
-  audio.pause();
-};
+
 
 // 하단은 자막
 
 const Scene15 = () => {
   const navigate = useNavigate();
-  // const timerpage = setTimeout(() => navigate(`/scene2`), 10000);
+  setTimeout(() => navigate(`/scene16`), 21000);
 
   return (
     <div className="SceneBox">
       <BackHome></BackHome>
-      <motion.div initial={{ x: 500 }} animate={{ x: 0 }} exit={{ opacity: 0 }}>
-        <div className="bgImg">
-          <img src="img/scene11/11.png"></img>
-        </div>
-        <div id="output"></div>
-      </motion.div>
-      <style></style>
+      <img src="img/scene15/15-만세2.png" className="cheer6" alt="#"></img>
+      <img src="img/scene15/15-만세1.png" className="cheer5" alt="#"></img>
+      <img src="img/scene15/15-만세2.png" className="cheer4" alt="#"></img>
+      <img src="img/scene15/15-만세1.png" className="cheer3" alt="#"></img>
+      <img src="img/scene15/15-만세2.png" className="cheer2" alt="#"></img>
+      <img src="img/scene15/15-만세1.png" className="cheer" alt="#"></img>
+      <img src="img/scene15/15-기도.png" className="bgImg15" alt="#"></img>
+      <img src="img/scene15/15-동아줄.png" className="rope" alt="#"></img>
     </div>
   );
 };

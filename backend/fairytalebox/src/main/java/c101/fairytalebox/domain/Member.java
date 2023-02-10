@@ -29,8 +29,8 @@ public class Member extends BaseTimeEntity{
     @NonNull
     private String nickname;
 
-    @OneToOne(mappedBy = "member", fetch = FetchType.LAZY)
-    private RaspberrySerial raspberrySerial;
+    @NonNull
+    private String serialNum;
 
     @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
     private List<History> historyList = new ArrayList<>();

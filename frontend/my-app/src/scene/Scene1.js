@@ -1,8 +1,8 @@
-import React from "react";
+import React ,{useEffect} from "react";
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
-import BackHome from "../modal/BackHomeModal";
+import BackHome from "../modal/BackHomeDrop";
 import "./Scene1.css";
+import axios from "axios";
 
 // 하단은 음성파일 Audio에 음성파일 경로를 넣으면 됩니다.
 const audio = new Audio("sound/1.mp3");
@@ -38,33 +38,39 @@ function Change_text() {
 const Scene1 = () => {
   const navigate = useNavigate();
 
+  useEffect(()=>{
+    axios({
+      method:'post',
+      url:"http://i8c101.p.ssafy.io/api/history",
+      data:{
+        "member_id":5,
+        "story_id":1,
+        "studyDate": new Date()
+      }
+    })
+    .then((res) => {
+      const number = res.data
+      setTimeout(() => navigate(`/scene2`, { state: { value: number } }), 23120)
+    })
+  
+  },[]);
+ 
   // 자막 시작 딜레이
   setTimeout(Change_text);
   // 페이지 넘어가는 시간
-  setTimeout(() => navigate(`/scene2`), 23120);
   // 오디오 파일 자동재생
   setTimeout(start);
 
+
   return (
+    
     <div className="SceneBox">
       <BackHome></BackHome>
-      <motion.div>
-        <div>
-          <img src="img/scene1/1-배경.png" className="bgImg"></img>
-          <div className="mother1">
-            <img src="img/scene1/1-엄마.png"></img>
-          </div>
-          <div className="brother1">
-            <img src="img/scene1/1-오빠.png"></img>
-          </div>
-          <div className="sister1">
-            <img src="img/scene1/1-동생.png"></img>
-          </div>
-          <h2 id="Text"></h2>
-        </div>
-        <div id="output"></div>
-      </motion.div>
-      <style></style>
+      <img src="img/scene1/1-배경.png" className="bgImg" alt="#"></img>
+      <img src="img/scene1/1-엄마.png" className="mother1" alt="#"></img>
+      <img src="img/scene1/1-오빠.png" className="brother1" alt="#"></img>
+      <img src="img/scene1/1-동생.png" className="sister1" alt="#"></img>
+      <h2 id="Text"> </h2>
     </div>
   );
 };

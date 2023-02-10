@@ -1,35 +1,27 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
-import BackHome from "../modal/BackHomeModal";
+import BackHome from "../modal/BackHomeDrop";
 import "./Scene16.css";
-
 
 // 하단은 음성파일
 const audio = new Audio("sound/sample.wav");
 const start = () => {
   audio.play();
 };
-const stop = () => {
-  audio.pause();
-};
 
 // 하단은 자막
 
 const Scene16 = () => {
   const navigate = useNavigate();
-  // const timerpage = setTimeout(() => navigate(`/scene2`), 10000);
+  setTimeout(() => navigate(`/scene17`), 10000);
 
   return (
     <div className="SceneBox">
       <BackHome></BackHome>
-      <motion.div initial={{ x: 500 }} animate={{ x: 0 }} exit={{ opacity: 0 }}>
-        <div className="bgImg">
-          <img src="img/scene11/11.png"></img>
-        </div>
-        <div id="output"></div>
-      </motion.div>
-      <style></style>
+        <img src="img/scene16/16-배경.png" className="bgImg16" alt="#"></img>
+        <img src="img/scene16/16-구름.png" className="cloud" alt="#"></img>
+        <img src="img/scene16/16-오누이.png" className="siblings16" alt="#"></img>
+        <img src="img/scene16/16-호랑이.png" className="tiger16" alt="#"></img>
     </div>
   );
 };

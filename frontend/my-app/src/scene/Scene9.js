@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
-import BackHome from "../modal/BackHomeModal";
+import BackHome from "../modal/BackHomeDrop";
 import "./Scene9.css";
 
 // 하단은 음성파일
@@ -22,43 +21,28 @@ function Change_text(){
     subtitle.innerText = '으악! 호랑이 손이야!'
   },3320)
   setTimeout(()=>{
-    subtitle.innerText = '손이라고 말해볼까요? 손!'
+    subtitle.innerText = '손이라고 말해볼까요?'
   },6800)
 }
 const Scene9 = () => {
   const navigate = useNavigate();
-  // const timerpage = setTimeout(() => navigate(`/scene2`), 10000);
 
   // 하단은 자막 시작 딜레이
   setTimeout(Change_text)
   // 하단은 페이지 넘어가는 시간
-  const timerpage = setTimeout(() => navigate(`/scene10`), 14800);
+  setTimeout(() => navigate(`/scene10`), 14800);
   // 하단은 오디오 파일 자동재생
   setTimeout(start)
 
   return (
     <div className="SceneBox">
       <BackHome></BackHome>
-      <motion.div initial={{ x: 500 }} animate={{ x: 0 }} exit={{ opacity: 0 }}>
-        <div className="bgImg">
-          <img src="img/scene9/9-배경.png"></img>
-          <div className="brother9">
-            <img src="img/scene9/9-오빠.png"></img>
-          </div>
-          <div className="sister9">
-            <img src="img/scene9/9-동생.png"></img>
-          </div>
-          <div className="hand1">
-            <img src="img/scene9/9-손1.png"></img>
-          </div>
-          <div className="hand2">
-            <img src="img/scene9/9-손2.png"></img>
-          </div>
-          <h2 id="Text"></h2>
-        </div>
-        <div id="output"></div>
-      </motion.div>
-      <style></style>
+          <img src="img/scene9/9-배경.png" className="bgImg" alt="#"></img>
+          <img src="img/scene9/9-오빠.png" className="brother9" alt="#"></img>
+          <img src="img/scene9/9-동생.png" className="sister9" alt="#"></img>
+          <img src="img/scene9/9-손1.png" className="hand1" alt="#"></img>
+          <img src="img/scene9/9-손2.png" className="hand2" alt="#"></img>
+          <h2 id="Text"> </h2>
     </div>
   );
 };

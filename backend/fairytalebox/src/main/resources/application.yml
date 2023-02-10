@@ -28,4 +28,5 @@ jwt:
   #HS512 알고리즘을 사용할 것이기 때문에 512bit, 즉 64byte 이상의 secret key를 사용해야 한다.
   #echo 'spring-boot-security-jwt-ssafy-project-fairytalebox-spring-boot-security-jwt'|base64
   secret: c3ByaW5nLWJvb3Qtc2VjdXJpdHktand0LXNzYWZ5LXByb2plY3QtZmFpcnl0YWxlYm94LXNwcmluZy1ib290LXNlY3VyaXR5LWp3dA==
-  token-validity-in-seconds: 100000000
+  token-validity-in-milliseconds: 1800000
+  refresh-token-validity-in-milliseconds: 1210000000
