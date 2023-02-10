@@ -36,8 +36,8 @@
     height: 50vh;
     object-fit: contain;
     animation-name: mother-move18;
-    animation-duration: 3s;
-    animation-delay: 1s;
+    animation-duration: 4s;
+    animation-delay: 5s;
     animation-fill-mode: forwards;
 }
 @keyframes mother-move18 {

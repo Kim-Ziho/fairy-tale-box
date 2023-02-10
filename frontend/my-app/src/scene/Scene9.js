@@ -42,6 +42,8 @@ const Scene9 = () => {
           <img src="img/scene9/9-동생.png" className="sister9" alt="#"></img>
           <img src="img/scene9/9-손1.png" className="hand1" alt="#"></img>
           <img src="img/scene9/9-손2.png" className="hand2" alt="#"></img>
+          <h1 className="word9">손</h1>
+          <div className="popup9"></div>
           <h2 id="Text"> </h2>
     </div>
   );
