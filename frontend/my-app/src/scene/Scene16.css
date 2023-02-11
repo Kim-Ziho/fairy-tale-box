@@ -96,5 +96,5 @@
     width: 100vw;
     height: 100vh;
     opacity: 1;
-    background-image: url("/public/img/bg2.jfif");
+    background-image: url("../../public/img/bgimg.jpg");
 }
