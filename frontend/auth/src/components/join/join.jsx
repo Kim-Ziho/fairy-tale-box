@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom"
 import { Link } from 'react-router-dom';
+import './join.css'
+
 
 const Join = () => {
     const [email, setEmail] = useState('');
@@ -10,7 +12,6 @@ const Join = () => {
     const [emailValid, setEmailValid] = useState(false);
     const [passwordValid, setPasswordValid] = useState(false);
     const [matchPassword, setMatchPassword] = useState(false);
-    const [notAllow, setNotAllow] = useState(true);
     const [nickname, setNickname] = useState('');
     const [emailCheck, setEmailCheck] = useState(false);
     const [nicknameCheck, setNicknameCheck] = useState(false);
@@ -62,13 +63,6 @@ const Join = () => {
 
     }, [checkedPassword])
 
-    useEffect(() => {
-        if (emailCheck && nicknameCheck && emailValid && passwordValid && matchPassword && nickname.length < 8) {
-            setNotAllow(false);
-            return;
-        }
-        setNotAllow(true);
-    })
 
     const axiossignup = () => {
         axios.post('http://localhost:8080/api/member/signup', {
@@ -117,9 +111,7 @@ const Join = () => {
     return (
         <div className='page'>
             <div className='titleWrap'>
-                회원가입을
-                <br />
-                진행해주세요
+                🧚🏻‍♀️ 동화상자 🧚🏻‍♂️
             </div>
 
             <div className='contentWrap'>
@@ -132,12 +124,12 @@ const Join = () => {
                         value={email}
                         onChange={handleEmail} />
                 </div>
+                <button onClick={() => { axiosemail() }}> 중복검사</button>
                 <div className='errorMessageWrap'>
                     {!emailValid && email.length > 0 && (
                         <div>올바른 이메일을 입력해주세요</div>
                     )}
                 </div>
-                <button onClick={() => { axiosemail() }}> 중복검사</button>
                 <div className='inputTitle'>닉네임</div>
                 <div className='inputWrap'>
                     <input
@@ -186,8 +178,8 @@ const Join = () => {
                     </div>
 
                     <div>
-                        <button onClick={() => { axiossignup() }} disabled={notAllow} className='bottomButton'>
-                            확인
+                        <button onClick={() => { axiossignup() }} className='bottomButton'>
+                            회원가입
                         </button>
                     </div>
                 </div>
