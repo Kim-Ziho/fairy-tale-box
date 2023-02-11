@@ -1,0 +1,77 @@
+.titleWrap {
+    padding-left: 15vw;
+    padding-top: 10vh;
+    font-size: 34px;
+    font-weight: 700;
+    color: black;
+}
+
+.contentWrap {
+    margin-top: 26px;
+    flex: 1;
+}
+
+.inputTitle {
+    margin-left: 5vw;
+    font-size: 14px;
+    font-weight: 600;
+    color: black;
+}
+
+.inputWrap {
+    margin-left: 5vw;
+    margin-right: 5vw;
+    display: flex;
+    border-radius: 8px;
+    padding: 16px;
+    margin-top: 8px;
+    background-color: white;
+    border: 1px solid #e2e0e0;
+}
+
+.inputWrap:focus-within {
+    border: 1px solid #9e30f4;
+}
+
+.input {
+    width: 100%;
+    outline: none;
+    border: none;
+    height: 17px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.input::placeholder {
+    color: #dadada;
+}
+
+.errorMessageWrap {
+    margin-top: 8px;
+    color: #ef000e;
+    font-size: 12px;
+}
+
+.bottomButton {
+    margin-top: 3vh;
+    margin-left: 5%;
+    width: 90%;
+    height: 48px;
+    border: none;
+    font-size: 17px;
+    background-color: #9e30f4;
+    border-radius: 64px;
+    color: white;
+    margin-bottom: 16px;
+    cursor: pointer;
+}
+
+.bottomButton:disabled {
+    background-color: #dadada;
+    color: white;
+}
+
+.newAccount {
+    margin-left: 35%;
+    margin-top: 30vh;
+}

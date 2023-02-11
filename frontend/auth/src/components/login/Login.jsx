@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import './Login.css'
 import { Link } from 'react-router-dom';
 
 
@@ -9,7 +10,6 @@ export default function Login() {
 
     const [emailValid, setEmailValid] = useState(false);
     const [passwordValid, setPasswordValid] = useState(false);
-    const [notAllow, setNotAllow] = useState(true);
 
 
     const handleEmail = (e) => {
@@ -37,24 +37,13 @@ export default function Login() {
         }
     }, [password])
 
-    useEffect(() => {
-        if (emailValid && passwordValid) {
-            setNotAllow(false);
-            return;
-        }
-        setNotAllow(true);
-
-    }, [emailValid, passwordValid])
-
-
     const axiosuser = () => {
         axios.post('http://localhost:8080/api/member/login', {
             email,
             password,
-
         })
             .then((res) => {
-                console.log(res.data)
+                alert("로그인 성공! 플레이를 진행해주세요")
             })
             .catch((err) => {
                 console.log(err.response.data.message)
@@ -65,9 +54,7 @@ export default function Login() {
         <div className='body'>
             <div className='page'>
                 <div className='titleWrap'>
-                    이메일과 비밀번호를
-                    <br />
-                    입력해주세요
+                    🧚🏻‍♀️ 동화상자 🧚🏻‍♂️
                 </div>
 
                 <div className='contentWrap'>
@@ -104,12 +91,16 @@ export default function Login() {
                 </div>
 
                 <div>
-                    <button onClick={() => { axiosuser() }} disabled={notAllow} className='bottomButton'>
-                        확인
+                    <button onClick={() => { axiosuser() }} className='bottomButton'>
+                        로그인
                     </button>
                 </div>
 
-                <Link to="/join">회원가입페이지로</Link>
+
+
+                <div className='newAccount'>
+                    <Link to="/join">새 계정 만들기</Link>
+                </div>
 
             </div>
         </div>
