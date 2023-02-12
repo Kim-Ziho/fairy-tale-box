@@ -70,14 +70,13 @@ const Join = () => {
             nickname,
             password,
             checkedPassword,
-            serialNum: "동화상자c101-1"
+            serialNum: "동화상자c101-2"
         })
             .then((res) => {
                 goToLogin()
-                console.log(res.data)
             })
             .catch((err) => {
-                console.log(err.response.data.message)
+                alert(err.response.data.message)
             })
     }
 
@@ -116,75 +115,78 @@ const Join = () => {
 
             <div className='contentWrap'>
                 <div className='inputTitle'>이메일 주소</div>
-                <div className='inputWrap'>
+                <div className='inputWrapCheck'>
                     <input
                         type='text'
                         className='input'
                         placeholder='test@gmail.com'
                         value={email}
                         onChange={handleEmail} />
+                    <button className="checkButton" onClick={() => { axiosemail() }}> 중복검사</button>
                 </div>
-                <button onClick={() => { axiosemail() }}> 중복검사</button>
+
                 <div className='errorMessageWrap'>
                     {!emailValid && email.length > 0 && (
                         <div>올바른 이메일을 입력해주세요</div>
                     )}
                 </div>
                 <div className='inputTitle'>닉네임</div>
-                <div className='inputWrap'>
+                <div className='inputWrapCheck'>
                     <input
                         type='text'
                         className='input'
-                        placeholder='test@gmail.com'
+                        placeholder='닉네임은 8자 이하입니다.'
                         value={nickname}
                         onChange={handleNickname} />
+                    <button className="checkButton" onClick={() => { axiosnickname() }}>
+                        중복검사
+                    </button>
                 </div>
                 <div className='errorMessageWrap'>
                     {nickname.length > 8 && (
                         <div>닉네임은 8자 이하입니다.</div>
+                    )}</div>
+
+
+
+                <div style={{ marginTop: "15px" }} className='inputTitle'>비밀번호</div>
+                <div className='inputWrap'>
+                    <input
+                        type='password'
+                        className='input'
+                        placeholder='영문, 숫자, 특수문자 포함 8자 이상'
+                        value={password}
+                        onChange={handlePassword} />
+                </div>
+                <div className='errorMessageWrap'>
+                    {!passwordValid && password.length > 0 && (
+                        <div>영문, 숫자, 특수문자 포함 8자 이상 입력해주세요</div>
                     )}
-                    <button onClick={() => { axiosnickname() }}>
-                        중복검사
+                </div>
+                <div style={{ marginTop: "15px" }} className='inputTitle'>비밀번호 확인</div>
+                <div className='inputWrap'>
+                    <input
+                        type='password'
+                        className='input'
+                        placeholder='영문, 숫자, 특수문자 포함 8자 이상'
+                        value={checkedPassword}
+                        onChange={handleCheckedPassword} />
+                </div>
+                <div className='errorMessageWrap'>
+                    {!matchPassword && checkedPassword.length > 0 && (
+                        <div>비밀번호가 일치하지 않습니다.</div>
+                    )}
+                </div>
+
+                <div>
+                    <button onClick={() => { axiossignup() }} className='bottomButton'>
+                        회원가입
                     </button>
-
-
-                    <div style={{ marginTop: "15px" }} className='inputTitle'>비밀번호</div>
-                    <div className='inputWrap'>
-                        <input
-                            type='password'
-                            className='input'
-                            placeholder='영문, 숫자, 특수문자 포함 8자 이상'
-                            value={password}
-                            onChange={handlePassword} />
-                    </div>
-                    <div className='errorMessageWrap'>
-                        {!passwordValid && password.length > 0 && (
-                            <div>영문, 숫자, 특수문자 포함 8자 이상 입력해주세요</div>
-                        )}
-                    </div>
-                    <div style={{ marginTop: "15px" }} className='inputTitle'>비밀번호 확인</div>
-                    <div className='inputWrap'>
-                        <input
-                            type='password'
-                            className='input'
-                            placeholder='영문, 숫자, 특수문자 포함 8자 이상'
-                            value={checkedPassword}
-                            onChange={handleCheckedPassword} />
-                    </div>
-                    <div className='errorMessageWrap'>
-                        {!matchPassword && checkedPassword.length > 0 && (
-                            <div>비밀번호가 일치하지 않습니다.</div>
-                        )}
-                    </div>
-
-                    <div>
-                        <button onClick={() => { axiossignup() }} className='bottomButton'>
-                            회원가입
-                        </button>
-                    </div>
                 </div>
             </div>
-            <Link to="/login">로그인 페이지로</Link>
+            <div className="goLogin">
+                <Link to="/login">로그인 페이지로</Link>
+            </div>
         </div>
 
 
