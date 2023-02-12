@@ -24,8 +24,6 @@ export default function Login() {
 
     const handlePassword = (e) => {
         setPassword(e.target.value);
-        console.log(password)
-
     }
 
     useEffect(() => {
@@ -44,65 +42,65 @@ export default function Login() {
         })
             .then((res) => {
                 alert("로그인 성공! 플레이를 진행해주세요")
+                setEmail('')
+                setPassword('')
             })
             .catch((err) => {
-                console.log(err.response.data.message)
+                alert(err.response.data.message)
             })
     }
 
     return (
         <div className='body'>
-            <div className='page'>
-                <div className='titleWrap'>
-                    🧚🏻‍♀️ 동화상자 🧚🏻‍♂️
-                </div>
-
-                <div className='contentWrap'>
-                    <div className='inputTitle'>이메일 주소</div>
-                    <div className='inputWrap'>
-                        <input
-                            type='text'
-                            className='input'
-                            placeholder='test@gmail.com'
-                            value={email}
-                            onChange={handleEmail} />
-                    </div>
-                    <div className='errorMessageWrap'>
-                        {!emailValid && email.length > 0 && (
-                            <div>올바른 이메일을 입력해주세요</div>
-                        )}
-                    </div>
-
-
-                    <div style={{ marginTop: "26px" }} className='inputTitle'>비밀번호</div>
-                    <div className='inputWrap'>
-                        <input
-                            type='password'
-                            className='input'
-                            placeholder='영문, 숫자, 특수문자 포함 8자 이상'
-                            value={password}
-                            onChange={handlePassword} />
-                    </div>
-                    <div className='errorMessageWrap'>
-                        {!passwordValid && password.length > 0 && (
-                            <div>영문, 숫자, 특수문자 포함 8자 이상 입력해주세요</div>
-                        )}
-                    </div>
-                </div>
-
-                <div>
-                    <button onClick={() => { axiosuser() }} className='bottomButton'>
-                        로그인
-                    </button>
-                </div>
-
-
-
-                <div className='newAccount'>
-                    <Link to="/join">새 계정 만들기</Link>
-                </div>
-
+            <div className='titleWraplogin'>
+                🧚🏻‍♀️ 동화상자 🧚🏻‍♂️
             </div>
+
+            <div className='contentWraplogin'>
+                <div className='inputTitlelogin'>이메일 주소</div>
+                <div className='inputWraplogin'>
+                    <input
+                        type='text'
+                        className='inputlogin'
+                        placeholder='test@gmail.com'
+                        value={email}
+                        onChange={handleEmail} />
+                </div>
+                <div className='errorMessageWraplogin'>
+                    {!emailValid && email.length > 0 && (
+                        <div>올바른 이메일을 입력해주세요</div>
+                    )}
+                </div>
+
+
+                <div style={{ marginTop: "26px" }} className='inputTitlelogin'>비밀번호</div>
+                <div className='inputWraplogin'>
+                    <input
+                        type='password'
+                        className='inputlogin'
+                        placeholder='영문, 숫자, 특수문자 포함 8자 이상'
+                        value={password}
+                        onChange={handlePassword} />
+                </div>
+                <div className='errorMessageWraplogin'>
+                    {!passwordValid && password.length > 0 && (
+                        <div>영문, 숫자, 특수문자 포함 8자 이상 입력해주세요</div>
+                    )}
+                </div>
+            </div>
+
+            <div>
+                <button onClick={() => { axiosuser() }} className='bottomButtonlogin'>
+                    로그인
+                </button>
+            </div>
+
+
+
+            <div className='newAccountlogin'>
+                <Link to="/join">새 계정 만들기</Link>
+            </div>
+
         </div>
     )
 }

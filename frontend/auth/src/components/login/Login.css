@@ -1,73 +1,70 @@
-.titleWrap {
-    padding-left: 15%;
+.titleWraplogin {
+    margin-top: 0;
+    margin: auto;
     padding-top: 10vh;
-    font-size: 50px;
-    font-weight: 700;
-    color: black;
+    padding-bottom: 5%;
+    font-size: 2rem;
+    font-weight: bold;
+    width: fit-content;
+    color: rgb(0, 0, 0);
+    margin-bottom: 4%;
 }
 
-.contentWrap {
-    margin-top: 26px;
-    flex: 1;
+.inputWraplogin {
+    padding-right: 1%;
+    margin-left: 4%;
+    margin-right: 4%;
+    display: flex;
+    border-radius: 1vh;
+    padding: 4%;
+    margin-top: 2%;
+    background-color: white;
+    border: 1px solid #e2e0e0;
+    margin-bottom: 2%;
 }
 
-.inputTitle {
+
+.inputTitlelogin {
     margin-left: 5vw;
-    font-size: 14px;
+    font-size: 0.9rem;
     font-weight: 600;
     color: black;
 }
 
-.inputWrap {
-    margin-left: 5vw;
-    margin-right: 5vw;
-    display: flex;
-    border-radius: 8px;
-    padding: 16px;
-    margin-top: 8px;
-    background-color: white;
-    border: 1px solid #e2e0e0;
-}
 
-.inputWrap:focus-within {
-    border: 1px solid #9e30f4;
-}
-
-.input {
+.inputlogin {
     width: 100%;
     outline: none;
     border: none;
-    height: 17px;
-    font-size: 14px;
+    height: 3vh;
+    font-size: 1rem;
     font-weight: 400;
 }
 
-.input::placeholder {
-    color: #dadada;
-}
-
-.errorMessageWrap {
+.errorMessageWraplogin {
     margin-left: 5%;
-    margin-top: 8px;
     color: #ef000e;
-    font-size: 12px;
+    font-size: 0.8rem;
 }
 
-.bottomButton {
-    margin-top: 3vh;
-    margin-left: 0%;
-    width: 10%;
-    height: 48px;
+.bottomButtonlogin {
+    font-size: 1rem;
+    margin: auto;
+    width: 90%;
+    height: 7vh;
     border: none;
-    font-weight: 700;
-    /* background-color: #9e30f4; */
-    border-radius: 64px;
+    font-weight: bold;
+    background-color: #9e30f4;
+    border-radius: 4vh;
     color: white;
-    margin-bottom: 16px;
-    cursor: pointer;
+    margin-left: 5%;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
 }
 
-.newAccount {
+.newAccountlogin {
+    position: fixed;
+    bottom: 2;
     margin-left: 35%;
     margin-top: 30vh;
 }
