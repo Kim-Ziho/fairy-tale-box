@@ -31,20 +31,25 @@
 .well{
     rotate: 100deg;
     position: absolute;
-    left: -22%;
-    bottom: 5%;
-    top: 30%;
-    right: 0%;
-    height: 150%;
+    top: 80%;
+    left: -20%;
+    /* display: inline-block; */
+    width: 65vw;
+    transform: translate(-50%, -50%) rotate(0deg);
+    /* 원을 정가운데로 맞추기위해서 축을-50%이동해줍니다. */
     z-index: -1;
-    animation-name:well-move;
-    animation-duration: 7s;
-    animation-delay: 15s;
-    animation-fill-mode: both;
-    width: 140vw;
-    height: 140vh;
-    object-fit: contain;
 }
+/* .well:after{
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: rotate(45deg);
+    width: 0px; height: 0px;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid none;
+    border-right: 30px solid transparent;
+    border-left: 30px solid  #000;
+} */
 .hidden{
     position: absolute;
     margin-top: -0.35%;

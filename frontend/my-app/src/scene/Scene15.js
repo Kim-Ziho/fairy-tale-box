@@ -28,10 +28,10 @@ function Change_text(){
     subtitle.innerText = '제발 도와주세요!'
   },10940)
   setTimeout(()=>{
-    subtitle.innerText = '동아줄이 내려오도록 손을 머리위로 만세해볼까요?'
+    subtitle.innerText = '동아줄이 내려오도록 손을 머리 위로 만세 해볼까요?'
   },14140)
   setTimeout(()=>{
-    subtitle.innerText = '한번더 만세!'
+    subtitle.innerText = '한 번 더 만세!'
   },20230)
   setTimeout(()=>{
     subtitle.innerText = '마지막으로 만세!'

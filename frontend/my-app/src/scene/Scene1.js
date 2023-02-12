@@ -16,16 +16,16 @@ const start = () => {
 function Change_text() {
   const subtitle = document.getElementById("Text");
   setTimeout(() => {
-    subtitle.innerText = "옛날옛날에 마음씨 좋은 엄마와";
+    subtitle.innerText = "옛날 옛적에 마음씨 좋은 엄마와";
   }, 1000);
   setTimeout(() => {
-    subtitle.innerText = "사이좋은 오누이가 살고 있었어요";
+    subtitle.innerText = "사이좋은 오누이가 살고 있었어요.";
   }, 3500);
   setTimeout(() => {
     subtitle.innerText = "얘들아, 혹시 누군가 문을 열어달라고 하면";
   }, 5500);
   setTimeout(() => {
-    subtitle.innerText = "엄마말고는 문을 열어 주면 안된단다!";
+    subtitle.innerText = "엄마 말고는 문을 열어 주면 안 된단다!";
   }, 10000);
   setTimeout(() => {
     subtitle.innerText = "네, 그럴게요!";
@@ -55,7 +55,7 @@ const Scene1 = () => {
         axios({
           method:'get',
           url:`192.168.100.245:3001/startrecord?wordname="엄마"&hist_num=${number}&word_id=1`
-        }),3000
+        }),14050
       )
     })
   },[]);

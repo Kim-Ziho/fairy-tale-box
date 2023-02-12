@@ -22,13 +22,13 @@ const start2 = () => {
 function Change_text(){
   const subtitle = document.getElementById('Text')
   setTimeout(()=>{
-    subtitle.innerText = '어서 나가서 우물옆 나무 위에 숨어버리자!'
+    subtitle.innerText = '어서 나가서 우물 옆 나무 위에 숨어버리자!'
   },1000)
   setTimeout(()=>{
     subtitle.innerText = '나무라고 말해 볼까요?'
   },5960)
   setTimeout(()=>{
-    subtitle.innerText = '오누이는 나무 위로 올라갔어요'
+    subtitle.innerText = '오누이는 나무 위로 올라갔어요.'
   },13500)
 }
 const Scene10 = () => {

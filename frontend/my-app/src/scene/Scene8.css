@@ -17,19 +17,17 @@
 
 .hole{
     position: absolute;
-    right: 0%;
-    left: 0%;
-    top: 0%;
-    bottom: 0%;
-    height: 200%;
-    animation-name: hole-move, hole-hide;
-    animation-duration: 9s,1s;
-    animation-delay: 5s,14s;
-    animation-iteration-count: 1,1;
-    animation-fill-mode: both;
-    width: 190vw;
-    height: 190vh;
-    object-fit: contain;
+
+    top: 70%; /* 초기 위치값을 설정해줍니다. */
+
+    left: 70%; /* 초기 위치값을 설정해줍니다. */
+
+    width: 300%; /*원 가로사이즈*/
+
+    height: 300%; /*원 세로사이즈*/
+
+    transform: translate(-45%, -40%); /* 원을 정가운데로 맞추기위해서 축을-50%이동해줍니다.*/
+
 }
 
 @keyframes hole-move {
@@ -52,4 +50,20 @@
     to{
         opacity: 0;
     }
+}
+
+.circle { /* 마우스를 따라다니는 원 설정*/
+
+    position: absolute;
+
+    top: 70%; /* 초기 위치값을 설정해줍니다. */
+
+    left: 70%; /* 초기 위치값을 설정해줍니다. */
+
+    width: 300%; /*원 가로사이즈*/
+
+    height: 300%; /*원 세로사이즈*/
+
+    transform: translate(-45%, -40%); /* 원을 정가운데로 맞추기위해서 축을-50%이동해줍니다.*/
+    
 }

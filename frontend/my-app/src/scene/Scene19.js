@@ -25,13 +25,13 @@ function Change_text(){
     subtitle.innerText = '이렇게 해서, 하늘로 올라간 귀여운 동생은 해님이,'
   },1000)
   setTimeout(()=>{
-    subtitle.innerText = '씩씩한 오빠는 달님이 되었답니다'
+    subtitle.innerText = '씩씩한 오빠는 달님이 되었답니다.'
   },5020)
   setTimeout(()=>{
-    subtitle.innerText = '햇님 이라고 말해볼까요?'
+    subtitle.innerText = '햇님이라고 말해볼까요?'
   },8370)
   setTimeout(()=>{
-    subtitle.innerText = '달님 이라고 말해볼까요?'
+    subtitle.innerText = '달님이라고 말해볼까요?'
   },15000)
 }
 const Scene19 = () => {

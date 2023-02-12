@@ -18,7 +18,7 @@ function Change_text() {
     subtitle.innerText = "일을 마친 엄마가 집으로 돌아가고 있었는데,";
   }, 1000);
   setTimeout(() => {
-    subtitle.innerText = "갑자기 사나운 호랑이 한 마리가 나타났어요";
+    subtitle.innerText = "갑자기 사나운 호랑이 한 마리가 나타났어요.";
   }, 3900);
   setTimeout(() => {
     subtitle.innerText = "호랑이라고 말해볼까요?";
