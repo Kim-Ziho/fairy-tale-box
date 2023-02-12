@@ -121,7 +121,6 @@ public class MemberServiceImpl implements MemberService {
         memberRaspberry.clearToken();
 
         return tokenInfo;
-
     }
 
     @Override
