@@ -13,14 +13,17 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* -ms-overflow-style: none; */
   background-image: url(../public/img/bgimg.jpg);
   background-size: cover;
-  /* background-image: url(../public/img/scene2/2-배경.png); */
 }
 
 * {
-  cursor: url("../public/img/cur11.png"), auto;
+/*  cursor: url("../public/img/cur1-1.png"), auto;*/
+  cursor: url("../public/img/cur2-1.png"), auto;
+}
+*:active {
+/*  cursor: url("../public/img/cur1-2.png"), auto;*/
+  cursor: url("../public/img/cur2-2.png"), auto;
 }
 
 ::-webkit-scrollbar {

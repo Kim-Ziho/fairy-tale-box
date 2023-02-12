@@ -5,14 +5,12 @@ import axios from "axios";
 import "./History.css";
 
 const History = () => {
-  // const [hist, setHists] = useState([]);
   const [histchild, setHistchild] = useState([]);
 
   useEffect(() => {
     axios
     .get("http://i8c101.p.ssafy.io/api/history")
     .then((response) => {
-      // setHists(response.data);
       const hist = response.data;
       setHistchild(
         hist.map((hist) => {
@@ -40,7 +38,9 @@ const History = () => {
   return (
     <div>
       <div>
-        <Back />
+      <Link to="/">
+        <button className="backBtn txt">👈🏻 뒤로가기</button>
+      </Link>
       </div>
       <div className="historyBox">
         <h3 className="histMainText txt">📝 학습기록 🎧</h3>
