@@ -19,6 +19,7 @@
 }
 
 .inputWrap {
+    margin: auto;
     margin-left: 5vw;
     margin-right: 5vw;
     display: flex;
