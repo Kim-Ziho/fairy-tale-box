@@ -65,7 +65,7 @@ const Join = () => {
 
 
     const axiossignup = () => {
-        axios.post('http://i8c101.p.ssafy.io/api/member/signup', {
+        axios.post('http://i8c101.p.ssafy.io:8080/api/member/signup', {
             email,
             nickname,
             password,
@@ -81,7 +81,7 @@ const Join = () => {
     }
 
     const axiosemail = () => {
-        axios.post('http://i8c101.p.ssafy.io/api/member/email/check', {
+        axios.post('http://i8c101.p.ssafy.io:8080/api/member/email/check', {
             email,
         })
             .then((res) => {
@@ -94,7 +94,7 @@ const Join = () => {
     }
 
     const axiosnickname = () => {
-        axios.post('http://i8c101.p.ssafy.io/api/member/nickname/check', {
+        axios.post('http://i8c101.p.ssafy.io:8080/api/member/nickname/check', {
             nickname,
         })
             .then((res) => {
