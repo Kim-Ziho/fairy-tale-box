@@ -24,13 +24,13 @@ function Change_text() {
     subtitle.innerText = "호랑이는 엄마가 입던 옷을 입고";
   }, 1000);
   setTimeout(() => {
-    subtitle.innerText = "오누이가 있는 집을 찾아갔어요";
+    subtitle.innerText = "오누이가 있는 집을 찾아갔어요.";
   }, 3900);
   setTimeout(() => {
     subtitle.innerText = "집이라고 말해볼까요?";
   }, 6500);
   setTimeout(() => {
-    subtitle.innerText = "애들아, 엄마 왔다!";
+    subtitle.innerText = "얘들아, 엄마 왔다!";
   }, 14000);
 }
 

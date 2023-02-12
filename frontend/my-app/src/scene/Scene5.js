@@ -27,7 +27,7 @@ function Change_text() {
     subtitle.innerText = "호랑이는 떡을 배불리 먹고서";
   }, 3900);
   setTimeout(() => {
-    subtitle.innerText = "약속을 깨고 엄마까지 잡아먹어버렸어요";
+    subtitle.innerText = "약속을 깨고 엄마까지 잡아먹어 버렸어요.";
   }, 5400);
   setTimeout(() => {
     subtitle.innerText = "약속이라고 말해볼까요?";

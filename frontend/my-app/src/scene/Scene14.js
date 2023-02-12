@@ -15,10 +15,10 @@ const start = () => {
 function Change_text(){
   const subtitle = document.getElementById('Text')
   setTimeout(()=>{
-    subtitle.innerText = '이 놈들, 나를 속였겠다? 도끼로 나무를 잘라주지!'
+    subtitle.innerText = '이놈들, 나를 속였겠다? 도끼로 나무를 잘라주지!'
   },1000)
   setTimeout(()=>{
-    subtitle.innerText = '호랑이가 도끼로 나무를 쿵쿵 찍고 있어요'
+    subtitle.innerText = '호랑이가 도끼로 나무를 쿵쿵 찍고 있어요.'
   },5300)
   setTimeout(()=>{
     subtitle.innerText = '나무에서 떨어지지 않게 바닥에 몸을 웅크리세요!'

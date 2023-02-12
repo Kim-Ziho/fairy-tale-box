@@ -18,10 +18,10 @@ function Change_text(){
     subtitle.innerText = '오호라, 참기름을 발라보자!'
   },1000)
   setTimeout(()=>{
-    subtitle.innerText = '호랑이가 못 올라오도록 나무에 참기름을 바르세요'
+    subtitle.innerText = '호랑이가 못 올라오도록 나무에 참기름을 바르세요.'
   },4580)
   setTimeout(()=>{
-    subtitle.innerText = '호랑이는 참기름 때문에 계속 미끄러져요'
+    subtitle.innerText = '호랑이는 참기름 때문에 계속 미끄러져요.'
   },14320)
 }
 
