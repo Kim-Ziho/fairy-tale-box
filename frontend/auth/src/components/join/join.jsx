@@ -76,6 +76,7 @@ const Join = () => {
                 goToLogin()
             })
             .catch((err) => {
+                console.log(err)
                 alert(err.response.data.message)
             })
     }
@@ -89,6 +90,7 @@ const Join = () => {
                 alert('사용 가능한 이메일 입니다.')
             })
             .catch((err) => {
+                console.log(err)
                 alert(err.response.data.message)
             })
     }
@@ -102,6 +104,7 @@ const Join = () => {
                 alert('사용 가능한 닉네임 입니다.')
             })
             .catch((err) => {
+                console.log(err)
                 alert(err.response.data.message)
             })
 
