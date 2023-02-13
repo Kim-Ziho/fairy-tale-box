@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { useNavigate , useLocation} from "react-router-dom";
 import BackHome from "../modal/BackHomeDrop";
 import "./Scene3.css";
@@ -20,7 +20,6 @@ function Change_text() {
   }, 1000);
   setTimeout(() => {
     subtitle.innerText = "떡이라고 말해볼까요?";
-    // axios.get('192.168.100.245:3001/startrecord?wordname="호랑이"&hist_num=1')
   }, 3800);
 }
 
@@ -32,6 +31,28 @@ const Scene3 = () => {
 
   // 자막 시작 딜레이
   setTimeout(Change_text);
+  
+  useEffect(() => {
+    axios({
+      method: "post",
+      url: "http://i8c101.p.ssafy.io/api/history",
+      data: {
+        member_id: 5,
+        story_id: 1,
+        studyDate: new Date(),
+      },
+    }).then((res) => {
+      const number = res.data;
+      setTimeout(
+        () =>
+          axios({
+            method: "get",
+            url: `http://192.168.100.245:3001/startrecord?wordname=떡&hist_num=${number}&word_id=3`,
+          }),
+        3300
+      );
+    });
+  }, []);
   // 페이지 넘어가는 시간
   setTimeout(() => navigate(`/scene4`, { state: { value: number } }), 11610);
   // 오디오 파일 자동재생

@@ -1,7 +1,8 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { useNavigate , useLocation} from "react-router-dom";
 import BackHome from "../modal/BackHomeDrop";
 import "./Scene7.css";
+import axios from "axios";
 
 // 하단은 음성파일
 const audio7_1 = new Audio("sound/7-1.mp3");
@@ -38,6 +39,27 @@ const Scene7 = () => {
   console.log(number)
   // 하단은 자막 시작 딜레이
   setTimeout(Change_text)
+  useEffect(() => {
+  axios({
+      method: "post",
+      url: "http://i8c101.p.ssafy.io/api/history",
+      data: {
+        member_id: 5,
+        story_id: 1,
+        studyDate: new Date(),
+      },
+    }).then((res) => {
+      const number = res.data;
+      setTimeout(
+        () =>
+          axios({
+            method: "get",
+            url: `http://192.168.100.245:3001/startrecord?wordname=목소리&hist_num=${number}&word_id=6`,
+          }),
+        3270
+      );
+    });
+  }, [])
   // 하단은 페이지 넘어가는 시간
   setTimeout(() => navigate(`/scene8`, { state: { value: number } }), 13000);
   // 하단은 오디오 파일 자동재생
