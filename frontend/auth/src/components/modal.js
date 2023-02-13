@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./modal.css";
 
 const Modal = (props) => {
-  const { open, close, header, main, footer } = props;
+  const { open, close, main } = props;
 
   return (
     <div className={open ? "openModal modal" : "modal"}>
