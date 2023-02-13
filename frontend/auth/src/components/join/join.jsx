@@ -90,7 +90,7 @@ const Join = () => {
 
 
     const axiossignup = () => {
-        axios.post('http://127.0.0.1:8080/api/member/signup', {
+        axios.post('http://i8c101.p.ssafy.io/api/member/signup', {
             email,
             nickname,
             password,
