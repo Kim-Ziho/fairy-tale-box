@@ -20,16 +20,20 @@ function Change_text(){
   setTimeout(()=>{
     subtitle.innerText = '여기? 저기? 호랑이가 어디에 있을까요?'
   },6632)
-  setTimeout(()=>{
-    subtitle.innerText = '호랑이와 눈이 마주쳤어요!'
-  },12710)
-  setTimeout(()=>{
-    subtitle.innerText = '큰일 났다!'
-  },15690)
-  setTimeout(()=>{
-    subtitle.innerText = '오빠, 왜 그래?'
-  },17170)
 }
+
+var op_count=1;
+var settime_func;
+function fade_out(){
+  const hole = document.querySelector(".hole")
+  op_count=op_count-0.1;
+  hole.style.opacity=op_count;
+  settime_func = setTimeout(fade_out,1000);
+  if(op_count<0){
+    clearTimeout(settime_func);
+  }
+}
+
 
 
 const Scene8 = () => {
@@ -50,9 +54,21 @@ const Scene8 = () => {
       
       console.log(mouseX,mouseY)
       
-      // if( mouseX<100){
-      //   navigate('/scene9')
-      // }
+      if( mouseX>550 && mouseX<650 && mouseY>200 && mouseY<300){
+        const subtitle = document.getElementById('Text')
+        audio8.pause()
+        fade_out()
+        setTimeout(()=>{
+          subtitle.innerText = '호랑이와 눈이 마주쳤어요!'
+        },1000)
+        setTimeout(()=>{
+          subtitle.innerText = '큰일 났다!'
+        },3000)
+        setTimeout(()=>{
+          subtitle.innerText = '오빠, 왜 그래?'
+        },5000)
+        // navigate('/scene9')
+      }
   });
   }
   const navigate = useNavigate();
