@@ -36,7 +36,7 @@ export default function Login() {
     }, [password])
 
     const axiosuser = () => {
-        axios.post('http://i8c101.p.ssafy.io:8080/api/member/login', {
+        axios.post('http://i8c101.p.ssafy.io/api/member/login', {
             email,
             password,
         })
