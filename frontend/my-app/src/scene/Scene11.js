@@ -29,10 +29,6 @@ function Change_text(){
 }
 
 
-
-
-    
-
 const Scene11 = () => {
   function movewell(){
 
@@ -57,24 +53,20 @@ const Scene11 = () => {
     const degree = (radian * 180 / Math.PI).toFixed(0);
     well.style.transform = 'translate(-50%, -50%) rotate(' + degree + 'deg)';
   
-    console.log(x,y)
+    // console.log(x,y)
     
-    if( x>290 && x<310 && y>20 && y<300){
-      // const subtitle = document.getElementById('Text')
-      navigate('/scene12')
-    }
   })}
   const navigate = useNavigate();
-  // const location = useLocation();
-  // const number =  location.state.value;
-  // console.log(number)
+  const location = useLocation();
+  const number =  location.state.value;
+  console.log(number)
   // 하단은 자막 시작 딜레이
   setTimeout(Change_text)
   // 하단은 페이지 넘어가는 시간
-  // setTimeout(() => navigate(`/scene12`, { state: { value: number } }), 23000);
+  setTimeout(() => navigate(`/scene12`, { state: { value: number } }), 23000);
   // 하단은 오디오 파일 자동재생
   setTimeout(start)
-  setTimeout(movewell,3000)
+  setTimeout(movewell,11000)
   return (
     <div className="SceneBox">
       <BackHome></BackHome>

@@ -45,11 +45,11 @@ const Scene15 = () => {
       // 마우스의 좌표는 clientX와 clientY를 이용해 알수 있다. -> 브라우저 window의 좌표값 위치를 전달한다.
   
       // pageX, pageY와는 다름.
-      const mouseX = e.clientX;
+      // const mouseX = e.clientX;
   
       const mouseY = e.clientY;
         
-      console.log(mouseX,mouseY)
+      // console.log(mouseX,mouseY)
       
       if( mouseY<200 ){
         rope.animate([
@@ -64,16 +64,16 @@ const Scene15 = () => {
     });
   }
   const navigate = useNavigate();
-  // const location = useLocation();
-  // const number =  location.state.value;
-  // console.log(number)
+  const location = useLocation();
+  const number =  location.state.value;
+  console.log(number)
   // 하단은 자막 시작 딜레이
   setTimeout(Change_text)
   // 하단은 페이지 넘어가는 시간
-  // setTimeout(() => navigate(`/scene16`, { state: { value: number } }), 30020);
+  setTimeout(() => navigate(`/scene16`, { state: { value: number } }), 30020);
   // 하단은 오디오 파일 자동재생
   setTimeout(start)
-  setTimeout(moveimg,3000)
+  setTimeout(moveimg,24000)
   return (
     <div className="SceneBox">
       <BackHome></BackHome>
