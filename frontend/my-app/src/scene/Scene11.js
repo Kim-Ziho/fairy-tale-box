@@ -30,34 +30,40 @@ function Change_text(){
 
 
 
-function movewell(){
 
-
-  const well = document.querySelector(".well");
-  let center = {
-      x : well.getBoundingClientRect().left + (well.clientWidth/2),
-      y : well.getBoundingClientRect().top + (well.clientHeight/2)
-  }
-
-  window.addEventListener('resize', ()=>{
-      center = {
-          x : well.getBoundingClientRect().left + (well.clientWidth/2),
-          y : well.getBoundingClientRect().top + (well.clientHeight/2)
-      }
-      console.log('실행');
-  })
-  document.addEventListener("mousemove", (e) => {
-  const x = center.x - e.clientX;
-  const y = center.y - e.clientY;
-  
-  const radian = Math.atan2(y, x);
-  const degree = (radian * 180 / Math.PI).toFixed(0);
-  well.style.transform = 'translate(-50%, -50%) rotate(' + degree + 'deg)';
-
-})}
     
 
 const Scene11 = () => {
+  function movewell(){
+
+    const well = document.querySelector(".well");
+    let center = {
+        x : well.getBoundingClientRect().left + (well.clientWidth/2),
+        y : well.getBoundingClientRect().top + (well.clientHeight/2)
+    }
+  
+    window.addEventListener('resize', ()=>{
+        center = {
+            x : well.getBoundingClientRect().left + (well.clientWidth/2),
+            y : well.getBoundingClientRect().top + (well.clientHeight/2)
+        }
+        console.log('실행');
+    })
+    document.addEventListener("mousemove", (e) => {
+    const x = center.x - e.clientX;
+    const y = center.y - e.clientY;
+    
+    const radian = Math.atan2(y, x);
+    const degree = (radian * 180 / Math.PI).toFixed(0);
+    well.style.transform = 'translate(-50%, -50%) rotate(' + degree + 'deg)';
+  
+    console.log(x,y)
+    
+    if( x>290 && x<310 && y>20 && y<300){
+      // const subtitle = document.getElementById('Text')
+      navigate('/scene12')
+    }
+  })}
   const navigate = useNavigate();
   // const location = useLocation();
   // const number =  location.state.value;

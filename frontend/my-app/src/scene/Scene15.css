@@ -130,10 +130,6 @@
     width: 50vw;
     height: 80vh;
     object-fit: contain;
-    animation-name: rope-move,rope-move2,rope-move3;
-    animation-duration: 2s,2s,2s;
-    animation-delay: 17s,21s,25s;
-    animation-fill-mode: forwards;
 }
 
 @keyframes rope-move {
