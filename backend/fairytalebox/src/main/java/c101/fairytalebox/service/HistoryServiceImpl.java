@@ -79,6 +79,7 @@ public class HistoryServiceImpl implements HistoryService {
             starpoint=1;
         }
         history.modifyStarPoint(starpoint);
+        historyRepository.save(history);
         return starpoint;
     }
 }
