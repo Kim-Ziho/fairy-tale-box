@@ -91,4 +91,10 @@ public class HistoryController {
         return ResponseEntity.ok().body(HttpStatus.ACCEPTED);
     }
 
+    @GetMapping("starpoint/{history_id}")
+    public ResponseEntity<Integer> getstarpoint(@PathVariable Long history_id){
+        int starpoint= historyService.getstarpoint(history_id);
+        return ResponseEntity.ok().body(starpoint);
+    }
+
 }

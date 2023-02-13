@@ -1,9 +1,6 @@
 package c101.fairytalebox.service;
 
-import c101.fairytalebox.domain.History;
-import c101.fairytalebox.domain.Member;
-import c101.fairytalebox.domain.Story;
-import c101.fairytalebox.domain.Word;
+import c101.fairytalebox.domain.*;
 import c101.fairytalebox.dto.*;
 import c101.fairytalebox.repository.*;
 import lombok.RequiredArgsConstructor;
@@ -67,5 +64,21 @@ public class HistoryServiceImpl implements HistoryService {
 
         wordResultRepository.save(createWordResultDto.toEntity());
 
+    }
+
+    @Override
+    public Integer getstarpoint(Long history_id) {
+        History history = historyRepository.findById(history_id).orElse(null);
+        long score = history.getWordResults().stream().filter(WordResult::getIsCorrect).count();
+        int starpoint;
+        if(score>=6){
+            starpoint=3;
+        } else if(score>=3){
+            starpoint=2;
+        } else{
+            starpoint=1;
+        }
+        history.modifyStarPoint(starpoint);
+        return starpoint;
     }
 }
