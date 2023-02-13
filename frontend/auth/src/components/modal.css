@@ -60,7 +60,8 @@
   padding: 1.2rem 2rem 0rem 2rem;
   font-family: "Yeon Sung", cursive;
   font-weight: 500;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  white-space: pre-line;
 }
 
 .modal.openModal {

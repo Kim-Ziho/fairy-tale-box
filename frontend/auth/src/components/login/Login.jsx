@@ -51,7 +51,7 @@ export default function Login() {
         password,
       })
       .then((res) => {
-        setModalMessage(`'로그인 성공!'&#13;'화면으로 돌아가 인증확인 버튼을 눌러주세요'`)
+        setModalMessage("로그인 성공! \n 화면으로 돌아가 인증확인 버튼을 눌러주세요")
         setEmail('')
         setPassword('')
         openModal();
