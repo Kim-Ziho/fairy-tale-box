@@ -36,27 +36,27 @@ function spawnTest(wordname, hist_num, word_id) {
             }
 	    console.log(data);
             let result_word = data.includes(`${wordname}`);
+            console.log(result_word);
        axios({
          method: "post",
          url: `http://i8c101.p.ssafy.io/api/history/wordresult/${word_id}`,
          data: {
-           "audioPath": `/home/nvidia/STT/${wordname}${hist_num}/audio/`,
+           "audioPath": `/home/nvidia/STT/${wordname}${hist_num}/audio/teat.wav`,
            "historyId": hist_num,
            "isCorrect": result_word,
-           "wordId": word_id,
-           "historyId":hist_num,
+           "wordId": word_id
          }
        });
         })
        //}
       // );
-       }, 67000);
+       }, 27000);
       //spawn('python3',[ 'main.py']);
       // stdin을 이용할때는 end()로 반드시 입력을 끝내야합니다
       setTimeout(function () {
         process.stdin.end();
         // 5. 명령이 모두 실행됐다면 'close' 이벤트가 발생합니다.
-      }, 68000);
+      }, 28000);
 
       process.on("close", function (code) {
         console.log("exec_end");
@@ -70,6 +70,7 @@ function spawnTest(wordname, hist_num, word_id) {
 }
 app.get("/", function (req, res) {
   let { wordname, hist_num, word_id } = req.query;
+	console.log(wordname, hist_num, word_id);
   spawnTest(wordname, hist_num, word_id);
   res.json({ success: "downloaded" });
 });

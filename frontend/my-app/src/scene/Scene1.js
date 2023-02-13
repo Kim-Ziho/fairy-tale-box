@@ -43,7 +43,7 @@ const Scene1 = () => {
       method:'post',
       url:"http://i8c101.p.ssafy.io/api/history",
       data:{
-        "member_id":5,
+        "member_id":2,
         "story_id":1,
         "studyDate": new Date()
       }
@@ -54,7 +54,7 @@ const Scene1 = () => {
       setTimeout( () =>
         axios({
           method:'get',
-          url:`192.168.100.245:3001/startrecord?wordname="엄마"&hist_num=${number}&word_id=1`
+          url:`http://192.168.100.245:3001/startrecord?wordname=엄마&hist_num=${number}&word_id=1`
         }),14050
       )
     })
