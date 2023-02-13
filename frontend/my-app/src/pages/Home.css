@@ -1,7 +1,7 @@
 .homeMainText {
   position: relative;
   margin: auto;
-  top: -3rem;
+  top: -2rem;
   font-size: 6.5rem;
   width: fit-content;
   color: rgb(0, 0, 0);
@@ -11,18 +11,15 @@
 #Grid {
   margin: auto;
   width: 76%;
-  padding: 5%;
+  padding: 6.5%;
 }
-
 .selectBtn {
   border: none;
-  background-color: #fff;
 }
-
 .selectImg {
   margin: auto;
-  width: 21.05vw;
-  height: 30vh;
+  width: 23vw;
+  height: 29vh;
   object-fit: cover;
 }
 .selectImg:hover {

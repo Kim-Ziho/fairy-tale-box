@@ -10,8 +10,6 @@ const ResultModal = (props) => {
   const [histdet, setHistdets] = useState([]);
   const [historydetails, setHistorydetails] = useState([]);
 
-  
-
   const jemok = taledata.map((taleDat) => {
     return (
       <div key={taleDat.id} className="txt">
