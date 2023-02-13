@@ -1,9 +1,8 @@
-import React ,{useState,useEffect} from "react";
-import { useNavigate , useLocation} from "react-router-dom";
+import React ,{useState} from "react";
+import { useLocation} from "react-router-dom";
 import BackHome from "../modal/BackHomeDrop";
 import "./Scene19.css";
 import Modal from "../modal/ResultModal.js";
-import axios from "axios";
 
 // 하단은 음성파일
 const audio19_1 = new Audio("sound/19-1.mp3");
@@ -31,27 +30,7 @@ function Change_text(){
 
 }
 const Scene19 = () => {
-  useEffect(()=>{
-    axios({
-      method:'post',
-      url:"http://i8c101.p.ssafy.io/api/history",
-      data:{
-        "member_id":2,
-        "story_id":1,
-        "studyDate": new Date()
-      }
-    })
-    .then((res) => {
-      const number = res.data
-      setTimeout(() => navigate(`/scene2`, { state: { value: number } }), 23120)
-      setTimeout( () =>
-        axios({
-          method:'get',
-          url:`http://192.168.100.245:3001/startrecord?wordname=엄마&hist_num=${number}&word_id=1`
-        }),14050
-      )
-    })
-  });
+
 
   const [modalOpen, setModalOpen] = useState(false);
   const openModal = () => {
@@ -61,7 +40,6 @@ const Scene19 = () => {
   //   setModalOpen(false);
   // };
 
-  const navigate = useNavigate();
   const location = useLocation();
   const number =  location.state.value;
   console.log(number)
@@ -80,7 +58,7 @@ const Scene19 = () => {
         <h1 className="word19-2">달님</h1>
         <div className="popup19-2"></div>
         <h2 id="Text"> </h2>  
-        <Modal open={modalOpen} header="학습 완료">
+        <Modal open={modalOpen} header="학습 완료" number={number}>
           <footer className="modalFooter"></footer>
         </Modal>
     </div>
