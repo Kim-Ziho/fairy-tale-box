@@ -1,70 +1,69 @@
 .titleWraplogin {
-    margin-top: 0;
-    margin: auto;
-    padding-top: 10vh;
-    padding-bottom: 5%;
-    font-size: 2rem;
-    font-weight: bold;
-    width: fit-content;
-    color: rgb(0, 0, 0);
-    margin-bottom: 4%;
+  margin-top: 0;
+  margin: auto;
+  padding-top: 10vh;
+  padding-bottom: 5%;
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: "Yeon Sung", cursive;
+  width: fit-content;
+  color: rgb(0, 0, 0);
+  margin-bottom: 4%;
 }
 
 .inputWraplogin {
-    padding-right: 1%;
-    margin-left: 4%;
-    margin-right: 4%;
-    display: flex;
-    border-radius: 1vh;
-    padding: 4%;
-    margin-top: 2%;
-    background-color: white;
-    border: 1px solid #e2e0e0;
-    margin-bottom: 2%;
+  padding-right: 1%;
+  margin-left: 4%;
+  margin-right: 4%;
+  display: flex;
+  border-radius: 1vh;
+  padding: 4%;
+  margin-top: 2%;
+  background-color: white;
+  border: 1px solid #e2e0e0;
+  margin-bottom: 2%;
 }
-
 
 .inputTitlelogin {
-    margin-left: 5vw;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: black;
+  margin-left: 5vw;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: black;
 }
 
-
 .inputlogin {
-    width: 100%;
-    outline: none;
-    border: none;
-    height: 3vh;
-    font-size: 1rem;
-    font-weight: 400;
+  width: 100%;
+  outline: none;
+  border: none;
+  height: 3vh;
+  font-size: 1rem;
+  font-weight: 400;
 }
 
 .errorMessageWraplogin {
-    margin-left: 5%;
-    color: #ef000e;
-    font-size: 0.8rem;
+  margin-left: 5%;
+  color: #ef000e;
+  font-size: 0.8rem;
 }
 
 .bottomButtonlogin {
-    font-size: 1rem;
-    margin: auto;
-    width: 90%;
-    height: 7vh;
-    border: none;
-    font-weight: bold;
-    background-color: #9e30f4;
-    border-radius: 4vh;
-    color: white;
-    margin-left: 5%;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
+  font-size: 1rem;
+  margin: auto;
+  width: 90%;
+  height: 7vh;
+  border: none;
+  font-weight: bold;
+  background-color: #9e30f4;
+  border-radius: 4vh;
+  color: white;
+  margin-left: 5%;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
 }
 
 .newAccountlogin {
-    position: fixed;
-    bottom: 2;
-    margin-left: 35%;
-    margin-top: 30vh;
+  position: fixed;
+  bottom: 2;
+  margin-left: 35%;
+  margin-top: 30vh;
 }

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom"
 import { Link } from 'react-router-dom';
+import Modal from "../modal";
 import './join.css'
 
 
@@ -15,6 +16,13 @@ const Join = () => {
     const [nickname, setNickname] = useState('');
     const [emailCheck, setEmailCheck] = useState(false);
     const [nicknameCheck, setNicknameCheck] = useState(false);
+    const [modalOpen, setModalOpen] = useState(false);
+    const openModal = () => {
+        setModalOpen(true);
+    };
+    const closeModal = () => {
+        setModalOpen(false);
+    };
 
 
     const navigate = useNavigate()
@@ -35,6 +43,7 @@ const Join = () => {
 
     const handleCheckedPassword = (e) => {
         setCheckedPassword(e.target.value);
+        
     }
 
     const handleNickname = (e) => {
@@ -87,7 +96,8 @@ const Join = () => {
         })
             .then((res) => {
                 setEmailCheck(true);
-                alert('사용 가능한 이메일 입니다.')
+                // alert('사용 가능한 이메일 입니다.')
+                openModal();
             })
             .catch((err) => {
                 console.log(err)
@@ -101,7 +111,7 @@ const Join = () => {
         })
             .then((res) => {
                 setNicknameCheck(true);
-                alert('사용 가능한 닉네임 입니다.')
+                openModal();
             })
             .catch((err) => {
                 console.log(err)
@@ -130,7 +140,7 @@ const Join = () => {
 
                 <div className='errorMessageWrap'>
                     {!emailValid && email.length > 0 && (
-                        <div>올바른 이메일을 입력해주세요</div>
+                        <div>사용 가능한 닉네임 입니다.</div>
                     )}
                 </div>
                 <div className='inputTitle'>닉네임</div>
@@ -144,6 +154,10 @@ const Join = () => {
                     <button className="checkButton" onClick={() => { axiosnickname() }}>
                         중복검사
                     </button>
+                    <Modal open={modalOpen} close={closeModal} header="로그아웃" main="로그아웃 하시겠어요?" footer="👈🏻 로그아웃">
+                        
+                        <footer className="modalFooter"></footer>
+                    </Modal>
                 </div>
                 <div className='errorMessageWrap'>
                     {nickname.length > 8 && (
