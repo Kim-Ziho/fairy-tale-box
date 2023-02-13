@@ -24,17 +24,6 @@ function Change_text(){
     subtitle.innerText = '호랑이는 참기름 때문에 계속 미끄러져요.'
   },14320)
 }
-var op_count=1;
-var settime_func;
-function fade_out(){
-  const hole = document.querySelector(".hole")
-  op_count=op_count-0.1;
-  hole.style.opacity=op_count;
-  settime_func = setTimeout(fade_out,1000);
-  if(op_count<0){
-    clearTimeout(settime_func);
-  }
-}
 
 const Scene13 = () => {
   function moveimg() {
@@ -52,10 +41,10 @@ const Scene13 = () => {
   
       oil.style.top = mouseY + 'px';
       
-      console.log(mouseX,mouseY)
+      // console.log(mouseX,mouseY)
       
       if( mouseX>550 && mouseX<650 && mouseY>200 && mouseY<300){
-        const subtitle = document.getElementById('Text')
+        // const subtitle = document.getElementById('Text')
         
   
         // navigate('/scene9')
@@ -63,16 +52,16 @@ const Scene13 = () => {
   });
   }
   const navigate = useNavigate();
-  // const location = useLocation();
-  // const number =  location.state.value;
-  // console.log(number)
+  const location = useLocation();
+  const number =  location.state.value;
+  console.log(number)
   // 하단은 자막 시작 딜레이
   setTimeout(Change_text)
   // 하단은 페이지 넘어가는 시간
-  // setTimeout(() => navigate(`/scene14`, { state: { value: number } }), 21000);
+  setTimeout(() => navigate(`/scene14`, { state: { value: number } }), 21000);
   // 하단은 오디오 파일 자동재생
   setTimeout(start)
-  setTimeout(moveimg,3000)
+  setTimeout(moveimg,5000)
 
   return (
     <div className="SceneBox">

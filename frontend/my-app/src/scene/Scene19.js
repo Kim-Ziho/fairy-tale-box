@@ -1,8 +1,9 @@
-import React ,{useState} from "react";
+import React ,{useState,useEffect} from "react";
 import { useNavigate , useLocation} from "react-router-dom";
 import BackHome from "../modal/BackHomeDrop";
 import "./Scene19.css";
 import Modal from "../modal/ResultModal.js";
+import axios from "axios";
 
 // 하단은 음성파일
 const audio19_1 = new Audio("sound/19-1.mp3");
@@ -27,21 +28,38 @@ function Change_text(){
   setTimeout(()=>{
     subtitle.innerText = '씩씩한 오빠는 달님이 되었답니다.'
   },5020)
-  setTimeout(()=>{
-    subtitle.innerText = '햇님이라고 말해볼까요?'
-  },8370)
-  setTimeout(()=>{
-    subtitle.innerText = '달님이라고 말해볼까요?'
-  },15000)
+
 }
 const Scene19 = () => {
+  useEffect(()=>{
+    axios({
+      method:'post',
+      url:"http://i8c101.p.ssafy.io/api/history",
+      data:{
+        "member_id":2,
+        "story_id":1,
+        "studyDate": new Date()
+      }
+    })
+    .then((res) => {
+      const number = res.data
+      setTimeout(() => navigate(`/scene2`, { state: { value: number } }), 23120)
+      setTimeout( () =>
+        axios({
+          method:'get',
+          url:`http://192.168.100.245:3001/startrecord?wordname=엄마&hist_num=${number}&word_id=1`
+        }),14050
+      )
+    })
+  });
+
   const [modalOpen, setModalOpen] = useState(false);
   const openModal = () => {
     setModalOpen(true);
   };
-  const closeModal = () => {
-    setModalOpen(false);
-  };
+  // const closeModal = () => {
+  //   setModalOpen(false);
+  // };
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -52,7 +70,7 @@ const Scene19 = () => {
   // 하단은 오디오 파일 자동재생
   setTimeout(start)
   setTimeout(start2)
-  setTimeout(()=>openModal(),2000)
+  setTimeout(()=>openModal(),12000)
   return (
     <div className="SceneBox">
       <BackHome></BackHome>

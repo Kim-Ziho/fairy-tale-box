@@ -30,11 +30,11 @@ const Scene4 = () => {
       // 마우스의 좌표는 clientX와 clientY를 이용해 알수 있다. -> 브라우저 window의 좌표값 위치를 전달한다.
   
       // pageX, pageY와는 다름.
-      const mouseX = e.clientX;
+      // const mouseX = e.clientX;
   
       const mouseY = e.clientY;
         
-      console.log(mouseX,mouseY)
+      // console.log(mouseX,mouseY)
       
       if( mouseY<200 ){
         rice4.animate([
@@ -60,7 +60,7 @@ const Scene4 = () => {
   // 자막 시작 딜레이
   setTimeout(Change_text);
   // 페이지 넘어가는 시간
-  // setTimeout(() => navigate(`/scene5`, { state: { value: number } }), 17400);
+  setTimeout(() => navigate(`/scene5`, { state: { value: number } }), 17400);
   // 오디오 파일 자동재생
   setTimeout(start);
   setTimeout(moveimg4,7000)

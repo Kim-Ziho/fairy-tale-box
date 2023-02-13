@@ -52,7 +52,7 @@ const Scene8 = () => {
   
       hole.style.top = mouseY + 'px';
       
-      console.log(mouseX,mouseY)
+      // console.log(mouseX,mouseY)
       
       if( mouseX>550 && mouseX<650 && mouseY>200 && mouseY<300){
         const subtitle = document.getElementById('Text')
@@ -72,13 +72,13 @@ const Scene8 = () => {
   });
   }
   const navigate = useNavigate();
-  // const location = useLocation();
-  // const number =  location.state.value;
-  // console.log(number)
+  const location = useLocation();
+  const number =  location.state.value;
+  console.log(number)
   // 하단은 자막 시작 딜레이
   setTimeout(Change_text)
   // 하단은 페이지 넘어가는 시간
-  // setTimeout(() => navigate(`/scene9`), 19000);
+  setTimeout(() => navigate(`/scene9` ,{ state: { value: number } }), 19000);
   // 하단은 오디오 파일 자동재생
   setTimeout(start)
   setTimeout(moveimg,3000)

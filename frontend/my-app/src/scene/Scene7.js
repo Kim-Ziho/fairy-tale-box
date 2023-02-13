@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 import { useNavigate , useLocation} from "react-router-dom";
 import BackHome from "../modal/BackHomeDrop";
 import "./Scene7.css";
