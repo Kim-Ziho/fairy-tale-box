@@ -3,6 +3,7 @@ package c101.fairytalebox.domain;
 import lombok.Getter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Getter
@@ -18,7 +19,7 @@ public class Word {
     private Story story;
 
     @OneToMany(mappedBy = "word", fetch = FetchType.LAZY)
-    private WordResult wordResult;
+    private List<WordResult> wordResult;
 
     private String imagePath;
 }
