@@ -17,6 +17,9 @@ const Join = () => {
     const [emailCheck, setEmailCheck] = useState(false);
     const [nicknameCheck, setNicknameCheck] = useState(false);
     const [modalOpen, setModalOpen] = useState(false);
+    const [modalMessage, setModalMessage] = useState('');
+
+
     const openModal = () => {
         setModalOpen(true);
     };
@@ -28,8 +31,8 @@ const Join = () => {
     const navigate = useNavigate()
 
     const goToLogin = () => {
-        alert('회원가입이 완료되었습니다.')
-        navigate('/login')
+        setModalMessage("회원가입이 완료되었습니다.")
+        openModal();
     }
     const handleEmail = (e) => {
         setEmail(e.target.value);
@@ -43,7 +46,7 @@ const Join = () => {
 
     const handleCheckedPassword = (e) => {
         setCheckedPassword(e.target.value);
-        
+
     }
 
     const handleNickname = (e) => {
@@ -86,7 +89,8 @@ const Join = () => {
             })
             .catch((err) => {
                 console.log(err)
-                alert(err.response.data.message)
+                setModalMessage(err.response.data.message)
+                openModal()
             })
     }
 
@@ -96,12 +100,13 @@ const Join = () => {
         })
             .then((res) => {
                 setEmailCheck(true);
-                // alert('사용 가능한 이메일 입니다.')
+                setModalMessage("사용 가능한 이메일입니다.")
                 openModal();
             })
             .catch((err) => {
                 console.log(err)
-                alert(err.response.data.message)
+                setModalMessage(err.response.data.message)
+                openModal();
             })
     }
 
@@ -111,11 +116,13 @@ const Join = () => {
         })
             .then((res) => {
                 setNicknameCheck(true);
+                setModalMessage("사용 가능한 닉네임입니다.")
                 openModal();
             })
             .catch((err) => {
                 console.log(err)
-                alert(err.response.data.message)
+                setModalMessage(err.response.data.message)
+                openModal();
             })
 
     }
@@ -140,7 +147,7 @@ const Join = () => {
 
                 <div className='errorMessageWrap'>
                     {!emailValid && email.length > 0 && (
-                        <div>사용 가능한 닉네임 입니다.</div>
+                        <div>사용 가능한 이메일 입니다.</div>
                     )}
                 </div>
                 <div className='inputTitle'>닉네임</div>
@@ -154,10 +161,7 @@ const Join = () => {
                     <button className="checkButton" onClick={() => { axiosnickname() }}>
                         중복검사
                     </button>
-                    <Modal open={modalOpen} close={closeModal} header="로그아웃" main="로그아웃 하시겠어요?" footer="👈🏻 로그아웃">
-                        
-                        <footer className="modalFooter"></footer>
-                    </Modal>
+
                 </div>
                 <div className='errorMessageWrap'>
                     {nickname.length > 8 && (
@@ -199,6 +203,11 @@ const Join = () => {
                     <button onClick={() => { axiossignup() }} className='bottomButton'>
                         회원가입
                     </button>
+
+                    <Modal open={modalOpen} close={closeModal} main={modalMessage}>
+
+                        <footer className="modalFooter"></footer>
+                    </Modal>
                 </div>
             </div>
             <div className="goLogin">
