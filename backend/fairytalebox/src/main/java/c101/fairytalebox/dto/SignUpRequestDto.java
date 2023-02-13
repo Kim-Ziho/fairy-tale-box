@@ -20,7 +20,7 @@ import java.util.List;
 @AllArgsConstructor
 public class SignUpRequestDto {
 
-//    @NotBlank(message = "아이디를 입력해주세요")
+    @NotBlank(message = "아이디를 입력해주세요")
     private String email;
 
     @NotBlank(message = "닉네임을 입력해주세요.")

@@ -10,7 +10,7 @@ const Modal = (props) => {
       {open ? (
         <section id="backgnd">
           <header>
-            경고메세지
+          🧚🏻‍♀️ 동화상자 🧚🏻‍♂️
             <button className="headerbutton" onClick={close}>
               &times;
             </button>

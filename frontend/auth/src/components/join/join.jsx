@@ -18,6 +18,9 @@ const Join = () => {
     const [nicknameCheck, setNicknameCheck] = useState(false);
     const [modalOpen, setModalOpen] = useState(false);
     const [modalMessage, setModalMessage] = useState('');
+    const [notAllow1, setNotAllow1] = useState(true);
+    const [notAllow2, setNotAllow2] = useState(true);
+
 
 
     const openModal = () => {
@@ -39,8 +42,10 @@ const Join = () => {
         const regex = /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
         if (regex.test(email)) {
             setEmailValid(true);
+            setNotAllow1(false);
         } else {
             setEmailValid(false);
+            setNotAllow1(true);
         }
     }
 
@@ -52,6 +57,14 @@ const Join = () => {
     const handleNickname = (e) => {
         setNickname(e.target.value);
     }
+    useEffect(() => {
+        if(nickname.length > 0 && nickname.length < 9) {
+            setNotAllow2(false)
+        }
+        else {
+            setNotAllow2(true)
+        }
+    })
 
     const handlePassword = (e) => {
         setPassword(e.target.value);
@@ -77,7 +90,7 @@ const Join = () => {
 
 
     const axiossignup = () => {
-        axios.post('http://i8c101.p.ssafy.io/api/member/signup', {
+        axios.post('http://127.0.0.1:8080/api/member/signup', {
             email,
             nickname,
             password,
@@ -88,9 +101,15 @@ const Join = () => {
                 goToLogin()
             })
             .catch((err) => {
-                console.log(err)
-                setModalMessage(err.response.data.message)
-                openModal()
+                if (err.response.data.message.includes("Validation failed for object='signUpRequestDto'")) {
+                    setModalMessage("유효성 검사를 진행해주세요")
+                    openModal()
+                }
+                else {
+                    setModalMessage(err.response.data.message)
+                    openModal()
+                }
+
             })
     }
 
@@ -142,12 +161,12 @@ const Join = () => {
                         placeholder='test@gmail.com'
                         value={email}
                         onChange={handleEmail} />
-                    <button className="checkButton" onClick={() => { axiosemail() }}> 중복검사</button>
+                    <button className="checkButton" onClick={() => { axiosemail() }} disabled={notAllow1}> 중복검사</button>
                 </div>
 
                 <div className='errorMessageWrap'>
                     {!emailValid && email.length > 0 && (
-                        <div>사용 가능한 이메일 입니다.</div>
+                        <div>이메일 형식이 유효하지 않습니다.</div>
                     )}
                 </div>
                 <div className='inputTitle'>닉네임</div>
@@ -158,7 +177,7 @@ const Join = () => {
                         placeholder='닉네임은 8자 이하입니다.'
                         value={nickname}
                         onChange={handleNickname} />
-                    <button className="checkButton" onClick={() => { axiosnickname() }}>
+                    <button className="checkButton" onClick={() => { axiosnickname() }} disabled={notAllow2}>
                         중복검사
                     </button>
 

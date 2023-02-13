@@ -54,14 +54,21 @@ public class MemberServiceImpl implements MemberService {
 
         }
 
+        try {
+            Member member = memberRepository.save(request.toEntity());
 
-        Member member = memberRepository.save(request.toEntity());
+            member.encodePassword(passwordEncoder);
+
+            return member.getId();
+        } catch (Exception e) {
+            throw new Exception("회원가입 오류");
+            
+        }
+        
 
 
 
-        member.encodePassword(passwordEncoder);
-
-        return member.getId();
+        
     }
 
     @Override
