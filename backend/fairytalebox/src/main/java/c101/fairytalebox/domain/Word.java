@@ -17,7 +17,7 @@ public class Word {
     @JoinColumn(name = "story_id")
     private Story story;
 
-    @OneToOne(mappedBy = "word", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "word", fetch = FetchType.LAZY)
     private WordResult wordResult;
 
     private String imagePath;
