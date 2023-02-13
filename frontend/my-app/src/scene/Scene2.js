@@ -34,18 +34,7 @@ const Scene2 = () => {
   // 자막 시작 딜레이
   setTimeout(Change_text);
 
-  useEffect(() => {
-    axios({
-      method: "post",
-      url: "http://i8c101.p.ssafy.io/api/history",
-      data: {
-        member_id: 5,
-        story_id: 1,
-        studyDate: new Date(),
-      },
-    }).then((res) => {
-      const number = res.data;
-      setTimeout(
+ setTimeout(
         () =>
           axios({
             method: "get",
@@ -53,8 +42,6 @@ const Scene2 = () => {
           }),
         7500
       );
-    });
-  }, []);
   // 페이지 넘어가는 시간
   setTimeout(() => navigate(`/scene3`, { state: { value: number } }), 16050);
   // 오디오 파일 자동재생
