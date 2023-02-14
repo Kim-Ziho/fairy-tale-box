@@ -87,9 +87,10 @@
 }
 
 .goLogin {
-  position: fixed;
-  margin-top: 15%;
-  margin-left: 41%;
+  position: absolute;
+  align-items: center;
+  margin-top: 3%;
+  margin-left: 33%;
   text-decoration: none;
   background-color: #dadada;
   border: none;
