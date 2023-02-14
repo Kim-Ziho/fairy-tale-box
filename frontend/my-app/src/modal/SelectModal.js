@@ -5,39 +5,29 @@ import "./Modal.css";
 import "./SelectModal.css";
 
 const SelectModal = (props) => {
+  const [story, setStory] = useState([]);
   const { open, close, storyid } = props;
-  // const [isLoading, setLoading] = useState(true);
-  const [jemok, setJemok] = useState([]);
-  const [naeyong, setNaeyong] = useState([]);
-  // const jemok="";
-  // const naeyong="";
 
   useEffect(() => {
     axios
       .get(`http://i8c101.p.ssafy.io/api/story/${storyid}`)
-      // .get(`http://i8c101.p.ssafy.io/api/story`)
       .then((response) => {
-        const story = response.data;
-        console.log(story);
-        setJemok(story.story_title);
-        setNaeyong(story.story_overview);
-        // jemok = story.story_title
-        // this.forceUpdate();
-        console.log(jemok);
+        setStory(response.data);
+        console.log(response.data);
       });
-  }, []);
+  }, [storyid]);
 
   return (
-    <div className={open ? "openModal modal" : "modal"}>
-      {open ? (
+    <div className={open && story ? "openModal modal" : "modal"}>
+      {open && story ? (
         <section id="SelectBg">
           <header>
-            {jemok}
+            {story.story_title}
             <button className="headerbutton" onClick={close}>
               &times;
             </button>
           </header>
-          <main className="modalMain">{naeyong}</main>
+          <main className="modalMain">{story.story_overview}</main>
           <footer className="modalFooter">
             <Link to="/scene1">
               <button className="footerButton">👉🏻 하러가기</button>
