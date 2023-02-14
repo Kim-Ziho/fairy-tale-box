@@ -35,7 +35,7 @@ const Home = (props) => {
         <Grid item xs={4} onClick={() => openModal(1)} className="selectBtn">
           <Item>
             <img
-              src="img/scene1/1.png"
+              src="img/thumnail/sunandmoon.png"
               className="selectImg"
               alt="sun and moon"
             ></img>
@@ -44,7 +44,7 @@ const Home = (props) => {
         <Grid item xs={4} onClick={() => openModal(2)} className="selectBtn">
           <Item>
             <img
-              src="img/scene2/2.png"
+              src="img/thumnail/huengbu.png"
               className="selectImg"
               alt="sun and moon"
             ></img>
@@ -53,7 +53,7 @@ const Home = (props) => {
         <Grid item xs={4} onClick={() => openModal(3)} className="selectBtn">
           <Item>
             <img
-              src="img/scene3/3.png"
+              src="img/thumnail/konggpatg.png"
               className="selectImg"
               alt="sun and moon"
             ></img>
@@ -62,7 +62,7 @@ const Home = (props) => {
         <Grid item xs={4} onClick={() => openModal(4)} className="selectBtn">
           <Item>
             <img
-              src="img/scene6/6.png"
+              src="img/thumnail/sunandmoon2.png"
               className="selectImg"
               alt="sun and moon"
             ></img>
@@ -71,7 +71,7 @@ const Home = (props) => {
         <Grid item xs={4} onClick={() => openModal(5)} className="selectBtn">
           <Item>
             <img
-              src="img/scene9/9.png"
+              src="img/thumnail/ready2.png"
               className="selectImg"
               alt="sun and moon"
             ></img>
@@ -80,7 +80,7 @@ const Home = (props) => {
         <Grid item xs={4} onClick={() => openModal(6)} className="selectBtn">
           <Item>
             <img
-              src="img/scene10/10.png"
+              src="img/thumnail/ready3.png"
               className="selectImg"
               alt="sun and moon"
             ></img>
