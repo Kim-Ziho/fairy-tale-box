@@ -6,12 +6,12 @@ import "./Historydetail.css";
 import "./History.css";
 import "../modal/Back.css";
 
-const testaudio = new Audio("sound/1.mp3");
-  const start = () => {
-    setTimeout(() => {
-      testaudio.play();
-    }, 1000);
-  };
+// const testaudio = new Audio("/home/nvidia/STT/집167/audio/1.mp3");
+//   const start = () => {
+//     setTimeout(() => {
+//       testaudio.play();
+//     }, 1000);
+//   };
 
 const audioStart = (path) => {
   var audio = new Audio(path)
@@ -19,6 +19,7 @@ const audioStart = (path) => {
   audio.volume = 1
   audio.play()
   console.log(path)
+  console.log(audio)
 };
 
 const Historydetail = () => {
