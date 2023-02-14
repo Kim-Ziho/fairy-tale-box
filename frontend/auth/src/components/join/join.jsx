@@ -58,7 +58,7 @@ const Join = () => {
         setNickname(e.target.value);
     }
     useEffect(() => {
-        if(nickname.length > 0 && nickname.length < 9) {
+        if (nickname.length > 0 && nickname.length < 9) {
             setNotAllow2(false)
         }
         else {
@@ -229,9 +229,9 @@ const Join = () => {
                     </Modal>
                 </div>
             </div>
-            <div className="goLogin">
-                <Link to="/login">로그인 페이지로</Link>
-            </div>
+            <button className="goLogin" onClick={() => {
+                navigate("/login")
+            }}>Login!</button>
         </div>
 
 
