@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
+// import { lazyLoader } from "./lazyLoader";
 import { Link } from "react-router-dom";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
-import Modal from "../modal/SelectModal.js";
 import "./Home.css";
+
+const Modal = React.lazy(() => import("../modal/SelectModal.js"));
+// import Modal from "../modal/SelectModal.js";
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -19,6 +22,7 @@ const Home = (props) => {
     setModalOpen(true);
     setStoryid(num);
     // Home.forceUpdate();
+    // console.log(num);
   };
   const closeModal = () => {
     setModalOpen(false);
@@ -35,7 +39,8 @@ const Home = (props) => {
         <Grid item xs={4} onClick={() => openModal(1)} className="selectBtn">
           <Item>
             <img
-              src="img/thumnail/sunandmoon.png"
+              // src="img/thumnail/sunandmoon.png"
+              src="img/scene1/1.png"
               className="selectImg"
               alt="sun and moon"
             ></img>
@@ -44,7 +49,8 @@ const Home = (props) => {
         <Grid item xs={4} onClick={() => openModal(2)} className="selectBtn">
           <Item>
             <img
-              src="img/thumnail/huengbu.png"
+              // src="img/thumnail/huengbu.png"
+              src="img/scene1/1.png"
               className="selectImg"
               alt="sun and moon"
             ></img>
@@ -53,7 +59,8 @@ const Home = (props) => {
         <Grid item xs={4} onClick={() => openModal(3)} className="selectBtn">
           <Item>
             <img
-              src="img/thumnail/konggpatg.png"
+              // src="img/thumnail/konggpatg.png"
+              src="img/scene1/1.png"
               className="selectImg"
               alt="sun and moon"
             ></img>
@@ -62,7 +69,8 @@ const Home = (props) => {
         <Grid item xs={4} onClick={() => openModal(4)} className="selectBtn">
           <Item>
             <img
-              src="img/thumnail/sunandmoon2.png"
+              // src="img/thumnail/sunandmoon2.png"
+              src="img/scene1/1.png"
               className="selectImg"
               alt="sun and moon"
             ></img>
