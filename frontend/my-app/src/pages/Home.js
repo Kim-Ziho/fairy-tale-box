@@ -1,13 +1,10 @@
 import React, { useState, Suspense } from "react";
-// import { lazyLoader } from "./lazyLoader";
+import Modal from "../modal/SelectModal.js";
 import { Link } from "react-router-dom";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import "./Home.css";
-
-const Modal = React.lazy(() => import("../modal/SelectModal.js"));
-// import Modal from "../modal/SelectModal.js";
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
