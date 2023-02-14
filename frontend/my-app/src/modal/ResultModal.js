@@ -28,13 +28,14 @@ const ResultModal = (props) => {
       </div>
     );
   });
-  const score = histdata.map((histDat) => {
-    return (
-      <div key={histDat.id} className="txt">
-        {histDat.score}
-      </div>
-    );
-  });
+  // const score = histdata.map((histDat) => {
+  //   return (
+  //     <div key={histDat.id} className="txt">
+  //       {histDat.score}
+  //     </div>
+  //   );
+  // });
+  let score = "⭐".repeat(starpoint)
   
   return (
     <div className={open ? "openModal modal" : "modal"}>
@@ -46,7 +47,7 @@ const ResultModal = (props) => {
               &times;
             </button> */}
           </header>
-          <main className="modalMain modalMainScore">{starpoint}옳지잘한다</main>
+          <main className="modalMain modalMainScore">{score}옳지잘한다</main>
           <footer className="modalFooter">
             <Link to="/home">
               <button className="footerButton">👈🏻 홈으로 돌아가기</button>

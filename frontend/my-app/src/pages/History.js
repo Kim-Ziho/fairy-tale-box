@@ -13,11 +13,12 @@ const History = () => {
       const hist = response.data;
       setHistchild(
         hist.map((hist) => {
+          let starpoint= "⭐".repeat(hist.starPoint)
           return (
             <div key={hist.historyId} className="historyContainer">
-              <div className="historycontent txt">{hist.studyDate}</div>
+              <div className="historycontent txt">{hist.studyDate.slice(0,10)}</div>
               <div className="historycontent txt">{hist.story}</div>
-              <div className="historycontent txt">{hist.starPoint}</div>
+              <div className="historycontent txt">{starpoint}</div>
               <div className="historycontent txt">
                 <Link
                   to={`/history/${hist.historyId}`}
