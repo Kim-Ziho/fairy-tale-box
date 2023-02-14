@@ -2,45 +2,46 @@
   position: relative;
   margin: auto;
   top: -1rem;
+  margin-bottom: 2%;
   font-size: 6.5rem;
   color: rgb(0, 0, 0);
   text-shadow: 4px 4px #ffffff;
 }
 .histLine {
-  width: 96.7%;
-  height: 2px;
-  margin: -0.5% auto 0.5% 1.9%;
-  border: 0;
+  width: 95.2%;
+  margin: auto;
   border-top: 3px dashed rgb(148, 148, 148);
 }
 .historyBox {
   position: relative;
   text-align: center;
-  /* background-image: url(../../public/img/씬3.png); */
   padding-left: 5%;
   padding-right: 5%;
   padding-top: 5%;
 }
 
 .historyContainer {
-  margin: 10px;
+  margin: 1rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 .historytitle {
   background-color: rgb(194, 224, 245);
   width: 88%;
-  margin: 7%;
+  margin: auto;
+  margin-bottom: 2.2%;
   border-radius: 8px;
   font-size: 4.5rem;
 }
 .historycontent {
-  background-color: rgb(240, 240, 240);
-  width: 87%;
+  width: 86.5%;
   height: 90%;
   margin: auto;
-  padding: 0.25rem;
+  padding: 0.2rem;
   border-radius: 8px;
   font-size: 3rem;
   background-color: #fff;
+}
+.golook:hover {
+  transform: scale(1.05);
 }

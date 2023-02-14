@@ -33,6 +33,9 @@
   font-size: 3rem;
   border: 0;
 }
+.footerButton:hover {
+  transform: scale(0.85);
+}
 .modal > section > header {
   position: relative;
   padding: 1.8rem 6.4rem 1.7rem 3.3rem;

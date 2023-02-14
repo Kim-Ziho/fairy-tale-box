@@ -7,21 +7,18 @@ import "./History.css";
 import "../modal/Back.css";
 
 const Historydetail = () => {
-  // const [histdet, setHistdets] = useState([]);
   const [histdetYes, setHistdetYes] = useState([]);
   const [histdetNo, setHistdetNo] = useState([]);
 
   const location = useLocation();
-	const histId = location.state.histId;
-
-  // console.log(histId);
+  const histId = location.state.histId;
 
   const audioStart = (path) => {
-    var audio = new Audio(path)
-    audio.load()
-    audio.volume = 1
-    audio.play()
-    console.log(path)
+    var audio = new Audio(path);
+    audio.load();
+    audio.volume = 1;
+    audio.play();
+    console.log(path);
   };
 
   useEffect(() => {
@@ -40,8 +37,13 @@ const Historydetail = () => {
                     alt="단어그림"
                     className="detailImg"
                   ></img>
-                  <div className="historycontent txt">{histdet.word_name}</div>
-                  <div className="historycontent txt" onClick={audioStart(histdet.audio_path)}>
+                  <div className="historydetailcontent txt">
+                    {histdet.word_name}
+                  </div>
+                  <div
+                    className="historydetailcontent histaudio"
+                    onClick={audioStart(histdet.audio_path)}
+                  >
                     🎧
                   </div>
                   <div></div>
@@ -61,8 +63,13 @@ const Historydetail = () => {
                     alt="단어그림"
                     className="detailImg"
                   ></img>
-                  <div className="historycontent txt">{histdet.word_name}</div>
-                  <div className="historycontent txt" onClick={audioStart(histdet.audio_path)}>
+                  <div className="historydetailcontent txt">
+                    {histdet.word_name}
+                  </div>
+                  <div
+                    className="historydetailcontent histaudio"
+                    onClick={audioStart(histdet.audio_path)}
+                  >
                     🎧
                   </div>
                   <div></div>
@@ -71,9 +78,8 @@ const Historydetail = () => {
             }
           })
         );
-      }
-      );
-  },[histId]);
+      });
+  }, [histId]);
 
   return (
     <div className="historyDetailBox">
