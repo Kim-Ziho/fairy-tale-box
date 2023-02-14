@@ -18,6 +18,7 @@ const Historydetail = () => {
 
   const audioStart = (path) => {
     new Audio(path).play();
+    console.log(path)
   };
 
   useEffect(() => {
@@ -58,7 +59,7 @@ const Historydetail = () => {
                     className="detailImg"
                   ></img>
                   <div className="historycontent txt">{histdet.word_name}</div>
-                  <div className="historycontent txt" onClick={audioStart}>
+                  <div className="historycontent txt" onClick={audioStart(histdet.audio_path)}>
                     🎧
                   </div>
                   <div></div>
@@ -69,7 +70,7 @@ const Historydetail = () => {
         );
       }
       );
-  });
+  },[]);
 
   return (
     <div className="historyDetailBox">
