@@ -5,22 +5,16 @@ import axios from "axios";
 import "./Historydetail.css";
 import "./History.css";
 import "../modal/Back.css";
+import "../STT"
 
-// const testaudio = new Audio("/home/nvidia/STT/집167/audio/1.mp3");
+// const testaudio = new Audio("../STT/1.mp3");
 //   const start = () => {
 //     setTimeout(() => {
 //       testaudio.play();
 //     }, 1000);
 //   };
 
-const audioStart = (path) => {
-  var audio = new Audio(path)
-  audio.load()
-  audio.volume = 1
-  audio.play()
-  console.log(path)
-  console.log(audio)
-};
+
 
 const Historydetail = () => {
   // const [histdet, setHistdets] = useState([]);
@@ -32,7 +26,14 @@ const Historydetail = () => {
 
   // console.log(histId);
   
-
+  const audioStart = (path) => {
+  var audio = new Audio(`${path}`)
+  // audio.load()
+  audio.volume = 1
+  audio.play()
+  console.log(path)
+  console.log(audio)
+};
   
 
   useEffect(() => {
@@ -52,7 +53,7 @@ const Historydetail = () => {
                     className="detailImg"
                   ></img>
                   <div className="historycontent txt">{histdet.word_name}</div>
-                  <div className="historycontent txt" onClick={()=>audioStart(require(histdet.audio_path).default)}>
+                  <div className="historycontent txt" onClick={()=>audioStart(histdet.audio_path)}>
                     🎧
                   </div>
                   <div></div>
@@ -86,6 +87,7 @@ const Historydetail = () => {
       );
   },[histId]);
   // setTimeout(start)
+  
   return (
     <div className="historyDetailBox">
       <div className="histHeader">
