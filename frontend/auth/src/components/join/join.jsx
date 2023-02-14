@@ -231,7 +231,7 @@ const Join = () => {
             </div>
             <button className="goLogin" onClick={() => {
                 navigate("/login")
-            }}>Login!</button>
+            }}>CLICK TO LOGIN</button>
         </div>
 
 
