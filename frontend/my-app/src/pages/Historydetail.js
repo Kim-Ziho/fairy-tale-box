@@ -41,7 +41,7 @@ const Historydetail = () => {
                     className="detailImg"
                   ></img>
                   <div className="historycontent txt">{histdet.word_name}</div>
-                  <div className="historycontent txt" onClick={audioStart(histdet.audio_path)}>
+                  <div className="historycontent txt" onClick={()=>audioStart(histdet.audio_path)}>
                     🎧
                   </div>
                   <div></div>
@@ -62,7 +62,7 @@ const Historydetail = () => {
                     className="detailImg"
                   ></img>
                   <div className="historycontent txt">{histdet.word_name}</div>
-                  <div className="historycontent txt" onClick={audioStart(histdet.audio_path)}>
+                  <div className="historycontent txt" onClick={()=>audioStart(histdet.audio_path)}>
                     🎧
                   </div>
                   <div></div>
