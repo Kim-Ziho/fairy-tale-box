@@ -35,7 +35,6 @@ const ResultModal = (props) => {
       </div>
     );
   });
-
   
   return (
     <div className={open ? "openModal modal" : "modal"}>
