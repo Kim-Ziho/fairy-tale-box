@@ -17,8 +17,10 @@ const Historydetail = () => {
   // console.log(histId);
 
   const audioStart = (path) => {
-    const audio = new Audio(path)
-    setTimeout(audio.play())
+    var audio = new Audio(path)
+    audio.load()
+    audio.volume = 1
+    audio.play()
     console.log(path)
   };
 
