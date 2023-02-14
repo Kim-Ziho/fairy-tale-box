@@ -10,7 +10,7 @@ const Qr = () => {
       <div className="qrText txt">
         로그인하시려면 휴대폰으로 아래 QR코드를 스캔해주세요!
       </div>
-      <img src="https://chart.googleapis.com/chart?cht=qr&chs=200x200&chl=http://www.google.com" className="qrimg" alt="#"></img>
+      <img src="http://i8c101.p.ssafy.io/login" className="qrimg" alt="#"></img>
       <div className="qrFooter">
         <Link to="/">
           <button className="qrButton txt">
