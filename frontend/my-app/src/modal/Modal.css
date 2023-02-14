@@ -24,7 +24,7 @@
   position: relative;
   padding: 0.6rem 1.8rem;
   margin: 0.3rem;
-  top: 3rem;
+  top: 1rem;
   bottom: 0rem;
   color: #fff;
   background-color: #6c757d;
@@ -43,13 +43,13 @@
   text-align: left;
 }
 .modalMain {
-  padding: 3rem 4rem 0rem 4rem;
+  padding: 2.5rem 4rem 0rem 4rem;
   font-family: "Yeon Sung", cursive;
   font-weight: 500;
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 .modalFooter {
-  padding: 1%;
+  padding: 0.5%;
   text-align: center;
 }
 .modal.openModal {

@@ -10,8 +10,7 @@ const ResultModal = (props) => {
   const [histdet, setHistdets] = useState([]);
   const [historydetails, setHistorydetails] = useState([]);
   const [starpoint,setstarpoint] = useState([]);
-  
-  useEffect(()=>{
+    useEffect(()=>{
     axios({
       method:'get',
       url:`http://i8c101.p.ssafy.io/api/history/starpoint/${number}`,
@@ -21,7 +20,6 @@ const ResultModal = (props) => {
       setstarpoint(res.data);
     })
   });
-  
 
   const jemok = taledata.map((taleDat) => {
     return (
