@@ -61,9 +61,14 @@
   margin-bottom: 2vh;
 }
 
-.newAccountlogin {
+.goJoin {
   position: fixed;
   bottom: 2;
   margin-left: 35%;
   margin-top: 30vh;
+  background-color: #dadada;
+  border: none;
+  color: black;
+  font-weight: bold;
+  border-radius: 4vh;
 }
