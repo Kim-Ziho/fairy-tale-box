@@ -35,6 +35,7 @@ public class SecurityConfig {
                 .antMatchers("/api/admin/**").hasRole("ADMIN")
                 .antMatchers("/api/**").permitAll()
                 .antMatchers("/member/login").permitAll()
+                .antMatchers("/history/**").permitAll()
                 .antMatchers("/member/signup").permitAll()
                 .antMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-resources/**").permitAll()
                 .anyRequest().authenticated();
