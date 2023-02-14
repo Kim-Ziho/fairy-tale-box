@@ -6,6 +6,21 @@ import "./Historydetail.css";
 import "./History.css";
 import "../modal/Back.css";
 
+const testaudio = new Audio("sound/1.mp3");
+  const start = () => {
+    setTimeout(() => {
+      testaudio.play();
+    }, 1000);
+  };
+
+const audioStart = (path) => {
+  var audio = new Audio(path)
+  audio.load()
+  audio.volume = 1
+  audio.play()
+  console.log(path)
+};
+
 const Historydetail = () => {
   // const [histdet, setHistdets] = useState([]);
   const [histdetYes, setHistdetYes] = useState([]);
@@ -15,14 +30,9 @@ const Historydetail = () => {
 	const histId = location.state.histId;
 
   // console.log(histId);
+  
 
-  const audioStart = (path) => {
-    var audio = new Audio(path)
-    audio.load()
-    audio.volume = 1
-    audio.play()
-    console.log(path)
-  };
+  
 
   useEffect(() => {
     axios
@@ -41,7 +51,7 @@ const Historydetail = () => {
                     className="detailImg"
                   ></img>
                   <div className="historycontent txt">{histdet.word_name}</div>
-                  <div className="historycontent txt" onClick={()=>audioStart(histdet.audio_path)}>
+                  <div className="historycontent txt" onClick={()=>audioStart(require(histdet.audio_path).default)}>
                     🎧
                   </div>
                   <div></div>
@@ -74,7 +84,7 @@ const Historydetail = () => {
       }
       );
   },[histId]);
-
+  // setTimeout(start)
   return (
     <div className="historyDetailBox">
       <div className="histHeader">
