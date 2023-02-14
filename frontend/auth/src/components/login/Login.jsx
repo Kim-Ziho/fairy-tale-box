@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Modal from "../modal";
 import "./Login.css";
@@ -33,6 +33,9 @@ export default function Login() {
   const handlePassword = (e) => {
     setPassword(e.target.value);
   };
+
+  const navigate = useNavigate()
+
 
   useEffect(() => {
     const regex =
@@ -118,9 +121,9 @@ export default function Login() {
         <footer className="modalFooter"></footer>
       </Modal>
 
-      <div className="newAccountlogin">
-        <Link to="/join">새 계정 만들기</Link>
-      </div>
+      <button className="goJoin" onClick={() => {
+        navigate("/join")
+      }}>new Account</button>
     </div>
   );
 }

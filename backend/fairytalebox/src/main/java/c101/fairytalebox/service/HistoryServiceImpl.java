@@ -6,6 +6,7 @@ import c101.fairytalebox.repository.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
@@ -66,6 +67,7 @@ public class HistoryServiceImpl implements HistoryService {
 
     }
 
+    @Transactional
     @Override
     public Integer getstarpoint(Long history_id) {
         History history = historyRepository.findById(history_id).orElse(null);
@@ -80,6 +82,7 @@ public class HistoryServiceImpl implements HistoryService {
         }
         history.modifyStarPoint(starpoint);
         historyRepository.save(history);
+
         return starpoint;
     }
 }
