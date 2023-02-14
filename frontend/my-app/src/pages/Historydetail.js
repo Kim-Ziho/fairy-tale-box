@@ -17,7 +17,8 @@ const Historydetail = () => {
   // console.log(histId);
 
   const audioStart = (path) => {
-    new Audio(path).play();
+    const audio = new Audio(path)
+    setTimeout(audio.play())
     console.log(path)
   };
 
@@ -70,7 +71,7 @@ const Historydetail = () => {
         );
       }
       );
-  },[]);
+  },[histId]);
 
   return (
     <div className="historyDetailBox">
