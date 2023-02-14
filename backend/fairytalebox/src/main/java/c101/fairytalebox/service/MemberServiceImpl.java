@@ -64,11 +64,7 @@ public class MemberServiceImpl implements MemberService {
             throw new Exception("회원가입 오류");
             
         }
-        
 
-
-
-        
     }
 
     @Override
