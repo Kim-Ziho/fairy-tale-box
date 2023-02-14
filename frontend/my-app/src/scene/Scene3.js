@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 import { useNavigate , useLocation} from "react-router-dom";
 import BackHome from "../modal/BackHomeDrop";
 import "./Scene3.css";
@@ -32,18 +32,7 @@ const Scene3 = () => {
   // 자막 시작 딜레이
   setTimeout(Change_text);
   
-  useEffect(() => {
-    axios({
-      method: "post",
-      url: "http://i8c101.p.ssafy.io/api/history",
-      data: {
-        member_id: 5,
-        story_id: 1,
-        studyDate: new Date(),
-      },
-    }).then((res) => {
-      const number = res.data;
-      setTimeout(
+  setTimeout(
         () =>
           axios({
             method: "get",
@@ -51,8 +40,6 @@ const Scene3 = () => {
           }),
         3300
       );
-    });
-  }, []);
   // 페이지 넘어가는 시간
   setTimeout(() => navigate(`/scene4`, { state: { value: number } }), 11610);
   // 오디오 파일 자동재생

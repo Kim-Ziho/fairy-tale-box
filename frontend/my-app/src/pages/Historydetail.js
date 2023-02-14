@@ -69,7 +69,7 @@ const Historydetail = () => {
         );
       }
       );
-  },[]);
+  });
 
   return (
     <div className="historyDetailBox">

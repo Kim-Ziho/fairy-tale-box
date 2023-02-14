@@ -58,7 +58,7 @@ const Scene1 = () => {
         }),14050
       )
     })
-  },[]);
+  });
  
   // 자막 시작 딜레이
   setTimeout(Change_text);

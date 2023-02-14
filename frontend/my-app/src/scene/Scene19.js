@@ -1,5 +1,5 @@
 import React ,{useState} from "react";
-import { useNavigate , useLocation} from "react-router-dom";
+import { useLocation} from "react-router-dom";
 import BackHome from "../modal/BackHomeDrop";
 import "./Scene19.css";
 import Modal from "../modal/ResultModal.js";
@@ -27,23 +27,19 @@ function Change_text(){
   setTimeout(()=>{
     subtitle.innerText = '씩씩한 오빠는 달님이 되었답니다.'
   },5020)
-  setTimeout(()=>{
-    subtitle.innerText = '햇님이라고 말해볼까요?'
-  },8370)
-  setTimeout(()=>{
-    subtitle.innerText = '달님이라고 말해볼까요?'
-  },15000)
+
 }
 const Scene19 = () => {
+
+
   const [modalOpen, setModalOpen] = useState(false);
   const openModal = () => {
     setModalOpen(true);
   };
-  const closeModal = () => {
-    setModalOpen(false);
-  };
+  // const closeModal = () => {
+  //   setModalOpen(false);
+  // };
 
-  const navigate = useNavigate();
   const location = useLocation();
   const number =  location.state.value;
   console.log(number)
@@ -52,7 +48,7 @@ const Scene19 = () => {
   // 하단은 오디오 파일 자동재생
   setTimeout(start)
   setTimeout(start2)
-  setTimeout(()=>openModal(),2000)
+  setTimeout(()=>openModal(),12000)
   return (
     <div className="SceneBox">
       <BackHome></BackHome>
@@ -62,7 +58,7 @@ const Scene19 = () => {
         <h1 className="word19-2">달님</h1>
         <div className="popup19-2"></div>
         <h2 id="Text"> </h2>  
-        <Modal open={modalOpen} header="학습 완료">
+        <Modal open={modalOpen} header="학습 완료" number={number}>
           <footer className="modalFooter"></footer>
         </Modal>
     </div>

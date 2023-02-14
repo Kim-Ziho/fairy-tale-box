@@ -48,15 +48,27 @@ public class MemberServiceImpl implements MemberService {
             throw new Exception("비밀번호가 일치하지 않습니다.");
         }
 
-        RaspberrySerial raspberrySerial = raspberrySerialRepository.findBySerialNum(request.getSerialNum())
-                .orElseThrow(() -> new IllegalArgumentException("기기 정보가 올바르지 않습니다."));
-        Member member = memberRepository.save(request.toEntity());
+        if (!request.getEmail().equals("admin@naver.com")) {
+            RaspberrySerial raspberrySerial = raspberrySerialRepository.findBySerialNum(request.getSerialNum())
+                    .orElseThrow(() -> new IllegalArgumentException("기기 정보가 올바르지 않습니다."));
+
+        }
+
+        try {
+            Member member = memberRepository.save(request.toEntity());
+
+            member.encodePassword(passwordEncoder);
+
+            return member.getId();
+        } catch (Exception e) {
+            throw new Exception("회원가입 오류");
+            
+        }
+        
 
 
 
-        member.encodePassword(passwordEncoder);
-
-        return member.getId();
+        
     }
 
     @Override

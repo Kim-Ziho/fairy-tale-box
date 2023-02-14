@@ -19,4 +19,6 @@ public interface HistoryService {
     public void setStarPoint(Long id, StarPointDto starPointDto);
 
     public void createWordResult(Long word_id,WordResultRequestDto wordResultRequestDto);
+
+    public Integer getstarpoint(Long history_id);
 }

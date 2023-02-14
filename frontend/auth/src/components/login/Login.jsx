@@ -10,6 +10,8 @@ export default function Login() {
   const [emailValid, setEmailValid] = useState(false);
   const [passwordValid, setPasswordValid] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
+  const [modalMessage, setModalMessage] = useState('');
+
   const openModal = () => {
     setModalOpen(true);
   };
@@ -49,16 +51,14 @@ export default function Login() {
         password,
       })
       .then((res) => {
-        <Modal open={modalOpen} close={closeModal} header="로그아웃">
-          로그아웃 하시겠어요?
-          <footer className="modalFooter"></footer>
-        </Modal>;
-        alert("로그인 성공! 플레이를 진행해주세요");
-        setEmail("");
-        setPassword("");
+        setModalMessage("로그인 성공! \n 화면으로 돌아가 인증확인 버튼을 눌러주세요")
+        setEmail('')
+        setPassword('')
+        openModal();
       })
       .catch((err) => {
-        alert(err.response.data.message);
+        setModalMessage(err.response.data.message)
+        openModal();
       });
   };
 
@@ -112,6 +112,11 @@ export default function Login() {
           로그인
         </button>
       </div>
+
+      <Modal open={modalOpen} close={closeModal} main={modalMessage}>
+
+        <footer className="modalFooter"></footer>
+      </Modal>
 
       <div className="newAccountlogin">
         <Link to="/join">새 계정 만들기</Link>

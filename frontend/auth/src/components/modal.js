@@ -2,29 +2,24 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./modal.css";
 
-const LogoutModal = (props) => {
-  const { open, close, header, main, footer } = props;
+const Modal = (props) => {
+  const { open, close, main } = props;
 
   return (
     <div className={open ? "openModal modal" : "modal"}>
       {open ? (
         <section id="backgnd">
           <header>
-            {header}
+          🧚🏻‍♀️ 동화상자 🧚🏻‍♂️
             <button className="headerbutton" onClick={close}>
               &times;
             </button>
           </header>
           <main className="modalMain">{main}</main>
-          <footer>
-            <Link to="/Qr">
-              <button className="footerButton">{footer}</button>
-            </Link>
-          </footer>
         </section>
       ) : null}
     </div>
   );
 };
 
-export default LogoutModal;
+export default Modal;

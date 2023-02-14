@@ -6,9 +6,20 @@ import axios from "axios";
 import "./ResultModal.css";
 
 const ResultModal = (props) => {
-  const { open, close } = props;
+  const { open, close, number } = props;
   const [histdet, setHistdets] = useState([]);
   const [historydetails, setHistorydetails] = useState([]);
+  const [starpoint,setstarpoint] = useState([]);
+    useEffect(()=>{
+    axios({
+      method:'get',
+      url:`http://i8c101.p.ssafy.io/api/history/starpoint/${number}`,
+    })
+    .then((res) =>{
+      // const starpoint = res.data
+      setstarpoint(res.data);
+    })
+  });
 
   const jemok = taledata.map((taleDat) => {
     return (
@@ -36,7 +47,7 @@ const ResultModal = (props) => {
               &times;
             </button> */}
           </header>
-          <main className="modalMain modalMainScore">{score[0]}옳지잘한다</main>
+          <main className="modalMain modalMainScore">{starpoint}옳지잘한다</main>
           <footer className="modalFooter">
             <Link to="/home">
               <button className="footerButton">👈🏻 홈으로 돌아가기</button>

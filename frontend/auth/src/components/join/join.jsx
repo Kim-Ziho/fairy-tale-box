@@ -17,6 +17,12 @@ const Join = () => {
     const [emailCheck, setEmailCheck] = useState(false);
     const [nicknameCheck, setNicknameCheck] = useState(false);
     const [modalOpen, setModalOpen] = useState(false);
+    const [modalMessage, setModalMessage] = useState('');
+    const [notAllow1, setNotAllow1] = useState(true);
+    const [notAllow2, setNotAllow2] = useState(true);
+
+
+
     const openModal = () => {
         setModalOpen(true);
     };
@@ -28,27 +34,37 @@ const Join = () => {
     const navigate = useNavigate()
 
     const goToLogin = () => {
-        alert('회원가입이 완료되었습니다.')
-        navigate('/login')
+        setModalMessage("회원가입이 완료되었습니다.")
+        openModal();
     }
     const handleEmail = (e) => {
         setEmail(e.target.value);
         const regex = /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
         if (regex.test(email)) {
             setEmailValid(true);
+            setNotAllow1(false);
         } else {
             setEmailValid(false);
+            setNotAllow1(true);
         }
     }
 
     const handleCheckedPassword = (e) => {
         setCheckedPassword(e.target.value);
-        
+
     }
 
     const handleNickname = (e) => {
         setNickname(e.target.value);
     }
+    useEffect(() => {
+        if(nickname.length > 0 && nickname.length < 9) {
+            setNotAllow2(false)
+        }
+        else {
+            setNotAllow2(true)
+        }
+    })
 
     const handlePassword = (e) => {
         setPassword(e.target.value);
@@ -85,8 +101,15 @@ const Join = () => {
                 goToLogin()
             })
             .catch((err) => {
-                console.log(err)
-                alert(err.response.data.message)
+                if (err.response.data.message.includes("Validation failed for object='signUpRequestDto'")) {
+                    setModalMessage("유효성 검사를 진행해주세요")
+                    openModal()
+                }
+                else {
+                    setModalMessage(err.response.data.message)
+                    openModal()
+                }
+
             })
     }
 
@@ -96,12 +119,13 @@ const Join = () => {
         })
             .then((res) => {
                 setEmailCheck(true);
-                // alert('사용 가능한 이메일 입니다.')
+                setModalMessage("사용 가능한 이메일입니다.")
                 openModal();
             })
             .catch((err) => {
                 console.log(err)
-                alert(err.response.data.message)
+                setModalMessage(err.response.data.message)
+                openModal();
             })
     }
 
@@ -111,11 +135,13 @@ const Join = () => {
         })
             .then((res) => {
                 setNicknameCheck(true);
+                setModalMessage("사용 가능한 닉네임입니다.")
                 openModal();
             })
             .catch((err) => {
                 console.log(err)
-                alert(err.response.data.message)
+                setModalMessage(err.response.data.message)
+                openModal();
             })
 
     }
@@ -135,12 +161,12 @@ const Join = () => {
                         placeholder='test@gmail.com'
                         value={email}
                         onChange={handleEmail} />
-                    <button className="checkButton" onClick={() => { axiosemail() }}> 중복검사</button>
+                    <button className="checkButton" onClick={() => { axiosemail() }} disabled={notAllow1}> 중복검사</button>
                 </div>
 
                 <div className='errorMessageWrap'>
                     {!emailValid && email.length > 0 && (
-                        <div>사용 가능한 닉네임 입니다.</div>
+                        <div>이메일 형식이 유효하지 않습니다.</div>
                     )}
                 </div>
                 <div className='inputTitle'>닉네임</div>
@@ -151,13 +177,10 @@ const Join = () => {
                         placeholder='닉네임은 8자 이하입니다.'
                         value={nickname}
                         onChange={handleNickname} />
-                    <button className="checkButton" onClick={() => { axiosnickname() }}>
+                    <button className="checkButton" onClick={() => { axiosnickname() }} disabled={notAllow2}>
                         중복검사
                     </button>
-                    <Modal open={modalOpen} close={closeModal} header="로그아웃" main="로그아웃 하시겠어요?" footer="👈🏻 로그아웃">
-                        
-                        <footer className="modalFooter"></footer>
-                    </Modal>
+
                 </div>
                 <div className='errorMessageWrap'>
                     {nickname.length > 8 && (
@@ -199,6 +222,11 @@ const Join = () => {
                     <button onClick={() => { axiossignup() }} className='bottomButton'>
                         회원가입
                     </button>
+
+                    <Modal open={modalOpen} close={closeModal} main={modalMessage}>
+
+                        <footer className="modalFooter"></footer>
+                    </Modal>
                 </div>
             </div>
             <div className="goLogin">

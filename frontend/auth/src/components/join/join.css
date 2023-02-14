@@ -92,3 +92,7 @@
   margin-left: 33%;
   text-decoration: none;
 }
+.checkButton:disabled {
+  background-color: #dadada;
+  color: white;
+}

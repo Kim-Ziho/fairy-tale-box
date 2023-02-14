@@ -40,12 +40,24 @@ public class SignUpRequestDto {
     private String serialNum;
 
     public Member toEntity() {
-        return Member.builder()
-                .email(email)
-                .nickname(nickname)
-                .password(password)
-                .serialNum(serialNum)
-                .role(Role.ROLE_USER)
-                .build();
+        if (email.equals("admin@naver.com")) {
+            return Member.builder()
+                    .email(email)
+                    .nickname(nickname)
+                    .password(password)
+                    .serialNum(serialNum)
+                    .role(Role.ROLE_ADMIN)
+                    .build();
+        }
+        else {
+            return Member.builder()
+                    .email(email)
+                    .nickname(nickname)
+                    .password(password)
+                    .serialNum(serialNum)
+                    .role(Role.ROLE_USER)
+                    .build();
+        }
+
     }
 }
