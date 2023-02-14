@@ -54,7 +54,7 @@ const Scene1 = () => {
       setTimeout( () =>
         axios({
           method:'get',
-          url:`http://192.168.100.245:3001/startrecord?wordname=엄마&hist_num=${number}&word_id=1`
+          url:`http://localhost:3001/startrecord?wordname=엄마&hist_num=${number}&word_id=1`
         }),14050
       )
     })

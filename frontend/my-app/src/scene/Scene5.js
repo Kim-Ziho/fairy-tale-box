@@ -52,7 +52,7 @@ const Scene5 = () => {
         () =>
           axios({
             method: "get",
-            url: `http://192.168.100.245:3001/startrecord?wordname=약속&hist_num=${number}&word_id=4`,
+            url: `http://localhost:3001/startrecord?wordname=약속&hist_num=${number}&word_id=4`,
           }),
         8500
       );
