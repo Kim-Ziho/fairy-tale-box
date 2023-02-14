@@ -8,7 +8,7 @@
 .qrMainText {
   position: relative;
   margin: auto;
-  top: 0rem;
+  top: -1.5rem;
   font-size: 12rem;
   width: fit-content;
   color: rgb(0, 0, 0);
@@ -16,7 +16,6 @@
 }
 .qrText {
   position: relative;
-  margin-top: -10%;
   margin: auto;
   font-size: 4rem;
   width: fit-content;

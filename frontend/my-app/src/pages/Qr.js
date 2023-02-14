@@ -1,8 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Qr.css";
+import axios from "axios";
+
+const serialNum = "동화상자c101-1";
 
 const Qr = () => {
+  const [sunggong, setSunggong] = useState([false]);
+  const axiosQR = () => {
+    axios
+      .post("http://i8c101.p.ssafy.io/api/member/authcheck", {
+        serialNum,
+      })
+      .then((res) => {
+        console.log(res);
+        setSunggong(true);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     <div className="qrContainer">
       <h1 className="qrMainText txt">🔒 로그인하기 🔑</h1>
@@ -15,9 +32,16 @@ const Qr = () => {
         alt="#"
       ></img>
       <div className="qrFooter">
-        <Link to="/">
+        <Link to={sunggong ? "/" : ""}>
           <button className="qrButton txt">
-            <div className="">👉🏻 로그인 후 인증하기</div>
+            <div
+              className=""
+              onClick={() => {
+                axiosQR();
+              }}
+            >
+              👉🏻 로그인 후 인증하기
+            </div>
           </button>
         </Link>
       </div>

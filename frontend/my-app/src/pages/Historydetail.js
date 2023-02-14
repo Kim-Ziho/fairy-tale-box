@@ -5,42 +5,37 @@ import axios from "axios";
 import "./Historydetail.css";
 import "./History.css";
 import "../modal/Back.css";
-import "../STT"
+import "../STT";
 
-// const testaudio = new Audio("../STT/1.mp3");
-//   const start = () => {
-//     setTimeout(() => {
-//       testaudio.play();
-//     }, 1000);
-//   };
-
-
+const audioStart = (path, id) => {
+  console.log(path);
+  console.log(id);
+  console.log(typeof path);
+  const newPath = require(`../STT/${path}${id}/audio/test.wav`);
+  console.log(newPath);
+  var audio = new Audio(newPath);
+  audio.volume = 1;
+  audio.play();
+};
 
 const Historydetail = () => {
-  // const [histdet, setHistdets] = useState([]);
+  const testaudio = new Audio("src/STT/엄마168/audio/test.wav");
+  console.log(testaudio);
+  const start = () => {
+    testaudio.play();
+  };
   const [histdetYes, setHistdetYes] = useState([]);
   const [histdetNo, setHistdetNo] = useState([]);
 
   const location = useLocation();
-	const histId = location.state.histId;
-
-  // console.log(histId);
-  
-  const audioStart = (path) => {
-  var audio = new Audio(`${path}`)
-  // audio.load()
-  audio.volume = 1
-  audio.play()
-  console.log(path)
-  console.log(audio)
-};
-  
+  const histId = location.state.histId;
 
   useEffect(() => {
     axios
       .get(`http://i8c101.p.ssafy.io/api/history/${histId}`)
       .then((response) => {
         const histdet = response.data;
+        console.log(histdet);
         setHistdetYes(
           histdet.wordResult.map((histdet) => {
             if (histdet.is_correct === true) {
@@ -52,8 +47,13 @@ const Historydetail = () => {
                     alt="단어그림"
                     className="detailImg"
                   ></img>
-                  <div className="historycontent txt">{histdet.word_name}</div>
-                  <div className="historycontent txt" onClick={()=>audioStart(histdet.audio_path)}>
+                  <div className="historydetailcontent txt">
+                    {histdet.word_name}
+                  </div>
+                  <div
+                    className="historydetailcontent histaudio"
+                    onClick={() => audioStart(histdet.word_name, histId)}
+                  >
                     🎧
                   </div>
                   <div></div>
@@ -73,8 +73,13 @@ const Historydetail = () => {
                     alt="단어그림"
                     className="detailImg"
                   ></img>
-                  <div className="historycontent txt">{histdet.word_name}</div>
-                  <div className="historycontent txt" onClick={()=>audioStart(histdet.audio_path)}>
+                  <div className="historydetailcontent txt">
+                    {histdet.word_name}
+                  </div>
+                  <div
+                    className="historydetailcontent histaudio"
+                    onClick={() => audioStart(histdet.word_name, histId)}
+                  >
                     🎧
                   </div>
                   <div></div>
@@ -83,11 +88,11 @@ const Historydetail = () => {
             }
           })
         );
-      }
-      );
-  },[histId]);
-  // setTimeout(start)
-  
+      });
+  }, [histId]);
+
+  setTimeout(start);
+
   return (
     <div className="historyDetailBox">
       <div className="histHeader">
