@@ -37,7 +37,7 @@ function fade_out(){
 
 
 
-const Scene8 = () => {
+const Scene8_test = () => {
   function moveimg() {
     const hole = document.querySelector(".hole")
     document.addEventListener("mousemove", (e) => { // mousemove이벤트를 이용해 움
@@ -95,4 +95,4 @@ const Scene8 = () => {
   );
 };
 
-export default Scene8;
+export default Scene8_test;

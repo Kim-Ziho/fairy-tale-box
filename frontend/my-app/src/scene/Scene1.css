@@ -144,3 +144,20 @@
   animation-delay: 17s,22s;
   animation-fill-mode: forwards;
 }
+
+@keyframes word-pop {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+@keyframes word-popout {
+  from{
+    opacity: 1;
+  }
+  to{
+    opacity: 0;
+  }
+}

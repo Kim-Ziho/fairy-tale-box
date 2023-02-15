@@ -24,7 +24,7 @@ function Change_text(){
     subtitle.innerText = '나무에서 떨어지지 않게 바닥에 몸을 웅크리세요!'
   },10730)
 }
-const Scene14 = () => {
+const Scene14_test = () => {
   function moveimg() {
     const siblings14 = document.querySelector(".siblings14")
     const siblings14_2 = document.querySelector(".siblings14-2")
@@ -66,7 +66,7 @@ const Scene14 = () => {
   // 하단은 자막 시작 딜레이
   setTimeout(Change_text)
   // 하단은 페이지 넘어가는 시간
-  setTimeout(() => navigate(`/scene15_test`, { state: { value: number } }), 21000);
+  setTimeout(() => navigate(`/scene15_test`, { state: { value: number } }), 19000);
   // 하단은 오디오 파일 자동재생
   setTimeout(start)
   setTimeout(moveimg,13000)
@@ -83,4 +83,4 @@ const Scene14 = () => {
   );
 };
 
-export default Scene14;
+export default Scene14_test;

@@ -29,7 +29,7 @@ function Change_text(){
 }
 
 
-const Scene11 = () => {
+const Scene11_test = () => {
   function movewell(){
 
     const well = document.querySelector(".well");
@@ -78,4 +78,4 @@ const Scene11 = () => {
   );
 };
 
-export default Scene11;
+export default Scene11_test;

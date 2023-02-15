@@ -25,7 +25,7 @@ function Change_text(){
   },14320)
 }
 
-const Scene13 = () => {
+const Scene13_test = () => {
   function moveimg() {
     const oil = document.querySelector(".oil")
     document.addEventListener("mousemove", (e) => { // mousemove이벤트를 이용해 움
@@ -75,4 +75,4 @@ const Scene13 = () => {
   );
 };
 
-export default Scene13;
+export default Scene13_test;

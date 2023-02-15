@@ -37,7 +37,7 @@ function Change_text(){
     subtitle.innerText = '마지막으로 만세!'
   },24020)
 }
-const Scene15 = () => {
+const Scene15_test = () => {
   function moveimg() {
     const rope = document.querySelector(".rope")
     document.addEventListener("mousemove", (e) => { // mousemove이벤트를 이용해 움
@@ -91,4 +91,4 @@ const Scene15 = () => {
   );
 };
 
-export default Scene15;
+export default Scene15_test;

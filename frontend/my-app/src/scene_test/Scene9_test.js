@@ -25,7 +25,7 @@ function Change_text(){
     subtitle.innerText = '손이라고 말해볼까요?'
   },6800)
 }
-const Scene9 = () => {
+const Scene9_test = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const number =  location.state.value;
@@ -60,4 +60,4 @@ const Scene9 = () => {
   );
 };
 
-export default Scene9;
+export default Scene9_test;
