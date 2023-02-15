@@ -5,4 +5,10 @@
   z-index: 1;
   position: absolute;
   background-color: #fff;
+  transition: 0.25s;
+}
+
+.backBtn:hover {
+  transition: 0.25s;
+  background-color: #ffee83;
 }

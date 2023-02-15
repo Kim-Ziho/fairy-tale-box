@@ -35,6 +35,12 @@
   background-color: #fff;
   padding: 9px;
   border-radius: 1rem;
+  transition: 0.25s;
+}
+.qrButton:hover {
+  transform: scale(0.85);
+  transition: 0.25s;
+  background-color: #ffee83;
 }
 .qrFooter {
   padding-top: 1%;

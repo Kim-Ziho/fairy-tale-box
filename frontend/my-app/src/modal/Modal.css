@@ -35,13 +35,14 @@
   transition: 0.25s;
 }
 .footerButton:hover {
-  transform: scale(0.85);
   transition: 0.25s;
+  background-color: #ffee83;
+  color: rgb(0, 0, 0);
 }
 .modal > section > header {
   position: relative;
   padding: 1.8rem 6.4rem 1.7rem 3.3rem;
-  background-color: #d4d4d4;
+  background-color: #ffee83;
   font-family: "Yeon Sung", cursive;
   font-weight: 1000;
   font-size: 3rem;
