@@ -6,7 +6,7 @@ import "./SelectModal.css";
 
 const SelectModal = (props) => {
   const [story, setStory] = useState([]);
-  const { open, close, storyid } = props;
+  const { open, close, storyid, storyurl } = props;
 
   useEffect(() => {
     axios
@@ -29,7 +29,7 @@ const SelectModal = (props) => {
           </header>
           <main className="modalMain">{story.story_overview}</main>
           <footer className="modalFooter">
-            <Link to="/scene1">
+            <Link to={(storyid===4) ? "/scene1_test" : "/scene1"}>
               <button className="footerButton">👉🏻 하러가기</button>
             </Link>
           </footer>
