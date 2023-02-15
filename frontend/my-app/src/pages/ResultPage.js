@@ -16,7 +16,7 @@ const ResultPage = () => {
     });
   });
 
-  let score = "🌝".repeat(starpoint) + "🌚".repeat(3 - starpoint);
+  let score = "⭐".repeat(starpoint) + "💨".repeat(3 - starpoint);
 
   return (
     <div>
@@ -31,7 +31,7 @@ const ResultPage = () => {
           </div>
           <footer className="modalFooter">
             <Link to="/home">
-              <button className="resultButton txt">👈🏻 홈으로 돌아가기</button>
+              <button className="resultButton txt">👈🏻  홈으로 돌아가기</button>
             </Link>
             <div></div>
             <Link to="/home">

@@ -8,18 +8,10 @@
   color: rgb(0, 0, 0);
   text-shadow: 4px 4px #ffffff;
 }
-.conn {
-  width: 100vw;
-  height: 71vh;
-  object-fit: contain;
-}
 #Grid {
   margin: auto;
   width: 76%;
   padding: 6%;
-}
-.selectBtn {
-  border: none;
 }
 .selectImg {
   margin: auto;
@@ -27,12 +19,9 @@
   height: 29.5vh;
   object-fit: cover;
   transition: 0.25s;
+  border-radius: 5%;
 }
 .selectImg:hover {
-  transform: scale(0.85);
+  transform: scale(1.09);
   transition: 0.25s;
-}
-.blur {
-  filter: blur(5px);
-  -webkit-filter: blur(5px);
 }

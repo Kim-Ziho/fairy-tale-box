@@ -6,6 +6,7 @@
   width: 60vw;
   height: 75vh;
   border-radius: 4rem;
+  box-shadow: 0 1.5rem 3.5rem rgba(0, 0, 0, 0.2);
 }
 
 .resultHeader {
@@ -23,7 +24,7 @@
   margin: auto;
   text-align: center;
   font-size: 9rem;
-  margin-top: 4%;
+  margin-top: 3.4%;
 }
 .resultTxt {
   text-align: center;

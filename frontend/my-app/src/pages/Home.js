@@ -15,18 +15,16 @@ const Item = styled(Paper)(({ theme }) => ({
 const Home = (props) => {
   const [modalOpen, setModalOpen] = useState(false);
   const [storyid, setStoryid] = useState({});
-  const [setStoryurl] = useState("");
-  const openModal = (num, url) => {
+  const openModal = (num) => {
     setModalOpen(true);
     setStoryid(num);
-    setStoryurl(`${url}`);
   };
   const closeModal = () => {
     setModalOpen(false);
   };
 
   return (
-    <div id="Grid" className="conn">
+    <div id="Grid">
       <div className="homeMainText txt">
         😃 동화선택 👆🏻
       </div>
@@ -35,7 +33,7 @@ const Home = (props) => {
       </Link>
       <Modal open={modalOpen} close={closeModal} storyid={storyid}></Modal>
       <Grid container spacing={4}>
-        <Grid item xs={4} onClick={() => openModal(1, "/scene1")} className="selectBtn">
+        <Grid item xs={4} onClick={() => openModal(1)}>
           <Item>
             <img
               src="img/thumnail/sunandmoon.png"
@@ -44,7 +42,7 @@ const Home = (props) => {
             ></img>
           </Item>
         </Grid>
-        <Grid item xs={4} onClick={() => openModal(2)} className="selectBtn">
+        <Grid item xs={4} onClick={() => openModal(2)}>
           <Item>
             <img
               src="img/thumnail/huengbu.png"
@@ -53,7 +51,7 @@ const Home = (props) => {
             ></img>
           </Item>
         </Grid>
-        <Grid item xs={4} onClick={() => openModal(3)} className="selectBtn">
+        <Grid item xs={4} onClick={() => openModal(3)}>
           <Item>
             <img
               src="img/thumnail/konggpatg.png"
@@ -62,7 +60,7 @@ const Home = (props) => {
             ></img>
           </Item>
         </Grid>
-        <Grid item xs={4} onClick={() => openModal(4)} className="selectBtn">
+        <Grid item xs={4} onClick={() => openModal(4)}>
           <Item>
             <img
               src="img/thumnail/sunandmoon2.png"
@@ -71,7 +69,7 @@ const Home = (props) => {
             ></img>
           </Item>
         </Grid>
-        <Grid item xs={4} onClick={() => openModal(5)} className="selectBtn">
+        <Grid item xs={4} onClick={() => openModal(5)}>
           <Item>
             <img
               src="img/thumnail/ggaesoon.png"
@@ -80,7 +78,7 @@ const Home = (props) => {
             ></img>
           </Item>
         </Grid>
-        <Grid item xs={4} onClick={() => openModal(6)} className="selectBtn">
+        <Grid item xs={4} onClick={() => openModal(6)}>
           <Item>
             <img
               src="img/thumnail/ready1.png"
