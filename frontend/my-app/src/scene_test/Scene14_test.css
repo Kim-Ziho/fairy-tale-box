@@ -1,0 +1,107 @@
+.bgImg14 {
+    margin-top: 1.5%;
+    width: 100vw;
+    height: 93vh;
+    object-fit: contain;
+    animation-name: hand14-move;
+    animation-duration: 1s;
+    animation-delay: 6s;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;    
+}
+
+.SceneBox{
+    text-align: center;
+}
+
+.Homebtn{
+    position: absolute;
+    right: 10%;
+}
+
+.tiger14{
+    position: absolute;
+    left: 40%;
+    bottom: 60%;
+    top: 45%;
+    right: 55%;
+    height: 40%;
+    opacity: 1;
+    animation-name: hand14-move;
+    animation-duration: 1s;
+    animation-delay: 3s;
+    animation-iteration-count: 3;
+    animation-fill-mode: both;
+    width: 30vw;
+    height: 30vh;
+    object-fit: contain;
+}
+.tiger14-2{
+    position: absolute;
+    left: 40%;
+    bottom: 20%;
+    top:45%;
+    right: 55%;
+    height: 40%;
+    opacity: 0;
+    animation-name: hand14-2-move;
+    animation-duration: 1s;
+    animation-delay: 3s;
+    animation-iteration-count: 3;
+    width: 30vw;
+    height: 30vh;
+    object-fit: contain;
+}
+@keyframes hand14-move {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+@keyframes hand14-2-move {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes fade-out {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+.siblings14{
+    position: absolute;
+    margin-top: 1.5%;
+    width: 100vw;
+    height: 93vh;
+    object-fit: contain;
+    animation-name: hand14-2-move;
+    animation-duration: 1s;
+    animation-delay: 6s;
+    animation-iteration-count: 1;
+    animation-fill-mode: both; 
+    opacity: 0;
+}
+
+.siblings14-2{
+    position: absolute;
+    margin-top: 1.5%;
+    width: 100vw;
+    height: 93vh;
+    object-fit: contain;
+    /* animation-name: hand14-2-move;
+    animation-duration: 1s;
+    animation-delay: 11s;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;  */
+    opacity: 0;
+}
