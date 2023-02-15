@@ -57,7 +57,6 @@ const Scene2 = () => {
       <h1 className="word2">호랑이</h1>
       <div className="popup2"></div>
       <h2 id="Text"> </h2>
-      {/* <div>number</div> */}
     </div>
   );
 };

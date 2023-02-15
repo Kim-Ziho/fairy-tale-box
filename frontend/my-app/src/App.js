@@ -29,21 +29,21 @@ import Scene16 from "./scene/Scene16";
 import Scene17 from "./scene/Scene17";
 import Scene18 from "./scene/Scene18";
 import Scene19 from "./scene/Scene19";
-import Scene1_test from "./scene_test/Scene1_test";
-import Scene2_test from "./scene_test/Scene2_test";
-import Scene6_test from "./scene_test/Scene6_test";
-import Scene7_test from "./scene_test/Scene7_test";
-import Scene8_test from "./scene_test/Scene8_test";
-import Scene9_test from "./scene_test/Scene9_test";
-import Scene10_test from "./scene_test/Scene10_test";
-import Scene11_test from "./scene_test/Scene11_test";
-import Scene12_test from "./scene_test/Scene12_test";
-import Scene13_test from "./scene_test/Scene13_test";
-import Scene14_test from "./scene_test/Scene14_test";
-import Scene15_test from "./scene_test/Scene15_test";
-import Scene17_test from "./scene_test/Scene17_test";
-import Scene18_test from "./scene_test/Scene18_test";
-import Scene19_test from "./scene_test/Scene19_test";
+import Scene1test from "./scene_test/Scene1_test";
+import Scene2test from "./scene_test/Scene2_test";
+import Scene6test from "./scene_test/Scene6_test";
+import Scene7test from "./scene_test/Scene7_test";
+import Scene8test from "./scene_test/Scene8_test";
+import Scene9test from "./scene_test/Scene9_test";
+import Scene10test from "./scene_test/Scene10_test";
+import Scene11test from "./scene_test/Scene11_test";
+import Scene12test from "./scene_test/Scene12_test";
+import Scene13test from "./scene_test/Scene13_test";
+import Scene14test from "./scene_test/Scene14_test";
+import Scene15test from "./scene_test/Scene15_test";
+import Scene17test from "./scene_test/Scene17_test";
+import Scene18test from "./scene_test/Scene18_test";
+import Scene19test from "./scene_test/Scene19_test";
 import Resultpage from "./pages/ResultPage";
 import { AnimatePresence } from "framer-motion";
 
@@ -80,21 +80,21 @@ function App() {
             <Route path="/Scene17" element={<Scene17 />}></Route>
             <Route path="/Scene18" element={<Scene18 />}></Route>
             <Route path="/Scene19" element={<Scene19 />}></Route>
-            <Route path="/Scene1_test" element={<Scene1_test/>}></Route>
-            <Route path="/Scene2_test" element={<Scene2_test/>}></Route>
-            <Route path="/Scene6_test" element={<Scene6_test/>}></Route>
-            <Route path="/Scene7_test" element={<Scene7_test/>}></Route>
-            <Route path="/Scene8_test" element={<Scene8_test/>}></Route>
-            <Route path="/Scene9_test" element={<Scene9_test/>}></Route>
-            <Route path="/Scene10_test" element={<Scene10_test/>}></Route>
-            <Route path="/Scene11_test" element={<Scene11_test/>}></Route>
-            <Route path="/Scene12_test" element={<Scene12_test/>}></Route>
-            <Route path="/Scene13_test" element={<Scene13_test/>}></Route>
-            <Route path="/Scene14_test" element={<Scene14_test/>}></Route>
-            <Route path="/Scene15_test" element={<Scene15_test/>}></Route>
-            <Route path="/Scene17_test" element={<Scene17_test/>}></Route>
-            <Route path="/Scene18_test" element={<Scene18_test/>}></Route>
-            <Route path="/Scene19_test" element={<Scene19_test/>}></Route>
+            <Route path="/Scene1_test" element={<Scene1test/>}></Route>
+            <Route path="/Scene2_test" element={<Scene2test/>}></Route>
+            <Route path="/Scene6_test" element={<Scene6test/>}></Route>
+            <Route path="/Scene7_test" element={<Scene7test/>}></Route>
+            <Route path="/Scene8_test" element={<Scene8test/>}></Route>
+            <Route path="/Scene9_test" element={<Scene9test/>}></Route>
+            <Route path="/Scene10_test" element={<Scene10test/>}></Route>
+            <Route path="/Scene11_test" element={<Scene11test/>}></Route>
+            <Route path="/Scene12_test" element={<Scene12test/>}></Route>
+            <Route path="/Scene13_test" element={<Scene13test/>}></Route>
+            <Route path="/Scene14_test" element={<Scene14test/>}></Route>
+            <Route path="/Scene15_test" element={<Scene15test/>}></Route>
+            <Route path="/Scene17_test" element={<Scene17test/>}></Route>
+            <Route path="/Scene18_test" element={<Scene18test/>}></Route>
+            <Route path="/Scene19_test" element={<Scene19test/>}></Route>
             <Route path="/Result" element={<Resultpage/>}></Route>
           </Routes>
         </AnimatePresence>
