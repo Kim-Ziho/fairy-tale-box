@@ -7,9 +7,7 @@ const Back = () => {
 
   return (
     <div>
-      <button className="backBtn txt" onClick={() => navigate(-1)}>
-        👈🏻 뒤로가기
-      </button>
+      <button className="backBtn txt" onClick={() => navigate(-1)}>👈🏻 뒤로가기</button>
     </div>
   );
 };
