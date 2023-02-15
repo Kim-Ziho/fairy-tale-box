@@ -15,13 +15,11 @@ const Item = styled(Paper)(({ theme }) => ({
 const Home = (props) => {
   const [modalOpen, setModalOpen] = useState(false);
   const [storyid, setStoryid] = useState({});
-  const [storyurl, setStoryurl] = useState("");
+  const [setStoryurl] = useState("");
   const openModal = (num, url) => {
     setModalOpen(true);
     setStoryid(num);
     setStoryurl(`${url}`);
-    // Home.forceUpdate();
-    // console.log(num);
   };
   const closeModal = () => {
     setModalOpen(false);
@@ -30,7 +28,6 @@ const Home = (props) => {
   return (
     <div id="Grid" className="conn">
       <div className="homeMainText txt">
-        {/* <img src="img/ggae1.png"></img> */}
         😃 동화선택 👆🏻
       </div>
       <Link to="/">

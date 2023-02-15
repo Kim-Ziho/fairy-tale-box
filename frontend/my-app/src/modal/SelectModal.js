@@ -6,7 +6,7 @@ import "./SelectModal.css";
 
 const SelectModal = (props) => {
   const [story, setStory] = useState([]);
-  const { open, close, storyid, storyurl } = props;
+  const { open, close, storyid } = props;
 
   useEffect(() => {
     axios

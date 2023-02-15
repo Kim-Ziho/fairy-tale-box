@@ -43,10 +43,8 @@
   background-color: #fff;
 }
 .golook {
-  /* transition: 0.25s; */
   color: black;
 }
 .golook:hover {
   background-color: #ffee83;
-  /* color: rgb(0, 0, 0); */
 }

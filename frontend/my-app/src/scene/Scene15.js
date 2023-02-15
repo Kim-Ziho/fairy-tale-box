@@ -60,7 +60,6 @@ const Scene15 = () => {
           fill:'forwards'
         })
         time15+=1
-        // navigate('/scene9')
       }
     });
   }
