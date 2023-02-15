@@ -44,7 +44,10 @@
 }
 .golook {
   color: black;
+  transition: 0.25s;
 }
 .golook:hover {
+  transition: 0.25s;
+  transform: scale(1.05);
   background-color: #ffee83;
 }

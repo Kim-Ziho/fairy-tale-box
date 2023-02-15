@@ -23,7 +23,6 @@ const History = () => {
                 to={`/history/${hist.historyId}`}
                 style={{ textDecoration: "none" }}
                 state={{ histId: hist.historyId }}
-                className="golook"
               >
                 <div className="historycontent txt golook">👀 보러가자</div>
               </Link>

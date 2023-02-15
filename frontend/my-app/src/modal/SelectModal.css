@@ -6,4 +6,5 @@
   background-color: #fff;
   animation: modal-show 0.3s;
   overflow: hidden;
+  box-shadow: 0 1.5rem 3.5rem rgba(0, 0, 0, 0.2);
 }
