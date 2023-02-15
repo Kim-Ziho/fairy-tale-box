@@ -42,6 +42,10 @@
   font-size: 3rem;
   background-color: #fff;
 }
+.golook {
+  transition: 0.25s;
+}
 .golook:hover {
   transform: scale(1.05);
+  transition: 0.25s;
 }

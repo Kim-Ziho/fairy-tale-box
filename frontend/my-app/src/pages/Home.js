@@ -1,4 +1,4 @@
-import React, { useState, Suspense } from "react";
+import React, { useState } from "react";
 import Modal from "../modal/SelectModal.js";
 import { Link } from "react-router-dom";
 import { styled } from "@mui/material/styles";
@@ -75,7 +75,7 @@ const Home = (props) => {
         <Grid item xs={4} onClick={() => openModal(5)} className="selectBtn">
           <Item>
             <img
-              src="img/thumnail/ready1.png"
+              src="img/thumnail/ggaesoon.png"
               className="selectImg"
               alt="sun and moon"
             ></img>
@@ -84,7 +84,7 @@ const Home = (props) => {
         <Grid item xs={4} onClick={() => openModal(6)} className="selectBtn">
           <Item>
             <img
-              src="img/thumnail/ready2.png"
+              src="img/thumnail/ready1.png"
               className="selectImg"
               alt="sun and moon"
             ></img>
