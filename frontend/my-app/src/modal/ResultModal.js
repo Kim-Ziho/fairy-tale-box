@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import taledata from "../data/taledata.json";
-import histdata from "../data/historydetaildata.json";
 import axios from "axios";
 import "./ResultModal.css";
 
 const ResultModal = (props) => {
-  const { open, close, number } = props;
-  const [histdet, setHistdets] = useState([]);
-  const [historydetails, setHistorydetails] = useState([]);
+  const { open, number } = props;
   const [starpoint,setstarpoint] = useState([]);
     useEffect(()=>{
     axios({
@@ -21,20 +17,6 @@ const ResultModal = (props) => {
     })
   });
 
-  const jemok = taledata.map((taleDat) => {
-    return (
-      <div key={taleDat.id} className="txt">
-        {taleDat.tale}
-      </div>
-    );
-  });
-  // const score = histdata.map((histDat) => {
-  //   return (
-  //     <div key={histDat.id} className="txt">
-  //       {histDat.score}
-  //     </div>
-  //   );
-  // });
   let score = "⭐".repeat(starpoint)
   
   return (
@@ -42,10 +24,7 @@ const ResultModal = (props) => {
       {open ? (
         <section id="ResultBg">
           <header>
-            {jemok[0]}
-            {/* <button className="headerbutton" onClick={close}>
-              &times;
-            </button> */}
+            <h1>참 잘했어요!</h1>
           </header>
           <main className="modalMain modalMainScore">{score}옳지잘한다</main>
           <footer className="modalFooter">
