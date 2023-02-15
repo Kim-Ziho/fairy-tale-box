@@ -14,6 +14,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpMessage;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,8 +36,9 @@ public class HistoryController {
     private final HistoryService historyService;
 
     @GetMapping("")
-    public ResponseEntity<List<GetHistoryDto>> getHistory(){
-        List<History> histories = historyService.getHistory();
+    public ResponseEntity<List<GetHistoryDto>> getHistory(@AuthenticationPrincipal User user){
+        Long member_id = Long.valueOf(user.getUsername());
+        List<History> histories = historyService.getHistory(member_id);
         List<GetHistoryDto> getHistory = histories.stream().filter(history -> history.getStarPoint()>0)
                 .map(history -> {
                     GetHistoryDto newDto = new GetHistoryDto();
@@ -72,9 +75,10 @@ public class HistoryController {
     }
 
     @PostMapping("")
-    public ResponseEntity<Long> createHistory(@RequestBody HistoryRequestDto historyRequestDto){
+    public ResponseEntity<Long> createHistory(@RequestBody HistoryRequestDto historyRequestDto, @AuthenticationPrincipal User user){
+        Long member_id = Long.valueOf(user.getUsername());
 
-        Long history_id = historyService.createHistory(historyRequestDto);
+        Long history_id = historyService.createHistory(historyRequestDto, member_id);
 
         return ResponseEntity.ok().body(history_id);
     }

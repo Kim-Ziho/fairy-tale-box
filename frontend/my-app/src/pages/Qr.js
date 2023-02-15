@@ -30,7 +30,6 @@ const Qr = () => {
         if (accessToken !== null) {
           localStorage.setItem("accessToken", accessToken);
           localStorage.setItem("refreshToken", refreshToken);
-          axios.defaults.headers.common["x-access-token"] = accessToken;
           navigate("/")
         } else {
           openModal();

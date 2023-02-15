@@ -21,8 +21,8 @@ public class HistoryServiceImpl implements HistoryService {
     private final WordResultRepository wordResultRepository;
 
     @Override
-    public List<History> getHistory() {
-        return historyRepository.findAll();
+    public List<History> getHistory(Long id) {
+        return historyRepository.findAllByMember_Id(id);
     }
 
     @Override
@@ -31,8 +31,8 @@ public class HistoryServiceImpl implements HistoryService {
     }
 
     @Override
-    public Long createHistory(HistoryRequestDto request){
-        Member member = memberRepository.findById(request.getMember_id()).orElse(null);
+    public Long createHistory(HistoryRequestDto request, Long id){
+        Member member = memberRepository.findById(id).orElse(null);
         Story story = storyRepository.findById(request.getStory_id()).orElse(null);
         CreateHistoryDto createHistoryDto = new CreateHistoryDto();
         createHistoryDto.member = member;

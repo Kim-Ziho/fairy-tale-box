@@ -11,6 +11,7 @@ import c101.fairytalebox.jwt.TokenInfo;
 import c101.fairytalebox.repository.MemberRaspberryRepository;
 import c101.fairytalebox.repository.MemberRepository;
 import c101.fairytalebox.repository.RaspberrySerialRepository;
+import c101.fairytalebox.utils.SecurityUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -70,7 +71,7 @@ public class MemberServiceImpl implements MemberService {
     @Override
     @Transactional
     public TokenInfo login(LoginRequestDto request) {
-
+        System.out.println(SecurityUtil.getLoginUsername());
         String email = request.getEmail();
         String password = request.getPassword();
 
