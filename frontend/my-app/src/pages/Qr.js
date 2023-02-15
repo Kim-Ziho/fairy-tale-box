@@ -6,8 +6,6 @@ import Modal from "../modal/AuthModal.js";
 
 const serialNum = "동화상자c101-1";
 
-
-
 const Qr = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const openModal = () => {
@@ -17,8 +15,8 @@ const Qr = () => {
     setModalOpen(false);
   };
   const [sunggong, setSunggong] = useState([false]);
-  const [accessToken, setAccessToken] = useState('')
-  const [refreshToken, setRefreshToken] = useState('')
+  const [accessToken, setAccessToken] = useState("");
+  const [refreshToken, setRefreshToken] = useState("");
   const axiosQR = () => {
     axios
       .post("http://i8c101.p.ssafy.io/api/member/authcheck", {
@@ -26,24 +24,20 @@ const Qr = () => {
       })
       .then((res) => {
         // console.log(res.data.accessToken)
-        setAccessToken(res.data.accessToken)
-        setRefreshToken(res.data.refreshToken)  
-        console.log("셋 됐나", accessToken)      
-        if (!accessToken === null ) { 
-          localStorage.setItem('accessToken',  accessToken)
-          localStorage.setItem('refreshToken', refreshToken)
-          axios.defaults.headers.common['x-access-token'] = accessToken
+        setAccessToken(res.data.accessToken);
+        setRefreshToken(res.data.refreshToken);
+        console.log("셋 됐나", accessToken);
+        if (!accessToken === null) {
+          localStorage.setItem("accessToken", accessToken);
+          localStorage.setItem("refreshToken", refreshToken);
+          axios.defaults.headers.common["x-access-token"] = accessToken;
           console.log(res);
           setSunggong(true);
         } else {
-        openModal();
-        <Modal open={modalOpen} close={closeModal} header="🧚🏻‍♀️ 동화상자 🧚🏻‍♂️">
-          웹 페이지에서 로그인을 진행해주세요!
-        </Modal>
-        console.log("토큰 널")
-        setSunggong(false);
+          openModal();
+          console.log("토큰 널");
+          setSunggong(false);
         }
-
       })
       .catch((err) => {
         console.log(err);
@@ -61,18 +55,19 @@ const Qr = () => {
         alt="#"
       ></img>
       <div className="qrFooter">
-        <Link to={sunggong ? "/QR" : ""}>
-          <button className="qrButton txt">
-            <div
-              className=""
-              onClick={() => {
-                axiosQR();
-              }}
-            >
-              👉🏻 로그인 후 인증하기
-            </div>
+        <Link to={sunggong ? "" : "/QR"}>
+          <button
+            className="qrButton txt"
+            onClick={() => {
+              axiosQR();
+            }}
+          >
+            👉🏻 로그인 후 인증하기
           </button>
         </Link>
+        <Modal open={modalOpen} close={closeModal} header="인증실패">
+          웹 페이지에서 로그인을 진행해주세요!
+        </Modal>
       </div>
     </div>
   );

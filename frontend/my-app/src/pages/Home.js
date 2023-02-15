@@ -26,8 +26,11 @@ const Home = (props) => {
   };
 
   return (
-    <div id="Grid">
-      <h3 className="homeMainText txt">😃 동화선택 👆🏻</h3>
+    <div id="Grid" className="conn">
+      <div className="homeMainText txt">
+        {/* <img src="img/ggae1.png"></img> */}
+        😃 동화선택 👆🏻
+      </div>
       <Link to="/">
         <button className="backBtn txt">👈🏻 뒤로가기</button>
       </Link>
