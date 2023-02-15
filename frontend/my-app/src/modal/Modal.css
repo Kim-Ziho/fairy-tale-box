@@ -32,9 +32,11 @@
   font-family: "Yeon Sung", cursive;
   font-size: 3rem;
   border: 0;
+  transition: 0.25s;
 }
 .footerButton:hover {
   transform: scale(0.85);
+  transition: 0.25s;
 }
 .modal > section > header {
   position: relative;

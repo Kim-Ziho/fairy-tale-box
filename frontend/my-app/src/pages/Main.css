@@ -19,21 +19,33 @@
   padding-left: 5%;
   padding-right: 5%;
 }
-.button1 {
-  /* background-image: url("../../public/img/ggae1.png"); */
-  /* background-size: contain; */
-  /* width: 100vw; */
+/* .button1 {
+  background-image: url("../../public/img/ggae1.png");
+  background-size: container;
 }
+.button2 {
+  background-image: url("../../public/img/ggae2.png");
+  background-size: container;
+}
+.button3 {
+  background-image: url("../../public/img/ggae3.png");
+  background-size: container;
+} */
 .button1,
 .button2,
 .button3 {
-  display: inline-block;
-  width: 26vw;
-  height: 50vh;
-  background-color: #fff;
-  border: 0px;
-  border-radius: 6%;
   position: relative;
+  border: none;
+  display: inline-block;
+  padding: 1.5rem 3rem;
+  border-radius: 3rem;
+  box-shadow: 0 1.5rem 3.5rem rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  height: 50vh;
+  width: 25vw;
+  transition: 0.25s;
+  /* border: 3px solid #000000; */
+  /* color: #000000; */
 }
 
 .txt {
@@ -50,4 +62,6 @@
 .button2:hover,
 .button3:hover {
   transform: scale(0.85);
+  transition: 0.25s;
+  background-color: #ffee83;
 }
