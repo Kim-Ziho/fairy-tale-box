@@ -98,5 +98,10 @@
     width: 100vw;
     height: 93vh;
     object-fit: contain;
+    /* animation-name: hand14-2-move;
+    animation-duration: 1s;
+    animation-delay: 11s;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;  */
     opacity: 0;
 }

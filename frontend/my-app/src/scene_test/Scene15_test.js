@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import BackHome from "../modal/BackHomeDrop";
-import "./Scene15.css";
+import "./Scene15_test.css";
 
 // 하단은 음성파일
 const audio15 = new Audio("sound/15.mp3");
@@ -37,7 +37,7 @@ function Change_text(){
     subtitle.innerText = '마지막으로 만세!'
   },24020)
 }
-const Scene15 = () => {
+const Scene15_test = () => {
   function moveimg() {
     const rope = document.querySelector(".rope")
     document.addEventListener("mousemove", (e) => { // mousemove이벤트를 이용해 움
@@ -60,6 +60,7 @@ const Scene15 = () => {
           fill:'forwards'
         })
         time15+=1
+        // navigate('/scene9')
       }
     });
   }
@@ -70,7 +71,7 @@ const Scene15 = () => {
   // 하단은 자막 시작 딜레이
   setTimeout(Change_text)
   // 하단은 페이지 넘어가는 시간
-  setTimeout(() => navigate(`/scene16`, { state: { value: number } }), 30020);
+  setTimeout(() => navigate(`/scene17_test`, { state: { value: number } }), 30020);
   // 하단은 오디오 파일 자동재생
   setTimeout(start)
   setTimeout(moveimg,24000)
@@ -90,4 +91,4 @@ const Scene15 = () => {
   );
 };
 
-export default Scene15;
+export default Scene15_test;

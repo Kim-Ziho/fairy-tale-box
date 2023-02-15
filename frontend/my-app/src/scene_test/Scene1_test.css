@@ -10,7 +10,7 @@
   position: absolute;
 }
 
-/* 아래 대사 시 움직임 복붙해서 쓸 것 */
+/* 아래 대사시 움직임 복붙해서 쓸 것 */
 @keyframes shake {
   0% {
     transform: translate(0px, 1px) rotate(0deg);
@@ -104,6 +104,8 @@
   bottom: 0%;
   font-size: 6vh;
   font-family: "Jua", sans-serif;
+  /* border: 1px solid white; */
+  /* background-color: white; */
   height: 7%;
   width: 75vw;
   height: 7vh;

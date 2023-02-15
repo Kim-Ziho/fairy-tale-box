@@ -14,28 +14,37 @@
     position: absolute;
     right: 10%;
 }
-
-.tiger17{
+.siblings18{
     position: absolute;
-    left: 13%;
+    left: 30%;
     bottom: 5%;
-    top: 18%;
+    top: 20%;
     right: 30%;
     height: 50%;
-    width: 80vw;
-    height: 80vh;
+    width: 40vw;
+    height: 40vh;
     object-fit: contain;
-    animation-name: tiger-move17;
+}
+.mother18{
+    position: absolute;
+    left: 25%;
+    bottom: 5%;
+    top: 70%;
+    right: 30%;
+    height: 50%;
+    width: 50vw;
+    height: 50vh;
+    object-fit: contain;
+    animation-name: mother-move18;
     animation-duration: 4s;
-    animation-delay: 3.56s;
+    animation-delay: 5s;
     animation-fill-mode: forwards;
 }
-
-@keyframes tiger-move17 {
+@keyframes mother-move18 {
     from{
         transform: translate(0,0);
     }
     to{
-        transform: translate(0,120%);
+        transform: translate(0,-70%);
     }
 }

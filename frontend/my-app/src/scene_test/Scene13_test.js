@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate , useLocation} from "react-router-dom";
 import BackHome from "../modal/BackHomeDrop";
-import "./Scene13.css";
+import "./Scene13_test.css";
 
 // 하단은 음성파일
 const audio13 = new Audio("sound/13.mp3");
@@ -25,7 +25,7 @@ function Change_text(){
   },14320)
 }
 
-const Scene13 = () => {
+const Scene13_test = () => {
   function moveimg() {
     const oil = document.querySelector(".oil")
     document.addEventListener("mousemove", (e) => { // mousemove이벤트를 이용해 움
@@ -43,6 +43,12 @@ const Scene13 = () => {
       
       // console.log(mouseX,mouseY)
       
+      if( mouseX>550 && mouseX<650 && mouseY>200 && mouseY<300){
+        // const subtitle = document.getElementById('Text')
+        
+  
+        // navigate('/scene9')
+      }
   });
   }
   const navigate = useNavigate();
@@ -52,7 +58,7 @@ const Scene13 = () => {
   // 하단은 자막 시작 딜레이
   setTimeout(Change_text)
   // 하단은 페이지 넘어가는 시간
-  setTimeout(() => navigate(`/scene14`, { state: { value: number } }), 21000);
+  setTimeout(() => navigate(`/scene14_test`, { state: { value: number } }), 21000);
   // 하단은 오디오 파일 자동재생
   setTimeout(start)
   setTimeout(moveimg,5000)
@@ -69,4 +75,4 @@ const Scene13 = () => {
   );
 };
 
-export default Scene13;
+export default Scene13_test;

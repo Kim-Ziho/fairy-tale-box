@@ -1,0 +1,39 @@
+.bgImg {
+  margin-top: 1.5%;
+  width: 100vw;
+  height: 93vh;
+  object-fit: contain;
+}
+
+.SceneBox {
+  text-align: center;
+}
+
+.Homebtn {
+  position: absolute;
+  right: 10%;
+}
+
+.well {
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  top: 100%;
+  right: 20%;
+  height: 60%;
+  width: 130vw;
+  height: 130vh;
+  object-fit: contain;
+  transform: translate(-50%, -50%) rotate(100deg);
+  /* 원을 정가운데로 맞추기위해서 축을-50%이동해줍니다. */
+  z-index: -1;
+}
+
+.hidden {
+  position: absolute;
+  margin-top: -0.35%;
+  width: 100vw;
+  height: 100vh;
+  opacity: 1;
+  background-image: url("../../public/img/bgimg.jpg");
+}

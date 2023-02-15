@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import BackHome from "../modal/BackHomeDrop";
-import "./Scene14.css";
+import "./Scene14_test.css";
 
 // 하단은 음성파일
 const audio14 = new Audio("sound/14.mp3");
@@ -10,7 +10,7 @@ const start = () => {
     audio14.play();
   }, 1000);
 };
-let time14 = 0
+
 // 하단은 자막
 function Change_text(){
   const subtitle = document.getElementById('Text')
@@ -24,7 +24,7 @@ function Change_text(){
     subtitle.innerText = '나무에서 떨어지지 않게 바닥에 몸을 웅크리세요!'
   },10730)
 }
-const Scene14 = () => {
+const Scene14_test = () => {
   function moveimg() {
     const siblings14 = document.querySelector(".siblings14")
     const siblings14_2 = document.querySelector(".siblings14-2")
@@ -39,7 +39,7 @@ const Scene14 = () => {
         
       // console.log(mouseY)
       
-      if( mouseY>540 && time14 === 0){
+      if( mouseY>540 ){
         siblings14.animate([
           { opacity : 1 },
           { opacity : 0 }
@@ -54,7 +54,8 @@ const Scene14 = () => {
           duration:1000,
           fill:'forwards'
         })
-        time14 +=1
+
+        // navigate('/scene9')
       }
     });
   }
@@ -65,7 +66,7 @@ const Scene14 = () => {
   // 하단은 자막 시작 딜레이
   setTimeout(Change_text)
   // 하단은 페이지 넘어가는 시간
-  setTimeout(() => navigate(`/scene15`, { state: { value: number } }), 19000);
+  setTimeout(() => navigate(`/scene15_test`, { state: { value: number } }), 19000);
   // 하단은 오디오 파일 자동재생
   setTimeout(start)
   setTimeout(moveimg,13000)
@@ -82,4 +83,4 @@ const Scene14 = () => {
   );
 };
 
-export default Scene14;
+export default Scene14_test;

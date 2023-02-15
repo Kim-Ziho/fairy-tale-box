@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate , useLocation} from "react-router-dom";
 import BackHome from "../modal/BackHomeDrop";
-import "./Scene8.css";
+import "./Scene8_test.css";
 
 // 하단은 음성파일
 const audio8_1 = new Audio("sound/8-1.mp3");
@@ -37,7 +37,7 @@ function fade_out(){
 
 
 
-const Scene8 = () => {
+const Scene8_test = () => {
   function moveimg() {
     const hole = document.querySelector(".hole")
     document.addEventListener("mousemove", (e) => { // mousemove이벤트를 이용해 움
@@ -70,7 +70,7 @@ const Scene8 = () => {
           subtitle.innerText = '오빠, 왜 그래?'
         },5000)
         time8 +=1
-        setTimeout(() => navigate(`/scene9`, { state: { value: number } }), 8000);
+        setTimeout(() => navigate(`/scene9_test`, { state: { value: number } }), 8000);
       }
   });
   }
@@ -95,4 +95,4 @@ const Scene8 = () => {
   );
 };
 
-export default Scene8;
+export default Scene8_test;
