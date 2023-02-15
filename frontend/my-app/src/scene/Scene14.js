@@ -37,9 +37,9 @@ const Scene14 = () => {
   
       const mouseY = e.clientY;
         
-      // console.log(mouseX,mouseY)
+      // console.log(mouseY)
       
-      if( mouseY<200 ){
+      if( mouseY>540 ){
         siblings14.animate([
           { opacity : 1 },
           { opacity : 0 }
@@ -69,7 +69,7 @@ const Scene14 = () => {
   setTimeout(() => navigate(`/scene15`, { state: { value: number } }), 21000);
   // 하단은 오디오 파일 자동재생
   setTimeout(start)
-  setTimeout(moveimg,3000)
+  setTimeout(moveimg,13000)
   return (
     <div className="SceneBox">
       <BackHome></BackHome>

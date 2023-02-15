@@ -19,6 +19,11 @@
   padding-left: 5%;
   padding-right: 5%;
 }
+.button1 {
+  /* background-image: url("../../public/img/ggae1.png"); */
+  /* background-size: contain; */
+  /* width: 100vw; */
+}
 .button1,
 .button2,
 .button3 {
