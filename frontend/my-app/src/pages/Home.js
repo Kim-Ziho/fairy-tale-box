@@ -15,9 +15,11 @@ const Item = styled(Paper)(({ theme }) => ({
 const Home = (props) => {
   const [modalOpen, setModalOpen] = useState(false);
   const [storyid, setStoryid] = useState({});
-  const openModal = (num) => {
+  const [storyurl, setStoryurl] = useState("");
+  const openModal = (num, url) => {
     setModalOpen(true);
     setStoryid(num);
+    setStoryurl(`${url}`);
     // Home.forceUpdate();
     // console.log(num);
   };
@@ -36,7 +38,7 @@ const Home = (props) => {
       </Link>
       <Modal open={modalOpen} close={closeModal} storyid={storyid}></Modal>
       <Grid container spacing={4}>
-        <Grid item xs={4} onClick={() => openModal(1)} className="selectBtn">
+        <Grid item xs={4} onClick={() => openModal(1, "/scene1")} className="selectBtn">
           <Item>
             <img
               src="img/thumnail/sunandmoon.png"
