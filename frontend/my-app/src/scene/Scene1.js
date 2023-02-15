@@ -1,4 +1,4 @@
-import React ,{useEffect} from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import BackHome from "../modal/BackHomeDrop";
 import "./Scene1.css";
@@ -38,36 +38,38 @@ function Change_text() {
 const Scene1 = () => {
   const navigate = useNavigate();
 
-  useEffect(()=>{
+  useEffect(() => {
     axios({
-      method:'post',
-      url:"http://i8c101.p.ssafy.io/api/history",
-      data:{
-        "member_id":2,
-        "story_id":1,
+      method: 'post',
+      url: "http://i8c101.p.ssafy.io/api/history",
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("accessToken")}`
+      },
+      data: {
+        "story_id": 1,
         "studyDate": new Date()
       }
     })
-    .then((res) => {
-      const number = res.data
-      setTimeout(() => navigate(`/scene2`, { state: { value: number } }), 23120)
-      setTimeout( () =>
-        axios({
-          method:'get',
-          url:`http://localhost:3001/startrecord?wordname=엄마&hist_num=${number}&word_id=1`
-        }),14050
-      )
-    })
+      .then((res) => {
+        const number = res.data
+        setTimeout(() => navigate(`/scene2`, { state: { value: number } }), 23120)
+        setTimeout(() =>
+          axios({
+            method: 'get',
+            url: `http://localhost:3001/startrecord?wordname=엄마&hist_num=${number}&word_id=1`
+          }), 14050
+        )
+      })
   });
- 
+
   // 자막 시작 딜레이
   setTimeout(Change_text);
-  
+
   // 오디오 파일 자동재생
   setTimeout(start);
 
   return (
-    
+
     <div className="SceneBox">
       <BackHome></BackHome>
       <img src="img/scene1/1-배경.png" className="bgImg" alt="#"></img>

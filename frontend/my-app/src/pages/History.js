@@ -7,7 +7,11 @@ const History = () => {
   const [histchild, setHistchild] = useState([]);
 
   useEffect(() => {
-    axios.get("http://i8c101.p.ssafy.io/api/history").then((response) => {
+    axios.get("http://i8c101.p.ssafy.io/api/history", {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("accessToken")}`
+      }
+    }).then((response) => {
       const hist = response.data;
       setHistchild(
         hist.map((hist) => {
