@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import "./ResultModal.css";
+import "./ResultPage.css";
 
-const ResultModal = (props) => {
-  const { open, number } = props;
+const ResultPage = (props) => {
+  const { number } = props;
   const [starpoint,setstarpoint] = useState([]);
     useEffect(()=>{
     axios({
@@ -20,8 +20,8 @@ const ResultModal = (props) => {
   let score = "⭐".repeat(starpoint)
   
   return (
-    <div className={open ? "openModal modal" : "modal"}>
-      {open ? (
+    <div>
+      
         <section id="ResultBg">
           <header>
             <h1>참 잘했어요!</h1>
@@ -41,9 +41,9 @@ const ResultModal = (props) => {
             </Link>
           </footer>
         </section>
-      ) : null}
+      
     </div>
   );
 };
 
-export default ResultModal;
+export default ResultPage;

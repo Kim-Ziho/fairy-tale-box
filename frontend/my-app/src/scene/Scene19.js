@@ -1,8 +1,7 @@
-import React ,{useState} from "react";
-import { useLocation} from "react-router-dom";
+import React from "react";
+import {useNavigate,useLocation} from "react-router-dom";
 import BackHome from "../modal/BackHomeDrop";
 import "./Scene19.css";
-import Modal from "../modal/ResultModal.js";
 
 // 하단은 음성파일
 const audio19 = new Audio("sound/19.mp3");
@@ -26,18 +25,14 @@ function Change_text(){
 }
 
 const Scene19 = () => {
-  const [modalOpen, setModalOpen] = useState(false);
-  const openModal = () => {
-    setModalOpen(true);
-  };
-  
-  // const location = useLocation();
-  // const number =  location.state.value;
-  // console.log(number)
+  const navigate = useNavigate();
+  const location = useLocation();
+  const number =  location.state.value;
+  console.log(number)
 
   setTimeout(start)
   setTimeout(Change_text)
-  setTimeout(openModal,10000)
+  setTimeout(() => navigate(`/Result`, { state: { value: number } }), 9000);
   
   return (
     
@@ -45,8 +40,6 @@ const Scene19 = () => {
       <BackHome></BackHome>
         <img src="img/scene19/19.png" className="bgImg" alt="#"></img>
         <h2 id="Text"> </h2>  
-        <Modal open={modalOpen} header="학습 완료">
-        </Modal>
     </div>
   );
 };

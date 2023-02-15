@@ -1,11 +1,9 @@
 import "./App.css";
-import React, { Component, useRef, useState, props } from "react";
+import React from "react";
 import {
   BrowserRouter,
   Routes,
   Route,
-  useNavigate,
-  useLocation,
 } from "react-router-dom";
 import Main from "./pages/Main";
 import Home from "./pages/Home";
@@ -31,6 +29,7 @@ import Scene16 from "./scene/Scene16";
 import Scene17 from "./scene/Scene17";
 import Scene18 from "./scene/Scene18";
 import Scene19 from "./scene/Scene19";
+import Resultpage from "./pages/ResultPage";
 import { AnimatePresence } from "framer-motion";
 
 function App() {
@@ -66,6 +65,7 @@ function App() {
             <Route path="/Scene17" element={<Scene17 />}></Route>
             <Route path="/Scene18" element={<Scene18 />}></Route>
             <Route path="/Scene19" element={<Scene19 />}></Route>
+            <Route path="/Result" element={<Resultpage/>}></Route>
           </Routes>
         </AnimatePresence>
       </BrowserRouter>

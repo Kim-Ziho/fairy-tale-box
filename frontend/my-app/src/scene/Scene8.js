@@ -11,7 +11,7 @@ const start = () => {
     audio8_1.play();
   }, 1000);
 };
-
+let time8 = 0
 // 하단은 자막
 function Change_text(){
   const subtitle = document.getElementById('Text')
@@ -27,7 +27,7 @@ var op_count=1;
 var settime_func;
 function fade_out(){
   const hole = document.querySelector(".hole")
-  op_count=op_count-0.1;
+  op_count=op_count-0.2;
   hole.style.opacity=op_count;
   settime_func = setTimeout(fade_out,1000);
   if(op_count<0){
@@ -55,7 +55,7 @@ const Scene8 = () => {
       
       // console.log(mouseX,mouseY)
       
-      if( mouseX>550 && mouseX<650 && mouseY>200 && mouseY<300){
+      if( mouseX>550 && mouseX<650 && mouseY>200 && mouseY<300 && time8 === 0 ){
         const subtitle = document.getElementById('Text')
         audio8_1.pause()
         audio8_2.play()
@@ -69,7 +69,8 @@ const Scene8 = () => {
         setTimeout(()=>{
           subtitle.innerText = '오빠, 왜 그래?'
         },5000)
-        setTimeout(() => navigate(`/scene9`, { state: { value: number } }), 7000);
+        time8 +=1
+        setTimeout(() => navigate(`/scene9`, { state: { value: number } }), 8000);
       }
   });
   }
