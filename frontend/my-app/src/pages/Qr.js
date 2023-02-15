@@ -1,12 +1,14 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import "./Qr.css";
+import { useNavigate } from "react-router-dom"
 import axios from "axios";
 import Modal from "../modal/AuthModal.js";
 
 const serialNum = "동화상자c101-1";
 
 const Qr = () => {
+  const navigate = useNavigate()
+
   const [modalOpen, setModalOpen] = useState(false);
   const openModal = () => {
     setModalOpen(true);
@@ -23,20 +25,16 @@ const Qr = () => {
         serialNum,
       })
       .then((res) => {
-        // console.log(res.data.accessToken)
-        setAccessToken(res.data.accessToken);
-        setRefreshToken(res.data.refreshToken);
-        console.log("셋 됐나", accessToken);
-        if (!accessToken === null) {
+        const accessToken = res.data.accessToken;
+        const refreshToken = res.data.refreshToken;
+        if (accessToken !== null) {
           localStorage.setItem("accessToken", accessToken);
           localStorage.setItem("refreshToken", refreshToken);
           axios.defaults.headers.common["x-access-token"] = accessToken;
-          console.log(res);
-          setSunggong(true);
+          navigate("/")
         } else {
           openModal();
-          console.log("토큰 널");
-          setSunggong(false);
+          console.log("토큰 널", accessToken);
         }
       })
       .catch((err) => {
@@ -55,16 +53,14 @@ const Qr = () => {
         alt="#"
       ></img>
       <div className="qrFooter">
-        <Link to={sunggong ? "" : "/QR"}>
-          <button
-            className="qrButton txt"
-            onClick={() => {
-              axiosQR();
-            }}
-          >
-            👉🏻 로그인 후 인증하기
-          </button>
-        </Link>
+        <button
+          className="qrButton txt"
+          onClick={() => {
+            axiosQR();
+          }}
+        >
+          👉🏻 로그인 후 인증하기
+        </button>
         <Modal open={modalOpen} close={closeModal} header="인증실패">
           웹 페이지에서 로그인을 진행해주세요!
         </Modal>
