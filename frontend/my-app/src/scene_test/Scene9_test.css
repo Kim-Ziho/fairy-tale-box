@@ -1,0 +1,129 @@
+.bgImg {
+    margin-top: 1.5%;
+    width: 100vw;
+    height: 93vh;
+    object-fit: contain;
+    
+}
+
+.SceneBox{
+    text-align: center;
+}
+
+.Homebtn{
+    position: absolute;
+    right: 10%;
+}
+.brother9{
+    position: absolute;
+    right: 0%;
+    bottom: 10%;
+    top: 45%;
+    left: 50%;
+    height: 55%;
+    width: 50vw;
+    height: 50vh;
+    object-fit: contain;
+    animation-name: shake;
+    animation-delay: 1s;
+    animation-duration: 2.22s;
+    animation-fill-mode: both;
+}
+.sister9{
+    position: absolute;
+    right: 35%;
+    bottom: 10%;
+    top: 45%;
+    left: 40%;
+    height: 55%;
+    width: 50vw;
+    height: 50vh;
+    object-fit: contain;
+    animation-name: shake;
+    animation-delay: 2.32s;
+    animation-duration: 2.36s;
+    animation-fill-mode: both;
+}
+
+@keyframes hand1-move {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes hand2-move {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+.hand1{
+    position: absolute;
+    left: 7%;
+    bottom: 60%;
+    top: 5%;
+    right: 60%;
+    height: 40%;
+    opacity: 0;
+    animation-name: hand1-move;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    width: 50vw;
+    height: 50vh;
+    object-fit: contain;
+}
+.hand2{
+    position: absolute;
+    left: 7%;
+    bottom: 20%;
+    top:35%;
+    right: 60%;
+    height: 40%;
+    opacity: 0;
+    animation-name: hand2-move;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    width: 50vw;
+    height: 50vh;
+    object-fit: contain;
+}
+.word9{
+    position: absolute;
+    left: 30%;
+    bottom: 5%;
+    top: 10%;
+    right: 30%;
+    height: 50%;
+    object-fit: contain;
+    z-index: 10;
+    opacity: 0;
+    animation-name: word-pop, word-popout;
+    animation-duration: 1s,1s;
+    animation-delay: 9s,14s;
+    animation-fill-mode: forwards;
+    font-size:20rem;
+    font-family: "Jua", sans-serif;
+    text-shadow: -2px 0px white, 0px 2px white, 2px 0px white, 0px -2px white;
+  }
+  .popup9{
+    position: absolute;
+    top:0%;
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 9;
+    opacity: 0;
+    animation-name: word-pop, word-popout;
+    animation-duration: 1s,1s;
+    animation-delay: 9s,14s;
+    animation-fill-mode: forwards;
+  }

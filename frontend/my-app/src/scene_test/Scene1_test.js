@@ -1,7 +1,7 @@
 import React ,{useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import BackHome from "../modal/BackHomeDrop";
-import "./Scene1.css";
+import "./Scene1_test.css";
 import axios from "axios";
 
 // 하단은 음성파일 Audio에 음성파일 경로를 넣으면 됩니다.
@@ -50,7 +50,7 @@ const Scene1 = () => {
     })
     .then((res) => {
       const number = res.data
-      setTimeout(() => navigate(`/scene2`, { state: { value: number } }), 23120)
+      setTimeout(() => navigate(`/scene2_test`, { state: { value: number } }), 23120)
       setTimeout( () =>
         axios({
           method:'get',

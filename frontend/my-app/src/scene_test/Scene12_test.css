@@ -1,0 +1,48 @@
+.bgImg {
+    margin-top: 1.5%;
+    width: 100vw;
+    height: 93vh;
+    object-fit: contain;
+    
+}
+
+.SceneBox{
+    text-align: center;
+}
+
+.Homebtn{
+    position: absolute;
+    right: 10%;
+}
+
+.siblings12{
+    position: absolute;
+    left: 40%;
+    bottom: 5%;
+    top: 30%;
+    right: 40%;
+    height: 50%;
+    width: 20vw;
+    height: 20vh;
+    object-fit: contain;
+    animation-name: shake;
+    animation-delay: 10.28s;
+    animation-duration: 6.38s;
+    animation-fill-mode: both;
+}
+
+.tiger12{
+    position: absolute;
+    left: 33%;
+    bottom: 5%;
+    top: 70%;
+    right: 40%;
+    height: 50%;
+    width: 30vw;
+    height: 30vh;
+    object-fit: contain;
+    animation-name: shake;
+    animation-delay: 1s;
+    animation-duration: 2.67s;
+    animation-fill-mode: both;
+}

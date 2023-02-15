@@ -1,0 +1,113 @@
+.bgImg {
+    margin-top: 1.5%;
+    width: 100vw;
+    height: 93vh;
+    object-fit: contain;
+    
+}
+
+.SceneBox{
+    text-align: center;
+    position: absolute;
+}
+
+.Homebtn{
+    position: absolute;
+    right: 10%;
+}
+.mother2{
+    position: absolute;
+    left: -5%;
+    bottom: 30%;
+    top: 25%;
+    right: 80%;
+    height: 35%;
+    animation-name: mother2-move;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    animation-fill-mode: both;
+    width: 40vw;
+    height: 40vh;
+    object-fit: contain;
+
+}
+@keyframes mother2-move{
+    from{
+        transform: translate(0,0);
+    }
+    to{
+        transform: translate(50%,30%);
+    }
+}
+
+.tree{
+    position: absolute;
+    left: 10%;
+    bottom: 30%;
+    top: 15%;
+    right: 80%;
+    width: 60%;
+    height: 60%;
+    width: 70vw;
+    height: 70vh;
+    object-fit: contain;
+}
+.tiger2{
+    position: absolute;
+    left: 40%;
+    bottom: 10%;
+    top: 40%;
+    right: 20%;
+    height: 60%;
+    animation-delay: 4s;
+    animation-duration: 3s;
+    animation-name: tiger-move2;
+    opacity: 0;
+    animation-fill-mode: both;
+    width: 60vw;
+    height: 60vh;
+    object-fit: contain;
+}
+
+@keyframes tiger-move2 {
+    from {                              
+        transform: translate(0,0);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-20%,-20%);
+        opacity: 1;
+    }
+}
+.word2{
+    position: absolute;
+    left: 30%;
+    bottom: 5%;
+    top: 10%;
+    right: 30%;
+    height: 50%;
+    object-fit: contain;
+    z-index: 10;
+    opacity: 0;
+    animation-name: word-pop, word-popout;
+    animation-duration: 1s,1s;
+    animation-delay: 8s,13s;
+    animation-fill-mode: forwards;
+    font-size:20rem;
+    font-family: "Jua", sans-serif;
+    text-shadow: -2px 0px white, 0px 2px white, 2px 0px white, 0px -2px white;
+  }
+  .popup2{
+    position: absolute;
+    top:0%;
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 9;
+    opacity: 0;
+    animation-name: word-pop, word-popout;
+    animation-duration: 1s,1s;
+    animation-delay: 8s,13s;
+    animation-fill-mode: forwards;
+  }
