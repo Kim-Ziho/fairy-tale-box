@@ -24,7 +24,7 @@ function Change_text(){
   },5020)
 }
 
-const Scene19 = () => {
+const Scene19_test = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const number =  location.state.value;
@@ -44,4 +44,4 @@ const Scene19 = () => {
   );
 };
 
-export default Scene19;
+export default Scene19_test;

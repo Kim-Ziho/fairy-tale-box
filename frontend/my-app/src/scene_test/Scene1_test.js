@@ -35,7 +35,7 @@ function Change_text() {
   }, 15050);
 }
 
-const Scene1 = () => {
+const Scene1_test = () => {
   const navigate = useNavigate();
 
   useEffect(()=>{
@@ -81,4 +81,4 @@ const Scene1 = () => {
   );
 };
 
-export default Scene1;
+export default Scene1_test;

@@ -10,7 +10,7 @@ const start = () => {
     audio14.play();
   }, 1000);
 };
-
+let time14 = 0
 // 하단은 자막
 function Change_text(){
   const subtitle = document.getElementById('Text')
@@ -39,7 +39,7 @@ const Scene14 = () => {
         
       // console.log(mouseY)
       
-      if( mouseY>540 ){
+      if( mouseY>540 && time14 === 0){
         siblings14.animate([
           { opacity : 1 },
           { opacity : 0 }
@@ -54,7 +54,7 @@ const Scene14 = () => {
           duration:1000,
           fill:'forwards'
         })
-
+        time14 +=1
         // navigate('/scene9')
       }
     });
@@ -66,7 +66,7 @@ const Scene14 = () => {
   // 하단은 자막 시작 딜레이
   setTimeout(Change_text)
   // 하단은 페이지 넘어가는 시간
-  setTimeout(() => navigate(`/scene15`, { state: { value: number } }), 21000);
+  setTimeout(() => navigate(`/scene15`, { state: { value: number } }), 19000);
   // 하단은 오디오 파일 자동재생
   setTimeout(start)
   setTimeout(moveimg,13000)

@@ -22,7 +22,7 @@ function Change_text(){
     subtitle.innerText = '중간에 툭 하고 끊어져서, 호랑이가 땅에 떨어져 버렸어요.'
   },3560)
 }
-const Scene17 = () => {
+const Scene17_test = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const number =  location.state.value;
@@ -45,4 +45,4 @@ const Scene17 = () => {
   );
 };
 
-export default Scene17;
+export default Scene17_test;

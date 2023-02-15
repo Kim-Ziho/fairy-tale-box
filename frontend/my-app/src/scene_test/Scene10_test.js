@@ -32,7 +32,7 @@ function Change_text(){
     subtitle.innerText = '오누이는 나무 위로 올라갔어요.'
   },13500)
 }
-const Scene10 = () => {
+const Scene10_test = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const number =  location.state.value;
@@ -65,4 +65,4 @@ const Scene10 = () => {
   );
 };
 
-export default Scene10;
+export default Scene10_test;

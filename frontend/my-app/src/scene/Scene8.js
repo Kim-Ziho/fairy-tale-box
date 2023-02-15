@@ -27,7 +27,7 @@ var op_count=1;
 var settime_func;
 function fade_out(){
   const hole = document.querySelector(".hole")
-  op_count=op_count-0.2;
+  op_count=op_count-0.4;
   hole.style.opacity=op_count;
   settime_func = setTimeout(fade_out,1000);
   if(op_count<0){

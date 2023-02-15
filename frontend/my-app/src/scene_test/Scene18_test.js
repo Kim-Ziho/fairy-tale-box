@@ -21,7 +21,7 @@ function Change_text(){
     subtitle.innerText = '하늘나라에서 기다리던 엄마와도 다시 만날 수 있었답니다.'
   },5320)
 }
-const Scene18 = () => {
+const Scene18_test = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const number =  location.state.value;
@@ -44,4 +44,4 @@ const Scene18 = () => {
   );
 };
 
-export default Scene18;
+export default Scene18_test;

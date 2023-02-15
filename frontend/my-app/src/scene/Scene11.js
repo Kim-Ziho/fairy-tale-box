@@ -63,7 +63,7 @@ const Scene11 = () => {
   // 하단은 자막 시작 딜레이
   setTimeout(Change_text)
   // 하단은 페이지 넘어가는 시간
-  setTimeout(() => navigate(`/scene12`, { state: { value: number } }), 23000);
+  setTimeout(() => navigate(`/scene12`, { state: { value: number } }), 19000);
   // 하단은 오디오 파일 자동재생
   setTimeout(start)
   setTimeout(movewell,11000)

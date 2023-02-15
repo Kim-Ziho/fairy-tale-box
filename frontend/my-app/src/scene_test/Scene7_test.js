@@ -32,7 +32,7 @@ function Change_text(){
     subtitle.innerText = '내가 구멍으로 살짝 봐볼게!'
   },10000)
 }
-const Scene7 = () => {
+const Scene7_test = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const number =  location.state.value;
@@ -63,4 +63,4 @@ const Scene7 = () => {
   );
 };
 
-export default Scene7;
+export default Scene7_test;
