@@ -1,6 +1,6 @@
 # 1. ERD 개요
 
-![erd개요](./practice/images/erd%EC%88%98%EC%A0%95.png)
+![erd개요](./practice/images/erd%EC%B5%9C%EC%A2%85.png)
 
 # 2. 인증 관련
 
