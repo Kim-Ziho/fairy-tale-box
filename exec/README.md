@@ -428,5 +428,5 @@ mysql -u root -p
 
 CREATE DATABASE 데이터베이스이름
 USE 데이터베이스이름
-source [파일경로]/talebox.sql
+source S08P12C101/exec/dumpdata/talebox.sql
 ```
