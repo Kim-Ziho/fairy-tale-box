@@ -38,26 +38,28 @@ function Change_text() {
 const Scene1_test = () => {
   const navigate = useNavigate();
 
-  useEffect(()=>{
+  useEffect(() => {
     axios({
-      method:'post',
-      url:"http://i8c101.p.ssafy.io/api/history",
-      data:{
-        "member_id":2,
-        "story_id":1,
+      method: 'post',
+      url: "http://i8c101.p.ssafy.io/api/history",
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("accessToken")}`
+      },
+      data: {
+        "story_id": 1,
         "studyDate": new Date()
       }
     })
-    .then((res) => {
-      const number = res.data
-      setTimeout(() => navigate(`/scene2_test`, { state: { value: number } }), 23120)
-      setTimeout( () =>
-        axios({
-          method:'get',
-          url:`http://localhost:3001/startrecord?wordname=엄마&hist_num=${number}&word_id=1`
-        }),14050
-      )
-    })
+      .then((res) => {
+        const number = res.data
+        setTimeout(() => navigate(`/scene2_test`, { state: { value: number } }), 23120)
+        setTimeout(() =>
+          axios({
+            method: 'get',
+            url: `http://localhost:3001/startrecord?wordname=엄마&hist_num=${number}&word_id=1`
+          }), 14050
+        )
+      })
   });
  
   // 자막 시작 딜레이

@@ -34,10 +34,10 @@ function fade_out(){
   }
 }
 
-let finded = 0
 
 const Scene8 = () => {
   function moveimg() {
+    let done = 0;
     const hole = document.querySelector(".hole")
     window.source.onmessage = function(event) {
       window.pose = JSON.parse(event.data);
@@ -47,13 +47,13 @@ const Scene8 = () => {
       // 마우스의 좌표는 clientX와 clientY를 이용해 알수 있다. -> 브라우저 window의 좌표값 위치를 전달한다.
       
       // pageX, pageY와는 다름.
-      if (finded === 0) {
+      if (done === 0) {
         hole.style.left = mouseX + 'px';
         hole.style.top = mouseY + 'px';
       }
       
-      if( window.pose.nose.x < 0.25 && window.pose.nose.y < 0.25 && finded === 0 ){
-        finded = 1;
+      if( window.pose.nose.x < 0.25 && window.pose.nose.y < 0.25 && done === 0 ){
+        done = 1;
         const subtitle = document.getElementById('Text')
         audio8_1.pause()
         audio8_2.play()
