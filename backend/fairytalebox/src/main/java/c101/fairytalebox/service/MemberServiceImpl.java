@@ -102,7 +102,9 @@ public class MemberServiceImpl implements MemberService {
                         .raspberrySerial(raspberrySerial)
                         .build());
 
-        memberRaspberry.updateToken(tokenInfo.getAccessToken(), tokenInfo.getRefreshToken());
+        if (!member.getRole().equals(Role.ROLE_ADMIN)) {
+        memberRaspberry.updateToken(tokenInfo.getAccessToken(), tokenInfo.getRefreshToken());}
+
 
         memberRaspberryRepository.save(memberRaspberry);
 
