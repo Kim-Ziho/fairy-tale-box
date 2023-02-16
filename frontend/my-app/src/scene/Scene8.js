@@ -4,13 +4,14 @@ import BackHome from "../modal/BackHomeDrop";
 import "./Scene8.css";
 
 // 하단은 음성파일
-const audio8 = new Audio("sound/8.mp3");
+const audio8_1 = new Audio("sound/8-1.mp3");
+const audio8_2 = new Audio("sound/8-2.mp3");
 const start = () => {
   setTimeout(() => {
-    audio8.play();
+    audio8_1.play();
   }, 1000);
 };
-
+let time8 = 0
 // 하단은 자막
 function Change_text(){
   const subtitle = document.getElementById('Text')
@@ -26,7 +27,7 @@ var op_count=1;
 var settime_func;
 function fade_out(){
   const hole = document.querySelector(".hole")
-  op_count=op_count-0.1;
+  op_count=op_count-0.4;
   hole.style.opacity=op_count;
   settime_func = setTimeout(fade_out,1000);
   if(op_count<0){
@@ -42,7 +43,7 @@ const Scene8 = () => {
     document.addEventListener("mousemove", (e) => { // mousemove이벤트를 이용해 움
   
       // 마우스의 좌표는 clientX와 clientY를 이용해 알수 있다. -> 브라우저 window의 좌표값 위치를 전달한다.
-  
+      
       // pageX, pageY와는 다름.
       const mouseX = e.clientX;
   
@@ -54,9 +55,10 @@ const Scene8 = () => {
       
       // console.log(mouseX,mouseY)
       
-      if( mouseX>550 && mouseX<650 && mouseY>200 && mouseY<300){
+      if( mouseX>550 && mouseX<650 && mouseY>200 && mouseY<300 && time8 === 0 ){
         const subtitle = document.getElementById('Text')
-        audio8.pause()
+        audio8_1.pause()
+        audio8_2.play()
         fade_out()
         setTimeout(()=>{
           subtitle.innerText = '호랑이와 눈이 마주쳤어요!'
@@ -67,7 +69,8 @@ const Scene8 = () => {
         setTimeout(()=>{
           subtitle.innerText = '오빠, 왜 그래?'
         },5000)
-        // navigate('/scene9')
+        time8 +=1
+        setTimeout(() => navigate(`/scene9`, { state: { value: number } }), 8000);
       }
   });
   }
@@ -78,10 +81,10 @@ const Scene8 = () => {
   // 하단은 자막 시작 딜레이
   setTimeout(Change_text)
   // 하단은 페이지 넘어가는 시간
-  setTimeout(() => navigate(`/scene9` ,{ state: { value: number } }), 19000);
+  // setTimeout(() => navigate(`/scene9`), 19000);
   // 하단은 오디오 파일 자동재생
   setTimeout(start)
-  setTimeout(moveimg,3000)
+  setTimeout(moveimg,5000)
   return (
     <div className="SceneBox">
       <BackHome></BackHome>

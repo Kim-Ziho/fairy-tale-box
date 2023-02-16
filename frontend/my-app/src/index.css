@@ -3,10 +3,6 @@ html {
 }
 
 body {
-  /* cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>😃</text></svg>") */
-  /* 16 0, */
-
-  /* cursor : url(../public/img/cursor1.png), grab; */
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -18,12 +14,10 @@ body {
 }
 
 * {
-  cursor: url("../public/img/cur1-1.png"), auto;
-  /* cursor: url("../public/img/cur2-1.png"), auto; */
+  cursor: url("../public/img/cursor/cursor1.png"), auto;
 }
 *:active {
-  cursor: url("../public/img/cur1-2.png"), auto;
-  /* cursor: url("../public/img/cur2-2.png"), auto; */
+  cursor: url("../public/img/cursor/cursor2.png"), auto;
 }
 
 ::-webkit-scrollbar {

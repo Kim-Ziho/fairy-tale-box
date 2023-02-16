@@ -87,8 +87,20 @@
 }
 
 .goLogin {
-  position: fixed;
-  margin-top: 15%;
+  position: absolute;
+  align-items: center;
+  margin-top: 3%;
   margin-left: 33%;
   text-decoration: none;
+  background-color: #dadada;
+  border: none;
+  color: black;
+  font-weight: bold;
+  border-radius: 4vh;
+
+}
+
+.checkButton:disabled {
+  background-color: #dadada;
+  color: white;
 }

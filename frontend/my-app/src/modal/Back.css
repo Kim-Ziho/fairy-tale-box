@@ -1,8 +1,14 @@
 .backBtn {
-  font-size: 3rem;
+  font-size: 3.5rem;
   top: 5%;
   right: 5%;
   z-index: 1;
   position: absolute;
   background-color: #fff;
+  transition: 0.25s;
+}
+
+.backBtn:hover {
+  transition: 0.25s;
+  background-color: #ffee83;
 }

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Modal from "../modal";
 import "./Login.css";
@@ -10,6 +10,8 @@ export default function Login() {
   const [emailValid, setEmailValid] = useState(false);
   const [passwordValid, setPasswordValid] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
+  const [modalMessage, setModalMessage] = useState('');
+
   const openModal = () => {
     setModalOpen(true);
   };
@@ -32,6 +34,9 @@ export default function Login() {
     setPassword(e.target.value);
   };
 
+  const navigate = useNavigate()
+
+
   useEffect(() => {
     const regex =
       /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,30}$/;
@@ -49,16 +54,14 @@ export default function Login() {
         password,
       })
       .then((res) => {
-        <Modal open={modalOpen} close={closeModal} header="로그아웃">
-          로그아웃 하시겠어요?
-          <footer className="modalFooter"></footer>
-        </Modal>;
-        alert("로그인 성공! 플레이를 진행해주세요");
-        setEmail("");
-        setPassword("");
+        setModalMessage("로그인 성공! \n 화면으로 돌아가서 \n 인증확인 버튼을 눌러주세요")
+        setEmail('')
+        setPassword('')
+        openModal();
       })
       .catch((err) => {
-        alert(err.response.data.message);
+        setModalMessage(err.response.data.message)
+        openModal();
       });
   };
 
@@ -113,9 +116,14 @@ export default function Login() {
         </button>
       </div>
 
-      <div className="newAccountlogin">
-        <Link to="/join">새 계정 만들기</Link>
-      </div>
+      <Modal open={modalOpen} close={closeModal} main={modalMessage}>
+
+        <footer className="modalFooter"></footer>
+      </Modal>
+
+      <button className="goJoin" onClick={() => {
+        navigate("/join")
+      }}>NEW ACCOUNT</button>
     </div>
   );
 }

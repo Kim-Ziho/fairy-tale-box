@@ -18,7 +18,6 @@ import java.util.List;
 @AllArgsConstructor
 public class HistoryRequestDto {
     private LocalDateTime studyDate;
-    private Long member_id;
     private Long story_id;
 
 

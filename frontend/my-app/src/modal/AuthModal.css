@@ -1,0 +1,11 @@
+#AuthBg {
+  width: 35%;
+  height: 23%;
+  margin: 0 auto;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  animation: modal-show 0.3s;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 1.5rem 3.5rem rgba(0, 0, 0, 0.2);
+}

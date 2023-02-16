@@ -1,0 +1,163 @@
+.bgImg {
+  margin-top: 1.5%;
+  width: 100vw;
+  height: 93vh;
+  object-fit: contain;
+}
+
+.SceneBox {
+  text-align: center;
+  position: absolute;
+}
+
+/* 아래 대사시 움직임 복붙해서 쓸 것 */
+@keyframes shake {
+  0% {
+    transform: translate(0px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(0px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(0px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(0px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(0px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(0px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(0px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(0px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(0px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(0px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(0px, -2px) rotate(-1deg);
+  }
+}
+
+.Homebtn {
+  position: absolute;
+  right: 10%;
+}
+
+.mother1 {
+  position: absolute;
+  left: 10%;
+  bottom: 40%;
+  top: 25%;
+  right: 80%;
+  animation-name: shake;
+  animation-delay: 6.33s;
+  animation-duration: 6.16s;
+  animation-fill-mode: both;
+  width: 50vw;
+  height: 50vh;
+  object-fit: contain;
+}
+
+.brother1 {
+  position: absolute;
+  right: 50%;
+  bottom: 20%;
+  top: 40%;
+  left: 50%;
+  width: 40vw;
+  height: 40vh;
+  object-fit: contain;
+  animation-name: shake;
+  animation-delay: 12.97s;
+  animation-duration: 0.82s;
+  animation-fill-mode: both;
+}
+.sister1 {
+  position: absolute;
+  right: 50%;
+  bottom: 30%;
+  top: 40%;
+  left: 40%;
+  width: 40vw;
+  height: 40vh;
+  object-fit: contain;
+  animation-name: shake;
+  animation-delay: 13.8s;
+  animation-duration: 1.27s;
+  animation-fill-mode: both;
+}
+
+#Text {
+  position: absolute;
+  top: 80%;
+  right: 20%;
+  left: 12.5%;
+  bottom: 0%;
+  font-size: 6vh;
+  font-family: "Jua", sans-serif;
+  /* border: 1px solid white; */
+  /* background-color: white; */
+  height: 7%;
+  width: 75vw;
+  height: 7vh;
+  object-fit: contain;
+  text-shadow: -2px 0px white, 0px 2px white, 2px 0px white, 0px -2px white;
+}
+.word1{
+  position: absolute;
+  left: 30%;
+  bottom: 5%;
+  top: 18%;
+  right: 30%;
+  height: 50%;
+  object-fit: contain;
+  z-index: 10;
+  opacity: 0;
+  animation-name: word-pop, word-popout;
+  animation-duration: 1s,1s;
+  animation-delay: 17s,22s;
+  animation-fill-mode: forwards;
+  font-size:20rem;
+  font-family: "Jua", sans-serif;
+  text-shadow: -2px 0px white, 0px 2px white, 2px 0px white, 0px -2px white;
+}
+.popup1{
+  position: absolute;
+  top:0%;
+  width: 100vw;
+  height: 100vh;
+  object-fit: contain;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 9;
+  opacity: 0;
+  animation-name: word-pop, word-popout;
+  animation-duration: 1s,1s;
+  animation-delay: 17s,22s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes word-pop {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+@keyframes word-popout {
+  from{
+    opacity: 1;
+  }
+  to{
+    opacity: 0;
+  }
+}

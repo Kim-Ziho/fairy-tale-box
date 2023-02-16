@@ -11,10 +11,9 @@
 }
 .headerbutton {
   position: absolute;
-  /* padding: 0.6rem 0.6rem 0.6rem 1.2rem; */
-  top: 1.8rem;
+  top: 1.1rem;
   right: 1.8rem;
-  font-size: 3rem;
+  font-size: 4.5rem;
   font-weight: 700;
   color: rgb(0, 0, 0);
   background-color: transparent;
@@ -32,24 +31,30 @@
   font-family: "Yeon Sung", cursive;
   font-size: 3rem;
   border: 0;
+  transition: 0.25s;
+}
+.footerButton:hover {
+  transition: 0.25s;
+  background-color: #ffee83;
+  color: rgb(0, 0, 0);
 }
 .modal > section > header {
   position: relative;
   padding: 1.8rem 6.4rem 1.7rem 3.3rem;
-  background-color: #d4d4d4;
+  background-color: #ffee83;
   font-family: "Yeon Sung", cursive;
   font-weight: 1000;
-  font-size: 3rem;
+  font-size: 3.7rem;
   text-align: left;
 }
 .modalMain {
-  padding: 3rem 4rem 0rem 4rem;
+  padding: 2.5rem 4rem 0rem 4rem;
   font-family: "Yeon Sung", cursive;
   font-weight: 500;
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 .modalFooter {
-  padding: 1%;
+  padding: 0.5%;
   text-align: center;
 }
 .modal.openModal {

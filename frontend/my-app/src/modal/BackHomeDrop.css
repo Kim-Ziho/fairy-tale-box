@@ -3,23 +3,25 @@
   background: rgb(255, 255, 255);
   text-align: center;
   top: 5%;
-  right: 7%;
+  right: 6%;
   z-index: 11;
+  transition: 0.25s;
 }
 
 .gohome::before {
-  content: "🖐🏻그만하자";
+  content: "🖐🏻 그만하기";
   font-size: 2em;
   color: rgb(0, 0, 0);
 }
 
 .gohome:hover {
-  animation-play-state: paused;
-  background: rgb(0, 109, 187);
+  transition: 0.25s;
+  background-color: #ffee83;
+  color: rgb(0, 0, 0);
 }
 
 .gohome:hover::before {
-  content: "🏠홈으로가자";
+  content: "🏠 홈으로가자";
   font-size: 2em;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }

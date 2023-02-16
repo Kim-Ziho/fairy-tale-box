@@ -1,14 +1,12 @@
 package c101.fairytalebox.service;
 
-import c101.fairytalebox.domain.History;
-import c101.fairytalebox.domain.Member;
-import c101.fairytalebox.domain.Story;
-import c101.fairytalebox.domain.Word;
+import c101.fairytalebox.domain.*;
 import c101.fairytalebox.dto.*;
 import c101.fairytalebox.repository.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,8 +21,8 @@ public class HistoryServiceImpl implements HistoryService {
     private final WordResultRepository wordResultRepository;
 
     @Override
-    public List<History> getHistory() {
-        return historyRepository.findAll();
+    public List<History> getHistory(Long id) {
+        return historyRepository.findAllByMember_Id(id);
     }
 
     @Override
@@ -33,8 +31,8 @@ public class HistoryServiceImpl implements HistoryService {
     }
 
     @Override
-    public Long createHistory(HistoryRequestDto request){
-        Member member = memberRepository.findById(request.getMember_id()).orElse(null);
+    public Long createHistory(HistoryRequestDto request, Long id){
+        Member member = memberRepository.findById(id).orElse(null);
         Story story = storyRepository.findById(request.getStory_id()).orElse(null);
         CreateHistoryDto createHistoryDto = new CreateHistoryDto();
         createHistoryDto.member = member;
@@ -67,5 +65,24 @@ public class HistoryServiceImpl implements HistoryService {
 
         wordResultRepository.save(createWordResultDto.toEntity());
 
+    }
+
+    @Transactional
+    @Override
+    public Integer getstarpoint(Long history_id) {
+        History history = historyRepository.findById(history_id).orElse(null);
+        long score = history.getWordResults().stream().filter(WordResult::getIsCorrect).count();
+        int starpoint;
+        if(score>=6){
+            starpoint=3;
+        } else if(score>=3){
+            starpoint=2;
+        } else{
+            starpoint=1;
+        }
+        history.modifyStarPoint(starpoint);
+        historyRepository.save(history);
+
+        return starpoint;
     }
 }

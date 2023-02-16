@@ -26,9 +26,8 @@ const Main = () => {
             <div className="btnText txt">📝 학습기록</div>
           </button>
         </Link>
-        {/* <Link to="/home"> */}
         <button className="button3" onClick={openModal}>
-          <div className="btnText txt">🤞🏻 로그아웃</div>
+          <div className="btnText txt">🔓 로그아웃</div>
         </button>
         <Modal open={modalOpen} close={closeModal} header="로그아웃">
           로그아웃 하시겠어요?

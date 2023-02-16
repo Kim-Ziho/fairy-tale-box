@@ -1,9 +1,9 @@
 import React, { useState } from "react";
+import Modal from "../modal/SelectModal.js";
 import { Link } from "react-router-dom";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
-import Modal from "../modal/SelectModal.js";
 import "./Home.css";
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -14,8 +14,10 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const Home = (props) => {
   const [modalOpen, setModalOpen] = useState(false);
-  const openModal = () => {
+  const [storyid, setStoryid] = useState({});
+  const openModal = (num) => {
     setModalOpen(true);
+    setStoryid(num);
   };
   const closeModal = () => {
     setModalOpen(false);
@@ -23,83 +25,68 @@ const Home = (props) => {
 
   return (
     <div id="Grid">
-      <h3 className="homeMainText txt">😃 동화선택 👆🏻</h3>
+      <div className="homeMainText txt">
+        😃 동화선택 👆🏻
+      </div>
       <Link to="/">
         <button className="backBtn txt">👈🏻 뒤로가기</button>
       </Link>
-      <Grid container spacing={6}>
-        <Grid item xs={4}>
+      <Modal open={modalOpen} close={closeModal} storyid={storyid}></Modal>
+      <Grid container spacing={4}>
+        <Grid item xs={4} onClick={() => openModal(1)}>
           <Item>
-            <button onClick={openModal} className="selectBtn">
-              <img
-                src="img/scene1/1.png"
-                className="selectImg"
-                alt="sun and moon"
-              ></img>
-            </button>
-            <Modal open={modalOpen} close={closeModal} storyid={1}></Modal>
+            <img
+              src="img/thumnail/sunandmoon.png"
+              className="selectImg"
+              alt="sun and moon"
+            ></img>
           </Item>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={4} onClick={() => openModal(2)}>
           <Item>
-            <button onClick={openModal} className="selectBtn">
-              <img
-                src="img/scene2/2.png"
-                className="selectImg"
-                alt="sun and moon"
-              ></img>
-            </button>
-            <Modal open={modalOpen} close={closeModal} storyid={2}></Modal>
-          </Item>
-        </Grid>{" "}
-        <Grid item xs={4}>
-          <Item>
-            <button onClick={openModal} className="selectBtn">
-              <img
-                src="img/scene3/3.png"
-                className="selectImg"
-                alt="sun and moon"
-              ></img>
-            </button>
-            <Modal open={modalOpen} close={closeModal} storyid="3"></Modal>
-          </Item>
-        </Grid>{" "}
-        <Grid item xs={4}>
-          <Item>
-            <button onClick={openModal} className="selectBtn">
-              <img
-                src="img/scene6/6.png"
-                className="selectImg"
-                alt="sun and moon"
-              ></img>
-            </button>
-            <Modal open={modalOpen} close={closeModal} storyid="4"></Modal>
-          </Item>
-        </Grid>{" "}
-        <Grid item xs={4}>
-          <Item>
-            <button onClick={openModal} className="selectBtn">
-              <img
-                src="img/scene9/9.png"
-                className="selectImg"
-                alt="sun and moon"
-              ></img>
-            </button>
-            <Modal open={modalOpen} close={closeModal} storyid="5"></Modal>
+            <img
+              src="img/thumnail/huengbu.png"
+              className="selectImg"
+              alt="sun and moon"
+            ></img>
           </Item>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={4} onClick={() => openModal(3)}>
           <Item>
-            <button onClick={openModal} className="selectBtn">
-              <img
-                src="img/scene10/10.png"
-                className="selectImg"
-                alt="sun and moon"
-              ></img>
-            </button>
-            <Modal open={modalOpen} close={closeModal} storyid="6"></Modal>
+            <img
+              src="img/thumnail/konggpatg.png"
+              className="selectImg"
+              alt="sun and moon"
+            ></img>
           </Item>
-        </Grid>{" "}
+        </Grid>
+        <Grid item xs={4} onClick={() => openModal(4)}>
+          <Item>
+            <img
+              src="img/thumnail/sunandmoon2.png"
+              className="selectImg"
+              alt="sun and moon"
+            ></img>
+          </Item>
+        </Grid>
+        <Grid item xs={4} onClick={() => openModal(5)}>
+          <Item>
+            <img
+              src="img/thumnail/ggaesoon.png"
+              className="selectImg"
+              alt="sun and moon"
+            ></img>
+          </Item>
+        </Grid>
+        <Grid item xs={4} onClick={() => openModal(6)}>
+          <Item>
+            <img
+              src="img/thumnail/ready1.png"
+              className="selectImg"
+              alt="sun and moon"
+            ></img>
+          </Item>
+        </Grid>
       </Grid>
     </div>
   );

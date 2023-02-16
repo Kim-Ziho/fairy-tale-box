@@ -11,6 +11,7 @@ import c101.fairytalebox.jwt.TokenInfo;
 import c101.fairytalebox.repository.MemberRaspberryRepository;
 import c101.fairytalebox.repository.MemberRepository;
 import c101.fairytalebox.repository.RaspberrySerialRepository;
+import c101.fairytalebox.utils.SecurityUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -54,20 +55,23 @@ public class MemberServiceImpl implements MemberService {
 
         }
 
+        try {
+            Member member = memberRepository.save(request.toEntity());
 
-        Member member = memberRepository.save(request.toEntity());
+            member.encodePassword(passwordEncoder);
 
+            return member.getId();
+        } catch (Exception e) {
+            throw new Exception("회원가입 오류");
+            
+        }
 
-
-        member.encodePassword(passwordEncoder);
-
-        return member.getId();
     }
 
     @Override
     @Transactional
     public TokenInfo login(LoginRequestDto request) {
-
+        System.out.println(SecurityUtil.getLoginUsername());
         String email = request.getEmail();
         String password = request.getPassword();
 

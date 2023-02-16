@@ -22,8 +22,6 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class MemberController {
 
-    private final JwtTokenProvider jwtTokenProvider;
-    private final AuthenticationManagerBuilder authenticationMangerBuilder;
     private final MemberService memberService;
 
     @PostMapping("/signup")

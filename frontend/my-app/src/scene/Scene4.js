@@ -21,7 +21,7 @@ function Change_text() {
     subtitle.innerText = "팔을 들어 호랑이에게 떡을 주세요.";
   }, 5500);
 }
-
+let time4 = 0
 const Scene4 = () => {
   function moveimg4() {
     const rice4 = document.querySelector(".rice4")
@@ -36,7 +36,7 @@ const Scene4 = () => {
         
       // console.log(mouseX,mouseY)
       
-      if( mouseY<200 ){
+      if( mouseY<200 && time4 === 0){
         rice4.animate([
           { transform: 'translateY(0)' },
           { transform: 'translateY(-30%)' }
@@ -44,12 +44,7 @@ const Scene4 = () => {
           duration:2000,
           fill:'forwards'
         })
-      
-      
-      }else if (mouseY>200){
-        rice4.animate([
-          { transform: 'translateY(0%)' }
-        ],1000)
+      time4 += 1
       }
     });
   }

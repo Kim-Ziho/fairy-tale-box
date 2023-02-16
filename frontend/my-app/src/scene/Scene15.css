@@ -131,28 +131,3 @@
     height: 80vh;
     object-fit: contain;
 }
-
-@keyframes rope-move {
-    from{
-        transform: translate(0,0);
-    }
-    to{
-        transform: translate(0,30%);
-    }
-}
-@keyframes rope-move2 {
-    from{
-        transform: translate(0,30%);
-    }
-    to{
-        transform: translate(0,50%);
-    }
-}
-@keyframes rope-move3 {
-    from{
-        transform: translate(0,50%);
-    }
-    to{
-        transform: translate(0,90%);
-    }
-}

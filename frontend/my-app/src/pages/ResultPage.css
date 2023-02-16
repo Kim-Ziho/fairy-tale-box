@@ -1,0 +1,53 @@
+.resultContainer {
+  background-color: #fff;
+  position: relative;
+  margin: auto;
+  margin-top: 7%;
+  width: 60vw;
+  height: 75vh;
+  border-radius: 4rem;
+  box-shadow: 0 1.5rem 3.5rem rgba(0, 0, 0, 0.2);
+}
+
+.resultHeader {
+  position: relative;
+  padding: 3rem;
+  background-color: #ffee83;
+  font-family: "Yeon Sung", cursive;
+  font-weight: 1000;
+  font-size: 5rem;
+  text-align: left;
+  border-radius: 1rem;
+}
+.resultScore {
+  border: 0;
+  margin: auto;
+  text-align: center;
+  font-size: 9rem;
+  margin-top: 3.4%;
+}
+.resultTxt {
+  text-align: center;
+  font-size: 3.2rem;
+  margin-top: 3%;
+  margin-bottom: -2%;
+}
+.resultButton {
+  position: relative;
+  padding: 0.6rem 1.6rem;
+  margin: 0.5rem;
+  top: 2.7rem;
+  bottom: 0rem;
+  width: 42%;
+  color: #fff;
+  background-color: #6c757d;
+  border-radius: 0.5rem;
+  font-size: 4rem;
+  border: 0;
+  transition: 0.25s;
+}
+.resultButton:hover {
+  transition: 0.25s;
+  background-color: #ffee83;
+  color: rgb(0, 0, 0);
+}

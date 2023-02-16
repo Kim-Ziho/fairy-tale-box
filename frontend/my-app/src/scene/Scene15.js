@@ -11,7 +11,7 @@ const start = () => {
   }, 1000);
 };
 
-
+let time15 = 0
 // 하단은 자막
 function Change_text(){
   const subtitle = document.getElementById('Text')
@@ -51,7 +51,7 @@ const Scene15 = () => {
         
       // console.log(mouseX,mouseY)
       
-      if( mouseY<200 ){
+      if( mouseY<200 && time15 === 0 ){
         rope.animate([
           { transform: 'translateY(0)' },
           { transform: 'translateY(90%)' }
@@ -59,7 +59,7 @@ const Scene15 = () => {
           duration:4000,
           fill:'forwards'
         })
-        // navigate('/scene9')
+        time15+=1
       }
     });
   }

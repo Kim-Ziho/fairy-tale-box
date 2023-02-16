@@ -43,12 +43,6 @@ const Scene13 = () => {
       
       // console.log(mouseX,mouseY)
       
-      if( mouseX>550 && mouseX<650 && mouseY>200 && mouseY<300){
-        // const subtitle = document.getElementById('Text')
-        
-  
-        // navigate('/scene9')
-      }
   });
   }
   const navigate = useNavigate();

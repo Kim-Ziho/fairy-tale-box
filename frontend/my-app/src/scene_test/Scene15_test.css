@@ -1,0 +1,158 @@
+.bgImg15 {
+    margin-top: 1.5%;
+    width: 100vw;
+    height: 93vh;
+    object-fit: contain;
+    animation-name: fade-out15;
+    animation-duration: 1s;
+    animation-delay: 11s;
+    animation-fill-mode: forwards;
+}
+
+.SceneBox{
+    text-align: center;
+}
+
+.Homebtn{
+    position: absolute;
+    right: 10%;
+}
+.cheer{
+    position: absolute;
+    margin-top: 1.5%;
+    width: 100vw;
+    height: 93vh;
+    object-fit: contain;
+    opacity: 0;
+    animation-name: hand15-2-move, hand15-move;
+    animation-duration: 2s, 2s;
+    animation-delay: 11s, 17s;
+    animation-iteration-count: 1, 1;
+    animation-fill-mode: forwards;
+}
+.cheer2{
+    position: absolute;
+    margin-top: 1.5%;
+    width: 100vw;
+    height: 93vh;
+    object-fit: contain;
+    opacity: 0;
+    animation-name: hand15-2-move, hand15-move;
+    animation-duration: 2s ,2s;
+    animation-delay: 17s , 19s;
+    animation-iteration-count: 1, 1;
+    animation-fill-mode: forwards
+}
+.cheer3{
+    position: absolute;
+    margin-top: 1.5%;
+    width: 100vw;
+    height: 93vh;
+    object-fit: contain;
+    opacity: 0;
+    animation-name: hand15-2-move, hand15-move;
+    animation-duration: 2s, 2s;
+    animation-delay: 19s, 21s;
+    animation-iteration-count: 1, 1;
+    animation-fill-mode: forwards;
+}
+.cheer4{
+    position: absolute;
+    margin-top: 1.5%;
+    width: 100vw;
+    height: 93vh;
+    object-fit: contain;
+    opacity: 0;
+    animation-name: hand15-2-move, hand15-move;
+    animation-duration: 2s ,2s;
+    animation-delay: 21s , 23s;
+    animation-iteration-count: 1, 1;
+    animation-fill-mode: forwards
+}
+.cheer5{
+    position: absolute;
+    margin-top: 1.5%;
+    width: 100vw;
+    height: 93vh;
+    object-fit: contain;
+    opacity: 0;
+    animation-name: hand15-2-move, hand15-move;
+    animation-duration: 2s, 2s;
+    animation-delay: 23s, 25s;
+    animation-iteration-count: 1, 1;
+    animation-fill-mode: forwards;
+}
+.cheer6{
+    position: absolute;
+    margin-top: 1.5%;
+    width: 100vw;
+    height: 93vh;
+    object-fit: contain;
+    opacity: 0;
+    animation-name: hand15-2-move;
+    animation-duration: 2s;
+    animation-delay: 25s;
+    animation-fill-mode: forwards
+}
+@keyframes hand15-move {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+@keyframes hand15-2-move {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes fade-out15 {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+.rope{
+    position: absolute;
+    left: 30%;
+    bottom: 5%;
+    top: -90%;
+    right: 40%;
+    height: 50%;
+    width: 50vw;
+    height: 80vh;
+    object-fit: contain;
+}
+
+@keyframes rope-move {
+    from{
+        transform: translate(0,0);
+    }
+    to{
+        transform: translate(0,30%);
+    }
+}
+@keyframes rope-move2 {
+    from{
+        transform: translate(0,30%);
+    }
+    to{
+        transform: translate(0,50%);
+    }
+}
+@keyframes rope-move3 {
+    from{
+        transform: translate(0,50%);
+    }
+    to{
+        transform: translate(0,90%);
+    }
+}

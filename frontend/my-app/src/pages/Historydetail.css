@@ -2,24 +2,31 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-
 .historydetailContainer {
   display: grid;
   grid-template-columns: 0.1fr 1fr 1fr 1fr 0.1fr;
 }
-.historydetailcontent {
-  background-color: rgb(240, 240, 240);
-  /* width: 88%; */
-  margin: 2% 7% 2% 7%;
+
+.histdetailtitle {
+  background-color: rgb(194, 224, 245);
+  width: 89%;
+  margin: 7% auto;
   border-radius: 8px;
+  font-size: 4rem;
+}
+.historydetailcontent {
+  background-color: #fff;
+  border-radius: 8px;
+  padding-top: 2%;
+  margin: auto;
+  width: 88%;
+  height: 72%;
+  font-size: 3.1rem;
 }
 
 .historyDetailBox {
   text-align: center;
-  /* background-image: url(../../public/img/씬3.png); */
-  padding-left: 3%;
-  padding-right: 3%;
-  padding-top: 2%;
+  padding: 2% 3% 0% 3%;
 }
 
 .detailMainText {
@@ -32,37 +39,25 @@
   text-shadow: 4px 4px #ffffff;
 }
 
-.histdetailtitle {
-  background-color: rgb(194, 224, 245);
-  width: 88%;
-  margin: 7%;
-  border-radius: 8px;
-  font-size: 4rem;
-}
 .detailImg {
   width: 4vw;
-  height: 8vh;
+  height: 7vh;
   margin: auto;
   object-fit: contain;
 }
-.detailText {
-  margin: auto;
-  padding-bottom: 3%;
-  font-size: 10rem;
-  width: fit-content;
-}
-.hide {
-  opacity: 0;
-  z-index: 99;
-}
-
 .histHeader {
-  margin-top: 4%;
+  margin-top: 4.5%;
 }
 .detailLine {
-  width: 95%;
-  height: 2px;
-  margin: auto;
-  border: 0;
+  width: 94%;
+  margin: 0% auto 0.5% auto;
   border-top: 3px dashed rgb(148, 148, 148);
+}
+.histaudio {
+  transition: 0.25s;
+}
+.histaudio:hover {
+  transform: scale(1.1);
+  transition: 0.25s;
+  background-color: #ffee83;
 }

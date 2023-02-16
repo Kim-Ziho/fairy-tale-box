@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 import "./modal.css";
 
 const Modal = (props) => {
-  const { open, close, header, main, footer } = props;
+  const { open, close, main } = props;
 
   return (
     <div className={open ? "openModal modal" : "modal"}>
       {open ? (
         <section id="backgnd">
           <header>
-            경고메세지
+          🧚🏻‍♀️ 동화상자 🧚🏻‍♂️
             <button className="headerbutton" onClick={close}>
               &times;
             </button>
