@@ -1,5 +1,5 @@
 FROM node:16.18.0 as build-stage
-WORKDIR /var/jenkins_home/workspace/frontend/auth
+WORKDIR /var/jenkins_home/workspace/talebox/frontend/auth
 COPY package*.json ./
 RUN npm install
 COPY . .
