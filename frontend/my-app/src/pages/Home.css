@@ -19,7 +19,6 @@
   height: 29.5vh;
   object-fit: cover;
   transition: 0.25s;
-  border-radius: 5%;
 }
 .selectImg:hover {
   transform: scale(1.09);

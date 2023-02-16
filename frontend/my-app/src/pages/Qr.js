@@ -16,9 +16,7 @@ const Qr = () => {
   const closeModal = () => {
     setModalOpen(false);
   };
-  const [sunggong, setSunggong] = useState([false]);
-  const [accessToken, setAccessToken] = useState("");
-  const [refreshToken, setRefreshToken] = useState("");
+ 
   const axiosQR = () => {
     axios
       .post("http://i8c101.p.ssafy.io/api/member/authcheck", {
