@@ -11,7 +11,6 @@ const start = () => {
     audio8_1.play();
   }, 1000);
 };
-let time8 = 0
 // 하단은 자막
 function Change_text(){
   const subtitle = document.getElementById('Text')
@@ -36,26 +35,25 @@ function fade_out(){
 }
 
 
-
-const Scene8_test = () => {
+const Scene8 = () => {
   function moveimg() {
+    let done = 0;
     const hole = document.querySelector(".hole")
-    document.addEventListener("mousemove", (e) => { // mousemove이벤트를 이용해 움
+    window.source.onmessage = function(event) {
+      window.pose = JSON.parse(event.data);
+      let mouseX = window.pose.nose.x * window.innerWidth;
+      let mouseY = window.pose.nose.y * window.innerHeight;
   
       // 마우스의 좌표는 clientX와 clientY를 이용해 알수 있다. -> 브라우저 window의 좌표값 위치를 전달한다.
-  
+      
       // pageX, pageY와는 다름.
-      const mouseX = e.clientX;
-  
-      const mouseY = e.clientY;
-  
-      hole.style.left = mouseX + 'px';
-  
-      hole.style.top = mouseY + 'px';
+      if (done === 0) {
+        hole.style.left = mouseX + 'px';
+        hole.style.top = mouseY + 'px';
+      }
       
-      // console.log(mouseX,mouseY)
-      
-      if( mouseX>550 && mouseX<650 && mouseY>200 && mouseY<300 && time8 === 0 ){
+      if( window.pose.nose.x < 0.25 && window.pose.nose.y < 0.25 && done === 0 ){
+        done = 1;
         const subtitle = document.getElementById('Text')
         audio8_1.pause()
         audio8_2.play()
@@ -69,10 +67,9 @@ const Scene8_test = () => {
         setTimeout(()=>{
           subtitle.innerText = '오빠, 왜 그래?'
         },5000)
-        time8 +=1
-        setTimeout(() => navigate(`/scene9_test`, { state: { value: number } }), 8000);
+        setTimeout(() => navigate(`/scene9`, { state: { value: number } }), 8000);
       }
-  });
+    };
   }
   const navigate = useNavigate();
   const location = useLocation();
@@ -95,4 +92,4 @@ const Scene8_test = () => {
   );
 };
 
-export default Scene8_test;
+export default Scene8;
