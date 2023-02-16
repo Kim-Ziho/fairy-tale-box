@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import BackHome from "../modal/BackHomeDrop";
 import "./Scene16.css";
 
@@ -18,7 +18,7 @@ function Change_text(){
     subtitle.innerText = '그러자, 하늘에서 동아줄이 내려왔고'
   },1000)
   setTimeout(()=>{
-    subtitle.innerText = '오누리는 동아줄을 타고, 하늘로 올라갔어요.'
+    subtitle.innerText = '오누이는 동아줄을 타고, 하늘로 올라갔어요.'
   },4310)
   setTimeout(()=>{
     subtitle.innerText = '이를 본 호랑이도 동아줄을 내려달라고 빌었지요.'
@@ -27,15 +27,18 @@ function Change_text(){
     subtitle.innerText = '그런데 이번에는, 썩은 동아줄이 내려왔어요.'
   },11790)
   setTimeout(()=>{
-    subtitle.innerText = '호랑이는 신나게 줄을 타고 올라갔어요'
+    subtitle.innerText = '호랑이는 신나게 줄을 타고 올라갔어요.'
   },15780)
 }
 const Scene16 = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const number =  location.state.value;
+  console.log(number)
   // 하단은 자막 시작 딜레이
   setTimeout(Change_text)
   // 하단은 페이지 넘어가는 시간
-  setTimeout(() => navigate(`/scene17`), 20000);
+  setTimeout(() => navigate(`/scene17`, { state: { value: number } }), 20000);
   // 하단은 오디오 파일 자동재생
   setTimeout(start)
 
@@ -48,6 +51,7 @@ const Scene16 = () => {
         <img src="img/scene16/16-호랑이.png" className="tiger16" alt="#"></img>
         <h2 id="Text16"> </h2>
         <div className="hidden16"></div>
+        <div className="hidden16-2"></div>
     </div>
   );
 };

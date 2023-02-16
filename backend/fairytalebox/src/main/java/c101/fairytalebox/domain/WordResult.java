@@ -22,7 +22,7 @@ public class WordResult {
     @JoinColumn(name = "history_id")
     private History history;
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "word_id")
     private Word word;
 

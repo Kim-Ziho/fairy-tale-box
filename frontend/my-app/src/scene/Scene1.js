@@ -16,16 +16,16 @@ const start = () => {
 function Change_text() {
   const subtitle = document.getElementById("Text");
   setTimeout(() => {
-    subtitle.innerText = "옛날옛날에 마음씨 좋은 엄마와";
+    subtitle.innerText = "옛날 옛적에 마음씨 좋은 엄마와";
   }, 1000);
   setTimeout(() => {
-    subtitle.innerText = "사이좋은 오누이가 살고 있었어요";
+    subtitle.innerText = "사이좋은 오누이가 살고 있었어요.";
   }, 3500);
   setTimeout(() => {
     subtitle.innerText = "얘들아, 혹시 누군가 문을 열어달라고 하면";
   }, 5500);
   setTimeout(() => {
-    subtitle.innerText = "엄마말고는 문을 열어 주면 안된단다!";
+    subtitle.innerText = "엄마 말고는 문을 열어 주면 안 된단다!";
   }, 10000);
   setTimeout(() => {
     subtitle.innerText = "네, 그럴게요!";
@@ -43,7 +43,7 @@ const Scene1 = () => {
       method:'post',
       url:"http://i8c101.p.ssafy.io/api/history",
       data:{
-        "member_id":5,
+        "member_id":2,
         "story_id":1,
         "studyDate": new Date()
       }
@@ -51,16 +51,20 @@ const Scene1 = () => {
     .then((res) => {
       const number = res.data
       setTimeout(() => navigate(`/scene2`, { state: { value: number } }), 23120)
+      setTimeout( () =>
+        axios({
+          method:'get',
+          url:`http://192.168.100.245:3001/startrecord?wordname=엄마&hist_num=${number}&word_id=1`
+        }),14050
+      )
     })
-  
-  },[]);
+  });
  
   // 자막 시작 딜레이
   setTimeout(Change_text);
-  // 페이지 넘어가는 시간
+  
   // 오디오 파일 자동재생
   setTimeout(start);
-
 
   return (
     

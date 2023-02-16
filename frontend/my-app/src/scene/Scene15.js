@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import BackHome from "../modal/BackHomeDrop";
 import "./Scene15.css";
 
@@ -28,24 +28,52 @@ function Change_text(){
     subtitle.innerText = '제발 도와주세요!'
   },10940)
   setTimeout(()=>{
-    subtitle.innerText = '동아줄이 내려오도록 손을 머리위로 만세해볼까요?'
+    subtitle.innerText = '동아줄이 내려오도록 손을 머리 위로 만세 해볼까요?'
   },14140)
   setTimeout(()=>{
-    subtitle.innerText = '한번더 만세!'
+    subtitle.innerText = '한 번 더 만세!'
   },20230)
   setTimeout(()=>{
     subtitle.innerText = '마지막으로 만세!'
   },24020)
 }
 const Scene15 = () => {
+  function moveimg() {
+    const rope = document.querySelector(".rope")
+    document.addEventListener("mousemove", (e) => { // mousemove이벤트를 이용해 움
+  
+      // 마우스의 좌표는 clientX와 clientY를 이용해 알수 있다. -> 브라우저 window의 좌표값 위치를 전달한다.
+  
+      // pageX, pageY와는 다름.
+      // const mouseX = e.clientX;
+  
+      const mouseY = e.clientY;
+        
+      // console.log(mouseX,mouseY)
+      
+      if( mouseY<200 ){
+        rope.animate([
+          { transform: 'translateY(0)' },
+          { transform: 'translateY(90%)' }
+        ],{
+          duration:4000,
+          fill:'forwards'
+        })
+        // navigate('/scene9')
+      }
+    });
+  }
   const navigate = useNavigate();
-
+  const location = useLocation();
+  const number =  location.state.value;
+  console.log(number)
   // 하단은 자막 시작 딜레이
   setTimeout(Change_text)
   // 하단은 페이지 넘어가는 시간
-  setTimeout(() => navigate(`/scene16`), 30020);
+  setTimeout(() => navigate(`/scene16`, { state: { value: number } }), 30020);
   // 하단은 오디오 파일 자동재생
   setTimeout(start)
+  setTimeout(moveimg,24000)
   return (
     <div className="SceneBox">
       <BackHome></BackHome>

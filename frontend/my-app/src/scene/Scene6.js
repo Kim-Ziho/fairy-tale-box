@@ -1,7 +1,8 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate , useLocation} from "react-router-dom";
 import BackHome from "../modal/BackHomeDrop";
 import "./Scene6.css";
+import axios from "axios"
 
 // 음성파일
 const audio6_1 = new Audio("sound/6-1.mp3");
@@ -24,23 +25,33 @@ function Change_text() {
     subtitle.innerText = "호랑이는 엄마가 입던 옷을 입고";
   }, 1000);
   setTimeout(() => {
-    subtitle.innerText = "오누이가 있는 집을 찾아갔어요";
+    subtitle.innerText = "오누이가 있는 집을 찾아갔어요.";
   }, 3900);
   setTimeout(() => {
     subtitle.innerText = "집이라고 말해볼까요?";
   }, 6500);
   setTimeout(() => {
-    subtitle.innerText = "애들아, 엄마 왔다!";
+    subtitle.innerText = "얘들아, 엄마 왔다!";
   }, 14000);
 }
 
 const Scene6 = () => {
   const navigate = useNavigate();
-
+  const location = useLocation();
+  const number =  location.state.value;
+  console.log(number)
   // 자막 시작 딜레이
   setTimeout(Change_text);
+  setTimeout(
+        () =>
+          axios({
+            method: "get",
+            url: `http://192.168.100.245:3001/startrecord?wordname=집&hist_num=${number}&word_id=5`,
+          }),
+        6000
+      );
   // 페이지 넘어가는 시간
-  setTimeout(() => navigate(`/scene7`), 17000);
+  setTimeout(() => navigate(`/scene7`, { state: { value: number } }), 17000);
   // 오디오 파일 자동재생
   setTimeout(start1);
   setTimeout(start2);

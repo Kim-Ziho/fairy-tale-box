@@ -3,14 +3,13 @@
   margin: auto;
   top: -1rem;
   font-size: 6.5rem;
-  width: fit-content;
   color: rgb(0, 0, 0);
   text-shadow: 4px 4px #ffffff;
 }
 .histLine {
   width: 96.7%;
   height: 2px;
-  margin: -0.5% auto 0.5% 2%;
+  margin: -0.5% auto 0.5% 1.9%;
   border: 0;
   border-top: 3px dashed rgb(148, 148, 148);
 }
@@ -36,11 +35,11 @@
 }
 .historycontent {
   background-color: rgb(240, 240, 240);
-  width: 88%;
+  width: 87%;
   height: 90%;
   margin: auto;
+  padding: 0.25rem;
   border-radius: 8px;
   font-size: 3rem;
   background-color: #fff;
-  object-fit: contain;
 }

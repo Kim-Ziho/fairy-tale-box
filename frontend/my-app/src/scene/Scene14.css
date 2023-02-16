@@ -84,10 +84,10 @@
     width: 100vw;
     height: 93vh;
     object-fit: contain;
-    animation-name: hand14-2-move, hand14-move;
-    animation-duration: 1s,1s;
-    animation-delay: 6s,11s;
-    animation-iteration-count: 1,1;
+    animation-name: hand14-2-move;
+    animation-duration: 1s;
+    animation-delay: 6s;
+    animation-iteration-count: 1;
     animation-fill-mode: both; 
     opacity: 0;
 }
@@ -98,10 +98,10 @@
     width: 100vw;
     height: 93vh;
     object-fit: contain;
-    animation-name: hand14-2-move;
+    /* animation-name: hand14-2-move;
     animation-duration: 1s;
     animation-delay: 11s;
     animation-iteration-count: 1;
-    animation-fill-mode: both; 
+    animation-fill-mode: both;  */
     opacity: 0;
 }

@@ -1,7 +1,8 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate , useLocation} from "react-router-dom";
 import BackHome from "../modal/BackHomeDrop";
 import "./Scene5.css";
+import axios from "axios"
 
 // 음성파일
 const audio5_1 = new Audio("sound/5-1.mp3");
@@ -27,7 +28,7 @@ function Change_text() {
     subtitle.innerText = "호랑이는 떡을 배불리 먹고서";
   }, 3900);
   setTimeout(() => {
-    subtitle.innerText = "약속을 깨고 엄마까지 잡아먹어버렸어요";
+    subtitle.innerText = "약속을 깨고 엄마까지 잡아먹어 버렸어요.";
   }, 5400);
   setTimeout(() => {
     subtitle.innerText = "약속이라고 말해볼까요?";
@@ -42,11 +43,21 @@ function Change_text() {
 
 const Scene5 = () => {
   const navigate = useNavigate();
-
+  const location = useLocation();
+  const number =  location.state.value;
+  console.log(number)
   // 자막 시작 딜레이
   setTimeout(Change_text);
+  setTimeout(
+        () =>
+          axios({
+            method: "get",
+            url: `http://192.168.100.245:3001/startrecord?wordname=약속&hist_num=${number}&word_id=4`,
+          }),
+        8500
+      );
   // 페이지 넘어가는 시간
-  setTimeout(() => navigate(`/scene6`), 19700);
+  setTimeout(() => navigate(`/scene6`, { state: { value: number } }), 19700);
   // 오디오 파일 자동재생
   setTimeout(start1);
   setTimeout(start2);

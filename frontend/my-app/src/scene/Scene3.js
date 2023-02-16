@@ -20,20 +20,28 @@ function Change_text() {
   }, 1000);
   setTimeout(() => {
     subtitle.innerText = "떡이라고 말해볼까요?";
-    // axios.get('192.168.100.245:3001/startrecord?wordname="호랑이"&hist_num=1')
   }, 3800);
 }
 
 const Scene3 = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  // const number =  location.state.value;
-  // console.log(number)/
+  const number =  location.state.value;
+  console.log(number)
 
   // 자막 시작 딜레이
   setTimeout(Change_text);
+  
+  setTimeout(
+        () =>
+          axios({
+            method: "get",
+            url: `http://192.168.100.245:3001/startrecord?wordname=떡&hist_num=${number}&word_id=3`,
+          }),
+        3300
+      );
   // 페이지 넘어가는 시간
-  setTimeout(() => navigate(`/scene4`), 11610);
+  setTimeout(() => navigate(`/scene4`, { state: { value: number } }), 11610);
   // 오디오 파일 자동재생
   setTimeout(start);
 

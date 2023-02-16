@@ -58,11 +58,11 @@
     width: 20vw;
     height: 20vh;
     object-fit: contain;
-    animation-name: oil-move , changebg13-2;
+    animation-name: changebg13-2;
     animation-duration: 5s;
-    animation-delay: 5s ,13s;
+    animation-delay: 13s;
     animation-fill-mode:both;
-    animation-iteration-count: 2,1;
+    animation-iteration-count: 1;
 }
 @keyframes oil-move {
     0% { transform: translate(0%,0%) }

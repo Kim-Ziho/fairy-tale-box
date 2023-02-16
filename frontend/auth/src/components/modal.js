@@ -1,0 +1,25 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import "./modal.css";
+
+const Modal = (props) => {
+  const { open, close, header, main, footer } = props;
+
+  return (
+    <div className={open ? "openModal modal" : "modal"}>
+      {open ? (
+        <section id="backgnd">
+          <header>
+            경고메세지
+            <button className="headerbutton" onClick={close}>
+              &times;
+            </button>
+          </header>
+          <main className="modalMain">{main}</main>
+        </section>
+      ) : null}
+    </div>
+  );
+};
+
+export default Modal;

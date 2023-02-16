@@ -1,6 +1,6 @@
 .qrContainer {
   text-align: center;
-  margin-top: 5%;
+  margin-top: 7%;
   margin-bottom: 5%;
   width: 100vw;
   height: 70vh;
@@ -8,24 +8,25 @@
 .qrMainText {
   position: relative;
   margin: auto;
-  top: -3rem;
-  font-size: 10rem;
+  top: 0rem;
+  font-size: 12rem;
   width: fit-content;
   color: rgb(0, 0, 0);
   text-shadow: 4px 4px #ffffff;
 }
 .qrText {
   position: relative;
-  padding-top: 1%;
+  margin-top: -10%;
   margin: auto;
   font-size: 4rem;
   width: fit-content;
 }
 .qrimg {
   position: relative;
-  padding-top: 3%;
+  padding-top: 2%;
+  padding-bottom: 1%;
   margin: auto;
-  width: fit-content;
+  width: 19%;
 }
 .qrButton {
   position: relative;
@@ -33,9 +34,9 @@
   font-size: 3.5rem;
   width: fit-content;
   background-color: #fff;
-  padding: 10px;
+  padding: 9px;
   border-radius: 1rem;
 }
 .qrFooter {
-  padding-top: 3%;
+  padding-top: 1%;
 }

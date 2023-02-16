@@ -35,6 +35,8 @@ sudo apt-get install libqtgui4
 sudo apt-get install libqt4-test
 pip install wavio
 44100
+./google-cloud-sdk/install.sh
+source ~/.bashrc
 pip install --upgrade google-api-python-client
 pip install google-cloud
 pip3 install --upgrade pip setuptools wheel

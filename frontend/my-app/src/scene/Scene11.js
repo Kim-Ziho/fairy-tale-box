@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import BackHome from "../modal/BackHomeDrop";
 import "./Scene11.css";
 
@@ -27,15 +27,46 @@ function Change_text(){
     subtitle.innerText = '오른쪽 왼쪽으로 움직이며 오누이를 찾아보세요'
   },10742)
 }
-const Scene11 = () => {
-  const navigate = useNavigate();
 
+
+const Scene11 = () => {
+  function movewell(){
+
+    const well = document.querySelector(".well");
+    let center = {
+        x : well.getBoundingClientRect().left + (well.clientWidth/2),
+        y : well.getBoundingClientRect().top + (well.clientHeight/2)
+    }
+  
+    window.addEventListener('resize', ()=>{
+        center = {
+            x : well.getBoundingClientRect().left + (well.clientWidth/2),
+            y : well.getBoundingClientRect().top + (well.clientHeight/2)
+        }
+        console.log('실행');
+    })
+    document.addEventListener("mousemove", (e) => {
+    const x = center.x - e.clientX;
+    const y = center.y - e.clientY;
+    
+    const radian = Math.atan2(y, x);
+    const degree = (radian * 180 / Math.PI).toFixed(0);
+    well.style.transform = 'translate(-50%, -50%) rotate(' + degree + 'deg)';
+  
+    // console.log(x,y)
+    
+  })}
+  const navigate = useNavigate();
+  const location = useLocation();
+  const number =  location.state.value;
+  console.log(number)
   // 하단은 자막 시작 딜레이
   setTimeout(Change_text)
   // 하단은 페이지 넘어가는 시간
-  setTimeout(() => navigate(`/scene12`), 23000);
+  setTimeout(() => navigate(`/scene12`, { state: { value: number } }), 23000);
   // 하단은 오디오 파일 자동재생
   setTimeout(start)
+  setTimeout(movewell,11000)
   return (
     <div className="SceneBox">
       <BackHome></BackHome>
