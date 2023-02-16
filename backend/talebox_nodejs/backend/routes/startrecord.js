@@ -10,7 +10,7 @@ function spawnTest(wordname, hist_num, word_id) {
     //var fr = new FileReader();
     // 3. 실행할 명령을 작성합니다.
     // '\n' 은 엔터입니다. terminal 이기 때문에 엔터로 명령어를 입력해야 실행되겠죠?
-    const command = `cd /home/nvidia/STT \n`;
+    const command = `cd /home/nvidia/S08P12C101/frontend/my-app/src/STT \n`;
     const command1 = `cp -r Speech-to-Text-G-API ${wordname}${hist_num} \n`; // a: 숨긴 파일까지 , l: 자세한 내용까지 검색
     const command2 = `cd ${wordname}${hist_num}/audio \n`;
     const command3 = `arecord -t wav -c 1 -D plughw:Device,0 -f S16_LE -d 6 -r 44100 test.wav \n`;
@@ -29,7 +29,7 @@ function spawnTest(wordname, hist_num, word_id) {
         setTimeout(function () {
       //  let text = fr.readAsText(`home/nvidia/STT/${wordname}${hist_num}/text/test.txt`);
 
-        fs.readFile(`/home/nvidia/STT/${wordname}${hist_num}/text/test.txt`,'utf8', (err, data) => {
+        fs.readFile(`/home/nvidia/S08P12C101/frontend/my-app/src/STT/${wordname}${hist_num}/text/test.txt`,'utf8', (err, data) => {
             if(err){
                 console.error(err)
                 return
@@ -41,7 +41,7 @@ function spawnTest(wordname, hist_num, word_id) {
          method: "post",
          url: `http://i8c101.p.ssafy.io/api/history/wordresult/${word_id}`,
          data: {
-           "audioPath": `/home/nvidia/STT/${wordname}${hist_num}/audio/teat.wav`,
+           "audioPath": `/home/nvidia/S08P12C101/frontend/my-app/src/STT/${wordname}${hist_num}/audio/teat.wav`,
            "historyId": hist_num,
            "isCorrect": result_word,
            "wordId": word_id

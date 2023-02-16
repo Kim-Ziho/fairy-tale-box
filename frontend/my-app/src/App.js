@@ -38,7 +38,6 @@ import Scene9test from "./scene_test/Scene9_test";
 import Scene10test from "./scene_test/Scene10_test";
 import Scene11test from "./scene_test/Scene11_test";
 import Scene12test from "./scene_test/Scene12_test";
-import Scene13test from "./scene_test/Scene13_test";
 import Scene14test from "./scene_test/Scene14_test";
 import Scene15test from "./scene_test/Scene15_test";
 import Scene17test from "./scene_test/Scene17_test";
@@ -90,7 +89,6 @@ function App() {
             <Route path="/Scene10_test" element={<Scene10test />}></Route>
             <Route path="/Scene11_test" element={<Scene11test />}></Route>
             <Route path="/Scene12_test" element={<Scene12test />}></Route>
-            <Route path="/Scene13_test" element={<Scene13test />}></Route>
             <Route path="/Scene14_test" element={<Scene14test />}></Route>
             <Route path="/Scene15_test" element={<Scene15test />}></Route>
             <Route path="/Scene17_test" element={<Scene17test />}></Route>

@@ -33,9 +33,8 @@ function moveimg4() {
   })
 }
 
-let done = 0;
-
 const Scene4 = () => {
+  let done = 0;
   const navigate = useNavigate();
   const location = useLocation();
   const number = location.state.value;
