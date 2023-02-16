@@ -21,35 +21,21 @@ function Change_text() {
     subtitle.innerText = "팔을 들어 호랑이에게 떡을 주세요.";
   }, 5500);
 }
-let time4 = 0
+
+function moveimg4() {
+  const rice4 = document.querySelector(".rice4");
+  rice4.animate([
+    { transform: 'translateY(0)' },
+    { transform: 'translateY(-30%)' }
+  ],{
+    duration:2000,
+    fill:'forwards'
+  })
+}
+
+let done = 0;
+
 const Scene4 = () => {
-  function moveimg4() {
-    const rice4 = document.querySelector(".rice4")
-    window.source.onmessage = function (event) {
-      window.pose = JSON.parse(event.data);
-
-
-      // 마우스의 좌표는 clientX와 clientY를 이용해 알수 있다. -> 브라우저 window의 좌표값 위치를 전달한다.
-
-      // pageX, pageY와는 다름.
-      // const mouseX = e.clientX;
-
-      // const mouseY = e.clientY;
-
-      // console.log(mouseX,mouseY)
-
-      // if( rightWristX<200 && time4 === 0){
-      //   rice4.animate([
-      //     { transform: 'translateY(0)' },
-      //     { transform: 'translateY(-30%)' }
-      //   ],{
-      //     duration:2000,
-      //     fill:'forwards'
-      //   })
-      // time4 += 1
-      // }
-    };
-  }
   const navigate = useNavigate();
   const location = useLocation();
   const number = location.state.value;
@@ -60,7 +46,13 @@ const Scene4 = () => {
   setTimeout(() => navigate(`/scene5`, { state: { value: number } }), 17400);
   // 오디오 파일 자동재생
   setTimeout(start);
-  setTimeout(moveimg4, 7000)
+  setTimeout(window.source.onmessage = function (event) {
+    window.pose = JSON.parse(event.data);
+    if (window.pose.right_wrist.y < window.pose.nose.y && window.pose.right_wrist.accur > 0.3 && window.pose.nose.accur > 0.3 && done == 0) {
+      done = 1;
+      moveimg4();
+    };
+  }, 7000)
   return (
     <div className="SceneBox">
       <BackHome></BackHome>
