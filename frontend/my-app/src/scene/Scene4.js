@@ -48,7 +48,7 @@ const Scene4 = () => {
   setTimeout(start);
   setTimeout(window.source.onmessage = function (event) {
     window.pose = JSON.parse(event.data);
-    if (window.pose.right_wrist.y < window.pose.nose.y && window.pose.right_wrist.accur > 0.3 && window.pose.nose.accur > 0.3 && done == 0) {
+    if (window.pose.right_wrist.y < window.pose.nose.y && window.pose.right_wrist.accur > 0.3 && window.pose.nose.accur > 0.3 && done === 0) {
       done = 1;
       moveimg4();
     };
