@@ -33,7 +33,9 @@ public class HistoryServiceImpl implements HistoryService {
     @Override
     public Long createHistory(HistoryRequestDto request, Long id){
         Member member = memberRepository.findById(id).orElse(null);
+        System.out.println(request.getStory_id());
         Story story = storyRepository.findById(request.getStory_id()).orElse(null);
+        System.out.println("####");
         CreateHistoryDto createHistoryDto = new CreateHistoryDto();
         createHistoryDto.member = member;
         createHistoryDto.story = story;
