@@ -95,7 +95,7 @@ const Join = () => {
             nickname,
             password,
             checkedPassword,
-            serialNum: "동화상자c101-2"
+            serialNum: "동화상자c101-1"
         })
             .then((res) => {
                 goToLogin()

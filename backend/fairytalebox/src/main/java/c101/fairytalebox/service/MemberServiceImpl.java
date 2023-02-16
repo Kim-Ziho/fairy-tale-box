@@ -52,8 +52,13 @@ public class MemberServiceImpl implements MemberService {
         if (!request.getEmail().equals("admin@naver.com")) {
             RaspberrySerial raspberrySerial = raspberrySerialRepository.findBySerialNum(request.getSerialNum())
                     .orElseThrow(() -> new IllegalArgumentException("기기 정보가 올바르지 않습니다."));
-
+            MemberRaspberry memberRaspberry = memberRaspberryRepository.findByRaspberrySerial(raspberrySerial)
+                    .orElse(null);
+            if (memberRaspberry != null) {
+                throw new Exception("이미 등록된 기기입니다.");
+            }
         }
+
 
         try {
             Member member = memberRepository.save(request.toEntity());
@@ -85,6 +90,8 @@ public class MemberServiceImpl implements MemberService {
         RaspberrySerial raspberrySerial = raspberrySerialRepository.findBySerialNum(member.getSerialNum())
                 .orElse(null);
 
+
+
         // 1. Login ID/PW 를 기반으로 Authentication 객체 생성
         // 이때 authentication 는 인증 여부를 확인하는 authenticated 값이 false
         UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(email, password);
@@ -102,7 +109,9 @@ public class MemberServiceImpl implements MemberService {
                         .raspberrySerial(raspberrySerial)
                         .build());
 
-        memberRaspberry.updateToken(tokenInfo.getAccessToken(), tokenInfo.getRefreshToken());
+        if (!member.getRole().equals(Role.ROLE_ADMIN)) {
+        memberRaspberry.updateToken(tokenInfo.getAccessToken(), tokenInfo.getRefreshToken());}
+
 
         memberRaspberryRepository.save(memberRaspberry);
 

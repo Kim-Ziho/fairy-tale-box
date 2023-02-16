@@ -77,9 +77,8 @@ public class HistoryController {
     @PostMapping("")
     public ResponseEntity<Long> createHistory(@RequestBody HistoryRequestDto historyRequestDto, @AuthenticationPrincipal User user){
         Long member_id = Long.valueOf(user.getUsername());
-
         Long history_id = historyService.createHistory(historyRequestDto, member_id);
-
+        System.out.println("!!!!");
         return ResponseEntity.ok().body(history_id);
     }
 
