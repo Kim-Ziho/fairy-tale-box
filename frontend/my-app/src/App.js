@@ -48,6 +48,7 @@ import Resultpage from "./pages/ResultPage";
 import { AnimatePresence } from "framer-motion";
 
 function App() {
+  window.source = new EventSource("http://localhost:8000/stream-pose");
   return (
     <div className="App">
       <BrowserRouter>
@@ -60,7 +61,7 @@ function App() {
               path="/history/:historyId"
               element={<Historydetail />}
             ></Route>
-            <Route path="/Qr" element={<Qr/>}></Route>
+            <Route path="/Qr" element={<Qr />}></Route>
             <Route path="/Scene1" element={<Scene1 />}></Route>
             <Route path="/Scene2" element={<Scene2 />}></Route>
             <Route path="/Scene3" element={<Scene3 />}></Route>
@@ -80,22 +81,22 @@ function App() {
             <Route path="/Scene17" element={<Scene17 />}></Route>
             <Route path="/Scene18" element={<Scene18 />}></Route>
             <Route path="/Scene19" element={<Scene19 />}></Route>
-            <Route path="/Scene1_test" element={<Scene1test/>}></Route>
-            <Route path="/Scene2_test" element={<Scene2test/>}></Route>
-            <Route path="/Scene6_test" element={<Scene6test/>}></Route>
-            <Route path="/Scene7_test" element={<Scene7test/>}></Route>
-            <Route path="/Scene8_test" element={<Scene8test/>}></Route>
-            <Route path="/Scene9_test" element={<Scene9test/>}></Route>
-            <Route path="/Scene10_test" element={<Scene10test/>}></Route>
-            <Route path="/Scene11_test" element={<Scene11test/>}></Route>
-            <Route path="/Scene12_test" element={<Scene12test/>}></Route>
-            <Route path="/Scene13_test" element={<Scene13test/>}></Route>
-            <Route path="/Scene14_test" element={<Scene14test/>}></Route>
-            <Route path="/Scene15_test" element={<Scene15test/>}></Route>
-            <Route path="/Scene17_test" element={<Scene17test/>}></Route>
-            <Route path="/Scene18_test" element={<Scene18test/>}></Route>
-            <Route path="/Scene19_test" element={<Scene19test/>}></Route>
-            <Route path="/Result" element={<Resultpage/>}></Route>
+            <Route path="/Scene1_test" element={<Scene1test />}></Route>
+            <Route path="/Scene2_test" element={<Scene2test />}></Route>
+            <Route path="/Scene6_test" element={<Scene6test />}></Route>
+            <Route path="/Scene7_test" element={<Scene7test />}></Route>
+            <Route path="/Scene8_test" element={<Scene8test />}></Route>
+            <Route path="/Scene9_test" element={<Scene9test />}></Route>
+            <Route path="/Scene10_test" element={<Scene10test />}></Route>
+            <Route path="/Scene11_test" element={<Scene11test />}></Route>
+            <Route path="/Scene12_test" element={<Scene12test />}></Route>
+            <Route path="/Scene13_test" element={<Scene13test />}></Route>
+            <Route path="/Scene14_test" element={<Scene14test />}></Route>
+            <Route path="/Scene15_test" element={<Scene15test />}></Route>
+            <Route path="/Scene17_test" element={<Scene17test />}></Route>
+            <Route path="/Scene18_test" element={<Scene18test />}></Route>
+            <Route path="/Scene19_test" element={<Scene19test />}></Route>
+            <Route path="/Result" element={<Resultpage />}></Route>
           </Routes>
         </AnimatePresence>
       </BrowserRouter>
